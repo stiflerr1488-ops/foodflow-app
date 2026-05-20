@@ -1,0 +1,1084 @@
+{
+  "plan": [
+    {
+      "day_cycle": 1,
+      "title": "День 1",
+      "shopping_type": "week1",
+      "meals": {
+        "Завтрак": {
+          "dish": "Ленивый хачапури на твороге",
+          "portion": "творог - 150 г",
+          "kcal": 291
+        },
+        "Обед": {
+          "dish": "Лосось Лапша роллс",
+          "portion": "Rice Noodles — 100g",
+          "kcal": 586
+        },
+        "Полдник": {
+          "dish": "Яблоко + арахис",
+          "portion": "яблоко - 1 шт",
+          "kcal": 210
+        },
+        "Ужин": {
+          "dish": "Лосось креветочный Ризотто",
+          "portion": "butter — 50g/2oz",
+          "kcal": 541
+        },
+        "Чай": {
+          "dish": "Бутерброды с яйцом и огурцом",
+          "portion": "яйца - 2 шт",
+          "kcal": 378
+        }
+      },
+      "cook": [],
+      "actual_day": 1,
+      "shopping_type_actual": "week1",
+      "cost": 491
+    },
+    {
+      "day_cycle": 2,
+      "title": "День 2",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Картофельные драники в мультипекаре",
+          "portion": "картофель — 500–600 г",
+          "kcal": 819
+        },
+        "Обед": {
+          "dish": "Липкий Ирис Пудинг Ултимате",
+          "portion": "Medjool dates — 225g",
+          "kcal": 691
+        },
+        "Полдник": {
+          "dish": "Кефир перед сном",
+          "portion": "кефир - 250 мл",
+          "kcal": 150
+        },
+        "Ужин": {
+          "dish": "Говядина Боургуигнон",
+          "portion": "Goose Fat — 3 tsp",
+          "kcal": 304
+        },
+        "Чай": {
+          "dish": "Творог с бананом и сушками",
+          "portion": "творог - 180 г",
+          "kcal": 330
+        }
+      },
+      "cook": [],
+      "actual_day": 2,
+      "shopping_type_actual": "",
+      "cost": 544
+    },
+    {
+      "day_cycle": 3,
+      "title": "День 3",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Омлет с овощной смесью",
+          "portion": "яйца - 2 шт",
+          "kcal": 330
+        },
+        "Обед": {
+          "dish": "веган Лазанья",
+          "portion": "green red lentils — 1 cups",
+          "kcal": 370
+        },
+        "Полдник": {
+          "dish": "Кефир + банан",
+          "portion": "кефир - 250 мл",
+          "kcal": 240
+        },
+        "Ужин": {
+          "dish": "квашеная капуста пирогроги",
+          "portion": "Sunflower Oil — 1 tablespoon",
+          "kcal": 867
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 3,
+      "shopping_type_actual": "",
+      "cost": 550
+    },
+    {
+      "day_cycle": 4,
+      "title": "День 4",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Ленивый хачапури на твороге",
+          "portion": "творог - 150 г",
+          "kcal": 291
+        },
+        "Обед": {
+          "dish": "Пельмени со сметаной и капустным салатом",
+          "portion": "пельмени - 220-250 г",
+          "kcal": 612
+        },
+        "Полдник": {
+          "dish": "Кефир + яблоко",
+          "portion": "кефир - 250 мл",
+          "kcal": 330
+        },
+        "Ужин": {
+          "dish": "квашеная капуста пирогрогии",
+          "portion": "Sunflower Oil — 1 tablespoon",
+          "kcal": 867
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 4,
+      "shopping_type_actual": "",
+      "cost": 553
+    },
+    {
+      "day_cycle": 5,
+      "title": "День 5",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Свёкольные драники",
+          "portion": "Rapeseed Oil — 1 tablespoon",
+          "kcal": 237
+        },
+        "Обед": {
+          "dish": "Лосось Лапша роллс",
+          "portion": "Rice Noodles — 100g",
+          "kcal": 586
+        },
+        "Полдник": {
+          "dish": "Яблоко + арахис",
+          "portion": "яблоко - 1 шт",
+          "kcal": 210
+        },
+        "Ужин": {
+          "dish": "Свинина & квашеная капуста гуляш",
+          "portion": "Lard — 3  tablespoons",
+          "kcal": 257
+        },
+        "Чай": {
+          "dish": "Бутерброды с яйцом и огурцом",
+          "portion": "яйца - 2 шт",
+          "kcal": 378
+        }
+      },
+      "cook": [],
+      "actual_day": 5,
+      "shopping_type_actual": "",
+      "cost": 447
+    },
+    {
+      "day_cycle": 6,
+      "title": "День 6",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Свёкольные блинс",
+          "portion": "Beetroot — 3",
+          "kcal": 555
+        },
+        "Обед": {
+          "dish": "Котлеты с картофельным пюре",
+          "portion": "котлеты - 2 шт",
+          "kcal": 846
+        },
+        "Полдник": {
+          "dish": "Кефир перед сном",
+          "portion": "кефир - 250 мл",
+          "kcal": 150
+        },
+        "Ужин": {
+          "dish": "Киннамон булочкас",
+          "portion": "Unsalted Butter — 100g",
+          "kcal": 945
+        },
+        "Чай": {
+          "dish": "Творог с бананом и сушками",
+          "portion": "творог - 180 г",
+          "kcal": 330
+        }
+      },
+      "cook": [],
+      "actual_day": 6,
+      "shopping_type_actual": "",
+      "cost": 530
+    },
+    {
+      "day_cycle": 7,
+      "title": "День 7",
+      "shopping_type": "week2",
+      "meals": {
+        "Завтрак": {
+          "dish": "Ленивый хачапури на твороге",
+          "portion": "творог - 150 г",
+          "kcal": 291
+        },
+        "Обед": {
+          "dish": "Пельмени, запеченные в сметане",
+          "portion": "пельмени - 220-250 г",
+          "kcal": 504
+        },
+        "Полдник": {
+          "dish": "Кефир + банан",
+          "portion": "кефир - 250 мл",
+          "kcal": 240
+        },
+        "Ужин": {
+          "dish": "квашеная капуста пирогроги",
+          "portion": "Sunflower Oil — 1 tablespoon",
+          "kcal": 867
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 7,
+      "shopping_type_actual": "week2",
+      "cost": 544
+    },
+    {
+      "day_cycle": 8,
+      "title": "День 8",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Свёкольные драники",
+          "portion": "Rapeseed Oil — 1 tablespoon",
+          "kcal": 237
+        },
+        "Обед": {
+          "dish": "Лосось Лапша роллс",
+          "portion": "Rice Noodles — 100g",
+          "kcal": 586
+        },
+        "Полдник": {
+          "dish": "Кефир + яблоко",
+          "portion": "кефир - 250 мл",
+          "kcal": 330
+        },
+        "Ужин": {
+          "dish": "Говядина Боургуигнон",
+          "portion": "Goose Fat — 3 tsp",
+          "kcal": 304
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 8,
+      "shopping_type_actual": "",
+      "cost": 528
+    },
+    {
+      "day_cycle": 9,
+      "title": "День 9",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Овсяноблин с творогом",
+          "portion": "овсянка - 60 г",
+          "kcal": 297
+        },
+        "Обед": {
+          "dish": "Пельмени со сметаной и капустным салатом",
+          "portion": "пельмени - 220-250 г",
+          "kcal": 612
+        },
+        "Полдник": {
+          "dish": "Яблоко + арахис",
+          "portion": "яблоко - 1 шт",
+          "kcal": 210
+        },
+        "Ужин": {
+          "dish": "Ходге Подге",
+          "portion": "New Potatoes — 1 lb",
+          "kcal": 50
+        },
+        "Чай": {
+          "dish": "Бутерброды с яйцом и огурцом",
+          "portion": "яйца - 2 шт",
+          "kcal": 378
+        }
+      },
+      "cook": [],
+      "actual_day": 9,
+      "shopping_type_actual": "",
+      "cost": 469
+    },
+    {
+      "day_cycle": 10,
+      "title": "День 10",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Омлет с овощной смесью",
+          "portion": "яйца - 2 шт",
+          "kcal": 330
+        },
+        "Обед": {
+          "dish": "Котлетный бургер-боул",
+          "portion": "котлеты - 2 шт",
+          "kcal": 840
+        },
+        "Полдник": {
+          "dish": "Кефир перед сном",
+          "portion": "кефир - 250 мл",
+          "kcal": 150
+        },
+        "Ужин": {
+          "dish": "Говядина строганофф",
+          "portion": "Olive Oil — 1 tbls",
+          "kcal": 304
+        },
+        "Чай": {
+          "dish": "Творог с бананом и сушками",
+          "portion": "творог - 180 г",
+          "kcal": 330
+        }
+      },
+      "cook": [],
+      "actual_day": 10,
+      "shopping_type_actual": "",
+      "cost": 553
+    },
+    {
+      "day_cycle": 11,
+      "title": "День 11",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Картофельные драники в мультипекаре",
+          "portion": "картофель — 500–600 г",
+          "kcal": 819
+        },
+        "Обед": {
+          "dish": "Пельмени, запеченные в сметане",
+          "portion": "пельмени - 220-250 г",
+          "kcal": 504
+        },
+        "Полдник": {
+          "dish": "Кефир + банан",
+          "portion": "кефир - 250 мл",
+          "kcal": 240
+        },
+        "Ужин": {
+          "dish": "без соли код тортилья",
+          "portion": "Olive Oil — 4 tbsp",
+          "kcal": 964
+        },
+        "Чай": {
+          "dish": "Творог с бананом и сушками",
+          "portion": "творог - 180 г",
+          "kcal": 330
+        }
+      },
+      "cook": [],
+      "actual_day": 11,
+      "shopping_type_actual": "",
+      "cost": 555
+    },
+    {
+      "day_cycle": 12,
+      "title": "День 12",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Рисовая каша с яблоком",
+          "portion": "рис - 70 г",
+          "kcal": 384
+        },
+        "Обед": {
+          "dish": "Липкий Ирис Пудинг Ултимате",
+          "portion": "Medjool dates — 225g",
+          "kcal": 691
+        },
+        "Полдник": {
+          "dish": "Кефир + яблоко",
+          "portion": "кефир - 250 мл",
+          "kcal": 330
+        },
+        "Ужин": {
+          "dish": "Киннамон булочкас",
+          "portion": "Unsalted Butter — 100g",
+          "kcal": 945
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 12,
+      "shopping_type_actual": "",
+      "cost": 518
+    },
+    {
+      "day_cycle": 13,
+      "title": "День 13",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Свёкольные блинс",
+          "portion": "Beetroot — 3",
+          "kcal": 555
+        },
+        "Обед": {
+          "dish": "веган Лазанья",
+          "portion": "green red lentils — 1 cups",
+          "kcal": 370
+        },
+        "Полдник": {
+          "dish": "Яблоко + арахис",
+          "portion": "яблоко - 1 шт",
+          "kcal": 210
+        },
+        "Ужин": {
+          "dish": "Ходге Подге",
+          "portion": "New Potatoes — 1 lb",
+          "kcal": 50
+        },
+        "Чай": {
+          "dish": "Бутерброды с яйцом и огурцом",
+          "portion": "яйца - 2 шт",
+          "kcal": 378
+        }
+      },
+      "cook": [],
+      "actual_day": 13,
+      "shopping_type_actual": "",
+      "cost": 467
+    },
+    {
+      "day_cycle": 14,
+      "title": "День 14",
+      "shopping_type": "week3",
+      "meals": {
+        "Завтрак": {
+          "dish": "Овсянка банан-арахис",
+          "portion": "овсянка - 70 г",
+          "kcal": 282
+        },
+        "Обед": {
+          "dish": "Пельмени, запеченные в сметане",
+          "portion": "пельмени - 220-250 г",
+          "kcal": 504
+        },
+        "Полдник": {
+          "dish": "Кефир перед сном",
+          "portion": "кефир - 250 мл",
+          "kcal": 150
+        },
+        "Ужин": {
+          "dish": "Лосось креветочный Ризотто",
+          "portion": "butter — 50g/2oz",
+          "kcal": 541
+        },
+        "Чай": {
+          "dish": "Творог с бананом и сушками",
+          "portion": "творог - 180 г",
+          "kcal": 330
+        }
+      },
+      "cook": [],
+      "actual_day": 14,
+      "shopping_type_actual": "week3",
+      "cost": 524
+    },
+    {
+      "day_cycle": 15,
+      "title": "День 15",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Свёкольные драники",
+          "portion": "Rapeseed Oil — 1 tablespoon",
+          "kcal": 237
+        },
+        "Обед": {
+          "dish": "Лосось Лапша роллс",
+          "portion": "Rice Noodles — 100g",
+          "kcal": 586
+        },
+        "Полдник": {
+          "dish": "Кефир + банан",
+          "portion": "кефир - 250 мл",
+          "kcal": 240
+        },
+        "Ужин": {
+          "dish": "В аэрогриле Яйцо Рулетс",
+          "portion": "Olive Oil — 1 tablespoon",
+          "kcal": 907
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 15,
+      "shopping_type_actual": "",
+      "cost": 527
+    },
+    {
+      "day_cycle": 16,
+      "title": "День 16",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Рисовая каша с яблоком",
+          "portion": "рис - 70 г",
+          "kcal": 384
+        },
+        "Обед": {
+          "dish": "Пельмени со сметаной и капустным салатом",
+          "portion": "пельмени - 220-250 г",
+          "kcal": 612
+        },
+        "Полдник": {
+          "dish": "Кефир + яблоко",
+          "portion": "кефир - 250 мл",
+          "kcal": 330
+        },
+        "Ужин": {
+          "dish": "квашеная капуста пирогрогии",
+          "portion": "Sunflower Oil — 1 tablespoon",
+          "kcal": 867
+        },
+        "Чай": {
+          "dish": "Творог с бананом и сушками",
+          "portion": "творог - 180 г",
+          "kcal": 330
+        }
+      },
+      "cook": [],
+      "actual_day": 16,
+      "shopping_type_actual": "",
+      "cost": 553
+    },
+    {
+      "day_cycle": 17,
+      "title": "День 17",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Свёкольные блинс",
+          "portion": "Beetroot — 3",
+          "kcal": 555
+        },
+        "Обед": {
+          "dish": "Котлетный бургер-боул",
+          "portion": "котлеты - 2 шт",
+          "kcal": 840
+        },
+        "Полдник": {
+          "dish": "Яблоко + арахис",
+          "portion": "яблоко - 1 шт",
+          "kcal": 210
+        },
+        "Ужин": {
+          "dish": "Свинина & квашеная капуста гуляш",
+          "portion": "Lard — 3  tablespoons",
+          "kcal": 257
+        },
+        "Чай": {
+          "dish": "Бутерброды с яйцом и огурцом",
+          "portion": "яйца - 2 шт",
+          "kcal": 378
+        }
+      },
+      "cook": [],
+      "actual_day": 17,
+      "shopping_type_actual": "",
+      "cost": 447
+    },
+    {
+      "day_cycle": 18,
+      "title": "День 18",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Овсяноблин с творогом",
+          "portion": "овсянка - 60 г",
+          "kcal": 297
+        },
+        "Обед": {
+          "dish": "Картофельная запеканка с фаршем",
+          "portion": "картофель - 700 г",
+          "kcal": 696
+        },
+        "Полдник": {
+          "dish": "Кефир перед сном",
+          "portion": "кефир - 250 мл",
+          "kcal": 150
+        },
+        "Ужин": {
+          "dish": "Ходге Подге",
+          "portion": "New Potatoes — 1 lb",
+          "kcal": 50
+        },
+        "Чай": {
+          "dish": "Творог с бананом и сушками",
+          "portion": "творог - 180 г",
+          "kcal": 330
+        }
+      },
+      "cook": [],
+      "actual_day": 18,
+      "shopping_type_actual": "",
+      "cost": 550
+    },
+    {
+      "day_cycle": 19,
+      "title": "День 19",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Свёкольные драники",
+          "portion": "Rapeseed Oil — 1 tablespoon",
+          "kcal": 237
+        },
+        "Обед": {
+          "dish": "Пельмени, запеченные в сметане",
+          "portion": "пельмени - 220-250 г",
+          "kcal": 504
+        },
+        "Полдник": {
+          "dish": "Кефир + банан",
+          "portion": "кефир - 250 мл",
+          "kcal": 240
+        },
+        "Ужин": {
+          "dish": "Киннамон булочкас",
+          "portion": "Unsalted Butter — 100g",
+          "kcal": 945
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 19,
+      "shopping_type_actual": "",
+      "cost": 508
+    },
+    {
+      "day_cycle": 20,
+      "title": "День 20",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Картофельные драники в мультипекаре",
+          "portion": "картофель — 500–600 г",
+          "kcal": 819
+        },
+        "Обед": {
+          "dish": "Вареники с творогом и сметаной",
+          "portion": "вареники - 250 г",
+          "kcal": 336
+        },
+        "Полдник": {
+          "dish": "Кефир + яблоко",
+          "portion": "кефир - 250 мл",
+          "kcal": 330
+        },
+        "Ужин": {
+          "dish": "В аэрогриле Яйцо Рулетс",
+          "portion": "Olive Oil — 1 tablespoon",
+          "kcal": 907
+        },
+        "Чай": {
+          "dish": "Бутерброды с яйцом и огурцом",
+          "portion": "яйца - 2 шт",
+          "kcal": 378
+        }
+      },
+      "cook": [],
+      "actual_day": 20,
+      "shopping_type_actual": "",
+      "cost": 500
+    },
+    {
+      "day_cycle": 21,
+      "title": "День 21",
+      "shopping_type": "week4",
+      "meals": {
+        "Завтрак": {
+          "dish": "Овсяноблин с творогом",
+          "portion": "овсянка - 60 г",
+          "kcal": 297
+        },
+        "Обед": {
+          "dish": "Липкий Ирис Пудинг Ултимате",
+          "portion": "Medjool dates — 225g",
+          "kcal": 691
+        },
+        "Полдник": {
+          "dish": "Яблоко + арахис",
+          "portion": "яблоко - 1 шт",
+          "kcal": 210
+        },
+        "Ужин": {
+          "dish": "Говядина строганофф",
+          "portion": "Olive Oil — 1 tbls",
+          "kcal": 304
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 21,
+      "shopping_type_actual": "week4",
+      "cost": 522
+    },
+    {
+      "day_cycle": 22,
+      "title": "День 22",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Творожные вафли в мультипекаре",
+          "portion": "творог — 180 г",
+          "kcal": 351
+        },
+        "Обед": {
+          "dish": "Пельмени, запеченные в сметане",
+          "portion": "пельмени - 220-250 г",
+          "kcal": 504
+        },
+        "Полдник": {
+          "dish": "Кефир перед сном",
+          "portion": "кефир - 250 мл",
+          "kcal": 150
+        },
+        "Ужин": {
+          "dish": "Говядина Боургуигнон",
+          "portion": "Goose Fat — 3 tsp",
+          "kcal": 304
+        },
+        "Чай": {
+          "dish": "Творог с бананом и сушками",
+          "portion": "творог - 180 г",
+          "kcal": 330
+        }
+      },
+      "cook": [],
+      "actual_day": 22,
+      "shopping_type_actual": "",
+      "cost": 579
+    },
+    {
+      "day_cycle": 23,
+      "title": "День 23",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Свёкольные блинс",
+          "portion": "Beetroot — 3",
+          "kcal": 555
+        },
+        "Обед": {
+          "dish": "Картофельная запеканка с фаршем",
+          "portion": "картофель - 700 г",
+          "kcal": 696
+        },
+        "Полдник": {
+          "dish": "Кефир + банан",
+          "portion": "кефир - 250 мл",
+          "kcal": 240
+        },
+        "Ужин": {
+          "dish": "Киннамон булочкас",
+          "portion": "Unsalted Butter — 100g",
+          "kcal": 945
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 23,
+      "shopping_type_actual": "",
+      "cost": 518
+    },
+    {
+      "day_cycle": 24,
+      "title": "День 24",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Овсяноблин с творогом",
+          "portion": "овсянка - 60 г",
+          "kcal": 297
+        },
+        "Обед": {
+          "dish": "Вареники с творогом и сметаной",
+          "portion": "вареники - 250 г",
+          "kcal": 336
+        },
+        "Полдник": {
+          "dish": "Кефир + яблоко",
+          "portion": "кефир - 250 мл",
+          "kcal": 330
+        },
+        "Ужин": {
+          "dish": "квашеная капуста пирогрогии",
+          "portion": "Sunflower Oil — 1 tablespoon",
+          "kcal": 867
+        },
+        "Чай": {
+          "dish": "Бутерброды с яйцом и огурцом",
+          "portion": "яйца - 2 шт",
+          "kcal": 378
+        }
+      },
+      "cook": [],
+      "actual_day": 24,
+      "shopping_type_actual": "",
+      "cost": 501
+    },
+    {
+      "day_cycle": 25,
+      "title": "День 25",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Ленивый хачапури на твороге",
+          "portion": "творог - 150 г",
+          "kcal": 291
+        },
+        "Обед": {
+          "dish": "Котлетный бургер-боул",
+          "portion": "котлеты - 2 шт",
+          "kcal": 840
+        },
+        "Полдник": {
+          "dish": "Яблоко + арахис",
+          "portion": "яблоко - 1 шт",
+          "kcal": 210
+        },
+        "Ужин": {
+          "dish": "Лосось креветочный Ризотто",
+          "portion": "butter — 50g/2oz",
+          "kcal": 541
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 25,
+      "shopping_type_actual": "",
+      "cost": 543
+    },
+    {
+      "day_cycle": 26,
+      "title": "День 26",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Блинс",
+          "portion": "Flour — 100g",
+          "kcal": 450
+        },
+        "Обед": {
+          "dish": "Лосось Лапша роллс",
+          "portion": "Rice Noodles — 100g",
+          "kcal": 586
+        },
+        "Полдник": {
+          "dish": "Кефир перед сном",
+          "portion": "кефир - 250 мл",
+          "kcal": 150
+        },
+        "Ужин": {
+          "dish": "без соли код тортилья",
+          "portion": "Olive Oil — 4 tbsp",
+          "kcal": 964
+        },
+        "Чай": {
+          "dish": "Творог с бананом и сушками",
+          "portion": "творог - 180 г",
+          "kcal": 330
+        }
+      },
+      "cook": [],
+      "actual_day": 26,
+      "shopping_type_actual": "",
+      "cost": 535
+    },
+    {
+      "day_cycle": 27,
+      "title": "День 27",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Овсяноблин с творогом",
+          "portion": "овсянка - 60 г",
+          "kcal": 297
+        },
+        "Обед": {
+          "dish": "Тефтели в томатном соусе с гречкой",
+          "portion": "тефтели - 200 г",
+          "kcal": 372
+        },
+        "Полдник": {
+          "dish": "Кефир + банан",
+          "portion": "кефир - 250 мл",
+          "kcal": 240
+        },
+        "Ужин": {
+          "dish": "Ходге Подге",
+          "portion": "New Potatoes — 1 lb",
+          "kcal": 50
+        },
+        "Чай": {
+          "dish": "Бутерброды с яйцом и огурцом",
+          "portion": "яйца - 2 шт",
+          "kcal": 378
+        }
+      },
+      "cook": [],
+      "actual_day": 27,
+      "shopping_type_actual": "",
+      "cost": 506
+    },
+    {
+      "day_cycle": 28,
+      "title": "День 28",
+      "shopping_type": "topup",
+      "meals": {
+        "Завтрак": {
+          "dish": "Свёкольные блинс",
+          "portion": "Beetroot — 3",
+          "kcal": 555
+        },
+        "Обед": {
+          "dish": "Липкий Ирис Пудинг Ултимате",
+          "portion": "Medjool dates — 225g",
+          "kcal": 691
+        },
+        "Полдник": {
+          "dish": "Кефир + яблоко",
+          "portion": "кефир - 250 мл",
+          "kcal": 330
+        },
+        "Ужин": {
+          "dish": "Свинина & квашеная капуста гуляш",
+          "portion": "Lard — 3  tablespoons",
+          "kcal": 257
+        },
+        "Чай": {
+          "dish": "Бутерброды с яйцом и огурцом",
+          "portion": "яйца - 2 шт",
+          "kcal": 378
+        }
+      },
+      "cook": [],
+      "actual_day": 28,
+      "shopping_type_actual": "topup",
+      "cost": 467
+    },
+    {
+      "day_cycle": 29,
+      "title": "День 29",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Картофельные драники в мультипекаре",
+          "portion": "картофель — 500–600 г",
+          "kcal": 819
+        },
+        "Обед": {
+          "dish": "Котлеты с картофельным пюре",
+          "portion": "котлеты - 2 шт",
+          "kcal": 846
+        },
+        "Полдник": {
+          "dish": "Яблоко + арахис",
+          "portion": "яблоко - 1 шт",
+          "kcal": 210
+        },
+        "Ужин": {
+          "dish": "Говядина строганофф",
+          "portion": "Olive Oil — 1 tbls",
+          "kcal": 304
+        },
+        "Чай": {
+          "dish": "Творог + чай",
+          "portion": "творог — 180 г",
+          "kcal": 216
+        }
+      },
+      "cook": [],
+      "actual_day": 29,
+      "shopping_type_actual": "",
+      "cost": 515
+    },
+    {
+      "day_cycle": 30,
+      "title": "День 30",
+      "shopping_type": "",
+      "meals": {
+        "Завтрак": {
+          "dish": "Творожные вафли в мультипекаре",
+          "portion": "творог — 180 г",
+          "kcal": 351
+        },
+        "Обед": {
+          "dish": "Пельмени со сметаной и капустным салатом",
+          "portion": "пельмени - 220-250 г",
+          "kcal": 612
+        },
+        "Полдник": {
+          "dish": "Кефир перед сном",
+          "portion": "кефир - 250 мл",
+          "kcal": 150
+        },
+        "Ужин": {
+          "dish": "квашеная капуста пирогрогии",
+          "portion": "Sunflower Oil — 1 tablespoon",
+          "kcal": 867
+        },
+        "Чай": {
+          "dish": "Творог с бананом и сушками",
+          "portion": "творог - 180 г",
+          "kcal": 330
+        }
+      },
+      "cook": [],
+      "actual_day": 30,
+      "shopping_type_actual": "",
+      "cost": 582
+    }
+  ]
+}

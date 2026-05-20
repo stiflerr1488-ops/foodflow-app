@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "currency": "RUB",
+  "city": "Москва",
+  "year": 2026,
+  "fixedBudgets": [10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 60000, 75000],
+  "unitRules": {
+    "adult": 1,
+    "child": 0.7
+  },
+  "statusByRubPerUnit": [
+    {"status": "not_recommended", "label": "Не рекомендую", "min": 0, "max": 7999},
+    {"status": "emergency", "label": "Аварийно", "min": 8000, "max": 11999},
+    {"status": "strict", "label": "Бюджет", "min": 12000, "max": 15999},
+    {"status": "normal", "label": "Нормально", "min": 16000, "max": 21999},
+    {"status": "comfortable", "label": "Комфортно", "min": 22000, "max": 999999}
+  ],
+  "statusRules": {
+    "not_recommended": {
+      "buildPlan": false,
+      "description": "Бюджет слишком низкий: не хватит на базовый белок, фрукты и молочку."
+    },
+    "emergency": {
+      "buildPlan": true,
+      "description": "Аварийный рацион: крупы, супы, яйца, фасоль, картофель, капуста. Без полуфабрикатов."
+    },
+    "strict": {
+      "buildPlan": true,
+      "description": "Бюджетный рацион: курица регулярно, рыба и творог дозированно, полуфабрикаты по акции."
+    },
+    "normal": {
+      "buildPlan": true,
+      "description": "Нормальный рацион: стабильный белок, фрукты каждый день, молочка, рыба 1-2 раза в неделю."
+    },
+    "comfortable": {
+      "buildPlan": true,
+      "description": "Комфортный рацион: больше мяса, свежих продуктов, быстрых блюд и разнообразия."
+    }
+  },
+  "recommendedBudgets": {
+    "a1_c0": { "emergency": 10000, "strict": 15000, "normal": 20000, "comfortable": 25000 },
+    "a1_c1": { "emergency": 15000, "strict": 25000, "normal": 30000, "comfortable": 40000 },
+    "a1_c2": { "emergency": 25000, "strict": 35000, "normal": 45000, "comfortable": 60000 },
+    "a2_c0": { "emergency": 20000, "strict": 30000, "normal": 40000, "comfortable": 50000 },
+    "a2_c1": { "emergency": 25000, "strict": 40000, "normal": 50000, "comfortable": 60000 },
+    "a2_c2": { "emergency": 35000, "strict": 50000, "normal": 60000, "comfortable": 75000 }
+  }
+}

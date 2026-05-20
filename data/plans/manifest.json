@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "id": "a1_c0",
+      "adults": 1,
+      "children": 0,
+      "budget": 20000,
+      "label": "1 взрослый",
+      "planFile": "plan_a1_c0.json",
+      "invFile": "inv_a1_c0.json"
+    },
+    {
+      "id": "a1_c1",
+      "adults": 1,
+      "children": 1,
+      "budget": 30000,
+      "label": "1 взрослый + 1 ребенок",
+      "planFile": "plan_a1_c1.json",
+      "invFile": "inv_a1_c1.json"
+    },
+    {
+      "id": "a1_c2",
+      "adults": 1,
+      "children": 2,
+      "budget": 45000,
+      "label": "1 взрослый + 2 ребенка",
+      "planFile": "plan_a1_c2.json",
+      "invFile": "inv_a1_c2.json"
+    },
+    {
+      "id": "a2_c0",
+      "adults": 2,
+      "children": 0,
+      "budget": 40000,
+      "label": "2 взрослых",
+      "planFile": "plan_a2_c0.json",
+      "invFile": "inv_a2_c0.json"
+    },
+    {
+      "id": "a2_c1",
+      "adults": 2,
+      "children": 1,
+      "budget": 50000,
+      "label": "2 взрослых + 1 ребенок",
+      "planFile": "plan_a2_c1.json",
+      "invFile": "inv_a2_c1.json"
+    },
+    {
+      "id": "a2_c2",
+      "adults": 2,
+      "children": 2,
+      "budget": 60000,
+      "label": "2 взрослых + 2 ребенка",
+      "planFile": "plan_a2_c2.json",
+      "invFile": "inv_a2_c2.json"
+    }
+  ],
+  "defaultProfile": "a1_c0"
+}

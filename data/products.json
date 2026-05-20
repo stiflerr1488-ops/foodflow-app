@@ -1,0 +1,2557 @@
+{
+  "version": 3,
+  "generatedFrom": "build-data.js",
+  "products": {
+    "oats_g": {
+      "id": "oats_g",
+      "name": "Овсянка",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.13,
+        "f": 0.07,
+        "c": 0.6
+      },
+      "pricePerUnit": 0.059,
+      "box": {
+        "id": "oats_g",
+        "title": "Овсянка",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.059,
+        "priceLabel": "0.059 ₽/г",
+        "macroPerUnit": {
+          "p": 0.13,
+          "f": 0.07,
+          "c": 0.6
+        }
+      },
+      "packSize": 800,
+      "packPrice": 47,
+      "packLabel": "800 г (47₽)",
+      "storeSection": "Бакалея"
+    },
+    "rice_g": {
+      "id": "rice_g",
+      "name": "Рис",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.07,
+        "f": 0.01,
+        "c": 0.78
+      },
+      "pricePerUnit": 0.079,
+      "box": {
+        "id": "rice_g",
+        "title": "Рис",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.079,
+        "priceLabel": "0.079 ₽/г",
+        "macroPerUnit": {
+          "p": 0.07,
+          "f": 0.01,
+          "c": 0.78
+        }
+      },
+      "packSize": 900,
+      "packPrice": 71,
+      "packLabel": "900 г (71₽)",
+      "storeSection": "Бакалея"
+    },
+    "buckwheat_g": {
+      "id": "buckwheat_g",
+      "name": "Гречка",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.13,
+        "f": 0.03,
+        "c": 0.68
+      },
+      "pricePerUnit": 0.089,
+      "box": {
+        "id": "buckwheat_g",
+        "title": "Гречка",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.089,
+        "priceLabel": "0.089 ₽/г",
+        "macroPerUnit": {
+          "p": 0.13,
+          "f": 0.03,
+          "c": 0.68
+        }
+      },
+      "packSize": 800,
+      "packPrice": 71,
+      "packLabel": "800 г (71₽)",
+      "storeSection": "Бакалея"
+    },
+    "pasta_g": {
+      "id": "pasta_g",
+      "name": "Макароны/лапша",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.11,
+        "f": 0.015,
+        "c": 0.72
+      },
+      "pricePerUnit": 0.079,
+      "box": {
+        "id": "pasta_g",
+        "title": "Макароны/лапша",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.079,
+        "priceLabel": "0.079 ₽/г",
+        "macroPerUnit": {
+          "p": 0.11,
+          "f": 0.015,
+          "c": 0.72
+        }
+      },
+      "packSize": 500,
+      "packPrice": 40,
+      "packLabel": "500 г (40₽)",
+      "storeSection": "Бакалея"
+    },
+    "beans_cans": {
+      "id": "beans_cans",
+      "name": "Фасоль",
+      "unit": "бан.",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 18,
+        "f": 2,
+        "c": 42
+      },
+      "pricePerUnit": 89,
+      "box": {
+        "id": "beans_cans",
+        "title": "Фасоль",
+        "unit": "бан.",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 89,
+        "priceLabel": "89 ₽/бан.",
+        "macroPerUnit": {
+          "p": 18,
+          "f": 2,
+          "c": 42
+        }
+      },
+      "packSize": 1,
+      "packPrice": 89,
+      "packLabel": "1 бан 400г (89₽)",
+      "storeSection": "Бакалея"
+    },
+    "peanuts_g": {
+      "id": "peanuts_g",
+      "name": "Арахис",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.26,
+        "f": 0.49,
+        "c": 0.16
+      },
+      "pricePerUnit": 0.399,
+      "box": {
+        "id": "peanuts_g",
+        "title": "Арахис",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.399,
+        "priceLabel": "0.399 ₽/г",
+        "macroPerUnit": {
+          "p": 0.26,
+          "f": 0.49,
+          "c": 0.16
+        }
+      },
+      "packSize": 200,
+      "packPrice": 80,
+      "packLabel": "200 г (80₽)",
+      "storeSection": "Бакалея"
+    },
+    "flour_g": {
+      "id": "flour_g",
+      "name": "Мука",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.1,
+        "f": 0.01,
+        "c": 0.76
+      },
+      "pricePerUnit": 0.059,
+      "box": {
+        "id": "flour_g",
+        "title": "Мука",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.059,
+        "priceLabel": "0.059 ₽/г",
+        "macroPerUnit": {
+          "p": 0.1,
+          "f": 0.01,
+          "c": 0.76
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 59,
+      "packLabel": "1 кг (59₽)",
+      "storeSection": "Бакалея"
+    },
+    "tomato_paste_g": {
+      "id": "tomato_paste_g",
+      "name": "Томатная паста",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.045,
+        "f": 0,
+        "c": 0.18
+      },
+      "pricePerUnit": 0.2,
+      "box": {
+        "id": "tomato_paste_g",
+        "title": "Томатная паста",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.2,
+        "priceLabel": "0.2 ₽/г",
+        "macroPerUnit": {
+          "p": 0.045,
+          "f": 0,
+          "c": 0.18
+        }
+      },
+      "packSize": 140,
+      "packPrice": 28,
+      "packLabel": "140 г (28₽)",
+      "storeSection": "Бакалея"
+    },
+    "sushki_g": {
+      "id": "sushki_g",
+      "name": "Сушки",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.1,
+        "f": 0.03,
+        "c": 0.75
+      },
+      "pricePerUnit": 0.25,
+      "box": {
+        "id": "sushki_g",
+        "title": "Сушки",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.25,
+        "priceLabel": "0.25 ₽/г",
+        "macroPerUnit": {
+          "p": 0.1,
+          "f": 0.03,
+          "c": 0.75
+        }
+      },
+      "packSize": 200,
+      "packPrice": 50,
+      "packLabel": "200 г (50₽)",
+      "storeSection": "Бакалея"
+    },
+    "potatoes_g": {
+      "id": "potatoes_g",
+      "name": "Картофель",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 35,
+      "lowStockLimit": 500,
+      "macroPerUnit": {
+        "p": 0.02,
+        "f": 0,
+        "c": 0.17
+      },
+      "pricePerUnit": 0.039,
+      "box": {
+        "id": "potatoes_g",
+        "title": "Картофель",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 35,
+        "lowStockLimit": 500,
+        "pricePerUnit": 0.039,
+        "priceLabel": "0.039 ₽/г",
+        "macroPerUnit": {
+          "p": 0.02,
+          "f": 0,
+          "c": 0.17
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 39,
+      "packLabel": "1 кг (39₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "cabbage_g": {
+      "id": "cabbage_g",
+      "name": "Капуста/огурец",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 16,
+      "lowStockLimit": 400,
+      "macroPerUnit": {
+        "p": 0.013,
+        "f": 0,
+        "c": 0.06
+      },
+      "pricePerUnit": 0.039,
+      "box": {
+        "id": "cabbage_g",
+        "title": "Капуста/огурец",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 16,
+        "lowStockLimit": 400,
+        "pricePerUnit": 0.039,
+        "priceLabel": "0.039 ₽/г",
+        "macroPerUnit": {
+          "p": 0.013,
+          "f": 0,
+          "c": 0.06
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 39,
+      "packLabel": "1 кг (39₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "roots_g": {
+      "id": "roots_g",
+      "name": "Морковь/лук/свекла",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 35,
+      "lowStockLimit": 300,
+      "macroPerUnit": {
+        "p": 0.01,
+        "f": 0,
+        "c": 0.09
+      },
+      "pricePerUnit": 0.049,
+      "box": {
+        "id": "roots_g",
+        "title": "Морковь/лук/свекла",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 35,
+        "lowStockLimit": 300,
+        "pricePerUnit": 0.049,
+        "priceLabel": "0.049 ₽/г",
+        "macroPerUnit": {
+          "p": 0.01,
+          "f": 0,
+          "c": 0.09
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 49,
+      "packLabel": "1 кг (49₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "apples_g": {
+      "id": "apples_g",
+      "name": "Яблоки",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 21,
+      "lowStockLimit": 300,
+      "macroPerUnit": {
+        "p": 0.003,
+        "f": 0,
+        "c": 0.12
+      },
+      "pricePerUnit": 0.089,
+      "box": {
+        "id": "apples_g",
+        "title": "Яблоки",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 21,
+        "lowStockLimit": 300,
+        "pricePerUnit": 0.089,
+        "priceLabel": "0.089 ₽/г",
+        "macroPerUnit": {
+          "p": 0.003,
+          "f": 0,
+          "c": 0.12
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 89,
+      "packLabel": "1 кг (89₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "bananas_pcs": {
+      "id": "bananas_pcs",
+      "name": "Бананы",
+      "unit": "шт",
+      "storage": "fridge",
+      "shelfLifeDays": 7,
+      "lowStockLimit": 1,
+      "macroPerUnit": {
+        "p": 1.3,
+        "f": 0.3,
+        "c": 27
+      },
+      "pricePerUnit": 11,
+      "box": {
+        "id": "bananas_pcs",
+        "title": "Бананы",
+        "unit": "шт",
+        "storage": "fridge",
+        "shelfLifeDays": 7,
+        "lowStockLimit": 1,
+        "pricePerUnit": 11,
+        "priceLabel": "11 ₽/шт",
+        "macroPerUnit": {
+          "p": 1.3,
+          "f": 0.3,
+          "c": 27
+        }
+      },
+      "packSize": 1,
+      "packPrice": 11,
+      "packLabel": "1 шт ~140г (79₽/кг)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "eggs_pcs": {
+      "id": "eggs_pcs",
+      "name": "Яйца",
+      "unit": "шт",
+      "storage": "fridge",
+      "shelfLifeDays": 25,
+      "lowStockLimit": 4,
+      "macroPerUnit": {
+        "p": 6.5,
+        "f": 5,
+        "c": 0.5
+      },
+      "pricePerUnit": 10,
+      "box": {
+        "id": "eggs_pcs",
+        "title": "Яйца",
+        "unit": "шт",
+        "storage": "fridge",
+        "shelfLifeDays": 25,
+        "lowStockLimit": 4,
+        "pricePerUnit": 10,
+        "priceLabel": "10 ₽/шт",
+        "macroPerUnit": {
+          "p": 6.5,
+          "f": 5,
+          "c": 0.5
+        }
+      },
+      "packSize": 10,
+      "packPrice": 99,
+      "packLabel": "10 шт (99₽)",
+      "storeSection": "Молочная продукция"
+    },
+    "milk_ml": {
+      "id": "milk_ml",
+      "name": "Молоко",
+      "unit": "мл",
+      "storage": "fridge",
+      "shelfLifeDays": 7,
+      "lowStockLimit": 300,
+      "macroPerUnit": {
+        "p": 0.03,
+        "f": 0.025,
+        "c": 0.047
+      },
+      "pricePerUnit": 0.072,
+      "box": {
+        "id": "milk_ml",
+        "title": "Молоко",
+        "unit": "мл",
+        "storage": "fridge",
+        "shelfLifeDays": 7,
+        "lowStockLimit": 300,
+        "pricePerUnit": 0.072,
+        "priceLabel": "0.072 ₽/мл",
+        "macroPerUnit": {
+          "p": 0.03,
+          "f": 0.025,
+          "c": 0.047
+        }
+      },
+      "packSize": 930,
+      "packPrice": 67,
+      "packLabel": "930 мл (67₽)",
+      "storeSection": "Молочная продукция"
+    },
+    "kefir_ml": {
+      "id": "kefir_ml",
+      "name": "Кефир",
+      "unit": "мл",
+      "storage": "fridge",
+      "shelfLifeDays": 10,
+      "lowStockLimit": 400,
+      "macroPerUnit": {
+        "p": 0.03,
+        "f": 0.025,
+        "c": 0.04
+      },
+      "pricePerUnit": 0.069,
+      "box": {
+        "id": "kefir_ml",
+        "title": "Кефир",
+        "unit": "мл",
+        "storage": "fridge",
+        "shelfLifeDays": 10,
+        "lowStockLimit": 400,
+        "pricePerUnit": 0.069,
+        "priceLabel": "0.069 ₽/мл",
+        "macroPerUnit": {
+          "p": 0.03,
+          "f": 0.025,
+          "c": 0.04
+        }
+      },
+      "packSize": 900,
+      "packPrice": 62,
+      "packLabel": "900 мл (62₽)",
+      "storeSection": "Молочная продукция"
+    },
+    "tvorog_g": {
+      "id": "tvorog_g",
+      "name": "Творог",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 8,
+      "lowStockLimit": 250,
+      "macroPerUnit": {
+        "p": 0.16,
+        "f": 0.05,
+        "c": 0.03
+      },
+      "pricePerUnit": 0.45,
+      "box": {
+        "id": "tvorog_g",
+        "title": "Творог",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 8,
+        "lowStockLimit": 250,
+        "pricePerUnit": 0.45,
+        "priceLabel": "0.45 ₽/г",
+        "macroPerUnit": {
+          "p": 0.16,
+          "f": 0.05,
+          "c": 0.03
+        }
+      },
+      "packSize": 180,
+      "packPrice": 81,
+      "packLabel": "180 г (81₽)",
+      "storeSection": "Молочная продукция"
+    },
+    "bread_g": {
+      "id": "bread_g",
+      "name": "Хлеб",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 7,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.08,
+        "f": 0.03,
+        "c": 0.5
+      },
+      "pricePerUnit": 0.13,
+      "box": {
+        "id": "bread_g",
+        "title": "Хлеб",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 7,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.13,
+        "priceLabel": "0.13 ₽/г",
+        "macroPerUnit": {
+          "p": 0.08,
+          "f": 0.03,
+          "c": 0.5
+        }
+      },
+      "packSize": 350,
+      "packPrice": 45,
+      "packLabel": "350 г батон (45₽)",
+      "storeSection": "Хлеб и выпечка"
+    },
+    "smetana_g": {
+      "id": "smetana_g",
+      "name": "Сметана",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 14,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.025,
+        "f": 0.15,
+        "c": 0.03
+      },
+      "pricePerUnit": 0.28,
+      "box": {
+        "id": "smetana_g",
+        "title": "Сметана",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 14,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.28,
+        "priceLabel": "0.28 ₽/г",
+        "macroPerUnit": {
+          "p": 0.025,
+          "f": 0.15,
+          "c": 0.03
+        }
+      },
+      "packSize": 330,
+      "packPrice": 92,
+      "packLabel": "330 г (92₽)",
+      "storeSection": "Молочная продукция"
+    },
+    "lavash_pcs": {
+      "id": "lavash_pcs",
+      "name": "Лаваш",
+      "unit": "шт",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 8,
+        "f": 2,
+        "c": 50
+      },
+      "pricePerUnit": 49,
+      "box": {
+        "id": "lavash_pcs",
+        "title": "Лаваш",
+        "unit": "шт",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 49,
+        "priceLabel": "49 ₽/шт",
+        "macroPerUnit": {
+          "p": 8,
+          "f": 2,
+          "c": 50
+        }
+      },
+      "packSize": 1,
+      "packPrice": 49,
+      "packLabel": "2 шт в упак (49₽)",
+      "storeSection": "Хлеб и выпечка"
+    },
+    "chicken_g": {
+      "id": "chicken_g",
+      "name": "Курица",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": 300,
+      "macroPerUnit": {
+        "p": 0.19,
+        "f": 0.08,
+        "c": 0
+      },
+      "pricePerUnit": 0.189,
+      "box": {
+        "id": "chicken_g",
+        "title": "Курица",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": 300,
+        "pricePerUnit": 0.189,
+        "priceLabel": "0.189 ₽/г",
+        "macroPerUnit": {
+          "p": 0.19,
+          "f": 0.08,
+          "c": 0
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 189,
+      "packLabel": "1 кг окорочка (189₽)",
+      "storeSection": "Мясо и птица"
+    },
+    "fish_g": {
+      "id": "fish_g",
+      "name": "Минтай/хек",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.17,
+        "f": 0.02,
+        "c": 0
+      },
+      "pricePerUnit": 0.249,
+      "box": {
+        "id": "fish_g",
+        "title": "Минтай/хек",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.249,
+        "priceLabel": "0.249 ₽/г",
+        "macroPerUnit": {
+          "p": 0.17,
+          "f": 0.02,
+          "c": 0
+        }
+      },
+      "packSize": 600,
+      "packPrice": 149,
+      "packLabel": "600 г филе (149₽)",
+      "storeSection": "Рыба и морепродукты"
+    },
+    "cutlets_g": {
+      "id": "cutlets_g",
+      "name": "Котлеты",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": 200,
+      "macroPerUnit": {
+        "p": 0.12,
+        "f": 0.16,
+        "c": 0.12
+      },
+      "pricePerUnit": 0.349,
+      "box": {
+        "id": "cutlets_g",
+        "title": "Котлеты",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": 200,
+        "pricePerUnit": 0.349,
+        "priceLabel": "0.349 ₽/г",
+        "macroPerUnit": {
+          "p": 0.12,
+          "f": 0.16,
+          "c": 0.12
+        }
+      },
+      "packSize": 400,
+      "packPrice": 140,
+      "packLabel": "400 г (140₽)",
+      "storeSection": "Заморозка"
+    },
+    "nuggets_g": {
+      "id": "nuggets_g",
+      "name": "Наггетсы",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.13,
+        "f": 0.14,
+        "c": 0.18
+      },
+      "pricePerUnit": 0.449,
+      "box": {
+        "id": "nuggets_g",
+        "title": "Наггетсы",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.449,
+        "priceLabel": "0.449 ₽/г",
+        "macroPerUnit": {
+          "p": 0.13,
+          "f": 0.14,
+          "c": 0.18
+        }
+      },
+      "packSize": 300,
+      "packPrice": 135,
+      "packLabel": "300 г (135₽)",
+      "storeSection": "Заморозка"
+    },
+    "fishsticks_g": {
+      "id": "fishsticks_g",
+      "name": "Рыбные палочки",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.12,
+        "f": 0.09,
+        "c": 0.2
+      },
+      "pricePerUnit": 0.399,
+      "box": {
+        "id": "fishsticks_g",
+        "title": "Рыбные палочки",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.399,
+        "priceLabel": "0.399 ₽/г",
+        "macroPerUnit": {
+          "p": 0.12,
+          "f": 0.09,
+          "c": 0.2
+        }
+      },
+      "packSize": 300,
+      "packPrice": 120,
+      "packLabel": "300 г (120₽)",
+      "storeSection": "Заморозка"
+    },
+    "pelmeni_g": {
+      "id": "pelmeni_g",
+      "name": "Пельмени",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": 250,
+      "macroPerUnit": {
+        "p": 0.1,
+        "f": 0.12,
+        "c": 0.28
+      },
+      "pricePerUnit": 0.299,
+      "box": {
+        "id": "pelmeni_g",
+        "title": "Пельмени",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": 250,
+        "pricePerUnit": 0.299,
+        "priceLabel": "0.299 ₽/г",
+        "macroPerUnit": {
+          "p": 0.1,
+          "f": 0.12,
+          "c": 0.28
+        }
+      },
+      "packSize": 900,
+      "packPrice": 269,
+      "packLabel": "900 г (269₽)",
+      "storeSection": "Заморозка"
+    },
+    "vareniki_g": {
+      "id": "vareniki_g",
+      "name": "Вареники",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.08,
+        "f": 0.04,
+        "c": 0.36
+      },
+      "pricePerUnit": 0.299,
+      "box": {
+        "id": "vareniki_g",
+        "title": "Вареники",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.299,
+        "priceLabel": "0.299 ₽/г",
+        "macroPerUnit": {
+          "p": 0.08,
+          "f": 0.04,
+          "c": 0.36
+        }
+      },
+      "packSize": 600,
+      "packPrice": 179,
+      "packLabel": "600 г (179₽)",
+      "storeSection": "Заморозка"
+    },
+    "tefteli_g": {
+      "id": "tefteli_g",
+      "name": "Тефтели",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.12,
+        "f": 0.14,
+        "c": 0.1
+      },
+      "pricePerUnit": 0.349,
+      "box": {
+        "id": "tefteli_g",
+        "title": "Тефтели",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.349,
+        "priceLabel": "0.349 ₽/г",
+        "macroPerUnit": {
+          "p": 0.12,
+          "f": 0.14,
+          "c": 0.1
+        }
+      },
+      "packSize": 400,
+      "packPrice": 140,
+      "packLabel": "400 г (140₽)",
+      "storeSection": "Заморозка"
+    },
+    "mince_g": {
+      "id": "mince_g",
+      "name": "Фарш",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.17,
+        "f": 0.18,
+        "c": 0
+      },
+      "pricePerUnit": 0.349,
+      "box": {
+        "id": "mince_g",
+        "title": "Фарш",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.349,
+        "priceLabel": "0.349 ₽/г",
+        "macroPerUnit": {
+          "p": 0.17,
+          "f": 0.18,
+          "c": 0
+        }
+      },
+      "packSize": 500,
+      "packPrice": 175,
+      "packLabel": "500 г свиной (175₽)",
+      "storeSection": "Мясо и птица"
+    },
+    "frozenveg_g": {
+      "id": "frozenveg_g",
+      "name": "Овощная смесь",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.025,
+        "f": 0,
+        "c": 0.08
+      },
+      "pricePerUnit": 0.149,
+      "box": {
+        "id": "frozenveg_g",
+        "title": "Овощная смесь",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.149,
+        "priceLabel": "0.149 ₽/г",
+        "macroPerUnit": {
+          "p": 0.025,
+          "f": 0,
+          "c": 0.08
+        }
+      },
+      "packSize": 400,
+      "packPrice": 60,
+      "packLabel": "400 г (60₽)",
+      "storeSection": "Заморозка"
+    },
+    "oil_g": {
+      "id": "oil_g",
+      "name": "Масло подсолнечное",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0,
+        "f": 0.999,
+        "c": 0
+      },
+      "pricePerUnit": 0.13,
+      "box": {
+        "id": "oil_g",
+        "title": "Масло подсолнечное",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.13,
+        "priceLabel": "0.13 ₽/г",
+        "macroPerUnit": {
+          "p": 0,
+          "f": 0.999,
+          "c": 0
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 129,
+      "packLabel": "1 л (129₽)",
+      "storeSection": "Бакалея"
+    },
+    "tea_g": {
+      "id": "tea_g",
+      "name": "Чай",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0,
+        "f": 0,
+        "c": 0
+      },
+      "pricePerUnit": 0.8,
+      "box": {
+        "id": "tea_g",
+        "title": "Чай",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.8,
+        "priceLabel": "0.8 ₽/г",
+        "macroPerUnit": {
+          "p": 0,
+          "f": 0,
+          "c": 0
+        }
+      },
+      "packSize": 100,
+      "packPrice": 80,
+      "packLabel": "100 г (80₽)",
+      "storeSection": "Бакалея"
+    },
+    "sugar_g": {
+      "id": "sugar_g",
+      "name": "Сахар",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0,
+        "f": 0,
+        "c": 0.999
+      },
+      "pricePerUnit": 0.06,
+      "box": {
+        "id": "sugar_g",
+        "title": "Сахар",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.06,
+        "priceLabel": "0.06 ₽/г",
+        "macroPerUnit": {
+          "p": 0,
+          "f": 0,
+          "c": 0.999
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 59,
+      "packLabel": "1 кг (59₽)",
+      "storeSection": "Бакалея"
+    },
+    "cheese_g": {
+      "id": "cheese_g",
+      "name": "Сыр",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 14,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.2,
+        "f": 0.27,
+        "c": 0
+      },
+      "pricePerUnit": 0.75,
+      "box": {
+        "id": "cheese_g",
+        "title": "Сыр",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 14,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.75,
+        "priceLabel": "0.75 ₽/г",
+        "macroPerUnit": {
+          "p": 0.2,
+          "f": 0.27,
+          "c": 0
+        }
+      },
+      "packSize": 400,
+      "packPrice": 299,
+      "packLabel": "400 г (299₽)",
+      "storeSection": "Молочная продукция"
+    },
+    "onion_g": {
+      "id": "onion_g",
+      "name": "Лук репчатый",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 35,
+      "lowStockLimit": 200,
+      "macroPerUnit": {
+        "p": 0.015,
+        "f": 0,
+        "c": 0.085
+      },
+      "pricePerUnit": 0.049,
+      "box": {
+        "id": "onion_g",
+        "title": "Лук репчатый",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 35,
+        "lowStockLimit": 200,
+        "pricePerUnit": 0.049,
+        "priceLabel": "0.049 ₽/г",
+        "macroPerUnit": {
+          "p": 0.015,
+          "f": 0,
+          "c": 0.085
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 49,
+      "packLabel": "1 кг (49₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "butter_g": {
+      "id": "butter_g",
+      "name": "Масло сливочное",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 30,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.005,
+        "f": 0.825,
+        "c": 0.008
+      },
+      "pricePerUnit": 0.83,
+      "box": {
+        "id": "butter_g",
+        "title": "Масло сливочное",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 30,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.83,
+        "priceLabel": "0.83 ₽/г",
+        "macroPerUnit": {
+          "p": 0.005,
+          "f": 0.825,
+          "c": 0.008
+        }
+      },
+      "packSize": 180,
+      "packPrice": 149,
+      "packLabel": "180 г (149₽)",
+      "storeSection": "Молочная продукция"
+    },
+    "sausage_g": {
+      "id": "sausage_g",
+      "name": "Сосиски/колбаса",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 7,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.12,
+        "f": 0.22,
+        "c": 0.03
+      },
+      "pricePerUnit": 0.49,
+      "box": {
+        "id": "sausage_g",
+        "title": "Сосиски/колбаса",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 7,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.49,
+        "priceLabel": "0.49 ₽/г",
+        "macroPerUnit": {
+          "p": 0.12,
+          "f": 0.22,
+          "c": 0.03
+        }
+      },
+      "packSize": 400,
+      "packPrice": 196,
+      "packLabel": "400 г (196₽)",
+      "storeSection": "Мясо и птица"
+    },
+    "garlic_g": {
+      "id": "garlic_g",
+      "name": "Чеснок",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 35,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.06,
+        "f": 0.005,
+        "c": 0.33
+      },
+      "pricePerUnit": 1,
+      "box": {
+        "id": "garlic_g",
+        "title": "Чеснок",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 35,
+        "lowStockLimit": null,
+        "pricePerUnit": 1,
+        "priceLabel": "1 ₽/г",
+        "macroPerUnit": {
+          "p": 0.06,
+          "f": 0.005,
+          "c": 0.33
+        }
+      },
+      "packSize": 50,
+      "packPrice": 50,
+      "packLabel": "50 г (50₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "mushrooms_g": {
+      "id": "mushrooms_g",
+      "name": "Шампиньоны",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 5,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.027,
+        "f": 0.01,
+        "c": 0.003
+      },
+      "pricePerUnit": 0.29,
+      "box": {
+        "id": "mushrooms_g",
+        "title": "Шампиньоны",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 5,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.29,
+        "priceLabel": "0.29 ₽/г",
+        "macroPerUnit": {
+          "p": 0.027,
+          "f": 0.01,
+          "c": 0.003
+        }
+      },
+      "packSize": 400,
+      "packPrice": 116,
+      "packLabel": "400 г (116₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "cucumber_g": {
+      "id": "cucumber_g",
+      "name": "Огурцы",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 7,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.008,
+        "f": 0,
+        "c": 0.025
+      },
+      "pricePerUnit": 0.099,
+      "box": {
+        "id": "cucumber_g",
+        "title": "Огурцы",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 7,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.099,
+        "priceLabel": "0.099 ₽/г",
+        "macroPerUnit": {
+          "p": 0.008,
+          "f": 0,
+          "c": 0.025
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 99,
+      "packLabel": "1 кг (99₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "honey_g": {
+      "id": "honey_g",
+      "name": "Мёд",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.005,
+        "f": 0,
+        "c": 0.8
+      },
+      "pricePerUnit": 0.69,
+      "box": {
+        "id": "honey_g",
+        "title": "Мёд",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.69,
+        "priceLabel": "0.69 ₽/г",
+        "macroPerUnit": {
+          "p": 0.005,
+          "f": 0,
+          "c": 0.8
+        }
+      },
+      "packSize": 350,
+      "packPrice": 242,
+      "packLabel": "350 г (242₽)",
+      "storeSection": "Бакалея"
+    },
+    "jam_g": {
+      "id": "jam_g",
+      "name": "Варенье",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.005,
+        "f": 0,
+        "c": 0.65
+      },
+      "pricePerUnit": 0.29,
+      "box": {
+        "id": "jam_g",
+        "title": "Варенье",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.29,
+        "priceLabel": "0.29 ₽/г",
+        "macroPerUnit": {
+          "p": 0.005,
+          "f": 0,
+          "c": 0.65
+        }
+      },
+      "packSize": 500,
+      "packPrice": 145,
+      "packLabel": "500 г (145₽)",
+      "storeSection": "Бакалея"
+    },
+    "cookies_g": {
+      "id": "cookies_g",
+      "name": "Печенье",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.07,
+        "f": 0.14,
+        "c": 0.71
+      },
+      "pricePerUnit": 0.25,
+      "box": {
+        "id": "cookies_g",
+        "title": "Печенье",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.25,
+        "priceLabel": "0.25 ₽/г",
+        "macroPerUnit": {
+          "p": 0.07,
+          "f": 0.14,
+          "c": 0.71
+        }
+      },
+      "packSize": 200,
+      "packPrice": 50,
+      "packLabel": "200 г (50₽)",
+      "storeSection": "Хлеб и выпечка"
+    },
+    "coffee_g": {
+      "id": "coffee_g",
+      "name": "Кофе",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.14,
+        "f": 0.02,
+        "c": 0.28
+      },
+      "pricePerUnit": 2.5,
+      "box": {
+        "id": "coffee_g",
+        "title": "Кофе",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 2.5,
+        "priceLabel": "2.5 ₽/г",
+        "macroPerUnit": {
+          "p": 0.14,
+          "f": 0.02,
+          "c": 0.28
+        }
+      },
+      "packSize": 100,
+      "packPrice": 250,
+      "packLabel": "100 г (250₽)",
+      "storeSection": "Бакалея"
+    },
+    "mayo_g": {
+      "id": "mayo_g",
+      "name": "Майонез",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 14,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.013,
+        "f": 0.7,
+        "c": 0.025
+      },
+      "pricePerUnit": 0.29,
+      "box": {
+        "id": "mayo_g",
+        "title": "Майонез",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 14,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.29,
+        "priceLabel": "0.29 ₽/г",
+        "macroPerUnit": {
+          "p": 0.013,
+          "f": 0.7,
+          "c": 0.025
+        }
+      },
+      "packSize": 400,
+      "packPrice": 116,
+      "packLabel": "400 г (116₽)",
+      "storeSection": "Бакалея"
+    },
+    "ketchup_g": {
+      "id": "ketchup_g",
+      "name": "Кетчуп",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.018,
+        "f": 0,
+        "c": 0.25
+      },
+      "pricePerUnit": 0.25,
+      "box": {
+        "id": "ketchup_g",
+        "title": "Кетчуп",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.25,
+        "priceLabel": "0.25 ₽/г",
+        "macroPerUnit": {
+          "p": 0.018,
+          "f": 0,
+          "c": 0.25
+        }
+      },
+      "packSize": 350,
+      "packPrice": 88,
+      "packLabel": "350 г (88₽)",
+      "storeSection": "Бакалея"
+    },
+    "soysauce_ml": {
+      "id": "soysauce_ml",
+      "name": "Соевый соус",
+      "unit": "мл",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.06,
+        "f": 0,
+        "c": 0.05
+      },
+      "pricePerUnit": 0.39,
+      "box": {
+        "id": "soysauce_ml",
+        "title": "Соевый соус",
+        "unit": "мл",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.39,
+        "priceLabel": "0.39 ₽/мл",
+        "macroPerUnit": {
+          "p": 0.06,
+          "f": 0,
+          "c": 0.05
+        }
+      },
+      "packSize": 250,
+      "packPrice": 98,
+      "packLabel": "250 мл (98₽)",
+      "storeSection": "Бакалея"
+    },
+    "peas_cans": {
+      "id": "peas_cans",
+      "name": "Горошек зелёный",
+      "unit": "бан.",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 4.5,
+        "f": 0.5,
+        "c": 12
+      },
+      "pricePerUnit": 79,
+      "box": {
+        "id": "peas_cans",
+        "title": "Горошек зелёный",
+        "unit": "бан.",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 79,
+        "priceLabel": "79 ₽/бан.",
+        "macroPerUnit": {
+          "p": 4.5,
+          "f": 0.5,
+          "c": 12
+        }
+      },
+      "packSize": 1,
+      "packPrice": 79,
+      "packLabel": "1 бан 400г (79₽)",
+      "storeSection": "Бакалея"
+    },
+    "corn_cans": {
+      "id": "corn_cans",
+      "name": "Кукуруза конс.",
+      "unit": "бан.",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 2.5,
+        "f": 0.8,
+        "c": 18
+      },
+      "pricePerUnit": 89,
+      "box": {
+        "id": "corn_cans",
+        "title": "Кукуруза конс.",
+        "unit": "бан.",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 89,
+        "priceLabel": "89 ₽/бан.",
+        "macroPerUnit": {
+          "p": 2.5,
+          "f": 0.8,
+          "c": 18
+        }
+      },
+      "packSize": 1,
+      "packPrice": 89,
+      "packLabel": "1 бан 340г (89₽)",
+      "storeSection": "Бакалея"
+    },
+    "herring_g": {
+      "id": "herring_g",
+      "name": "Сельдь",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.17,
+        "f": 0.12,
+        "c": 0
+      },
+      "pricePerUnit": 0.199,
+      "box": {
+        "id": "herring_g",
+        "title": "Сельдь",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.199,
+        "priceLabel": "0.199 ₽/г",
+        "macroPerUnit": {
+          "p": 0.17,
+          "f": 0.12,
+          "c": 0
+        }
+      },
+      "packSize": 500,
+      "packPrice": 99,
+      "packLabel": "500 г (99₽)",
+      "storeSection": "Рыба и морепродукты"
+    },
+    "liver_g": {
+      "id": "liver_g",
+      "name": "Печень",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.19,
+        "f": 0.05,
+        "c": 0.01
+      },
+      "pricePerUnit": 0.299,
+      "box": {
+        "id": "liver_g",
+        "title": "Печень",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.299,
+        "priceLabel": "0.299 ₽/г",
+        "macroPerUnit": {
+          "p": 0.19,
+          "f": 0.05,
+          "c": 0.01
+        }
+      },
+      "packSize": 500,
+      "packPrice": 149,
+      "packLabel": "500 г (149₽)",
+      "storeSection": "Мясо и птица"
+    },
+    "raisins_g": {
+      "id": "raisins_g",
+      "name": "Изюм",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.03,
+        "f": 0.005,
+        "c": 0.79
+      },
+      "pricePerUnit": 0.4,
+      "box": {
+        "id": "raisins_g",
+        "title": "Изюм",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.4,
+        "priceLabel": "0.4 ₽/г",
+        "macroPerUnit": {
+          "p": 0.03,
+          "f": 0.005,
+          "c": 0.79
+        }
+      },
+      "packSize": 200,
+      "packPrice": 80,
+      "packLabel": "200 г (80₽)",
+      "storeSection": "Бакалея"
+    },
+    "cream_ml": {
+      "id": "cream_ml",
+      "name": "Сливки",
+      "unit": "мл",
+      "storage": "fridge",
+      "shelfLifeDays": 7,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.025,
+        "f": 0.1,
+        "c": 0.04
+      },
+      "pricePerUnit": 0.2,
+      "box": {
+        "id": "cream_ml",
+        "title": "Сливки",
+        "unit": "мл",
+        "storage": "fridge",
+        "shelfLifeDays": 7,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.2,
+        "priceLabel": "0.2 ₽/мл",
+        "macroPerUnit": {
+          "p": 0.025,
+          "f": 0.1,
+          "c": 0.04
+        }
+      },
+      "packSize": 330,
+      "packPrice": 66,
+      "packLabel": "330 мл (66₽)",
+      "storeSection": "Молочная продукция"
+    },
+    "tomato_g": {
+      "id": "tomato_g",
+      "name": "Помидоры",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 7,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.011,
+        "f": 0.002,
+        "c": 0.038
+      },
+      "pricePerUnit": 0.129,
+      "box": {
+        "id": "tomato_g",
+        "title": "Помидоры",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 7,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.129,
+        "priceLabel": "0.129 ₽/г",
+        "macroPerUnit": {
+          "p": 0.011,
+          "f": 0.002,
+          "c": 0.038
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 129,
+      "packLabel": "1 кг (129₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "pepper_g": {
+      "id": "pepper_g",
+      "name": "Перец болгарский",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 7,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.013,
+        "f": 0,
+        "c": 0.053
+      },
+      "pricePerUnit": 0.199,
+      "box": {
+        "id": "pepper_g",
+        "title": "Перец болгарский",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 7,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.199,
+        "priceLabel": "0.199 ₽/г",
+        "macroPerUnit": {
+          "p": 0.013,
+          "f": 0,
+          "c": 0.053
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 199,
+      "packLabel": "1 кг (199₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "herbs_g": {
+      "id": "herbs_g",
+      "name": "Зелень (укроп/петрушка)",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 3,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.025,
+        "f": 0.005,
+        "c": 0.04
+      },
+      "pricePerUnit": 1,
+      "box": {
+        "id": "herbs_g",
+        "title": "Зелень (укроп/петрушка)",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 3,
+        "lowStockLimit": null,
+        "pricePerUnit": 1,
+        "priceLabel": "1 ₽/г",
+        "macroPerUnit": {
+          "p": 0.025,
+          "f": 0.005,
+          "c": 0.04
+        }
+      },
+      "packSize": 30,
+      "packPrice": 30,
+      "packLabel": "1 пучок ~30г (30₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "lemon_pcs": {
+      "id": "lemon_pcs",
+      "name": "Лимон",
+      "unit": "шт",
+      "storage": "fridge",
+      "shelfLifeDays": 14,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.09,
+        "f": 0.03,
+        "c": 0.3
+      },
+      "pricePerUnit": 19,
+      "box": {
+        "id": "lemon_pcs",
+        "title": "Лимон",
+        "unit": "шт",
+        "storage": "fridge",
+        "shelfLifeDays": 14,
+        "lowStockLimit": null,
+        "pricePerUnit": 19,
+        "priceLabel": "19 ₽/шт",
+        "macroPerUnit": {
+          "p": 0.09,
+          "f": 0.03,
+          "c": 0.3
+        }
+      },
+      "packSize": 1,
+      "packPrice": 19,
+      "packLabel": "1 шт ~70г (19₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "beet_g": {
+      "id": "beet_g",
+      "name": "Свёкла",
+      "unit": "г",
+      "storage": "fridge",
+      "shelfLifeDays": 35,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.017,
+        "f": 0,
+        "c": 0.1
+      },
+      "pricePerUnit": 0.039,
+      "box": {
+        "id": "beet_g",
+        "title": "Свёкла",
+        "unit": "г",
+        "storage": "fridge",
+        "shelfLifeDays": 35,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.039,
+        "priceLabel": "0.039 ₽/г",
+        "macroPerUnit": {
+          "p": 0.017,
+          "f": 0,
+          "c": 0.1
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 39,
+      "packLabel": "1 кг (39₽)",
+      "storeSection": "Овощи и фрукты"
+    },
+    "pork_g": {
+      "id": "pork_g",
+      "name": "Свинина",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.16,
+        "f": 0.21,
+        "c": 0
+      },
+      "pricePerUnit": 0.299,
+      "box": {
+        "id": "pork_g",
+        "title": "Свинина",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.299,
+        "priceLabel": "0.299 ₽/г",
+        "macroPerUnit": {
+          "p": 0.16,
+          "f": 0.21,
+          "c": 0
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 299,
+      "packLabel": "1 кг (299₽)",
+      "storeSection": "Мясо и птица"
+    },
+    "beef_g": {
+      "id": "beef_g",
+      "name": "Говядина",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.19,
+        "f": 0.12,
+        "c": 0
+      },
+      "pricePerUnit": 0.499,
+      "box": {
+        "id": "beef_g",
+        "title": "Говядина",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.499,
+        "priceLabel": "0.499 ₽/г",
+        "macroPerUnit": {
+          "p": 0.19,
+          "f": 0.12,
+          "c": 0
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 499,
+      "packLabel": "1 кг (499₽)",
+      "storeSection": "Мясо и птица"
+    },
+    "turkey_g": {
+      "id": "turkey_g",
+      "name": "Индейка",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.19,
+        "f": 0.08,
+        "c": 0
+      },
+      "pricePerUnit": 0.349,
+      "box": {
+        "id": "turkey_g",
+        "title": "Индейка",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.349,
+        "priceLabel": "0.349 ₽/г",
+        "macroPerUnit": {
+          "p": 0.19,
+          "f": 0.08,
+          "c": 0
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 349,
+      "packLabel": "1 кг (349₽)",
+      "storeSection": "Мясо и птица"
+    },
+    "stew_cans": {
+      "id": "stew_cans",
+      "name": "Тушёнка",
+      "unit": "бан.",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 15,
+        "f": 17,
+        "c": 0
+      },
+      "pricePerUnit": 159,
+      "box": {
+        "id": "stew_cans",
+        "title": "Тушёнка",
+        "unit": "бан.",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 159,
+        "priceLabel": "159 ₽/бан.",
+        "macroPerUnit": {
+          "p": 15,
+          "f": 17,
+          "c": 0
+        }
+      },
+      "packSize": 1,
+      "packPrice": 159,
+      "packLabel": "1 бан 338г (159₽)",
+      "storeSection": "Мясо и птица"
+    },
+    "salmon_cans": {
+      "id": "salmon_cans",
+      "name": "Горбуша консервы",
+      "unit": "бан.",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 22,
+        "f": 8,
+        "c": 0
+      },
+      "pricePerUnit": 129,
+      "box": {
+        "id": "salmon_cans",
+        "title": "Горбуша консервы",
+        "unit": "бан.",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 129,
+        "priceLabel": "129 ₽/бан.",
+        "macroPerUnit": {
+          "p": 22,
+          "f": 8,
+          "c": 0
+        }
+      },
+      "packSize": 1,
+      "packPrice": 129,
+      "packLabel": "1 бан 250г (129₽)",
+      "storeSection": "Рыба и морепродукты"
+    },
+    "sprat_cans": {
+      "id": "sprat_cans",
+      "name": "Килька/шпроты",
+      "unit": "бан.",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 14,
+        "f": 18,
+        "c": 0
+      },
+      "pricePerUnit": 89,
+      "box": {
+        "id": "sprat_cans",
+        "title": "Килька/шпроты",
+        "unit": "бан.",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 89,
+        "priceLabel": "89 ₽/бан.",
+        "macroPerUnit": {
+          "p": 14,
+          "f": 18,
+          "c": 0
+        }
+      },
+      "packSize": 1,
+      "packPrice": 89,
+      "packLabel": "1 бан 240г (89₽)",
+      "storeSection": "Рыба и морепродукты"
+    },
+    "saury_cans": {
+      "id": "saury_cans",
+      "name": "Сайра консервы",
+      "unit": "бан.",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 18,
+        "f": 12,
+        "c": 0
+      },
+      "pricePerUnit": 99,
+      "box": {
+        "id": "saury_cans",
+        "title": "Сайра консервы",
+        "unit": "бан.",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 99,
+        "priceLabel": "99 ₽/бан.",
+        "macroPerUnit": {
+          "p": 18,
+          "f": 12,
+          "c": 0
+        }
+      },
+      "packSize": 1,
+      "packPrice": 99,
+      "packLabel": "1 бан 250г (99₽)",
+      "storeSection": "Рыба и морепродукты"
+    },
+    "salt_g": {
+      "id": "salt_g",
+      "name": "Соль",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0,
+        "f": 0,
+        "c": 0
+      },
+      "pricePerUnit": 0.019,
+      "box": {
+        "id": "salt_g",
+        "title": "Соль",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.019,
+        "priceLabel": "0.019 ₽/г",
+        "macroPerUnit": {
+          "p": 0,
+          "f": 0,
+          "c": 0
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 19,
+      "packLabel": "1 кг (19₽)",
+      "storeSection": "Бакалея"
+    },
+    "baking_g": {
+      "id": "baking_g",
+      "name": "Сода/разрыхлитель",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0,
+        "f": 0,
+        "c": 0.5
+      },
+      "pricePerUnit": 0.58,
+      "box": {
+        "id": "baking_g",
+        "title": "Сода/разрыхлитель",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.58,
+        "priceLabel": "0.58 ₽/г",
+        "macroPerUnit": {
+          "p": 0,
+          "f": 0,
+          "c": 0.5
+        }
+      },
+      "packSize": 50,
+      "packPrice": 29,
+      "packLabel": "50 г (29₽)",
+      "storeSection": "Бакалея"
+    },
+    "noodle_g": {
+      "id": "noodle_g",
+      "name": "Лапша быстр. (доширак)",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.09,
+        "f": 0.13,
+        "c": 0.58
+      },
+      "pricePerUnit": 0.444,
+      "box": {
+        "id": "noodle_g",
+        "title": "Лапша быстр. (доширак)",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.444,
+        "priceLabel": "0.444 ₽/г",
+        "macroPerUnit": {
+          "p": 0.09,
+          "f": 0.13,
+          "c": 0.58
+        }
+      },
+      "packSize": 90,
+      "packPrice": 40,
+      "packLabel": "90 г (40₽)",
+      "storeSection": "Бакалея",
+      "priceLabel": "0.444 ₽/г"
+    },
+    "chips_g": {
+      "id": "chips_g",
+      "name": "Чипсы/снеки",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.07,
+        "f": 0.3,
+        "c": 0.53
+      },
+      "pricePerUnit": 0.445,
+      "box": {
+        "id": "chips_g",
+        "title": "Чипсы/снеки",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.445,
+        "priceLabel": "0.445 ₽/г",
+        "macroPerUnit": {
+          "p": 0.07,
+          "f": 0.3,
+          "c": 0.53
+        }
+      },
+      "packSize": 200,
+      "packPrice": 89,
+      "packLabel": "200 г (89₽)",
+      "storeSection": "Бакалея"
+    },
+    "pancakes_g": {
+      "id": "pancakes_g",
+      "name": "Блинчики замор.",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.06,
+        "f": 0.08,
+        "c": 0.3
+      },
+      "pricePerUnit": 0.298,
+      "box": {
+        "id": "pancakes_g",
+        "title": "Блинчики замор.",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.298,
+        "priceLabel": "0.298 ₽/г",
+        "macroPerUnit": {
+          "p": 0.06,
+          "f": 0.08,
+          "c": 0.3
+        }
+      },
+      "packSize": 500,
+      "packPrice": 149,
+      "packLabel": "500 г (149₽)",
+      "storeSection": "Заморозка"
+    },
+    "berries_g": {
+      "id": "berries_g",
+      "name": "Ягоды замор.",
+      "unit": "г",
+      "storage": "freezer",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.01,
+        "f": 0.005,
+        "c": 0.08
+      },
+      "pricePerUnit": 0.298,
+      "box": {
+        "id": "berries_g",
+        "title": "Ягоды замор.",
+        "unit": "г",
+        "storage": "freezer",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.298,
+        "priceLabel": "0.298 ₽/г",
+        "macroPerUnit": {
+          "p": 0.01,
+          "f": 0.005,
+          "c": 0.08
+        }
+      },
+      "packSize": 500,
+      "packPrice": 149,
+      "packLabel": "500 г (149₽)",
+      "storeSection": "Заморозка"
+    },
+    "chocolate_g": {
+      "id": "chocolate_g",
+      "name": "Шоколад",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.05,
+        "f": 0.3,
+        "c": 0.55
+      },
+      "pricePerUnit": 0.89,
+      "box": {
+        "id": "chocolate_g",
+        "title": "Шоколад",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.89,
+        "priceLabel": "0.89 ₽/г",
+        "macroPerUnit": {
+          "p": 0.05,
+          "f": 0.3,
+          "c": 0.55
+        }
+      },
+      "packSize": 100,
+      "packPrice": 89,
+      "packLabel": "100 г (89₽)",
+      "storeSection": "Бакалея"
+    },
+    "candy_g": {
+      "id": "candy_g",
+      "name": "Конфеты",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.04,
+        "f": 0.12,
+        "c": 0.75
+      },
+      "pricePerUnit": 0.495,
+      "box": {
+        "id": "candy_g",
+        "title": "Конфеты",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.495,
+        "priceLabel": "0.495 ₽/г",
+        "macroPerUnit": {
+          "p": 0.04,
+          "f": 0.12,
+          "c": 0.75
+        }
+      },
+      "packSize": 300,
+      "packPrice": 149,
+      "packLabel": "300 г (149₽)",
+      "storeSection": "Бакалея"
+    },
+    "zephyr_g": {
+      "id": "zephyr_g",
+      "name": "Зефир/пастила",
+      "unit": "г",
+      "storage": "base",
+      "shelfLifeDays": null,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.08,
+        "f": 0,
+        "c": 0.8
+      },
+      "pricePerUnit": 0.59,
+      "box": {
+        "id": "zephyr_g",
+        "title": "Зефир/пастила",
+        "unit": "г",
+        "storage": "base",
+        "shelfLifeDays": null,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.59,
+        "priceLabel": "0.59 ₽/г",
+        "macroPerUnit": {
+          "p": 0.08,
+          "f": 0,
+          "c": 0.8
+        }
+      },
+      "packSize": 150,
+      "packPrice": 89,
+      "packLabel": "150 г (89₽)",
+      "storeSection": "Бакалея"
+    },
+    "juice_ml": {
+      "id": "juice_ml",
+      "name": "Сок",
+      "unit": "мл",
+      "storage": "fridge",
+      "shelfLifeDays": 3,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.005,
+        "f": 0,
+        "c": 0.1
+      },
+      "pricePerUnit": 0.079,
+      "box": {
+        "id": "juice_ml",
+        "title": "Сок",
+        "unit": "мл",
+        "storage": "fridge",
+        "shelfLifeDays": 3,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.079,
+        "priceLabel": "0.079 ₽/мл",
+        "macroPerUnit": {
+          "p": 0.005,
+          "f": 0,
+          "c": 0.1
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 79,
+      "packLabel": "1 л (79₽)",
+      "storeSection": "Бакалея"
+    },
+    "mors_ml": {
+      "id": "mors_ml",
+      "name": "Морс/компот",
+      "unit": "мл",
+      "storage": "fridge",
+      "shelfLifeDays": 5,
+      "lowStockLimit": null,
+      "macroPerUnit": {
+        "p": 0.002,
+        "f": 0,
+        "c": 0.1
+      },
+      "pricePerUnit": 0.089,
+      "box": {
+        "id": "mors_ml",
+        "title": "Морс/компот",
+        "unit": "мл",
+        "storage": "fridge",
+        "shelfLifeDays": 5,
+        "lowStockLimit": null,
+        "pricePerUnit": 0.089,
+        "priceLabel": "0.089 ₽/мл",
+        "macroPerUnit": {
+          "p": 0.002,
+          "f": 0,
+          "c": 0.1
+        }
+      },
+      "packSize": 1000,
+      "packPrice": 89,
+      "packLabel": "1 л (89₽)",
+      "storeSection": "Бакалея"
+    }
+  },
+  "storeSections": [
+    "Овощи и фрукты",
+    "Молочная продукция",
+    "Мясо и птица",
+    "Рыба и морепродукты",
+    "Заморозка",
+    "Хлеб и выпечка",
+    "Бакалея"
+  ]
+}

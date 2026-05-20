@@ -1,0 +1,1409 @@
+{
+  "pyaterochka": {
+    "name": "Пятёрочка",
+    "color": "#E3292B",
+    "icon": "5",
+    "products": {
+      "oats_g": {
+        "packSize": 800,
+        "packPrice": 47,
+        "packLabel": "800 г (47₽)",
+        "pricePerUnit": 0.059
+      },
+      "rice_g": {
+        "packSize": 900,
+        "packPrice": 71,
+        "packLabel": "900 г (71₽)",
+        "pricePerUnit": 0.079
+      },
+      "buckwheat_g": {
+        "packSize": 800,
+        "packPrice": 71,
+        "packLabel": "800 г (71₽)",
+        "pricePerUnit": 0.089
+      },
+      "pasta_g": {
+        "packSize": 500,
+        "packPrice": 40,
+        "packLabel": "500 г (40₽)",
+        "pricePerUnit": 0.079
+      },
+      "beans_cans": {
+        "packSize": 1,
+        "packPrice": 89,
+        "packLabel": "1 бан 400г (89₽)",
+        "pricePerUnit": 89
+      },
+      "peanuts_g": {
+        "packSize": 200,
+        "packPrice": 80,
+        "packLabel": "200 г (80₽)",
+        "pricePerUnit": 0.399
+      },
+      "flour_g": {
+        "packSize": 1000,
+        "packPrice": 59,
+        "packLabel": "1 кг (59₽)",
+        "pricePerUnit": 0.059
+      },
+      "tomato_paste_g": {
+        "packSize": 140,
+        "packPrice": 28,
+        "packLabel": "140 г (28₽)",
+        "pricePerUnit": 0.2
+      },
+      "sushki_g": {
+        "packSize": 200,
+        "packPrice": 50,
+        "packLabel": "200 г (50₽)",
+        "pricePerUnit": 0.25
+      },
+      "potatoes_g": {
+        "packSize": 1000,
+        "packPrice": 39,
+        "packLabel": "1 кг (39₽)",
+        "pricePerUnit": 0.039
+      },
+      "cabbage_g": {
+        "packSize": 1000,
+        "packPrice": 39,
+        "packLabel": "1 кг (39₽)",
+        "pricePerUnit": 0.039
+      },
+      "roots_g": {
+        "packSize": 1000,
+        "packPrice": 49,
+        "packLabel": "1 кг (49₽)",
+        "pricePerUnit": 0.049
+      },
+      "apples_g": {
+        "packSize": 1000,
+        "packPrice": 89,
+        "packLabel": "1 кг (89₽)",
+        "pricePerUnit": 0.089
+      },
+      "bananas_pcs": {
+        "packSize": 1,
+        "packPrice": 11,
+        "packLabel": "1 шт ~140г (79₽/кг)",
+        "pricePerUnit": 11
+      },
+      "eggs_pcs": {
+        "packSize": 10,
+        "packPrice": 99,
+        "packLabel": "10 шт (99₽)",
+        "pricePerUnit": 10
+      },
+      "milk_ml": {
+        "packSize": 930,
+        "packPrice": 67,
+        "packLabel": "930 мл (67₽)",
+        "pricePerUnit": 0.072
+      },
+      "kefir_ml": {
+        "packSize": 900,
+        "packPrice": 62,
+        "packLabel": "900 мл (62₽)",
+        "pricePerUnit": 0.069
+      },
+      "tvorog_g": {
+        "packSize": 180,
+        "packPrice": 81,
+        "packLabel": "180 г (81₽)",
+        "pricePerUnit": 0.45
+      },
+      "bread_g": {
+        "packSize": 350,
+        "packPrice": 45,
+        "packLabel": "350 г батон (45₽)",
+        "pricePerUnit": 0.13
+      },
+      "smetana_g": {
+        "packSize": 330,
+        "packPrice": 92,
+        "packLabel": "330 г (92₽)",
+        "pricePerUnit": 0.28
+      },
+      "lavash_pcs": {
+        "packSize": 1,
+        "packPrice": 49,
+        "packLabel": "2 шт в упак (49₽)",
+        "pricePerUnit": 49
+      },
+      "chicken_g": {
+        "packSize": 1000,
+        "packPrice": 189,
+        "packLabel": "1 кг окорочка (189₽)",
+        "pricePerUnit": 0.189
+      },
+      "fish_g": {
+        "packSize": 600,
+        "packPrice": 149,
+        "packLabel": "600 г филе (149₽)",
+        "pricePerUnit": 0.249
+      },
+      "cutlets_g": {
+        "packSize": 400,
+        "packPrice": 140,
+        "packLabel": "400 г (140₽)",
+        "pricePerUnit": 0.349
+      },
+      "nuggets_g": {
+        "packSize": 300,
+        "packPrice": 135,
+        "packLabel": "300 г (135₽)",
+        "pricePerUnit": 0.449
+      },
+      "fishsticks_g": {
+        "packSize": 300,
+        "packPrice": 120,
+        "packLabel": "300 г (120₽)",
+        "pricePerUnit": 0.399
+      },
+      "pelmeni_g": {
+        "packSize": 900,
+        "packPrice": 269,
+        "packLabel": "900 г (269₽)",
+        "pricePerUnit": 0.299
+      },
+      "vareniki_g": {
+        "packSize": 600,
+        "packPrice": 179,
+        "packLabel": "600 г (179₽)",
+        "pricePerUnit": 0.299
+      },
+      "tefteli_g": {
+        "packSize": 400,
+        "packPrice": 140,
+        "packLabel": "400 г (140₽)",
+        "pricePerUnit": 0.349
+      },
+      "mince_g": {
+        "packSize": 500,
+        "packPrice": 175,
+        "packLabel": "500 г свиной (175₽)",
+        "pricePerUnit": 0.349
+      },
+      "frozenveg_g": {
+        "packSize": 400,
+        "packPrice": 60,
+        "packLabel": "400 г (60₽)",
+        "pricePerUnit": 0.149
+      },
+      "oil_g": {
+        "packSize": 1000,
+        "packPrice": 129,
+        "packLabel": "1 л (129₽)",
+        "pricePerUnit": 0.13
+      },
+      "tea_g": {
+        "packSize": 100,
+        "packPrice": 80,
+        "packLabel": "100 г (80₽)",
+        "pricePerUnit": 0.8
+      },
+      "sugar_g": {
+        "packSize": 1000,
+        "packPrice": 59,
+        "packLabel": "1 кг (59₽)",
+        "pricePerUnit": 0.06
+      },
+      "cheese_g": {
+        "packSize": 400,
+        "packPrice": 299,
+        "packLabel": "400 г (299₽)",
+        "pricePerUnit": 0.75
+      },
+      "onion_g": {
+        "packSize": 1000,
+        "packPrice": 49,
+        "packLabel": "1 кг (49₽)",
+        "pricePerUnit": 0.049
+      },
+      "butter_g": {
+        "packSize": 180,
+        "packPrice": 149,
+        "packLabel": "180 г (149₽)",
+        "pricePerUnit": 0.83
+      },
+      "sausage_g": {
+        "packSize": 400,
+        "packPrice": 196,
+        "packLabel": "400 г (196₽)",
+        "pricePerUnit": 0.49
+      },
+      "garlic_g": {
+        "packSize": 50,
+        "packPrice": 50,
+        "packLabel": "50 г (50₽)",
+        "pricePerUnit": 1
+      },
+      "mushrooms_g": {
+        "packSize": 400,
+        "packPrice": 116,
+        "packLabel": "400 г (116₽)",
+        "pricePerUnit": 0.29
+      },
+      "cucumber_g": {
+        "packSize": 1000,
+        "packPrice": 99,
+        "packLabel": "1 кг (99₽)",
+        "pricePerUnit": 0.099
+      },
+      "honey_g": {
+        "packSize": 350,
+        "packPrice": 242,
+        "packLabel": "350 г (242₽)",
+        "pricePerUnit": 0.69
+      },
+      "jam_g": {
+        "packSize": 500,
+        "packPrice": 145,
+        "packLabel": "500 г (145₽)",
+        "pricePerUnit": 0.29
+      },
+      "cookies_g": {
+        "packSize": 200,
+        "packPrice": 50,
+        "packLabel": "200 г (50₽)",
+        "pricePerUnit": 0.25
+      },
+      "coffee_g": {
+        "packSize": 100,
+        "packPrice": 250,
+        "packLabel": "100 г (250₽)",
+        "pricePerUnit": 2.5
+      },
+      "mayo_g": {
+        "packSize": 400,
+        "packPrice": 116,
+        "packLabel": "400 г (116₽)",
+        "pricePerUnit": 0.29
+      },
+      "ketchup_g": {
+        "packSize": 350,
+        "packPrice": 88,
+        "packLabel": "350 г (88₽)",
+        "pricePerUnit": 0.25
+      },
+      "soysauce_ml": {
+        "packSize": 250,
+        "packPrice": 98,
+        "packLabel": "250 мл (98₽)",
+        "pricePerUnit": 0.39
+      },
+      "peas_cans": {
+        "packSize": 1,
+        "packPrice": 79,
+        "packLabel": "1 бан 400г (79₽)",
+        "pricePerUnit": 79
+      },
+      "corn_cans": {
+        "packSize": 1,
+        "packPrice": 89,
+        "packLabel": "1 бан 340г (89₽)",
+        "pricePerUnit": 89
+      },
+      "herring_g": {
+        "packSize": 500,
+        "packPrice": 99,
+        "packLabel": "500 г (99₽)",
+        "pricePerUnit": 0.199
+      },
+      "liver_g": {
+        "packSize": 500,
+        "packPrice": 149,
+        "packLabel": "500 г (149₽)",
+        "pricePerUnit": 0.299
+      },
+      "raisins_g": {
+        "packSize": 200,
+        "packPrice": 80,
+        "packLabel": "200 г (80₽)",
+        "pricePerUnit": 0.4
+      },
+      "cream_ml": {
+        "packSize": 330,
+        "packPrice": 66,
+        "packLabel": "330 мл (66₽)",
+        "pricePerUnit": 0.2
+      },
+      "tomato_g": {
+        "packSize": 1000,
+        "packPrice": 129,
+        "packLabel": "1 кг (129₽)",
+        "pricePerUnit": 0.129
+      },
+      "pepper_g": {
+        "packSize": 1000,
+        "packPrice": 199,
+        "packLabel": "1 кг (199₽)",
+        "pricePerUnit": 0.199
+      },
+      "herbs_g": {
+        "packSize": 30,
+        "packPrice": 30,
+        "packLabel": "1 пучок ~30г (30₽)",
+        "pricePerUnit": 1
+      },
+      "lemon_pcs": {
+        "packSize": 1,
+        "packPrice": 19,
+        "packLabel": "1 шт ~70г (19₽)",
+        "pricePerUnit": 19
+      },
+      "beet_g": {
+        "packSize": 1000,
+        "packPrice": 39,
+        "packLabel": "1 кг (39₽)",
+        "pricePerUnit": 0.039
+      },
+      "pork_g": {
+        "packSize": 1000,
+        "packPrice": 299,
+        "packLabel": "1 кг (299₽)",
+        "pricePerUnit": 0.299
+      },
+      "beef_g": {
+        "packSize": 1000,
+        "packPrice": 499,
+        "packLabel": "1 кг (499₽)",
+        "pricePerUnit": 0.499
+      },
+      "turkey_g": {
+        "packSize": 1000,
+        "packPrice": 349,
+        "packLabel": "1 кг (349₽)",
+        "pricePerUnit": 0.349
+      },
+      "stew_cans": {
+        "packSize": 1,
+        "packPrice": 159,
+        "packLabel": "1 бан 338г (159₽)",
+        "pricePerUnit": 159
+      },
+      "salmon_cans": {
+        "packSize": 1,
+        "packPrice": 129,
+        "packLabel": "1 бан 250г (129₽)",
+        "pricePerUnit": 129
+      },
+      "sprat_cans": {
+        "packSize": 1,
+        "packPrice": 89,
+        "packLabel": "1 бан 240г (89₽)",
+        "pricePerUnit": 89
+      },
+      "saury_cans": {
+        "packSize": 1,
+        "packPrice": 99,
+        "packLabel": "1 бан 250г (99₽)",
+        "pricePerUnit": 99
+      },
+      "salt_g": {
+        "packSize": 1000,
+        "packPrice": 19,
+        "packLabel": "1 кг (19₽)",
+        "pricePerUnit": 0.019
+      },
+      "baking_g": {
+        "packSize": 50,
+        "packPrice": 29,
+        "packLabel": "50 г (29₽)",
+        "pricePerUnit": 0.58
+      },
+      "noodle_g": {
+        "packSize": 90,
+        "packPrice": 40,
+        "packLabel": "500 г (29₽)",
+        "pricePerUnit": 0.058
+      },
+      "chips_g": {
+        "packSize": 200,
+        "packPrice": 89,
+        "packLabel": "200 г (89₽)",
+        "pricePerUnit": 0.445
+      },
+      "pancakes_g": {
+        "packSize": 500,
+        "packPrice": 149,
+        "packLabel": "500 г (149₽)",
+        "pricePerUnit": 0.298
+      },
+      "berries_g": {
+        "packSize": 500,
+        "packPrice": 149,
+        "packLabel": "500 г (149₽)",
+        "pricePerUnit": 0.298
+      },
+      "chocolate_g": {
+        "packSize": 100,
+        "packPrice": 89,
+        "packLabel": "100 г (89₽)",
+        "pricePerUnit": 0.89
+      },
+      "candy_g": {
+        "packSize": 300,
+        "packPrice": 149,
+        "packLabel": "300 г (149₽)",
+        "pricePerUnit": 0.495
+      },
+      "zephyr_g": {
+        "packSize": 150,
+        "packPrice": 89,
+        "packLabel": "150 г (89₽)",
+        "pricePerUnit": 0.59
+      },
+      "juice_ml": {
+        "packSize": 1000,
+        "packPrice": 79,
+        "packLabel": "1 л (79₽)",
+        "pricePerUnit": 0.079
+      },
+      "mors_ml": {
+        "packSize": 1000,
+        "packPrice": 89,
+        "packLabel": "1 л (89₽)",
+        "pricePerUnit": 0.089
+      }
+    }
+  },
+  "magnit": {
+    "name": "Магнит",
+    "color": "#E31E24",
+    "icon": "М",
+    "products": {
+      "oats_g": {
+        "packSize": 800,
+        "packPrice": 52,
+        "packLabel": "800 г (52₽)",
+        "pricePerUnit": 0.065
+      },
+      "rice_g": {
+        "packSize": 900,
+        "packPrice": 76,
+        "packLabel": "900 г (76₽)",
+        "pricePerUnit": 0.084
+      },
+      "buckwheat_g": {
+        "packSize": 800,
+        "packPrice": 79,
+        "packLabel": "800 г (79₽)",
+        "pricePerUnit": 0.099
+      },
+      "pasta_g": {
+        "packSize": 500,
+        "packPrice": 45,
+        "packLabel": "500 г (45₽)",
+        "pricePerUnit": 0.089
+      },
+      "beans_cans": {
+        "packSize": 1,
+        "packPrice": 95,
+        "packLabel": "1 бан 400г (95₽)",
+        "pricePerUnit": 95
+      },
+      "peanuts_g": {
+        "packSize": 200,
+        "packPrice": 85,
+        "packLabel": "200 г (85₽)",
+        "pricePerUnit": 0.425
+      },
+      "flour_g": {
+        "packSize": 1000,
+        "packPrice": 65,
+        "packLabel": "1 кг (65₽)",
+        "pricePerUnit": 0.065
+      },
+      "tomato_paste_g": {
+        "packSize": 140,
+        "packPrice": 32,
+        "packLabel": "140 г (32₽)",
+        "pricePerUnit": 0.23
+      },
+      "sushki_g": {
+        "packSize": 200,
+        "packPrice": 55,
+        "packLabel": "200 г (55₽)",
+        "pricePerUnit": 0.275
+      },
+      "potatoes_g": {
+        "packSize": 1000,
+        "packPrice": 42,
+        "packLabel": "1 кг (42₽)",
+        "pricePerUnit": 0.042
+      },
+      "cabbage_g": {
+        "packSize": 1000,
+        "packPrice": 35,
+        "packLabel": "1 кг (35₽)",
+        "pricePerUnit": 0.035
+      },
+      "roots_g": {
+        "packSize": 1000,
+        "packPrice": 52,
+        "packLabel": "1 кг (52₽)",
+        "pricePerUnit": 0.052
+      },
+      "apples_g": {
+        "packSize": 1000,
+        "packPrice": 95,
+        "packLabel": "1 кг (95₽)",
+        "pricePerUnit": 0.095
+      },
+      "bananas_pcs": {
+        "packSize": 1,
+        "packPrice": 12,
+        "packLabel": "1 шт ~140г (85₽/кг)",
+        "pricePerUnit": 12
+      },
+      "eggs_pcs": {
+        "packSize": 10,
+        "packPrice": 105,
+        "packLabel": "10 шт (105₽)",
+        "pricePerUnit": 11
+      },
+      "milk_ml": {
+        "packSize": 930,
+        "packPrice": 72,
+        "packLabel": "930 мл (72₽)",
+        "pricePerUnit": 0.077
+      },
+      "kefir_ml": {
+        "packSize": 900,
+        "packPrice": 65,
+        "packLabel": "900 мл (65₽)",
+        "pricePerUnit": 0.072
+      },
+      "tvorog_g": {
+        "packSize": 180,
+        "packPrice": 85,
+        "packLabel": "180 г (85₽)",
+        "pricePerUnit": 0.472
+      },
+      "bread_g": {
+        "packSize": 350,
+        "packPrice": 42,
+        "packLabel": "350 г батон (42₽)",
+        "pricePerUnit": 0.12
+      },
+      "smetana_g": {
+        "packSize": 330,
+        "packPrice": 95,
+        "packLabel": "330 г (95₽)",
+        "pricePerUnit": 0.288
+      },
+      "lavash_pcs": {
+        "packSize": 1,
+        "packPrice": 52,
+        "packLabel": "2 шт в упак (52₽)",
+        "pricePerUnit": 52
+      },
+      "chicken_g": {
+        "packSize": 1000,
+        "packPrice": 199,
+        "packLabel": "1 кг окорочка (199₽)",
+        "pricePerUnit": 0.199
+      },
+      "fish_g": {
+        "packSize": 600,
+        "packPrice": 159,
+        "packLabel": "600 г филе (159₽)",
+        "pricePerUnit": 0.265
+      },
+      "cutlets_g": {
+        "packSize": 400,
+        "packPrice": 149,
+        "packLabel": "400 г (149₽)",
+        "pricePerUnit": 0.373
+      },
+      "nuggets_g": {
+        "packSize": 300,
+        "packPrice": 145,
+        "packLabel": "300 г (145₽)",
+        "pricePerUnit": 0.483
+      },
+      "fishsticks_g": {
+        "packSize": 300,
+        "packPrice": 129,
+        "packLabel": "300 г (129₽)",
+        "pricePerUnit": 0.43
+      },
+      "pelmeni_g": {
+        "packSize": 900,
+        "packPrice": 285,
+        "packLabel": "900 г (285₽)",
+        "pricePerUnit": 0.317
+      },
+      "vareniki_g": {
+        "packSize": 600,
+        "packPrice": 189,
+        "packLabel": "600 г (189₽)",
+        "pricePerUnit": 0.315
+      },
+      "tefteli_g": {
+        "packSize": 400,
+        "packPrice": 149,
+        "packLabel": "400 г (149₽)",
+        "pricePerUnit": 0.373
+      },
+      "mince_g": {
+        "packSize": 500,
+        "packPrice": 189,
+        "packLabel": "500 г свиной (189₽)",
+        "pricePerUnit": 0.378
+      },
+      "frozenveg_g": {
+        "packSize": 400,
+        "packPrice": 65,
+        "packLabel": "400 г (65₽)",
+        "pricePerUnit": 0.163
+      },
+      "oil_g": {
+        "packSize": 1000,
+        "packPrice": 139,
+        "packLabel": "1 л (139₽)",
+        "pricePerUnit": 0.14
+      },
+      "tea_g": {
+        "packSize": 100,
+        "packPrice": 89,
+        "packLabel": "100 г (89₽)",
+        "pricePerUnit": 0.89
+      },
+      "sugar_g": {
+        "packSize": 1000,
+        "packPrice": 65,
+        "packLabel": "1 кг (65₽)",
+        "pricePerUnit": 0.065
+      },
+      "cheese_g": {
+        "packSize": 400,
+        "packPrice": 329,
+        "packLabel": "400 г (329₽)",
+        "pricePerUnit": 0.82
+      },
+      "onion_g": {
+        "packSize": 1000,
+        "packPrice": 55,
+        "packLabel": "1 кг (55₽)",
+        "pricePerUnit": 0.055
+      },
+      "butter_g": {
+        "packSize": 180,
+        "packPrice": 169,
+        "packLabel": "180 г (169₽)",
+        "pricePerUnit": 0.94
+      },
+      "sausage_g": {
+        "packSize": 400,
+        "packPrice": 219,
+        "packLabel": "400 г (219₽)",
+        "pricePerUnit": 0.55
+      },
+      "garlic_g": {
+        "packSize": 50,
+        "packPrice": 55,
+        "packLabel": "50 г (55₽)",
+        "pricePerUnit": 1.1
+      },
+      "mushrooms_g": {
+        "packSize": 400,
+        "packPrice": 129,
+        "packLabel": "400 г (129₽)",
+        "pricePerUnit": 0.32
+      },
+      "cucumber_g": {
+        "packSize": 1000,
+        "packPrice": 109,
+        "packLabel": "1 кг (109₽)",
+        "pricePerUnit": 0.109
+      },
+      "honey_g": {
+        "packSize": 350,
+        "packPrice": 269,
+        "packLabel": "350 г (269₽)",
+        "pricePerUnit": 0.77
+      },
+      "jam_g": {
+        "packSize": 500,
+        "packPrice": 165,
+        "packLabel": "500 г (165₽)",
+        "pricePerUnit": 0.33
+      },
+      "cookies_g": {
+        "packSize": 200,
+        "packPrice": 55,
+        "packLabel": "200 г (55₽)",
+        "pricePerUnit": 0.275
+      },
+      "coffee_g": {
+        "packSize": 100,
+        "packPrice": 279,
+        "packLabel": "100 г (279₽)",
+        "pricePerUnit": 2.79
+      },
+      "mayo_g": {
+        "packSize": 400,
+        "packPrice": 129,
+        "packLabel": "400 г (129₽)",
+        "pricePerUnit": 0.32
+      },
+      "ketchup_g": {
+        "packSize": 350,
+        "packPrice": 99,
+        "packLabel": "350 г (99₽)",
+        "pricePerUnit": 0.28
+      },
+      "soysauce_ml": {
+        "packSize": 250,
+        "packPrice": 109,
+        "packLabel": "250 мл (109₽)",
+        "pricePerUnit": 0.44
+      },
+      "peas_cans": {
+        "packSize": 1,
+        "packPrice": 89,
+        "packLabel": "1 бан 400г (89₽)",
+        "pricePerUnit": 89
+      },
+      "corn_cans": {
+        "packSize": 1,
+        "packPrice": 99,
+        "packLabel": "1 бан 340г (99₽)",
+        "pricePerUnit": 99
+      },
+      "herring_g": {
+        "packSize": 500,
+        "packPrice": 109,
+        "packLabel": "500 г (109₽)",
+        "pricePerUnit": 0.218
+      },
+      "liver_g": {
+        "packSize": 500,
+        "packPrice": 169,
+        "packLabel": "500 г (169₽)",
+        "pricePerUnit": 0.338
+      },
+      "raisins_g": {
+        "packSize": 200,
+        "packPrice": 89,
+        "packLabel": "200 г (89₽)",
+        "pricePerUnit": 0.445
+      },
+      "cream_ml": {
+        "packSize": 330,
+        "packPrice": 75,
+        "packLabel": "330 мл (75₽)",
+        "pricePerUnit": 0.227
+      },
+      "tomato_g": {
+        "packSize": 1000,
+        "packPrice": 149,
+        "packLabel": "1 кг (149₽)",
+        "pricePerUnit": 0.149
+      },
+      "pepper_g": {
+        "packSize": 1000,
+        "packPrice": 229,
+        "packLabel": "1 кг (229₽)",
+        "pricePerUnit": 0.229
+      },
+      "herbs_g": {
+        "packSize": 30,
+        "packPrice": 35,
+        "packLabel": "1 пучок ~30г (35₽)",
+        "pricePerUnit": 1.17
+      },
+      "lemon_pcs": {
+        "packSize": 1,
+        "packPrice": 22,
+        "packLabel": "1 шт ~70г (22₽)",
+        "pricePerUnit": 22
+      },
+      "beet_g": {
+        "packSize": 1000,
+        "packPrice": 45,
+        "packLabel": "1 кг (45₽)",
+        "pricePerUnit": 0.045
+      },
+      "pork_g": {
+        "packSize": 1000,
+        "packPrice": 339,
+        "packLabel": "1 кг (339₽)",
+        "pricePerUnit": 0.339
+      },
+      "beef_g": {
+        "packSize": 1000,
+        "packPrice": 569,
+        "packLabel": "1 кг (569₽)",
+        "pricePerUnit": 0.569
+      },
+      "turkey_g": {
+        "packSize": 1000,
+        "packPrice": 389,
+        "packLabel": "1 кг (389₽)",
+        "pricePerUnit": 0.389
+      },
+      "stew_cans": {
+        "packSize": 1,
+        "packPrice": 179,
+        "packLabel": "1 бан 338г (179₽)",
+        "pricePerUnit": 179
+      },
+      "salmon_cans": {
+        "packSize": 1,
+        "packPrice": 149,
+        "packLabel": "1 бан 250г (149₽)",
+        "pricePerUnit": 149
+      },
+      "sprat_cans": {
+        "packSize": 1,
+        "packPrice": 99,
+        "packLabel": "1 бан 240г (99₽)",
+        "pricePerUnit": 99
+      },
+      "saury_cans": {
+        "packSize": 1,
+        "packPrice": 109,
+        "packLabel": "1 бан 250г (109₽)",
+        "pricePerUnit": 109
+      },
+      "salt_g": {
+        "packSize": 1000,
+        "packPrice": 22,
+        "packLabel": "1 кг (22₽)",
+        "pricePerUnit": 0.022
+      },
+      "baking_g": {
+        "packSize": 50,
+        "packPrice": 32,
+        "packLabel": "50 г (32₽)",
+        "pricePerUnit": 0.64
+      },
+      "noodle_g": {
+        "packSize": 90,
+        "packPrice": 40,
+        "packLabel": "500 г (35₽)",
+        "pricePerUnit": 0.07
+      },
+      "chips_g": {
+        "packSize": 200,
+        "packPrice": 99,
+        "packLabel": "200 г (99₽)",
+        "pricePerUnit": 0.495
+      },
+      "pancakes_g": {
+        "packSize": 500,
+        "packPrice": 169,
+        "packLabel": "500 г (169₽)",
+        "pricePerUnit": 0.338
+      },
+      "berries_g": {
+        "packSize": 500,
+        "packPrice": 169,
+        "packLabel": "500 г (169₽)",
+        "pricePerUnit": 0.338
+      },
+      "chocolate_g": {
+        "packSize": 100,
+        "packPrice": 99,
+        "packLabel": "100 г (99₽)",
+        "pricePerUnit": 0.99
+      },
+      "candy_g": {
+        "packSize": 300,
+        "packPrice": 169,
+        "packLabel": "300 г (169₽)",
+        "pricePerUnit": 0.563
+      },
+      "zephyr_g": {
+        "packSize": 150,
+        "packPrice": 99,
+        "packLabel": "150 г (99₽)",
+        "pricePerUnit": 0.66
+      },
+      "juice_ml": {
+        "packSize": 1000,
+        "packPrice": 89,
+        "packLabel": "1 л (89₽)",
+        "pricePerUnit": 0.089
+      },
+      "mors_ml": {
+        "packSize": 1000,
+        "packPrice": 99,
+        "packLabel": "1 л (99₽)",
+        "pricePerUnit": 0.099
+      }
+    }
+  },
+  "perekrestok": {
+    "name": "Перекрёсток",
+    "color": "#00A650",
+    "icon": "П",
+    "products": {
+      "oats_g": {
+        "packSize": 800,
+        "packPrice": 59,
+        "packLabel": "800 г (59₽)",
+        "pricePerUnit": 0.074
+      },
+      "rice_g": {
+        "packSize": 900,
+        "packPrice": 89,
+        "packLabel": "900 г (89₽)",
+        "pricePerUnit": 0.099
+      },
+      "buckwheat_g": {
+        "packSize": 800,
+        "packPrice": 89,
+        "packLabel": "800 г (89₽)",
+        "pricePerUnit": 0.111
+      },
+      "pasta_g": {
+        "packSize": 500,
+        "packPrice": 55,
+        "packLabel": "500 г (55₽)",
+        "pricePerUnit": 0.109
+      },
+      "beans_cans": {
+        "packSize": 1,
+        "packPrice": 109,
+        "packLabel": "1 бан 400г (109₽)",
+        "pricePerUnit": 109
+      },
+      "peanuts_g": {
+        "packSize": 200,
+        "packPrice": 95,
+        "packLabel": "200 г (95₽)",
+        "pricePerUnit": 0.475
+      },
+      "flour_g": {
+        "packSize": 1000,
+        "packPrice": 75,
+        "packLabel": "1 кг (75₽)",
+        "pricePerUnit": 0.075
+      },
+      "tomato_paste_g": {
+        "packSize": 140,
+        "packPrice": 35,
+        "packLabel": "140 г (35₽)",
+        "pricePerUnit": 0.25
+      },
+      "sushki_g": {
+        "packSize": 200,
+        "packPrice": 59,
+        "packLabel": "200 г (59₽)",
+        "pricePerUnit": 0.295
+      },
+      "potatoes_g": {
+        "packSize": 1000,
+        "packPrice": 49,
+        "packLabel": "1 кг (49₽)",
+        "pricePerUnit": 0.049
+      },
+      "cabbage_g": {
+        "packSize": 1000,
+        "packPrice": 45,
+        "packLabel": "1 кг (45₽)",
+        "pricePerUnit": 0.045
+      },
+      "roots_g": {
+        "packSize": 1000,
+        "packPrice": 59,
+        "packLabel": "1 кг (59₽)",
+        "pricePerUnit": 0.059
+      },
+      "apples_g": {
+        "packSize": 1000,
+        "packPrice": 109,
+        "packLabel": "1 кг (109₽)",
+        "pricePerUnit": 0.109
+      },
+      "bananas_pcs": {
+        "packSize": 1,
+        "packPrice": 13,
+        "packLabel": "1 шт ~140г (89₽/кг)",
+        "pricePerUnit": 13
+      },
+      "eggs_pcs": {
+        "packSize": 10,
+        "packPrice": 119,
+        "packLabel": "10 шт (119₽)",
+        "pricePerUnit": 12
+      },
+      "milk_ml": {
+        "packSize": 930,
+        "packPrice": 79,
+        "packLabel": "930 мл (79₽)",
+        "pricePerUnit": 0.085
+      },
+      "kefir_ml": {
+        "packSize": 900,
+        "packPrice": 75,
+        "packLabel": "900 мл (75₽)",
+        "pricePerUnit": 0.083
+      },
+      "tvorog_g": {
+        "packSize": 180,
+        "packPrice": 99,
+        "packLabel": "180 г (99₽)",
+        "pricePerUnit": 0.55
+      },
+      "bread_g": {
+        "packSize": 350,
+        "packPrice": 55,
+        "packLabel": "350 г батон (55₽)",
+        "pricePerUnit": 0.157
+      },
+      "smetana_g": {
+        "packSize": 330,
+        "packPrice": 109,
+        "packLabel": "330 г (109₽)",
+        "pricePerUnit": 0.33
+      },
+      "lavash_pcs": {
+        "packSize": 1,
+        "packPrice": 59,
+        "packLabel": "2 шт в упак (59₽)",
+        "pricePerUnit": 59
+      },
+      "chicken_g": {
+        "packSize": 1000,
+        "packPrice": 219,
+        "packLabel": "1 кг окорочка (219₽)",
+        "pricePerUnit": 0.219
+      },
+      "fish_g": {
+        "packSize": 600,
+        "packPrice": 179,
+        "packLabel": "600 г филе (179₽)",
+        "pricePerUnit": 0.298
+      },
+      "cutlets_g": {
+        "packSize": 400,
+        "packPrice": 165,
+        "packLabel": "400 г (165₽)",
+        "pricePerUnit": 0.413
+      },
+      "nuggets_g": {
+        "packSize": 300,
+        "packPrice": 159,
+        "packLabel": "300 г (159₽)",
+        "pricePerUnit": 0.53
+      },
+      "fishsticks_g": {
+        "packSize": 300,
+        "packPrice": 139,
+        "packLabel": "300 г (139₽)",
+        "pricePerUnit": 0.463
+      },
+      "pelmeni_g": {
+        "packSize": 900,
+        "packPrice": 315,
+        "packLabel": "900 г (315₽)",
+        "pricePerUnit": 0.35
+      },
+      "vareniki_g": {
+        "packSize": 600,
+        "packPrice": 209,
+        "packLabel": "600 г (209₽)",
+        "pricePerUnit": 0.348
+      },
+      "tefteli_g": {
+        "packSize": 400,
+        "packPrice": 165,
+        "packLabel": "400 г (165₽)",
+        "pricePerUnit": 0.413
+      },
+      "mince_g": {
+        "packSize": 500,
+        "packPrice": 199,
+        "packLabel": "500 г свиной (199₽)",
+        "pricePerUnit": 0.398
+      },
+      "frozenveg_g": {
+        "packSize": 400,
+        "packPrice": 75,
+        "packLabel": "400 г (75₽)",
+        "pricePerUnit": 0.188
+      },
+      "oil_g": {
+        "packSize": 1000,
+        "packPrice": 159,
+        "packLabel": "1 л (159₽)",
+        "pricePerUnit": 0.16
+      },
+      "tea_g": {
+        "packSize": 100,
+        "packPrice": 99,
+        "packLabel": "100 г (99₽)",
+        "pricePerUnit": 0.99
+      },
+      "sugar_g": {
+        "packSize": 1000,
+        "packPrice": 75,
+        "packLabel": "1 кг (75₽)",
+        "pricePerUnit": 0.075
+      },
+      "cheese_g": {
+        "packSize": 400,
+        "packPrice": 359,
+        "packLabel": "400 г (359₽)",
+        "pricePerUnit": 0.9
+      },
+      "onion_g": {
+        "packSize": 1000,
+        "packPrice": 59,
+        "packLabel": "1 кг (59₽)",
+        "pricePerUnit": 0.059
+      },
+      "butter_g": {
+        "packSize": 180,
+        "packPrice": 189,
+        "packLabel": "180 г (189₽)",
+        "pricePerUnit": 1.05
+      },
+      "sausage_g": {
+        "packSize": 400,
+        "packPrice": 249,
+        "packLabel": "400 г (249₽)",
+        "pricePerUnit": 0.62
+      },
+      "garlic_g": {
+        "packSize": 50,
+        "packPrice": 59,
+        "packLabel": "50 г (59₽)",
+        "pricePerUnit": 1.18
+      },
+      "mushrooms_g": {
+        "packSize": 400,
+        "packPrice": 139,
+        "packLabel": "400 г (139₽)",
+        "pricePerUnit": 0.35
+      },
+      "cucumber_g": {
+        "packSize": 1000,
+        "packPrice": 119,
+        "packLabel": "1 кг (119₽)",
+        "pricePerUnit": 0.119
+      },
+      "honey_g": {
+        "packSize": 350,
+        "packPrice": 299,
+        "packLabel": "350 г (299₽)",
+        "pricePerUnit": 0.85
+      },
+      "jam_g": {
+        "packSize": 500,
+        "packPrice": 179,
+        "packLabel": "500 г (179₽)",
+        "pricePerUnit": 0.36
+      },
+      "cookies_g": {
+        "packSize": 200,
+        "packPrice": 59,
+        "packLabel": "200 г (59₽)",
+        "pricePerUnit": 0.295
+      },
+      "coffee_g": {
+        "packSize": 100,
+        "packPrice": 299,
+        "packLabel": "100 г (299₽)",
+        "pricePerUnit": 2.99
+      },
+      "mayo_g": {
+        "packSize": 400,
+        "packPrice": 139,
+        "packLabel": "400 г (139₽)",
+        "pricePerUnit": 0.35
+      },
+      "ketchup_g": {
+        "packSize": 350,
+        "packPrice": 109,
+        "packLabel": "350 г (109₽)",
+        "pricePerUnit": 0.31
+      },
+      "soysauce_ml": {
+        "packSize": 250,
+        "packPrice": 119,
+        "packLabel": "250 мл (119₽)",
+        "pricePerUnit": 0.48
+      },
+      "peas_cans": {
+        "packSize": 1,
+        "packPrice": 99,
+        "packLabel": "1 бан 400г (99₽)",
+        "pricePerUnit": 99
+      },
+      "corn_cans": {
+        "packSize": 1,
+        "packPrice": 109,
+        "packLabel": "1 бан 340г (109₽)",
+        "pricePerUnit": 109
+      },
+      "herring_g": {
+        "packSize": 500,
+        "packPrice": 119,
+        "packLabel": "500 г (119₽)",
+        "pricePerUnit": 0.238
+      },
+      "liver_g": {
+        "packSize": 500,
+        "packPrice": 189,
+        "packLabel": "500 г (189₽)",
+        "pricePerUnit": 0.378
+      },
+      "raisins_g": {
+        "packSize": 200,
+        "packPrice": 99,
+        "packLabel": "200 г (99₽)",
+        "pricePerUnit": 0.495
+      },
+      "cream_ml": {
+        "packSize": 330,
+        "packPrice": 85,
+        "packLabel": "330 мл (85₽)",
+        "pricePerUnit": 0.258
+      },
+      "tomato_g": {
+        "packSize": 1000,
+        "packPrice": 169,
+        "packLabel": "1 кг (169₽)",
+        "pricePerUnit": 0.169
+      },
+      "pepper_g": {
+        "packSize": 1000,
+        "packPrice": 249,
+        "packLabel": "1 кг (249₽)",
+        "pricePerUnit": 0.249
+      },
+      "herbs_g": {
+        "packSize": 30,
+        "packPrice": 39,
+        "packLabel": "1 пучок ~30г (39₽)",
+        "pricePerUnit": 1.3
+      },
+      "lemon_pcs": {
+        "packSize": 1,
+        "packPrice": 25,
+        "packLabel": "1 шт ~70г (25₽)",
+        "pricePerUnit": 25
+      },
+      "beet_g": {
+        "packSize": 1000,
+        "packPrice": 49,
+        "packLabel": "1 кг (49₽)",
+        "pricePerUnit": 0.049
+      },
+      "pork_g": {
+        "packSize": 1000,
+        "packPrice": 379,
+        "packLabel": "1 кг (379₽)",
+        "pricePerUnit": 0.379
+      },
+      "beef_g": {
+        "packSize": 1000,
+        "packPrice": 629,
+        "packLabel": "1 кг (629₽)",
+        "pricePerUnit": 0.629
+      },
+      "turkey_g": {
+        "packSize": 1000,
+        "packPrice": 429,
+        "packLabel": "1 кг (429₽)",
+        "pricePerUnit": 0.429
+      },
+      "stew_cans": {
+        "packSize": 1,
+        "packPrice": 199,
+        "packLabel": "1 бан 338г (199₽)",
+        "pricePerUnit": 199
+      },
+      "salmon_cans": {
+        "packSize": 1,
+        "packPrice": 169,
+        "packLabel": "1 бан 250г (169₽)",
+        "pricePerUnit": 169
+      },
+      "sprat_cans": {
+        "packSize": 1,
+        "packPrice": 109,
+        "packLabel": "1 бан 240г (109₽)",
+        "pricePerUnit": 109
+      },
+      "saury_cans": {
+        "packSize": 1,
+        "packPrice": 119,
+        "packLabel": "1 бан 250г (119₽)",
+        "pricePerUnit": 119
+      },
+      "salt_g": {
+        "packSize": 1000,
+        "packPrice": 25,
+        "packLabel": "1 кг (25₽)",
+        "pricePerUnit": 0.025
+      },
+      "baking_g": {
+        "packSize": 50,
+        "packPrice": 35,
+        "packLabel": "50 г (35₽)",
+        "pricePerUnit": 0.7
+      },
+      "noodle_g": {
+        "packSize": 90,
+        "packPrice": 40,
+        "packLabel": "500 г (39₽)",
+        "pricePerUnit": 0.078
+      },
+      "chips_g": {
+        "packSize": 200,
+        "packPrice": 109,
+        "packLabel": "200 г (109₽)",
+        "pricePerUnit": 0.545
+      },
+      "pancakes_g": {
+        "packSize": 500,
+        "packPrice": 189,
+        "packLabel": "500 г (189₽)",
+        "pricePerUnit": 0.378
+      },
+      "berries_g": {
+        "packSize": 500,
+        "packPrice": 189,
+        "packLabel": "500 г (189₽)",
+        "pricePerUnit": 0.378
+      },
+      "chocolate_g": {
+        "packSize": 100,
+        "packPrice": 109,
+        "packLabel": "100 г (109₽)",
+        "pricePerUnit": 1.09
+      },
+      "candy_g": {
+        "packSize": 300,
+        "packPrice": 189,
+        "packLabel": "300 г (189₽)",
+        "pricePerUnit": 0.63
+      },
+      "zephyr_g": {
+        "packSize": 150,
+        "packPrice": 109,
+        "packLabel": "150 г (109₽)",
+        "pricePerUnit": 0.727
+      },
+      "juice_ml": {
+        "packSize": 1000,
+        "packPrice": 99,
+        "packLabel": "1 л (99₽)",
+        "pricePerUnit": 0.099
+      },
+      "mors_ml": {
+        "packSize": 1000,
+        "packPrice": 109,
+        "packLabel": "1 л (109₽)",
+        "pricePerUnit": 0.109
+      }
+    }
+  }
+}

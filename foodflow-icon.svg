@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="FoodFlow">
+  <rect width="512" height="512" rx="112" fill="#1769df"/>
+  <path d="M104 146c0-23 19-42 42-42h220c23 0 42 19 42 42v220c0 23-19 42-42 42H146c-23 0-42-19-42-42V146Z" fill="#fff" opacity=".96"/>
+  <path d="M164 186h184M164 256h184M164 326h132" stroke="#1769df" stroke-width="28" stroke-linecap="round"/>
+  <circle cx="358" cy="326" r="22" fill="#138a58"/>
+  <path d="M132 104 408 408" stroke="#0f4fb2" stroke-width="18" stroke-linecap="round" opacity=".22"/>
+</svg>

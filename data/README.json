@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "note": "Offline data files for FoodFlow. The current app still uses inline data; these files are the migration boundary for the next modular app.js step.",
+  "files": [
+    "products.json",
+    "recipes.json",
+    "inventory-rules.json",
+    "plans.json",
+    "budget-tiers.json",
+    "family-profiles.json"
+  ]
+}
