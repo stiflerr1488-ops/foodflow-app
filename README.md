@@ -49,6 +49,8 @@ node test-runtime.js
 node check-html-refs.js
 node check-sw-files.js
 node audit.js
+node audit-all-profiles.js
+node check-recipe-coverage.js
 python validate_recipe_cleanup.py
 ```
 
@@ -70,6 +72,8 @@ Expected current status:
 - `node check-html-refs.js` passes with all HTML references present.
 - `node check-sw-files.js` passes with all service worker cache files present.
 - `node audit.js` passes with `PLAN QUALITY: PASS` and `Warnings: 0`.
+- `node audit-all-profiles.js` passes for all 6 saved family profiles.
+- `node check-recipe-coverage.js` reports all 1211 recipes eligible for generator selection.
 - `python validate_recipe_cleanup.py` reports `recipes=1211`, `generated_source=0`, `suspicious_names=0`, `missing_refs=0`.
 
 ## Recipe Review

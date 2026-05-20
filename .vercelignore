@@ -4,7 +4,9 @@ node_modules/
 docs/
 *.py
 audit.js
+audit-all-profiles.js
 test-runtime.js
+check-recipe-coverage.js
 check-*.js
 generate-*.js
 build-*.js

@@ -51,6 +51,8 @@ if (!syntaxOnly) {
   run(process.execPath, ["check-html-refs.js"]);
   run(process.execPath, ["check-sw-files.js"]);
   run(process.execPath, ["audit.js"]);
+  run(process.execPath, ["audit-all-profiles.js"]);
+  run(process.execPath, ["check-recipe-coverage.js"]);
   run("python", ["validate_recipe_cleanup.py"]);
   checkReleaseMetadata();
 }
