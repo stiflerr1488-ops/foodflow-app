@@ -1,11 +1,12 @@
 {
   "name": "foodflow",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "private": true,
   "description": "Static 30-day meal planning app.",
   "scripts": {
     "verify": "node verify.js",
     "smoke:prod": "node smoke-production.js",
+    "smoke:browser": "node smoke-browser.js",
     "check:runtime": "node test-runtime.js",
     "check:profiles": "node audit-all-profiles.js",
     "check:recipes": "node check-recipe-coverage.js",

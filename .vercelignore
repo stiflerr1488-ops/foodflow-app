@@ -12,6 +12,8 @@ generate-*.js
 build-*.js
 apply-recipe-patch.js
 verify.js
+smoke-production.js
+smoke-browser.js
 AGENTS.md
 ROADMAP.md
 data/recipe-name-preview*

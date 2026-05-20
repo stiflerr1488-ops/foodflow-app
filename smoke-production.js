@@ -62,7 +62,7 @@ async function check(pathname, options = {}) {
   await check("/sw.js", {
     cache: "max-age=0, must-revalidate",
     contentType: "application/javascript",
-    includes: ["CACHE_VERSION", "2026-05-20-rc-2"]
+    includes: ["CACHE_VERSION", "2026-05-20-rc-3"]
   });
   await check("/manifest.webmanifest", { contentType: "application/manifest+json", includes: ["FoodFlow", "icons/icon-512.png"] });
   await check("/robots.txt", { cache: "max-age=0, must-revalidate", includes: [`Sitemap: ${origin}/sitemap.xml`] });

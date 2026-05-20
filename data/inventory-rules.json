@@ -13,526 +13,40 @@
       "orderDay": 0,
       "availableDay": 1,
       "items": {
-        "apples_g": 857,
-        "beans_cans": 2,
-        "beef_g": 510,
-        "bread_g": 700,
+        "apples_g": 725,
+        "bananas_pcs": 2,
+        "beans_cans": 5,
+        "berries_g": 500,
+        "bread_g": 350,
+        "buckwheat_g": 800,
         "butter_g": 180,
-        "cabbage_g": 408,
-        "chicken_g": 1469,
-        "chocolate_g": 100,
-        "cream_ml": 330,
-        "cucumber_g": 1000,
+        "cabbage_g": 306,
+        "chicken_g": 1719,
         "eggs_pcs": 20,
-        "fish_g": 592,
+        "fish_g": 368,
         "fishsticks_g": 300,
         "flour_g": 1000,
         "frozenveg_g": 800,
+        "garlic_g": 50,
+        "herbs_g": 30,
         "jam_g": 500,
         "kefir_ml": 900,
-        "ketchup_g": 350,
-        "milk_ml": 1860,
-        "mushrooms_g": 800,
-        "noodle_g": 90,
+        "lavash_pcs": 3,
+        "lemon_pcs": 1,
+        "milk_ml": 930,
+        "nuggets_g": 600,
+        "oats_g": 800,
         "oil_g": 1000,
-        "onion_g": 1000,
-        "pancakes_g": 500,
-        "pasta_g": 500,
+        "pancakes_g": 1000,
         "peanuts_g": 200,
-        "pelmeni_g": 900,
-        "potatoes_g": 1020,
+        "raisins_g": 200,
         "rice_g": 900,
-        "roots_g": 827,
+        "roots_g": 846,
         "salt_g": 1000,
-        "sausage_g": 400,
         "smetana_g": 330,
-        "sprat_cans": 1,
-        "stew_cans": 3,
-        "sushki_g": 200,
-        "tea_g": 100,
-        "tomato_paste_g": 140,
+        "sugar_g": 1000,
+        "tomato_paste_g": 280,
         "tvorog_g": 720
-      },
-      "itemBoxes": [
-        {
-          "id": "week1-1-apples_g",
-          "productId": "apples_g",
-          "title": "Яблоки",
-          "amount": 857,
-          "amountLabel": "857 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.089,
-          "cost": 76.27,
-          "priceLabel": "~76 ₽"
-        },
-        {
-          "id": "week1-2-beans_cans",
-          "productId": "beans_cans",
-          "title": "Фасоль",
-          "amount": 2,
-          "amountLabel": "2 бан.",
-          "unit": "бан.",
-          "storage": "base",
-          "pricePerUnit": 89,
-          "cost": 178,
-          "priceLabel": "~178 ₽"
-        },
-        {
-          "id": "week1-3-beef_g",
-          "productId": "beef_g",
-          "title": "Говядина",
-          "amount": 510,
-          "amountLabel": "510 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.499,
-          "cost": 254.49,
-          "priceLabel": "~254 ₽"
-        },
-        {
-          "id": "week1-4-bread_g",
-          "productId": "bread_g",
-          "title": "Хлеб",
-          "amount": 700,
-          "amountLabel": "700 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.13,
-          "cost": 91,
-          "priceLabel": "~91 ₽"
-        },
-        {
-          "id": "week1-5-butter_g",
-          "productId": "butter_g",
-          "title": "Масло сливочное",
-          "amount": 180,
-          "amountLabel": "180 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.83,
-          "cost": 149.4,
-          "priceLabel": "~149 ₽"
-        },
-        {
-          "id": "week1-6-cabbage_g",
-          "productId": "cabbage_g",
-          "title": "Капуста/огурец",
-          "amount": 408,
-          "amountLabel": "408 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "cost": 15.91,
-          "priceLabel": "~16 ₽"
-        },
-        {
-          "id": "week1-7-chicken_g",
-          "productId": "chicken_g",
-          "title": "Курица",
-          "amount": 1469,
-          "amountLabel": "1469 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.189,
-          "cost": 277.64,
-          "priceLabel": "~278 ₽"
-        },
-        {
-          "id": "week1-8-chocolate_g",
-          "productId": "chocolate_g",
-          "title": "Шоколад",
-          "amount": 100,
-          "amountLabel": "100 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.89,
-          "cost": 89,
-          "priceLabel": "~89 ₽"
-        },
-        {
-          "id": "week1-9-cream_ml",
-          "productId": "cream_ml",
-          "title": "Сливки",
-          "amount": 330,
-          "amountLabel": "330 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.2,
-          "cost": 66,
-          "priceLabel": "~66 ₽"
-        },
-        {
-          "id": "week1-10-cucumber_g",
-          "productId": "cucumber_g",
-          "title": "Огурцы",
-          "amount": 1000,
-          "amountLabel": "1000 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.099,
-          "cost": 99,
-          "priceLabel": "~99 ₽"
-        },
-        {
-          "id": "week1-11-eggs_pcs",
-          "productId": "eggs_pcs",
-          "title": "Яйца",
-          "amount": 20,
-          "amountLabel": "20 шт",
-          "unit": "шт",
-          "storage": "fridge",
-          "pricePerUnit": 10,
-          "cost": 200,
-          "priceLabel": "~200 ₽"
-        },
-        {
-          "id": "week1-12-fish_g",
-          "productId": "fish_g",
-          "title": "Минтай/хек",
-          "amount": 592,
-          "amountLabel": "592 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.249,
-          "cost": 147.41,
-          "priceLabel": "~147 ₽"
-        },
-        {
-          "id": "week1-13-fishsticks_g",
-          "productId": "fishsticks_g",
-          "title": "Рыбные палочки",
-          "amount": 300,
-          "amountLabel": "300 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.399,
-          "cost": 119.7,
-          "priceLabel": "~120 ₽"
-        },
-        {
-          "id": "week1-14-flour_g",
-          "productId": "flour_g",
-          "title": "Мука",
-          "amount": 1000,
-          "amountLabel": "1000 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.059,
-          "cost": 59,
-          "priceLabel": "~59 ₽"
-        },
-        {
-          "id": "week1-15-frozenveg_g",
-          "productId": "frozenveg_g",
-          "title": "Овощная смесь",
-          "amount": 800,
-          "amountLabel": "800 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.149,
-          "cost": 119.2,
-          "priceLabel": "~119 ₽"
-        },
-        {
-          "id": "week1-16-jam_g",
-          "productId": "jam_g",
-          "title": "Варенье",
-          "amount": 500,
-          "amountLabel": "500 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.29,
-          "cost": 145,
-          "priceLabel": "~145 ₽"
-        },
-        {
-          "id": "week1-17-kefir_ml",
-          "productId": "kefir_ml",
-          "title": "Кефир",
-          "amount": 900,
-          "amountLabel": "900 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.069,
-          "cost": 62.1,
-          "priceLabel": "~62 ₽"
-        },
-        {
-          "id": "week1-18-ketchup_g",
-          "productId": "ketchup_g",
-          "title": "Кетчуп",
-          "amount": 350,
-          "amountLabel": "350 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.25,
-          "cost": 87.5,
-          "priceLabel": "~88 ₽"
-        },
-        {
-          "id": "week1-19-milk_ml",
-          "productId": "milk_ml",
-          "title": "Молоко",
-          "amount": 1860,
-          "amountLabel": "1860 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.072,
-          "cost": 133.92,
-          "priceLabel": "~134 ₽"
-        },
-        {
-          "id": "week1-20-mushrooms_g",
-          "productId": "mushrooms_g",
-          "title": "Шампиньоны",
-          "amount": 800,
-          "amountLabel": "800 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.29,
-          "cost": 232,
-          "priceLabel": "~232 ₽"
-        },
-        {
-          "id": "week1-21-noodle_g",
-          "productId": "noodle_g",
-          "title": "Лапша быстр. (доширак)",
-          "amount": 90,
-          "amountLabel": "90 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.444,
-          "cost": 39.96,
-          "priceLabel": "~40 ₽"
-        },
-        {
-          "id": "week1-22-oil_g",
-          "productId": "oil_g",
-          "title": "Масло подсолнечное",
-          "amount": 1000,
-          "amountLabel": "1000 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.13,
-          "cost": 130,
-          "priceLabel": "~130 ₽"
-        },
-        {
-          "id": "week1-23-onion_g",
-          "productId": "onion_g",
-          "title": "Лук репчатый",
-          "amount": 1000,
-          "amountLabel": "1000 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.049,
-          "cost": 49,
-          "priceLabel": "~49 ₽"
-        },
-        {
-          "id": "week1-24-pancakes_g",
-          "productId": "pancakes_g",
-          "title": "Блинчики замор.",
-          "amount": 500,
-          "amountLabel": "500 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.298,
-          "cost": 149,
-          "priceLabel": "~149 ₽"
-        },
-        {
-          "id": "week1-25-pasta_g",
-          "productId": "pasta_g",
-          "title": "Макароны/лапша",
-          "amount": 500,
-          "amountLabel": "500 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.079,
-          "cost": 39.5,
-          "priceLabel": "~40 ₽"
-        },
-        {
-          "id": "week1-26-peanuts_g",
-          "productId": "peanuts_g",
-          "title": "Арахис",
-          "amount": 200,
-          "amountLabel": "200 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.399,
-          "cost": 79.8,
-          "priceLabel": "~80 ₽"
-        },
-        {
-          "id": "week1-27-pelmeni_g",
-          "productId": "pelmeni_g",
-          "title": "Пельмени",
-          "amount": 900,
-          "amountLabel": "900 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.299,
-          "cost": 269.1,
-          "priceLabel": "~269 ₽"
-        },
-        {
-          "id": "week1-28-potatoes_g",
-          "productId": "potatoes_g",
-          "title": "Картофель",
-          "amount": 1020,
-          "amountLabel": "1020 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "cost": 39.78,
-          "priceLabel": "~40 ₽"
-        },
-        {
-          "id": "week1-29-rice_g",
-          "productId": "rice_g",
-          "title": "Рис",
-          "amount": 900,
-          "amountLabel": "900 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.079,
-          "cost": 71.1,
-          "priceLabel": "~71 ₽"
-        },
-        {
-          "id": "week1-30-roots_g",
-          "productId": "roots_g",
-          "title": "Морковь/лук/свекла",
-          "amount": 827,
-          "amountLabel": "827 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.049,
-          "cost": 40.52,
-          "priceLabel": "~41 ₽"
-        },
-        {
-          "id": "week1-31-salt_g",
-          "productId": "salt_g",
-          "title": "Соль",
-          "amount": 1000,
-          "amountLabel": "1000 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.019,
-          "cost": 19,
-          "priceLabel": "~19 ₽"
-        },
-        {
-          "id": "week1-32-sausage_g",
-          "productId": "sausage_g",
-          "title": "Сосиски/колбаса",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.49,
-          "cost": 196,
-          "priceLabel": "~196 ₽"
-        },
-        {
-          "id": "week1-33-smetana_g",
-          "productId": "smetana_g",
-          "title": "Сметана",
-          "amount": 330,
-          "amountLabel": "330 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.28,
-          "cost": 92.4,
-          "priceLabel": "~92 ₽"
-        },
-        {
-          "id": "week1-34-sprat_cans",
-          "productId": "sprat_cans",
-          "title": "Килька/шпроты",
-          "amount": 1,
-          "amountLabel": "1 бан.",
-          "unit": "бан.",
-          "storage": "base",
-          "pricePerUnit": 89,
-          "cost": 89,
-          "priceLabel": "~89 ₽"
-        },
-        {
-          "id": "week1-35-stew_cans",
-          "productId": "stew_cans",
-          "title": "Тушёнка",
-          "amount": 3,
-          "amountLabel": "3 бан.",
-          "unit": "бан.",
-          "storage": "base",
-          "pricePerUnit": 159,
-          "cost": 477,
-          "priceLabel": "~477 ₽"
-        },
-        {
-          "id": "week1-36-sushki_g",
-          "productId": "sushki_g",
-          "title": "Сушки",
-          "amount": 200,
-          "amountLabel": "200 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.25,
-          "cost": 50,
-          "priceLabel": "~50 ₽"
-        },
-        {
-          "id": "week1-37-tea_g",
-          "productId": "tea_g",
-          "title": "Чай",
-          "amount": 100,
-          "amountLabel": "100 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.8,
-          "cost": 80,
-          "priceLabel": "~80 ₽"
-        },
-        {
-          "id": "week1-38-tomato_paste_g",
-          "productId": "tomato_paste_g",
-          "title": "Томатная паста",
-          "amount": 140,
-          "amountLabel": "140 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.2,
-          "cost": 28,
-          "priceLabel": "~28 ₽"
-        },
-        {
-          "id": "week1-39-tvorog_g",
-          "productId": "tvorog_g",
-          "title": "Творог",
-          "amount": 720,
-          "amountLabel": "720 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.45,
-          "cost": 324,
-          "priceLabel": "~324 ₽"
-        }
-      ],
-      "totalCost": 4865.7,
-      "totalCostLabel": "~4866 ₽",
-      "box": {
-        "id": "week1",
-        "title": "Заказ week1",
-        "orderDay": 0,
-        "availableDay": 1,
-        "itemCount": 39,
-        "totalCost": 4865.7,
-        "totalCostLabel": "~4866 ₽"
       }
     },
     {
@@ -541,45 +55,7 @@
       "orderDay": 3,
       "availableDay": 4,
       "items": {
-        "herbs_g": 30,
-        "mushrooms_g": 400
-      },
-      "itemBoxes": [
-        {
-          "id": "week1-mid-1-herbs_g",
-          "productId": "herbs_g",
-          "title": "Зелень (укроп/петрушка)",
-          "amount": 30,
-          "amountLabel": "30 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 1,
-          "cost": 30,
-          "priceLabel": "~30 ₽"
-        },
-        {
-          "id": "week1-mid-2-mushrooms_g",
-          "productId": "mushrooms_g",
-          "title": "Шампиньоны",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.29,
-          "cost": 116,
-          "priceLabel": "~116 ₽"
-        }
-      ],
-      "totalCost": 146,
-      "totalCostLabel": "~146 ₽",
-      "box": {
-        "id": "week1-mid",
-        "title": "Докупка week1",
-        "orderDay": 3,
-        "availableDay": 4,
-        "itemCount": 2,
-        "totalCost": 146,
-        "totalCostLabel": "~146 ₽"
+        "mors_ml": 1000
       }
     },
     {
@@ -588,552 +64,33 @@
       "orderDay": 7,
       "availableDay": 8,
       "items": {
-        "apples_g": 541,
+        "apples_g": 306,
         "bananas_pcs": 3,
+        "berries_g": 500,
         "bread_g": 350,
-        "butter_g": 180,
-        "cabbage_g": 357,
-        "cheese_g": 400,
-        "chicken_g": 1102,
-        "coffee_g": 100,
-        "cookies_g": 200,
-        "cream_ml": 330,
-        "cucumber_g": 1000,
-        "cutlets_g": 400,
+        "cabbage_g": 776,
+        "chicken_g": 1235,
         "eggs_pcs": 10,
-        "fish_g": 735,
-        "fishsticks_g": 300,
-        "garlic_g": 50,
-        "herbs_g": 30,
+        "fish_g": 776,
         "honey_g": 350,
         "kefir_ml": 900,
-        "lavash_pcs": 3,
-        "lemon_pcs": 2,
-        "mayo_g": 400,
+        "ketchup_g": 350,
+        "lavash_pcs": 5,
         "milk_ml": 930,
-        "mushrooms_g": 400,
-        "noodle_g": 90,
-        "nuggets_g": 300,
-        "oats_g": 800,
-        "pancakes_g": 500,
+        "mince_g": 184,
+        "onion_g": 1000,
+        "pancakes_g": 1000,
         "pasta_g": 500,
-        "peas_cans": 1,
-        "pepper_g": 1000,
-        "potatoes_g": 765,
-        "roots_g": 857,
-        "saury_cans": 3,
-        "sausage_g": 400,
+        "pelmeni_g": 900,
+        "potatoes_g": 204,
+        "rice_g": 900,
+        "roots_g": 771,
+        "saury_cans": 2,
         "smetana_g": 330,
-        "stew_cans": 2,
         "sushki_g": 200,
-        "tomato_paste_g": 280,
+        "tea_g": 100,
         "tvorog_g": 1080,
         "zephyr_g": 150
-      },
-      "itemBoxes": [
-        {
-          "id": "week2-1-apples_g",
-          "productId": "apples_g",
-          "title": "Яблоки",
-          "amount": 541,
-          "amountLabel": "541 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.089,
-          "cost": 48.15,
-          "priceLabel": "~48 ₽"
-        },
-        {
-          "id": "week2-2-bananas_pcs",
-          "productId": "bananas_pcs",
-          "title": "Бананы",
-          "amount": 3,
-          "amountLabel": "3 шт",
-          "unit": "шт",
-          "storage": "fridge",
-          "pricePerUnit": 11,
-          "cost": 33,
-          "priceLabel": "~33 ₽"
-        },
-        {
-          "id": "week2-3-bread_g",
-          "productId": "bread_g",
-          "title": "Хлеб",
-          "amount": 350,
-          "amountLabel": "350 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.13,
-          "cost": 45.5,
-          "priceLabel": "~46 ₽"
-        },
-        {
-          "id": "week2-4-butter_g",
-          "productId": "butter_g",
-          "title": "Масло сливочное",
-          "amount": 180,
-          "amountLabel": "180 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.83,
-          "cost": 149.4,
-          "priceLabel": "~149 ₽"
-        },
-        {
-          "id": "week2-5-cabbage_g",
-          "productId": "cabbage_g",
-          "title": "Капуста/огурец",
-          "amount": 357,
-          "amountLabel": "357 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "cost": 13.92,
-          "priceLabel": "~14 ₽"
-        },
-        {
-          "id": "week2-6-cheese_g",
-          "productId": "cheese_g",
-          "title": "Сыр",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.75,
-          "cost": 300,
-          "priceLabel": "~300 ₽"
-        },
-        {
-          "id": "week2-7-chicken_g",
-          "productId": "chicken_g",
-          "title": "Курица",
-          "amount": 1102,
-          "amountLabel": "1102 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.189,
-          "cost": 208.28,
-          "priceLabel": "~208 ₽"
-        },
-        {
-          "id": "week2-8-coffee_g",
-          "productId": "coffee_g",
-          "title": "Кофе",
-          "amount": 100,
-          "amountLabel": "100 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 2.5,
-          "cost": 250,
-          "priceLabel": "~250 ₽"
-        },
-        {
-          "id": "week2-9-cookies_g",
-          "productId": "cookies_g",
-          "title": "Печенье",
-          "amount": 200,
-          "amountLabel": "200 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.25,
-          "cost": 50,
-          "priceLabel": "~50 ₽"
-        },
-        {
-          "id": "week2-10-cream_ml",
-          "productId": "cream_ml",
-          "title": "Сливки",
-          "amount": 330,
-          "amountLabel": "330 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.2,
-          "cost": 66,
-          "priceLabel": "~66 ₽"
-        },
-        {
-          "id": "week2-11-cucumber_g",
-          "productId": "cucumber_g",
-          "title": "Огурцы",
-          "amount": 1000,
-          "amountLabel": "1000 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.099,
-          "cost": 99,
-          "priceLabel": "~99 ₽"
-        },
-        {
-          "id": "week2-12-cutlets_g",
-          "productId": "cutlets_g",
-          "title": "Котлеты",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.349,
-          "cost": 139.6,
-          "priceLabel": "~140 ₽"
-        },
-        {
-          "id": "week2-13-eggs_pcs",
-          "productId": "eggs_pcs",
-          "title": "Яйца",
-          "amount": 10,
-          "amountLabel": "10 шт",
-          "unit": "шт",
-          "storage": "fridge",
-          "pricePerUnit": 10,
-          "cost": 100,
-          "priceLabel": "~100 ₽"
-        },
-        {
-          "id": "week2-14-fish_g",
-          "productId": "fish_g",
-          "title": "Минтай/хек",
-          "amount": 735,
-          "amountLabel": "735 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.249,
-          "cost": 183.02,
-          "priceLabel": "~183 ₽"
-        },
-        {
-          "id": "week2-15-fishsticks_g",
-          "productId": "fishsticks_g",
-          "title": "Рыбные палочки",
-          "amount": 300,
-          "amountLabel": "300 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.399,
-          "cost": 119.7,
-          "priceLabel": "~120 ₽"
-        },
-        {
-          "id": "week2-16-garlic_g",
-          "productId": "garlic_g",
-          "title": "Чеснок",
-          "amount": 50,
-          "amountLabel": "50 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 1,
-          "cost": 50,
-          "priceLabel": "~50 ₽"
-        },
-        {
-          "id": "week2-17-herbs_g",
-          "productId": "herbs_g",
-          "title": "Зелень (укроп/петрушка)",
-          "amount": 30,
-          "amountLabel": "30 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 1,
-          "cost": 30,
-          "priceLabel": "~30 ₽"
-        },
-        {
-          "id": "week2-18-honey_g",
-          "productId": "honey_g",
-          "title": "Мёд",
-          "amount": 350,
-          "amountLabel": "350 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.69,
-          "cost": 241.5,
-          "priceLabel": "~242 ₽"
-        },
-        {
-          "id": "week2-19-kefir_ml",
-          "productId": "kefir_ml",
-          "title": "Кефир",
-          "amount": 900,
-          "amountLabel": "900 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.069,
-          "cost": 62.1,
-          "priceLabel": "~62 ₽"
-        },
-        {
-          "id": "week2-20-lavash_pcs",
-          "productId": "lavash_pcs",
-          "title": "Лаваш",
-          "amount": 3,
-          "amountLabel": "3 шт",
-          "unit": "шт",
-          "storage": "freezer",
-          "pricePerUnit": 49,
-          "cost": 147,
-          "priceLabel": "~147 ₽"
-        },
-        {
-          "id": "week2-21-lemon_pcs",
-          "productId": "lemon_pcs",
-          "title": "Лимон",
-          "amount": 2,
-          "amountLabel": "2 шт",
-          "unit": "шт",
-          "storage": "fridge",
-          "pricePerUnit": 19,
-          "cost": 38,
-          "priceLabel": "~38 ₽"
-        },
-        {
-          "id": "week2-22-mayo_g",
-          "productId": "mayo_g",
-          "title": "Майонез",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.29,
-          "cost": 116,
-          "priceLabel": "~116 ₽"
-        },
-        {
-          "id": "week2-23-milk_ml",
-          "productId": "milk_ml",
-          "title": "Молоко",
-          "amount": 930,
-          "amountLabel": "930 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.072,
-          "cost": 66.96,
-          "priceLabel": "~67 ₽"
-        },
-        {
-          "id": "week2-24-mushrooms_g",
-          "productId": "mushrooms_g",
-          "title": "Шампиньоны",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.29,
-          "cost": 116,
-          "priceLabel": "~116 ₽"
-        },
-        {
-          "id": "week2-25-noodle_g",
-          "productId": "noodle_g",
-          "title": "Лапша быстр. (доширак)",
-          "amount": 90,
-          "amountLabel": "90 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.444,
-          "cost": 39.96,
-          "priceLabel": "~40 ₽"
-        },
-        {
-          "id": "week2-26-nuggets_g",
-          "productId": "nuggets_g",
-          "title": "Наггетсы",
-          "amount": 300,
-          "amountLabel": "300 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.449,
-          "cost": 134.7,
-          "priceLabel": "~135 ₽"
-        },
-        {
-          "id": "week2-27-oats_g",
-          "productId": "oats_g",
-          "title": "Овсянка",
-          "amount": 800,
-          "amountLabel": "800 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.059,
-          "cost": 47.2,
-          "priceLabel": "~47 ₽"
-        },
-        {
-          "id": "week2-28-pancakes_g",
-          "productId": "pancakes_g",
-          "title": "Блинчики замор.",
-          "amount": 500,
-          "amountLabel": "500 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.298,
-          "cost": 149,
-          "priceLabel": "~149 ₽"
-        },
-        {
-          "id": "week2-29-pasta_g",
-          "productId": "pasta_g",
-          "title": "Макароны/лапша",
-          "amount": 500,
-          "amountLabel": "500 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.079,
-          "cost": 39.5,
-          "priceLabel": "~40 ₽"
-        },
-        {
-          "id": "week2-30-peas_cans",
-          "productId": "peas_cans",
-          "title": "Горошек зелёный",
-          "amount": 1,
-          "amountLabel": "1 бан.",
-          "unit": "бан.",
-          "storage": "base",
-          "pricePerUnit": 79,
-          "cost": 79,
-          "priceLabel": "~79 ₽"
-        },
-        {
-          "id": "week2-31-pepper_g",
-          "productId": "pepper_g",
-          "title": "Перец болгарский",
-          "amount": 1000,
-          "amountLabel": "1000 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.199,
-          "cost": 199,
-          "priceLabel": "~199 ₽"
-        },
-        {
-          "id": "week2-32-potatoes_g",
-          "productId": "potatoes_g",
-          "title": "Картофель",
-          "amount": 765,
-          "amountLabel": "765 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "cost": 29.84,
-          "priceLabel": "~30 ₽"
-        },
-        {
-          "id": "week2-33-roots_g",
-          "productId": "roots_g",
-          "title": "Морковь/лук/свекла",
-          "amount": 857,
-          "amountLabel": "857 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.049,
-          "cost": 41.99,
-          "priceLabel": "~42 ₽"
-        },
-        {
-          "id": "week2-34-saury_cans",
-          "productId": "saury_cans",
-          "title": "Сайра консервы",
-          "amount": 3,
-          "amountLabel": "3 бан.",
-          "unit": "бан.",
-          "storage": "base",
-          "pricePerUnit": 99,
-          "cost": 297,
-          "priceLabel": "~297 ₽"
-        },
-        {
-          "id": "week2-35-sausage_g",
-          "productId": "sausage_g",
-          "title": "Сосиски/колбаса",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.49,
-          "cost": 196,
-          "priceLabel": "~196 ₽"
-        },
-        {
-          "id": "week2-36-smetana_g",
-          "productId": "smetana_g",
-          "title": "Сметана",
-          "amount": 330,
-          "amountLabel": "330 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.28,
-          "cost": 92.4,
-          "priceLabel": "~92 ₽"
-        },
-        {
-          "id": "week2-37-stew_cans",
-          "productId": "stew_cans",
-          "title": "Тушёнка",
-          "amount": 2,
-          "amountLabel": "2 бан.",
-          "unit": "бан.",
-          "storage": "base",
-          "pricePerUnit": 159,
-          "cost": 318,
-          "priceLabel": "~318 ₽"
-        },
-        {
-          "id": "week2-38-sushki_g",
-          "productId": "sushki_g",
-          "title": "Сушки",
-          "amount": 200,
-          "amountLabel": "200 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.25,
-          "cost": 50,
-          "priceLabel": "~50 ₽"
-        },
-        {
-          "id": "week2-39-tomato_paste_g",
-          "productId": "tomato_paste_g",
-          "title": "Томатная паста",
-          "amount": 280,
-          "amountLabel": "280 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.2,
-          "cost": 56,
-          "priceLabel": "~56 ₽"
-        },
-        {
-          "id": "week2-40-tvorog_g",
-          "productId": "tvorog_g",
-          "title": "Творог",
-          "amount": 1080,
-          "amountLabel": "1080 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.45,
-          "cost": 486,
-          "priceLabel": "~486 ₽"
-        },
-        {
-          "id": "week2-41-zephyr_g",
-          "productId": "zephyr_g",
-          "title": "Зефир/пастила",
-          "amount": 150,
-          "amountLabel": "150 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.59,
-          "cost": 88.5,
-          "priceLabel": "~89 ₽"
-        }
-      ],
-      "totalCost": 5017.22,
-      "totalCostLabel": "~5017 ₽",
-      "box": {
-        "id": "week2",
-        "title": "Заказ week2",
-        "orderDay": 7,
-        "availableDay": 8,
-        "itemCount": 41,
-        "totalCost": 5017.22,
-        "totalCostLabel": "~5017 ₽"
       }
     },
     {
@@ -1142,32 +99,7 @@
       "orderDay": 10,
       "availableDay": 11,
       "items": {
-        "herbs_g": 60
-      },
-      "itemBoxes": [
-        {
-          "id": "week2-mid-1-herbs_g",
-          "productId": "herbs_g",
-          "title": "Зелень (укроп/петрушка)",
-          "amount": 60,
-          "amountLabel": "60 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 1,
-          "cost": 60,
-          "priceLabel": "~60 ₽"
-        }
-      ],
-      "totalCost": 60,
-      "totalCostLabel": "~60 ₽",
-      "box": {
-        "id": "week2-mid",
-        "title": "Докупка week2",
-        "orderDay": 10,
-        "availableDay": 11,
-        "itemCount": 1,
-        "totalCost": 60,
-        "totalCostLabel": "~60 ₽"
+        "herbs_g": 30
       }
     },
     {
@@ -1176,422 +108,31 @@
       "orderDay": 14,
       "availableDay": 15,
       "items": {
-        "apples_g": 755,
+        "apples_g": 337,
         "bananas_pcs": 3,
         "beans_cans": 3,
-        "beef_g": 255,
-        "berries_g": 500,
-        "bread_g": 350,
+        "bread_g": 700,
         "buckwheat_g": 800,
-        "butter_g": 180,
-        "cabbage_g": 459,
-        "candy_g": 300,
-        "cheese_g": 400,
-        "chicken_g": 1243,
-        "eggs_pcs": 10,
-        "fish_g": 980,
-        "frozenveg_g": 400,
+        "cabbage_g": 1082,
+        "chicken_g": 1020,
+        "chocolate_g": 100,
+        "cucumber_g": 1000,
+        "fish_g": 572,
+        "fishsticks_g": 300,
+        "herbs_g": 30,
         "kefir_ml": 900,
-        "lavash_pcs": 2,
+        "lavash_pcs": 4,
         "milk_ml": 930,
-        "mince_g": 46,
-        "noodle_g": 90,
-        "nuggets_g": 300,
+        "mince_g": 551,
         "pancakes_g": 500,
-        "potatoes_g": 1237,
-        "rice_g": 900,
-        "roots_g": 1502,
-        "salmon_cans": 2,
-        "sausage_g": 400,
-        "smetana_g": 330,
-        "sugar_g": 1000,
+        "potatoes_g": 1683,
+        "roots_g": 1361,
+        "saury_cans": 2,
+        "smetana_g": 660,
+        "tomato_g": 1000,
         "tomato_paste_g": 280,
-        "tvorog_g": 900
-      },
-      "itemBoxes": [
-        {
-          "id": "week3-1-apples_g",
-          "productId": "apples_g",
-          "title": "Яблоки",
-          "amount": 755,
-          "amountLabel": "755 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.089,
-          "cost": 67.19,
-          "priceLabel": "~67 ₽"
-        },
-        {
-          "id": "week3-2-bananas_pcs",
-          "productId": "bananas_pcs",
-          "title": "Бананы",
-          "amount": 3,
-          "amountLabel": "3 шт",
-          "unit": "шт",
-          "storage": "fridge",
-          "pricePerUnit": 11,
-          "cost": 33,
-          "priceLabel": "~33 ₽"
-        },
-        {
-          "id": "week3-3-beans_cans",
-          "productId": "beans_cans",
-          "title": "Фасоль",
-          "amount": 3,
-          "amountLabel": "3 бан.",
-          "unit": "бан.",
-          "storage": "base",
-          "pricePerUnit": 89,
-          "cost": 267,
-          "priceLabel": "~267 ₽"
-        },
-        {
-          "id": "week3-4-beef_g",
-          "productId": "beef_g",
-          "title": "Говядина",
-          "amount": 255,
-          "amountLabel": "255 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.499,
-          "cost": 127.25,
-          "priceLabel": "~127 ₽"
-        },
-        {
-          "id": "week3-5-berries_g",
-          "productId": "berries_g",
-          "title": "Ягоды замор.",
-          "amount": 500,
-          "amountLabel": "500 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.298,
-          "cost": 149,
-          "priceLabel": "~149 ₽"
-        },
-        {
-          "id": "week3-6-bread_g",
-          "productId": "bread_g",
-          "title": "Хлеб",
-          "amount": 350,
-          "amountLabel": "350 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.13,
-          "cost": 45.5,
-          "priceLabel": "~46 ₽"
-        },
-        {
-          "id": "week3-7-buckwheat_g",
-          "productId": "buckwheat_g",
-          "title": "Гречка",
-          "amount": 800,
-          "amountLabel": "800 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.089,
-          "cost": 71.2,
-          "priceLabel": "~71 ₽"
-        },
-        {
-          "id": "week3-8-butter_g",
-          "productId": "butter_g",
-          "title": "Масло сливочное",
-          "amount": 180,
-          "amountLabel": "180 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.83,
-          "cost": 149.4,
-          "priceLabel": "~149 ₽"
-        },
-        {
-          "id": "week3-9-cabbage_g",
-          "productId": "cabbage_g",
-          "title": "Капуста/огурец",
-          "amount": 459,
-          "amountLabel": "459 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "cost": 17.9,
-          "priceLabel": "~18 ₽"
-        },
-        {
-          "id": "week3-10-candy_g",
-          "productId": "candy_g",
-          "title": "Конфеты",
-          "amount": 300,
-          "amountLabel": "300 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.495,
-          "cost": 148.5,
-          "priceLabel": "~149 ₽"
-        },
-        {
-          "id": "week3-11-cheese_g",
-          "productId": "cheese_g",
-          "title": "Сыр",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.75,
-          "cost": 300,
-          "priceLabel": "~300 ₽"
-        },
-        {
-          "id": "week3-12-chicken_g",
-          "productId": "chicken_g",
-          "title": "Курица",
-          "amount": 1243,
-          "amountLabel": "1243 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.189,
-          "cost": 234.93,
-          "priceLabel": "~235 ₽"
-        },
-        {
-          "id": "week3-13-eggs_pcs",
-          "productId": "eggs_pcs",
-          "title": "Яйца",
-          "amount": 10,
-          "amountLabel": "10 шт",
-          "unit": "шт",
-          "storage": "fridge",
-          "pricePerUnit": 10,
-          "cost": 100,
-          "priceLabel": "~100 ₽"
-        },
-        {
-          "id": "week3-14-fish_g",
-          "productId": "fish_g",
-          "title": "Минтай/хек",
-          "amount": 980,
-          "amountLabel": "980 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.249,
-          "cost": 244.02,
-          "priceLabel": "~244 ₽"
-        },
-        {
-          "id": "week3-15-frozenveg_g",
-          "productId": "frozenveg_g",
-          "title": "Овощная смесь",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.149,
-          "cost": 59.6,
-          "priceLabel": "~60 ₽"
-        },
-        {
-          "id": "week3-16-kefir_ml",
-          "productId": "kefir_ml",
-          "title": "Кефир",
-          "amount": 900,
-          "amountLabel": "900 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.069,
-          "cost": 62.1,
-          "priceLabel": "~62 ₽"
-        },
-        {
-          "id": "week3-17-lavash_pcs",
-          "productId": "lavash_pcs",
-          "title": "Лаваш",
-          "amount": 2,
-          "amountLabel": "2 шт",
-          "unit": "шт",
-          "storage": "freezer",
-          "pricePerUnit": 49,
-          "cost": 98,
-          "priceLabel": "~98 ₽"
-        },
-        {
-          "id": "week3-18-milk_ml",
-          "productId": "milk_ml",
-          "title": "Молоко",
-          "amount": 930,
-          "amountLabel": "930 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.072,
-          "cost": 66.96,
-          "priceLabel": "~67 ₽"
-        },
-        {
-          "id": "week3-19-mince_g",
-          "productId": "mince_g",
-          "title": "Фарш",
-          "amount": 46,
-          "amountLabel": "46 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.349,
-          "cost": 16.05,
-          "priceLabel": "~16 ₽"
-        },
-        {
-          "id": "week3-20-noodle_g",
-          "productId": "noodle_g",
-          "title": "Лапша быстр. (доширак)",
-          "amount": 90,
-          "amountLabel": "90 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.444,
-          "cost": 39.96,
-          "priceLabel": "~40 ₽"
-        },
-        {
-          "id": "week3-21-nuggets_g",
-          "productId": "nuggets_g",
-          "title": "Наггетсы",
-          "amount": 300,
-          "amountLabel": "300 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.449,
-          "cost": 134.7,
-          "priceLabel": "~135 ₽"
-        },
-        {
-          "id": "week3-22-pancakes_g",
-          "productId": "pancakes_g",
-          "title": "Блинчики замор.",
-          "amount": 500,
-          "amountLabel": "500 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.298,
-          "cost": 149,
-          "priceLabel": "~149 ₽"
-        },
-        {
-          "id": "week3-23-potatoes_g",
-          "productId": "potatoes_g",
-          "title": "Картофель",
-          "amount": 1237,
-          "amountLabel": "1237 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "cost": 48.24,
-          "priceLabel": "~48 ₽"
-        },
-        {
-          "id": "week3-24-rice_g",
-          "productId": "rice_g",
-          "title": "Рис",
-          "amount": 900,
-          "amountLabel": "900 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.079,
-          "cost": 71.1,
-          "priceLabel": "~71 ₽"
-        },
-        {
-          "id": "week3-25-roots_g",
-          "productId": "roots_g",
-          "title": "Морковь/лук/свекла",
-          "amount": 1502,
-          "amountLabel": "1502 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.049,
-          "cost": 73.6,
-          "priceLabel": "~74 ₽"
-        },
-        {
-          "id": "week3-26-salmon_cans",
-          "productId": "salmon_cans",
-          "title": "Горбуша консервы",
-          "amount": 2,
-          "amountLabel": "2 бан.",
-          "unit": "бан.",
-          "storage": "base",
-          "pricePerUnit": 129,
-          "cost": 258,
-          "priceLabel": "~258 ₽"
-        },
-        {
-          "id": "week3-27-sausage_g",
-          "productId": "sausage_g",
-          "title": "Сосиски/колбаса",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.49,
-          "cost": 196,
-          "priceLabel": "~196 ₽"
-        },
-        {
-          "id": "week3-28-smetana_g",
-          "productId": "smetana_g",
-          "title": "Сметана",
-          "amount": 330,
-          "amountLabel": "330 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.28,
-          "cost": 92.4,
-          "priceLabel": "~92 ₽"
-        },
-        {
-          "id": "week3-29-sugar_g",
-          "productId": "sugar_g",
-          "title": "Сахар",
-          "amount": 1000,
-          "amountLabel": "1000 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.06,
-          "cost": 60,
-          "priceLabel": "~60 ₽"
-        },
-        {
-          "id": "week3-30-tomato_paste_g",
-          "productId": "tomato_paste_g",
-          "title": "Томатная паста",
-          "amount": 280,
-          "amountLabel": "280 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.2,
-          "cost": 56,
-          "priceLabel": "~56 ₽"
-        },
-        {
-          "id": "week3-31-tvorog_g",
-          "productId": "tvorog_g",
-          "title": "Творог",
-          "amount": 900,
-          "amountLabel": "900 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.45,
-          "cost": 405,
-          "priceLabel": "~405 ₽"
-        }
-      ],
-      "totalCost": 3841.6,
-      "totalCostLabel": "~3842 ₽",
-      "box": {
-        "id": "week3",
-        "title": "Заказ week3",
-        "orderDay": 14,
-        "availableDay": 15,
-        "itemCount": 31,
-        "totalCost": 3841.6,
-        "totalCostLabel": "~3842 ₽"
+        "turkey_g": 1000,
+        "tvorog_g": 540
       }
     },
     {
@@ -1600,32 +141,8 @@
       "orderDay": 17,
       "availableDay": 18,
       "items": {
-        "mushrooms_g": 400
-      },
-      "itemBoxes": [
-        {
-          "id": "week3-mid-1-mushrooms_g",
-          "productId": "mushrooms_g",
-          "title": "Шампиньоны",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.29,
-          "cost": 116,
-          "priceLabel": "~116 ₽"
-        }
-      ],
-      "totalCost": 116,
-      "totalCostLabel": "~116 ₽",
-      "box": {
-        "id": "week3-mid",
-        "title": "Докупка week3",
-        "orderDay": 17,
-        "availableDay": 18,
-        "itemCount": 1,
-        "totalCost": 116,
-        "totalCostLabel": "~116 ₽"
+        "bananas_pcs": 2,
+        "herbs_g": 60
       }
     },
     {
@@ -1634,292 +151,36 @@
       "orderDay": 21,
       "availableDay": 22,
       "items": {
-        "apples_g": 779,
-        "bananas_pcs": 2,
-        "bread_g": 700,
-        "cabbage_g": 929,
-        "chicken_g": 1003,
+        "apples_g": 545,
+        "bread_g": 350,
+        "butter_g": 180,
+        "cabbage_g": 918,
+        "chicken_g": 1102,
+        "coffee_g": 100,
+        "cucumber_g": 1000,
+        "cutlets_g": 400,
         "eggs_pcs": 10,
-        "fish_g": 1235,
-        "frozenveg_g": 1200,
+        "fish_g": 592,
+        "fishsticks_g": 300,
+        "frozenveg_g": 400,
+        "juice_ml": 1000,
         "kefir_ml": 900,
-        "lavash_pcs": 6,
-        "milk_ml": 1860,
+        "lavash_pcs": 5,
+        "milk_ml": 930,
         "mince_g": 184,
-        "potatoes_g": 215,
-        "roots_g": 980,
+        "nuggets_g": 300,
+        "oats_g": 800,
+        "pancakes_g": 500,
+        "pelmeni_g": 900,
+        "potatoes_g": 255,
+        "rice_g": 900,
+        "roots_g": 694,
+        "saury_cans": 2,
         "sausage_g": 400,
         "smetana_g": 330,
-        "sushki_g": 200,
         "tomato_g": 1000,
         "tomato_paste_g": 140,
-        "tvorog_g": 1080,
-        "vareniki_g": 600
-      },
-      "itemBoxes": [
-        {
-          "id": "week4-1-apples_g",
-          "productId": "apples_g",
-          "title": "Яблоки",
-          "amount": 779,
-          "amountLabel": "779 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.089,
-          "cost": 69.33,
-          "priceLabel": "~69 ₽"
-        },
-        {
-          "id": "week4-2-bananas_pcs",
-          "productId": "bananas_pcs",
-          "title": "Бананы",
-          "amount": 2,
-          "amountLabel": "2 шт",
-          "unit": "шт",
-          "storage": "fridge",
-          "pricePerUnit": 11,
-          "cost": 22,
-          "priceLabel": "~22 ₽"
-        },
-        {
-          "id": "week4-3-bread_g",
-          "productId": "bread_g",
-          "title": "Хлеб",
-          "amount": 700,
-          "amountLabel": "700 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.13,
-          "cost": 91,
-          "priceLabel": "~91 ₽"
-        },
-        {
-          "id": "week4-4-cabbage_g",
-          "productId": "cabbage_g",
-          "title": "Капуста/огурец",
-          "amount": 929,
-          "amountLabel": "929 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "cost": 36.23,
-          "priceLabel": "~36 ₽"
-        },
-        {
-          "id": "week4-5-chicken_g",
-          "productId": "chicken_g",
-          "title": "Курица",
-          "amount": 1003,
-          "amountLabel": "1003 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.189,
-          "cost": 189.57,
-          "priceLabel": "~190 ₽"
-        },
-        {
-          "id": "week4-6-eggs_pcs",
-          "productId": "eggs_pcs",
-          "title": "Яйца",
-          "amount": 10,
-          "amountLabel": "10 шт",
-          "unit": "шт",
-          "storage": "fridge",
-          "pricePerUnit": 10,
-          "cost": 100,
-          "priceLabel": "~100 ₽"
-        },
-        {
-          "id": "week4-7-fish_g",
-          "productId": "fish_g",
-          "title": "Минтай/хек",
-          "amount": 1235,
-          "amountLabel": "1235 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.249,
-          "cost": 307.52,
-          "priceLabel": "~308 ₽"
-        },
-        {
-          "id": "week4-8-frozenveg_g",
-          "productId": "frozenveg_g",
-          "title": "Овощная смесь",
-          "amount": 1200,
-          "amountLabel": "1200 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.149,
-          "cost": 178.8,
-          "priceLabel": "~179 ₽"
-        },
-        {
-          "id": "week4-9-kefir_ml",
-          "productId": "kefir_ml",
-          "title": "Кефир",
-          "amount": 900,
-          "amountLabel": "900 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.069,
-          "cost": 62.1,
-          "priceLabel": "~62 ₽"
-        },
-        {
-          "id": "week4-10-lavash_pcs",
-          "productId": "lavash_pcs",
-          "title": "Лаваш",
-          "amount": 6,
-          "amountLabel": "6 шт",
-          "unit": "шт",
-          "storage": "freezer",
-          "pricePerUnit": 49,
-          "cost": 294,
-          "priceLabel": "~294 ₽"
-        },
-        {
-          "id": "week4-11-milk_ml",
-          "productId": "milk_ml",
-          "title": "Молоко",
-          "amount": 1860,
-          "amountLabel": "1860 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.072,
-          "cost": 133.92,
-          "priceLabel": "~134 ₽"
-        },
-        {
-          "id": "week4-12-mince_g",
-          "productId": "mince_g",
-          "title": "Фарш",
-          "amount": 184,
-          "amountLabel": "184 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.349,
-          "cost": 64.22,
-          "priceLabel": "~64 ₽"
-        },
-        {
-          "id": "week4-13-potatoes_g",
-          "productId": "potatoes_g",
-          "title": "Картофель",
-          "amount": 215,
-          "amountLabel": "215 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "cost": 8.39,
-          "priceLabel": "~8 ₽"
-        },
-        {
-          "id": "week4-14-roots_g",
-          "productId": "roots_g",
-          "title": "Морковь/лук/свекла",
-          "amount": 980,
-          "amountLabel": "980 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.049,
-          "cost": 48.02,
-          "priceLabel": "~48 ₽"
-        },
-        {
-          "id": "week4-15-sausage_g",
-          "productId": "sausage_g",
-          "title": "Сосиски/колбаса",
-          "amount": 400,
-          "amountLabel": "400 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.49,
-          "cost": 196,
-          "priceLabel": "~196 ₽"
-        },
-        {
-          "id": "week4-16-smetana_g",
-          "productId": "smetana_g",
-          "title": "Сметана",
-          "amount": 330,
-          "amountLabel": "330 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.28,
-          "cost": 92.4,
-          "priceLabel": "~92 ₽"
-        },
-        {
-          "id": "week4-17-sushki_g",
-          "productId": "sushki_g",
-          "title": "Сушки",
-          "amount": 200,
-          "amountLabel": "200 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.25,
-          "cost": 50,
-          "priceLabel": "~50 ₽"
-        },
-        {
-          "id": "week4-18-tomato_g",
-          "productId": "tomato_g",
-          "title": "Помидоры",
-          "amount": 1000,
-          "amountLabel": "1000 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.129,
-          "cost": 129,
-          "priceLabel": "~129 ₽"
-        },
-        {
-          "id": "week4-19-tomato_paste_g",
-          "productId": "tomato_paste_g",
-          "title": "Томатная паста",
-          "amount": 140,
-          "amountLabel": "140 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.2,
-          "cost": 28,
-          "priceLabel": "~28 ₽"
-        },
-        {
-          "id": "week4-20-tvorog_g",
-          "productId": "tvorog_g",
-          "title": "Творог",
-          "amount": 1080,
-          "amountLabel": "1080 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.45,
-          "cost": 486,
-          "priceLabel": "~486 ₽"
-        },
-        {
-          "id": "week4-21-vareniki_g",
-          "productId": "vareniki_g",
-          "title": "Вареники",
-          "amount": 600,
-          "amountLabel": "600 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.299,
-          "cost": 179.4,
-          "priceLabel": "~179 ₽"
-        }
-      ],
-      "totalCost": 2765.9,
-      "totalCostLabel": "~2766 ₽",
-      "box": {
-        "id": "week4",
-        "title": "Заказ week4",
-        "orderDay": 21,
-        "availableDay": 22,
-        "itemCount": 21,
-        "totalCost": 2765.9,
-        "totalCostLabel": "~2766 ₽"
+        "tvorog_g": 540
       }
     },
     {
@@ -1928,32 +189,9 @@
       "orderDay": 24,
       "availableDay": 25,
       "items": {
-        "bananas_pcs": 3
-      },
-      "itemBoxes": [
-        {
-          "id": "week4-mid-1-bananas_pcs",
-          "productId": "bananas_pcs",
-          "title": "Бананы",
-          "amount": 3,
-          "amountLabel": "3 шт",
-          "unit": "шт",
-          "storage": "fridge",
-          "pricePerUnit": 11,
-          "cost": 33,
-          "priceLabel": "~33 ₽"
-        }
-      ],
-      "totalCost": 33,
-      "totalCostLabel": "~33 ₽",
-      "box": {
-        "id": "week4-mid",
-        "title": "Докупка week4",
-        "orderDay": 24,
-        "availableDay": 25,
-        "itemCount": 1,
-        "totalCost": 33,
-        "totalCostLabel": "~33 ₽"
+        "bananas_pcs": 1,
+        "herbs_g": 30,
+        "juice_ml": 1000
       }
     },
     {
@@ -1962,696 +200,41 @@
       "orderDay": 28,
       "availableDay": 29,
       "items": {
-        "baking_g": 50,
+        "apples_g": 184,
+        "bananas_pcs": 2,
         "bread_g": 350,
-        "cabbage_g": 470,
-        "chicken_g": 368,
-        "fishsticks_g": 300,
+        "cabbage_g": 816,
+        "fish_g": 612,
+        "kefir_ml": 900,
+        "lavash_pcs": 3,
         "milk_ml": 930,
-        "pelmeni_g": 900,
-        "potatoes_g": 306,
-        "roots_g": 337,
+        "pancakes_g": 500,
+        "potatoes_g": 510,
+        "roots_g": 309,
         "smetana_g": 330,
-        "tvorog_g": 720
-      },
-      "itemBoxes": [
-        {
-          "id": "topup-1-baking_g",
-          "productId": "baking_g",
-          "title": "Сода/разрыхлитель",
-          "amount": 50,
-          "amountLabel": "50 г",
-          "unit": "г",
-          "storage": "base",
-          "pricePerUnit": 0.58,
-          "cost": 29,
-          "priceLabel": "~29 ₽"
-        },
-        {
-          "id": "topup-2-bread_g",
-          "productId": "bread_g",
-          "title": "Хлеб",
-          "amount": 350,
-          "amountLabel": "350 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.13,
-          "cost": 45.5,
-          "priceLabel": "~46 ₽"
-        },
-        {
-          "id": "topup-3-cabbage_g",
-          "productId": "cabbage_g",
-          "title": "Капуста/огурец",
-          "amount": 470,
-          "amountLabel": "470 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "cost": 18.33,
-          "priceLabel": "~18 ₽"
-        },
-        {
-          "id": "topup-4-chicken_g",
-          "productId": "chicken_g",
-          "title": "Курица",
-          "amount": 368,
-          "amountLabel": "368 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.189,
-          "cost": 69.55,
-          "priceLabel": "~70 ₽"
-        },
-        {
-          "id": "topup-5-fishsticks_g",
-          "productId": "fishsticks_g",
-          "title": "Рыбные палочки",
-          "amount": 300,
-          "amountLabel": "300 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.399,
-          "cost": 119.7,
-          "priceLabel": "~120 ₽"
-        },
-        {
-          "id": "topup-6-milk_ml",
-          "productId": "milk_ml",
-          "title": "Молоко",
-          "amount": 930,
-          "amountLabel": "930 мл",
-          "unit": "мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.072,
-          "cost": 66.96,
-          "priceLabel": "~67 ₽"
-        },
-        {
-          "id": "topup-7-pelmeni_g",
-          "productId": "pelmeni_g",
-          "title": "Пельмени",
-          "amount": 900,
-          "amountLabel": "900 г",
-          "unit": "г",
-          "storage": "freezer",
-          "pricePerUnit": 0.299,
-          "cost": 269.1,
-          "priceLabel": "~269 ₽"
-        },
-        {
-          "id": "topup-8-potatoes_g",
-          "productId": "potatoes_g",
-          "title": "Картофель",
-          "amount": 306,
-          "amountLabel": "306 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "cost": 11.93,
-          "priceLabel": "~12 ₽"
-        },
-        {
-          "id": "topup-9-roots_g",
-          "productId": "roots_g",
-          "title": "Морковь/лук/свекла",
-          "amount": 337,
-          "amountLabel": "337 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.049,
-          "cost": 16.51,
-          "priceLabel": "~17 ₽"
-        },
-        {
-          "id": "topup-10-smetana_g",
-          "productId": "smetana_g",
-          "title": "Сметана",
-          "amount": 330,
-          "amountLabel": "330 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.28,
-          "cost": 92.4,
-          "priceLabel": "~92 ₽"
-        },
-        {
-          "id": "topup-11-tvorog_g",
-          "productId": "tvorog_g",
-          "title": "Творог",
-          "amount": 720,
-          "amountLabel": "720 г",
-          "unit": "г",
-          "storage": "fridge",
-          "pricePerUnit": 0.45,
-          "cost": 324,
-          "priceLabel": "~324 ₽"
-        }
-      ],
-      "totalCost": 1062.98,
-      "totalCostLabel": "~1063 ₽",
-      "box": {
-        "id": "topup",
-        "title": "Заказ topup",
-        "orderDay": 28,
-        "availableDay": 29,
-        "itemCount": 11,
-        "totalCost": 1062.98,
-        "totalCostLabel": "~1063 ₽"
+        "tvorog_g": 360
       }
     }
   ],
   "packageOrders": {
     "week1": [
       [
-        "Яблоки 857 г",
+        "Яблоки 725 г",
         "apples_g",
-        857,
-        1
-      ],
-      [
-        "Фасоль 1 бан 400г (89₽)",
-        "beans_cans",
-        1,
-        2
-      ],
-      [
-        "Говядина 510 г",
-        "beef_g",
-        510,
-        1
-      ],
-      [
-        "Хлеб 350 г батон (45₽)",
-        "bread_g",
-        350,
-        2
-      ],
-      [
-        "Масло сливочное 180 г (149₽)",
-        "butter_g",
-        180,
-        1
-      ],
-      [
-        "Капуста/огурец 408 г",
-        "cabbage_g",
-        408,
-        1
-      ],
-      [
-        "Курица 1469 г",
-        "chicken_g",
-        1469,
-        1
-      ],
-      [
-        "Шоколад 100 г (89₽)",
-        "chocolate_g",
-        100,
-        1
-      ],
-      [
-        "Сливки 330 мл (66₽)",
-        "cream_ml",
-        330,
-        1
-      ],
-      [
-        "Огурцы 1 кг (99₽)",
-        "cucumber_g",
-        1000,
-        1
-      ],
-      [
-        "Яйца 10 шт (99₽)",
-        "eggs_pcs",
-        10,
-        2
-      ],
-      [
-        "Минтай/хек 592 г",
-        "fish_g",
-        592,
-        1
-      ],
-      [
-        "Рыбные палочки 300 г (120₽)",
-        "fishsticks_g",
-        300,
-        1
-      ],
-      [
-        "Мука 1 кг (59₽)",
-        "flour_g",
-        1000,
-        1
-      ],
-      [
-        "Овощная смесь 400 г (60₽)",
-        "frozenveg_g",
-        400,
-        2
-      ],
-      [
-        "Варенье 500 г (145₽)",
-        "jam_g",
-        500,
-        1
-      ],
-      [
-        "Кефир 900 мл (62₽)",
-        "kefir_ml",
-        900,
-        1
-      ],
-      [
-        "Кетчуп 350 г (88₽)",
-        "ketchup_g",
-        350,
-        1
-      ],
-      [
-        "Молоко 930 мл (67₽)",
-        "milk_ml",
-        930,
-        2
-      ],
-      [
-        "Шампиньоны 400 г (116₽)",
-        "mushrooms_g",
-        400,
-        2
-      ],
-      [
-        "Лапша быстр. (доширак) 500 г (29₽)",
-        "noodle_g",
-        90,
-        1
-      ],
-      [
-        "Масло подсолнечное 1 л (129₽)",
-        "oil_g",
-        1000,
-        1
-      ],
-      [
-        "Лук репчатый 1 кг (49₽)",
-        "onion_g",
-        1000,
-        1
-      ],
-      [
-        "Блинчики замор. 500 г (149₽)",
-        "pancakes_g",
-        500,
-        1
-      ],
-      [
-        "Макароны/лапша 500 г (40₽)",
-        "pasta_g",
-        500,
-        1
-      ],
-      [
-        "Арахис 200 г (80₽)",
-        "peanuts_g",
-        200,
-        1
-      ],
-      [
-        "Пельмени 900 г (269₽)",
-        "pelmeni_g",
-        900,
-        1
-      ],
-      [
-        "Картофель 1020 г",
-        "potatoes_g",
-        1020,
-        1
-      ],
-      [
-        "Рис 900 г (71₽)",
-        "rice_g",
-        900,
-        1
-      ],
-      [
-        "Морковь/лук/свекла 827 г",
-        "roots_g",
-        827,
-        1
-      ],
-      [
-        "Соль 1 кг (19₽)",
-        "salt_g",
-        1000,
-        1
-      ],
-      [
-        "Сосиски/колбаса 400 г (196₽)",
-        "sausage_g",
-        400,
-        1
-      ],
-      [
-        "Сметана 330 г (92₽)",
-        "smetana_g",
-        330,
-        1
-      ],
-      [
-        "Килька/шпроты 1 бан 240г (89₽)",
-        "sprat_cans",
-        1,
-        1
-      ],
-      [
-        "Тушёнка 1 бан 338г (159₽)",
-        "stew_cans",
-        1,
-        3
-      ],
-      [
-        "Сушки 200 г (50₽)",
-        "sushki_g",
-        200,
-        1
-      ],
-      [
-        "Чай 100 г (80₽)",
-        "tea_g",
-        100,
-        1
-      ],
-      [
-        "Томатная паста 140 г (28₽)",
-        "tomato_paste_g",
-        140,
-        1
-      ],
-      [
-        "Творог 180 г (81₽)",
-        "tvorog_g",
-        180,
-        4
-      ]
-    ],
-    "week1-mid": [
-      [
-        "Зелень (укроп/петрушка) 1 пучок ~30г (30₽)",
-        "herbs_g",
-        30,
-        1
-      ],
-      [
-        "Шампиньоны 400 г (116₽)",
-        "mushrooms_g",
-        400,
-        1
-      ]
-    ],
-    "week2": [
-      [
-        "Яблоки 541 г",
-        "apples_g",
-        541,
+        725,
         1
       ],
       [
         "Бананы 1 шт ~140г (79₽/кг)",
         "bananas_pcs",
         1,
-        3
-      ],
-      [
-        "Хлеб 350 г батон (45₽)",
-        "bread_g",
-        350,
-        1
-      ],
-      [
-        "Масло сливочное 180 г (149₽)",
-        "butter_g",
-        180,
-        1
-      ],
-      [
-        "Капуста/огурец 357 г",
-        "cabbage_g",
-        357,
-        1
-      ],
-      [
-        "Сыр 400 г (299₽)",
-        "cheese_g",
-        400,
-        1
-      ],
-      [
-        "Курица 1102 г",
-        "chicken_g",
-        1102,
-        1
-      ],
-      [
-        "Кофе 100 г (250₽)",
-        "coffee_g",
-        100,
-        1
-      ],
-      [
-        "Печенье 200 г (50₽)",
-        "cookies_g",
-        200,
-        1
-      ],
-      [
-        "Сливки 330 мл (66₽)",
-        "cream_ml",
-        330,
-        1
-      ],
-      [
-        "Огурцы 1 кг (99₽)",
-        "cucumber_g",
-        1000,
-        1
-      ],
-      [
-        "Котлеты 400 г (140₽)",
-        "cutlets_g",
-        400,
-        1
-      ],
-      [
-        "Яйца 10 шт (99₽)",
-        "eggs_pcs",
-        10,
-        1
-      ],
-      [
-        "Минтай/хек 735 г",
-        "fish_g",
-        735,
-        1
-      ],
-      [
-        "Рыбные палочки 300 г (120₽)",
-        "fishsticks_g",
-        300,
-        1
-      ],
-      [
-        "Чеснок 50 г (50₽)",
-        "garlic_g",
-        50,
-        1
-      ],
-      [
-        "Зелень (укроп/петрушка) 1 пучок ~30г (30₽)",
-        "herbs_g",
-        30,
-        1
-      ],
-      [
-        "Мёд 350 г (242₽)",
-        "honey_g",
-        350,
-        1
-      ],
-      [
-        "Кефир 900 мл (62₽)",
-        "kefir_ml",
-        900,
-        1
-      ],
-      [
-        "Лаваш 2 шт в упак (49₽)",
-        "lavash_pcs",
-        1,
-        3
-      ],
-      [
-        "Лимон 1 шт ~70г (19₽)",
-        "lemon_pcs",
-        1,
         2
-      ],
-      [
-        "Майонез 400 г (116₽)",
-        "mayo_g",
-        400,
-        1
-      ],
-      [
-        "Молоко 930 мл (67₽)",
-        "milk_ml",
-        930,
-        1
-      ],
-      [
-        "Шампиньоны 400 г (116₽)",
-        "mushrooms_g",
-        400,
-        1
-      ],
-      [
-        "Лапша быстр. (доширак) 500 г (29₽)",
-        "noodle_g",
-        90,
-        1
-      ],
-      [
-        "Наггетсы 300 г (135₽)",
-        "nuggets_g",
-        300,
-        1
-      ],
-      [
-        "Овсянка 800 г (47₽)",
-        "oats_g",
-        800,
-        1
-      ],
-      [
-        "Блинчики замор. 500 г (149₽)",
-        "pancakes_g",
-        500,
-        1
-      ],
-      [
-        "Макароны/лапша 500 г (40₽)",
-        "pasta_g",
-        500,
-        1
-      ],
-      [
-        "Горошек зелёный 1 бан 400г (79₽)",
-        "peas_cans",
-        1,
-        1
-      ],
-      [
-        "Перец болгарский 1 кг (199₽)",
-        "pepper_g",
-        1000,
-        1
-      ],
-      [
-        "Картофель 765 г",
-        "potatoes_g",
-        765,
-        1
-      ],
-      [
-        "Морковь/лук/свекла 857 г",
-        "roots_g",
-        857,
-        1
-      ],
-      [
-        "Сайра консервы 1 бан 250г (99₽)",
-        "saury_cans",
-        1,
-        3
-      ],
-      [
-        "Сосиски/колбаса 400 г (196₽)",
-        "sausage_g",
-        400,
-        1
-      ],
-      [
-        "Сметана 330 г (92₽)",
-        "smetana_g",
-        330,
-        1
-      ],
-      [
-        "Тушёнка 1 бан 338г (159₽)",
-        "stew_cans",
-        1,
-        2
-      ],
-      [
-        "Сушки 200 г (50₽)",
-        "sushki_g",
-        200,
-        1
-      ],
-      [
-        "Томатная паста 140 г (28₽)",
-        "tomato_paste_g",
-        140,
-        2
-      ],
-      [
-        "Творог 180 г (81₽)",
-        "tvorog_g",
-        180,
-        6
-      ],
-      [
-        "Зефир/пастила 150 г (89₽)",
-        "zephyr_g",
-        150,
-        1
-      ]
-    ],
-    "week2-mid": [
-      [
-        "Зелень (укроп/петрушка) 1 пучок ~30г (30₽)",
-        "herbs_g",
-        30,
-        2
-      ]
-    ],
-    "week3": [
-      [
-        "Яблоки 755 г",
-        "apples_g",
-        755,
-        1
-      ],
-      [
-        "Бананы 1 шт ~140г (79₽/кг)",
-        "bananas_pcs",
-        1,
-        3
       ],
       [
         "Фасоль 1 бан 400г (89₽)",
         "beans_cans",
         1,
-        3
-      ],
-      [
-        "Говядина 255 г",
-        "beef_g",
-        255,
-        1
+        5
       ],
       [
         "Ягоды замор. 500 г (149₽)",
@@ -2678,45 +261,63 @@
         1
       ],
       [
-        "Капуста/огурец 459 г",
+        "Капуста/огурец 306 г",
         "cabbage_g",
-        459,
+        306,
         1
       ],
       [
-        "Конфеты 300 г (149₽)",
-        "candy_g",
-        300,
-        1
-      ],
-      [
-        "Сыр 400 г (299₽)",
-        "cheese_g",
-        400,
-        1
-      ],
-      [
-        "Курица 1243 г",
+        "Курица 1719 г",
         "chicken_g",
-        1243,
+        1719,
         1
       ],
       [
         "Яйца 10 шт (99₽)",
         "eggs_pcs",
         10,
+        2
+      ],
+      [
+        "Минтай/хек 368 г",
+        "fish_g",
+        368,
         1
       ],
       [
-        "Минтай/хек 980 г",
-        "fish_g",
-        980,
+        "Рыбные палочки 300 г (120₽)",
+        "fishsticks_g",
+        300,
+        1
+      ],
+      [
+        "Мука 1 кг (59₽)",
+        "flour_g",
+        1000,
         1
       ],
       [
         "Овощная смесь 400 г (60₽)",
         "frozenveg_g",
         400,
+        2
+      ],
+      [
+        "Чеснок 50 г (50₽)",
+        "garlic_g",
+        50,
+        1
+      ],
+      [
+        "Зелень (укроп/петрушка) 1 пучок ~30г (30₽)",
+        "herbs_g",
+        30,
+        1
+      ],
+      [
+        "Варенье 500 г (145₽)",
+        "jam_g",
+        500,
         1
       ],
       [
@@ -2729,7 +330,13 @@
         "Лаваш 2 шт в упак (49₽)",
         "lavash_pcs",
         1,
-        2
+        3
+      ],
+      [
+        "Лимон 1 шт ~70г (19₽)",
+        "lemon_pcs",
+        1,
+        1
       ],
       [
         "Молоко 930 мл (67₽)",
@@ -2738,33 +345,39 @@
         1
       ],
       [
-        "Фарш 46 г",
-        "mince_g",
-        46,
-        1
-      ],
-      [
-        "Лапша быстр. (доширак) 500 г (29₽)",
-        "noodle_g",
-        90,
-        1
-      ],
-      [
         "Наггетсы 300 г (135₽)",
         "nuggets_g",
         300,
+        2
+      ],
+      [
+        "Овсянка 800 г (47₽)",
+        "oats_g",
+        800,
+        1
+      ],
+      [
+        "Масло подсолнечное 1 л (129₽)",
+        "oil_g",
+        1000,
         1
       ],
       [
         "Блинчики замор. 500 г (149₽)",
         "pancakes_g",
         500,
+        2
+      ],
+      [
+        "Арахис 200 г (80₽)",
+        "peanuts_g",
+        200,
         1
       ],
       [
-        "Картофель 1237 г",
-        "potatoes_g",
-        1237,
+        "Изюм 200 г (80₽)",
+        "raisins_g",
+        200,
         1
       ],
       [
@@ -2774,21 +387,15 @@
         1
       ],
       [
-        "Морковь/лук/свекла 1502 г",
+        "Морковь/лук/свекла 846 г",
         "roots_g",
-        1502,
+        846,
         1
       ],
       [
-        "Горбуша консервы 1 бан 250г (129₽)",
-        "salmon_cans",
-        1,
-        2
-      ],
-      [
-        "Сосиски/колбаса 400 г (196₽)",
-        "sausage_g",
-        400,
+        "Соль 1 кг (19₽)",
+        "salt_g",
+        1000,
         1
       ],
       [
@@ -2813,46 +420,52 @@
         "Творог 180 г (81₽)",
         "tvorog_g",
         180,
-        5
+        4
       ]
     ],
-    "week3-mid": [
+    "week1-mid": [
       [
-        "Шампиньоны 400 г (116₽)",
-        "mushrooms_g",
-        400,
+        "Морс/компот 1 л (89₽)",
+        "mors_ml",
+        1000,
         1
       ]
     ],
-    "week4": [
+    "week2": [
       [
-        "Яблоки 779 г",
+        "Яблоки 306 г",
         "apples_g",
-        779,
+        306,
         1
       ],
       [
         "Бананы 1 шт ~140г (79₽/кг)",
         "bananas_pcs",
         1,
-        2
+        3
+      ],
+      [
+        "Ягоды замор. 500 г (149₽)",
+        "berries_g",
+        500,
+        1
       ],
       [
         "Хлеб 350 г батон (45₽)",
         "bread_g",
         350,
-        2
-      ],
-      [
-        "Капуста/огурец 929 г",
-        "cabbage_g",
-        929,
         1
       ],
       [
-        "Курица 1003 г",
+        "Капуста/огурец 776 г",
+        "cabbage_g",
+        776,
+        1
+      ],
+      [
+        "Курица 1235 г",
         "chicken_g",
-        1003,
+        1235,
         1
       ],
       [
@@ -2862,16 +475,16 @@
         1
       ],
       [
-        "Минтай/хек 1235 г",
+        "Минтай/хек 776 г",
         "fish_g",
-        1235,
+        776,
         1
       ],
       [
-        "Овощная смесь 400 г (60₽)",
-        "frozenveg_g",
-        400,
-        3
+        "Мёд 350 г (242₽)",
+        "honey_g",
+        350,
+        1
       ],
       [
         "Кефир 900 мл (62₽)",
@@ -2880,16 +493,22 @@
         1
       ],
       [
+        "Кетчуп 350 г (88₽)",
+        "ketchup_g",
+        350,
+        1
+      ],
+      [
         "Лаваш 2 шт в упак (49₽)",
         "lavash_pcs",
         1,
-        6
+        5
       ],
       [
         "Молоко 930 мл (67₽)",
         "milk_ml",
         930,
-        2
+        1
       ],
       [
         "Фарш 184 г",
@@ -2898,22 +517,52 @@
         1
       ],
       [
-        "Картофель 215 г",
+        "Лук репчатый 1 кг (49₽)",
+        "onion_g",
+        1000,
+        1
+      ],
+      [
+        "Блинчики замор. 500 г (149₽)",
+        "pancakes_g",
+        500,
+        2
+      ],
+      [
+        "Макароны/лапша 500 г (40₽)",
+        "pasta_g",
+        500,
+        1
+      ],
+      [
+        "Пельмени 900 г (269₽)",
+        "pelmeni_g",
+        900,
+        1
+      ],
+      [
+        "Картофель 204 г",
         "potatoes_g",
-        215,
+        204,
         1
       ],
       [
-        "Морковь/лук/свекла 980 г",
+        "Рис 900 г (71₽)",
+        "rice_g",
+        900,
+        1
+      ],
+      [
+        "Морковь/лук/свекла 771 г",
         "roots_g",
-        980,
+        771,
         1
       ],
       [
-        "Сосиски/колбаса 400 г (196₽)",
-        "sausage_g",
-        400,
-        1
+        "Сайра консервы 1 бан 250г (99₽)",
+        "saury_cans",
+        1,
+        2
       ],
       [
         "Сметана 330 г (92₽)",
@@ -2925,6 +574,362 @@
         "Сушки 200 г (50₽)",
         "sushki_g",
         200,
+        1
+      ],
+      [
+        "Чай 100 г (80₽)",
+        "tea_g",
+        100,
+        1
+      ],
+      [
+        "Творог 180 г (81₽)",
+        "tvorog_g",
+        180,
+        6
+      ],
+      [
+        "Зефир/пастила 150 г (89₽)",
+        "zephyr_g",
+        150,
+        1
+      ]
+    ],
+    "week2-mid": [
+      [
+        "Зелень (укроп/петрушка) 1 пучок ~30г (30₽)",
+        "herbs_g",
+        30,
+        1
+      ]
+    ],
+    "week3": [
+      [
+        "Яблоки 337 г",
+        "apples_g",
+        337,
+        1
+      ],
+      [
+        "Бананы 1 шт ~140г (79₽/кг)",
+        "bananas_pcs",
+        1,
+        3
+      ],
+      [
+        "Фасоль 1 бан 400г (89₽)",
+        "beans_cans",
+        1,
+        3
+      ],
+      [
+        "Хлеб 350 г батон (45₽)",
+        "bread_g",
+        350,
+        2
+      ],
+      [
+        "Гречка 800 г (71₽)",
+        "buckwheat_g",
+        800,
+        1
+      ],
+      [
+        "Капуста/огурец 1082 г",
+        "cabbage_g",
+        1082,
+        1
+      ],
+      [
+        "Курица 1020 г",
+        "chicken_g",
+        1020,
+        1
+      ],
+      [
+        "Шоколад 100 г (89₽)",
+        "chocolate_g",
+        100,
+        1
+      ],
+      [
+        "Огурцы 1 кг (99₽)",
+        "cucumber_g",
+        1000,
+        1
+      ],
+      [
+        "Минтай/хек 572 г",
+        "fish_g",
+        572,
+        1
+      ],
+      [
+        "Рыбные палочки 300 г (120₽)",
+        "fishsticks_g",
+        300,
+        1
+      ],
+      [
+        "Зелень (укроп/петрушка) 1 пучок ~30г (30₽)",
+        "herbs_g",
+        30,
+        1
+      ],
+      [
+        "Кефир 900 мл (62₽)",
+        "kefir_ml",
+        900,
+        1
+      ],
+      [
+        "Лаваш 2 шт в упак (49₽)",
+        "lavash_pcs",
+        1,
+        4
+      ],
+      [
+        "Молоко 930 мл (67₽)",
+        "milk_ml",
+        930,
+        1
+      ],
+      [
+        "Фарш 551 г",
+        "mince_g",
+        551,
+        1
+      ],
+      [
+        "Блинчики замор. 500 г (149₽)",
+        "pancakes_g",
+        500,
+        1
+      ],
+      [
+        "Картофель 1683 г",
+        "potatoes_g",
+        1683,
+        1
+      ],
+      [
+        "Морковь/лук/свекла 1361 г",
+        "roots_g",
+        1361,
+        1
+      ],
+      [
+        "Сайра консервы 1 бан 250г (99₽)",
+        "saury_cans",
+        1,
+        2
+      ],
+      [
+        "Сметана 330 г (92₽)",
+        "smetana_g",
+        330,
+        2
+      ],
+      [
+        "Помидоры 1 кг (129₽)",
+        "tomato_g",
+        1000,
+        1
+      ],
+      [
+        "Томатная паста 140 г (28₽)",
+        "tomato_paste_g",
+        140,
+        2
+      ],
+      [
+        "Индейка 1 кг (349₽)",
+        "turkey_g",
+        1000,
+        1
+      ],
+      [
+        "Творог 180 г (81₽)",
+        "tvorog_g",
+        180,
+        3
+      ]
+    ],
+    "week3-mid": [
+      [
+        "Бананы 1 шт ~140г (79₽/кг)",
+        "bananas_pcs",
+        1,
+        2
+      ],
+      [
+        "Зелень (укроп/петрушка) 1 пучок ~30г (30₽)",
+        "herbs_g",
+        30,
+        2
+      ]
+    ],
+    "week4": [
+      [
+        "Яблоки 545 г",
+        "apples_g",
+        545,
+        1
+      ],
+      [
+        "Хлеб 350 г батон (45₽)",
+        "bread_g",
+        350,
+        1
+      ],
+      [
+        "Масло сливочное 180 г (149₽)",
+        "butter_g",
+        180,
+        1
+      ],
+      [
+        "Капуста/огурец 918 г",
+        "cabbage_g",
+        918,
+        1
+      ],
+      [
+        "Курица 1102 г",
+        "chicken_g",
+        1102,
+        1
+      ],
+      [
+        "Кофе 100 г (250₽)",
+        "coffee_g",
+        100,
+        1
+      ],
+      [
+        "Огурцы 1 кг (99₽)",
+        "cucumber_g",
+        1000,
+        1
+      ],
+      [
+        "Котлеты 400 г (140₽)",
+        "cutlets_g",
+        400,
+        1
+      ],
+      [
+        "Яйца 10 шт (99₽)",
+        "eggs_pcs",
+        10,
+        1
+      ],
+      [
+        "Минтай/хек 592 г",
+        "fish_g",
+        592,
+        1
+      ],
+      [
+        "Рыбные палочки 300 г (120₽)",
+        "fishsticks_g",
+        300,
+        1
+      ],
+      [
+        "Овощная смесь 400 г (60₽)",
+        "frozenveg_g",
+        400,
+        1
+      ],
+      [
+        "Сок 1 л (79₽)",
+        "juice_ml",
+        1000,
+        1
+      ],
+      [
+        "Кефир 900 мл (62₽)",
+        "kefir_ml",
+        900,
+        1
+      ],
+      [
+        "Лаваш 2 шт в упак (49₽)",
+        "lavash_pcs",
+        1,
+        5
+      ],
+      [
+        "Молоко 930 мл (67₽)",
+        "milk_ml",
+        930,
+        1
+      ],
+      [
+        "Фарш 184 г",
+        "mince_g",
+        184,
+        1
+      ],
+      [
+        "Наггетсы 300 г (135₽)",
+        "nuggets_g",
+        300,
+        1
+      ],
+      [
+        "Овсянка 800 г (47₽)",
+        "oats_g",
+        800,
+        1
+      ],
+      [
+        "Блинчики замор. 500 г (149₽)",
+        "pancakes_g",
+        500,
+        1
+      ],
+      [
+        "Пельмени 900 г (269₽)",
+        "pelmeni_g",
+        900,
+        1
+      ],
+      [
+        "Картофель 255 г",
+        "potatoes_g",
+        255,
+        1
+      ],
+      [
+        "Рис 900 г (71₽)",
+        "rice_g",
+        900,
+        1
+      ],
+      [
+        "Морковь/лук/свекла 694 г",
+        "roots_g",
+        694,
+        1
+      ],
+      [
+        "Сайра консервы 1 бан 250г (99₽)",
+        "saury_cans",
+        1,
+        2
+      ],
+      [
+        "Сосиски/колбаса 400 г (196₽)",
+        "sausage_g",
+        400,
+        1
+      ],
+      [
+        "Сметана 330 г (92₽)",
+        "smetana_g",
+        330,
         1
       ],
       [
@@ -2943,13 +948,7 @@
         "Творог 180 г (81₽)",
         "tvorog_g",
         180,
-        6
-      ],
-      [
-        "Вареники 600 г (179₽)",
-        "vareniki_g",
-        600,
-        1
+        3
       ]
     ],
     "week4-mid": [
@@ -2957,15 +956,33 @@
         "Бананы 1 шт ~140г (79₽/кг)",
         "bananas_pcs",
         1,
-        3
+        1
+      ],
+      [
+        "Зелень (укроп/петрушка) 1 пучок ~30г (30₽)",
+        "herbs_g",
+        30,
+        1
+      ],
+      [
+        "Сок 1 л (79₽)",
+        "juice_ml",
+        1000,
+        1
       ]
     ],
     "topup": [
       [
-        "Сода/разрыхлитель 50 г (29₽)",
-        "baking_g",
-        50,
+        "Яблоки 184 г",
+        "apples_g",
+        184,
         1
+      ],
+      [
+        "Бананы 1 шт ~140г (79₽/кг)",
+        "bananas_pcs",
+        1,
+        2
       ],
       [
         "Хлеб 350 г батон (45₽)",
@@ -2974,22 +991,28 @@
         1
       ],
       [
-        "Капуста/огурец 470 г",
+        "Капуста/огурец 816 г",
         "cabbage_g",
-        470,
+        816,
         1
       ],
       [
-        "Курица 368 г",
-        "chicken_g",
-        368,
+        "Минтай/хек 612 г",
+        "fish_g",
+        612,
         1
       ],
       [
-        "Рыбные палочки 300 г (120₽)",
-        "fishsticks_g",
-        300,
+        "Кефир 900 мл (62₽)",
+        "kefir_ml",
+        900,
         1
+      ],
+      [
+        "Лаваш 2 шт в упак (49₽)",
+        "lavash_pcs",
+        1,
+        3
       ],
       [
         "Молоко 930 мл (67₽)",
@@ -2998,21 +1021,21 @@
         1
       ],
       [
-        "Пельмени 900 г (269₽)",
-        "pelmeni_g",
-        900,
+        "Блинчики замор. 500 г (149₽)",
+        "pancakes_g",
+        500,
         1
       ],
       [
-        "Картофель 306 г",
+        "Картофель 510 г",
         "potatoes_g",
-        306,
+        510,
         1
       ],
       [
-        "Морковь/лук/свекла 337 г",
+        "Морковь/лук/свекла 309 г",
         "roots_g",
-        337,
+        309,
         1
       ],
       [
@@ -3025,7 +1048,7 @@
         "Творог 180 г (81₽)",
         "tvorog_g",
         180,
-        4
+        2
       ]
     ]
   },

@@ -171,12 +171,17 @@ const MEAL_TARGETS = {
 };
 const MEAL_ORDER = ["Завтрак", "Обед", "Полдник", "Ужин", "Чай"];
 
-// Daily nutrition targets (scaled for family)
-const DAILY_KCAL_TARGET = Math.round(2100 * FAMILY_SCALE);
-const DAILY_PROTEIN_TARGET = Math.round(120 * FAMILY_SCALE); // grams
+// Daily nutrition targets (scaled for family). Stay safely inside the audit
+// kcal range [DAILY_KCAL_MIN, DAILY_KCAL_MAX] (1900..2700 base) to avoid both
+// undershoot and overshoot warnings.
+const DAILY_KCAL_TARGET = Math.round(2150 * FAMILY_SCALE);
+const DAILY_PROTEIN_TARGET = Math.round(125 * FAMILY_SCALE); // grams
+const DAILY_KCAL_MIN = Math.round(1900 * FAMILY_SCALE);
+const DAILY_KCAL_MAX = Math.round(2700 * FAMILY_SCALE);
+const DAILY_PROTEIN_MIN = Math.round(70 * FAMILY_SCALE);
 
-// Max active cooking minutes per day (realistic for 3 hot meals + 2 snacks)
-const MAX_DAILY_COOK_MIN = 60;
+// Max active cooking minutes per day must match audit.js plan-quality gate.
+const MAX_DAILY_COOK_MIN = 45;
 
 // ── 1. Generate combo recipes for Полдник/Чай ──────────────────────
 // Combo prices are derived from current products (which may be store-specific)
@@ -318,6 +323,45 @@ Object.entries(recipes).forEach(([name, r]) => {
 
 MEAL_ORDER.forEach(m => console.log(`  ${m}: ${mealPools[m].length} candidates`));
 
+// Audit-side kcal estimator: matches audit.js dayNutrition() which sums
+// macroForUsage(DISH_USAGE[dish]) per meal using the same scaled usage that
+// will be saved to inventory-rules.json. Generator must respect this number
+// to avoid kcal-range warnings.
+const macroByItem = invData.macroByItem || {};
+function auditKcalForUsage(usage) {
+  let p = 0, f = 0, c = 0;
+  for (const [k, v] of Object.entries(usage || {})) {
+    const m = macroByItem[k];
+    if (!m) continue;
+    p += (m.p || 0) * v;
+    f += (m.f || 0) * v;
+    c += (m.c || 0) * v;
+  }
+  return Math.round(4 * p + 9 * f + 4 * c);
+}
+function auditProteinForUsage(usage) {
+  let p = 0;
+  for (const [k, v] of Object.entries(usage || {})) {
+    const m = macroByItem[k];
+    if (!m) continue;
+    p += (m.p || 0) * v;
+  }
+  return Math.round(p);
+}
+const RECIPE_AUDIT_KCAL = {};
+const RECIPE_AUDIT_PROTEIN = {};
+function rebuildRecipeAuditMacros() {
+  for (const [name, usage] of Object.entries(dishUsage)) {
+    const scaled = {};
+    for (const [k, v] of Object.entries(usage || {})) {
+      scaled[k] = Math.round(v * FAMILY_SCALE * 10) / 10;
+    }
+    RECIPE_AUDIT_KCAL[name] = auditKcalForUsage(scaled);
+    RECIPE_AUDIT_PROTEIN[name] = auditProteinForUsage(scaled);
+  }
+}
+rebuildRecipeAuditMacros();
+
 // ── Helper: get recipe info ─────────────────────────────────────────
 function getRecipeInfo(name) {
   const r = recipes[name];
@@ -337,7 +381,9 @@ function getRecipeInfo(name) {
   }
   return {
     kcal: Math.round((r.macros?.kcal || r.kcal || 0) * FAMILY_SCALE),
+    auditKcal: RECIPE_AUDIT_KCAL[name] || 0,
     protein: Math.round((r.macros?.p || 0) * FAMILY_SCALE * 10) / 10,
+    auditProtein: RECIPE_AUDIT_PROTEIN[name] || 0,
     fat: Math.round((r.macros?.f || 0) * FAMILY_SCALE * 10) / 10,
     carbs: Math.round((r.macros?.c || 0) * FAMILY_SCALE * 10) / 10,
     cost: Math.round((r.cost || 0) * FAMILY_SCALE),
@@ -361,6 +407,7 @@ let usedToday = new Set();
 const MAX_FREEZE_PER_WEEK = 5;  // max frozen meals per week (out of 14 обед+ужин)
 const MIN_FISH_PER_WEEK = 2;    // min fish meals per week
 const MIN_MEAT_PER_WEEK = 3;    // min meat meals per week (курица, фарш, котлеты, пельмени, тефтели, наггетсы)
+const FROZEN_NAME_RE = /пельмен|вареник|наггетс|котлет|рыбные палочки|блинчик|тефтел|фарш|шницел|чебурек|хинкал|манты/i;
 function getMinForWeek(weekNum, baseMin) {
   const daysInWeek = Math.min(weekNum * 7, DAYS) - (weekNum - 1) * 7;
   const mainMeals = daysInWeek * 2; // обед+ужин
@@ -370,6 +417,10 @@ const weekFreezeCount = {};      // {weekNum: count}
 const weekFishCount = {};        // {weekNum: count}
 const weekMeatCount = {};        // {weekNum: count}
 function getWeek(dayNum) { return Math.ceil(dayNum / 7); }
+function isFrozenDish(dishName, info) {
+  if (info?.type?.includes("Заморозка")) return true;
+  return FROZEN_NAME_RE.test(dishName);
+}
 function isMeatDish(dishName, info) {
   const usage = dishUsage[dishName] || {};
   return !!(usage.chicken_g || usage.mince_g || usage.cutlets_g || usage.meatballs_g || usage.nuggets_g || usage.pelmeni_g);
@@ -393,8 +444,10 @@ for (let dayNum = 1; dayNum <= DAYS; dayNum++) {
       const r = recipes[cd.dish];
       const info = getRecipeInfo(cd.dish);
       const c = Math.round((info?.cost || 0) * 0.4);
-      const kcal = Math.round((info?.kcal || 0) * 0.4);
-      const protein = Math.round((info?.protein || 0) * 0.4 * 10) / 10;
+      const auditKcalSource = info?.auditKcal || info?.kcal || 0;
+      const auditProteinSource = info?.auditProtein || info?.protein || 0;
+      const kcal = Math.round(auditKcalSource * 0.4);
+      const protein = Math.round(auditProteinSource * 0.4 * 10) / 10;
       const cookMin = 0; // leftovers don't need cooking
       dayMeals[mealName] = {
         dish: cd.dish,
@@ -406,7 +459,7 @@ for (let dayNum = 1; dayNum <= DAYS; dayNum++) {
       // Track weekly freeze/fish/meat for container leftovers too
       if (mealName === "Обед" || mealName === "Ужин") {
         const wk = getWeek(dayNum);
-        if (info?.type?.includes("Заморозка")) weekFreezeCount[wk] = (weekFreezeCount[wk] || 0) + 1;
+        if (info?.type?.includes("Заморозка") || isFrozenDish(cd.dish, info)) weekFreezeCount[wk] = (weekFreezeCount[wk] || 0) + 1;
         const isFish = info?.type?.includes("Рыба") ||
           cd.dish.toLowerCase().includes("рыб") || cd.dish.toLowerCase().includes("минта") ||
           cd.dish.toLowerCase().includes("хек") || cd.dish.toLowerCase().includes("лосо") ||
@@ -483,12 +536,44 @@ for (let dayNum = 1; dayNum <= DAYS; dayNum++) {
       score += Math.abs(info.cost - costMid) * 2;
 
       // --- 2. КБЖВ-баланс: prefer dishes that fill protein deficit ---
-      if (proteinDeficit > 20) {
-        // High protein deficit: strongly prefer protein-rich dishes
-        score -= info.protein * 3;
+      if (proteinDeficit > 30) {
+        // Major protein deficit: heavily prefer protein-rich dishes
+        score -= info.protein * 5;
+      } else if (proteinDeficit > 15) {
+        // Moderate deficit: strong preference
+        score -= info.protein * 2.5;
       } else if (proteinDeficit > 5) {
-        // Moderate deficit: mild preference
+        // Mild deficit
         score -= info.protein * 1;
+      }
+
+      // Hard finalize: ensure DAILY_PROTEIN_MIN/DAILY_KCAL_MIN are reachable.
+      const remainingMealsAfter = MEAL_ORDER.filter(m => !dayMeals[m]).length - 1;
+      const candProtein = info.auditProtein || info.protein || 0;
+      const candKcal = info.auditKcal || info.kcal || 0;
+      const proteinShortfall = DAILY_PROTEIN_MIN - dayProtein - candProtein;
+      if (remainingMealsAfter <= 1 && proteinShortfall > 0) {
+        score += proteinShortfall * 90;
+      } else if (remainingMealsAfter <= 2 && proteinShortfall > 0) {
+        score += proteinShortfall * 35;
+      }
+      const kcalShortfall = DAILY_KCAL_MIN - dayKcal - candKcal;
+      if (remainingMealsAfter <= 1 && kcalShortfall > 0) {
+        score += kcalShortfall * 5;
+      } else if (remainingMealsAfter <= 2 && kcalShortfall > 0) {
+        score += kcalShortfall * 2;
+      }
+      // Hard ceiling: keep the day strictly inside DAILY_KCAL_MAX. Apply a
+      // safety margin because per-dish auditKcal can round low compared to
+      // the full-day audit sum; small families need more head-room.
+      const projectedKcal = dayKcal + candKcal;
+      const safeMax = DAILY_KCAL_MAX - Math.max(120, Math.round(120 * FAMILY_SCALE));
+      if (projectedKcal > safeMax) {
+        score += (projectedKcal - safeMax) * 250 + 6000;
+      } else if (projectedKcal > safeMax - 80) {
+        score += (projectedKcal - (safeMax - 80)) * 30;
+      } else if (projectedKcal > safeMax - 200) {
+        score += (projectedKcal - (safeMax - 200)) * 6;
       }
 
       // Prefer dishes closer to meal kcal target (not too high, not too low)
@@ -523,11 +608,11 @@ for (let dayNum = 1; dayNum <= DAYS; dayNum++) {
       const reservedTime = hotMealsLeft * 8 + snackMealsLeft * 2;
       const effectiveRemaining = cookRemaining - reservedTime;
       if (dishCook > Math.max(0, effectiveRemaining + 5)) {
-        score += 1200; // very long cook — strongly prefer shorter
+        score += 2400; // very long cook — strongly prefer shorter
       } else if (dishCook > Math.max(0, effectiveRemaining)) {
-        score += 600; // tight on time
+        score += 1200; // tight on time
       } else if (dishCook > Math.max(0, effectiveRemaining) * 0.8) {
-        score += 200; // getting close
+        score += 400; // getting close
       }
       // Prefer quick dishes when daily cook budget is half-spent
       if (dayCookMin > MAX_DAILY_COOK_MIN * 0.5) {
@@ -585,14 +670,15 @@ for (let dayNum = 1; dayNum <= DAYS; dayNum++) {
         const wk = getWeek(dayNum);
         const freezeCount = weekFreezeCount[wk] || 0;
         const fishCount = weekFishCount[wk] || 0;
+        const candFrozen = isFrozenDish(d, info);
 
         // Discourage frozen dishes if already at or near weekly limit
-        if (info.type.includes("Заморозка") && freezeCount >= MAX_FREEZE_PER_WEEK) {
-          score += 500; // strongly discourage
-        } else if (info.type.includes("Заморозка") && freezeCount >= MAX_FREEZE_PER_WEEK - 1) {
-          score += 200; // discourage
-        } else if (info.type.includes("Заморозка") && freezeCount >= MAX_FREEZE_PER_WEEK - 2) {
-          score += 60; // mild
+        if (candFrozen && freezeCount >= MAX_FREEZE_PER_WEEK) {
+          score += 1500; // strongly discourage
+        } else if (candFrozen && freezeCount >= MAX_FREEZE_PER_WEEK - 1) {
+          score += 600; // discourage
+        } else if (candFrozen && freezeCount >= MAX_FREEZE_PER_WEEK - 2) {
+          score += 200; // mild
         }
 
         // Bonus for fish if weekly minimum not met
@@ -634,7 +720,7 @@ for (let dayNum = 1; dayNum <= DAYS; dayNum++) {
     // Track weekly freeze/fish counts
     if (mealName === "Обед" || mealName === "Ужин") {
       const wk = getWeek(dayNum);
-      if (info.type.includes("Заморозка")) {
+      if (info.type.includes("Заморозка") || isFrozenDish(bestDish, info)) {
         weekFreezeCount[wk] = (weekFreezeCount[wk] || 0) + 1;
       }
       const isFish = info.type.includes("Рыба") ||
@@ -657,14 +743,14 @@ for (let dayNum = 1; dayNum <= DAYS; dayNum++) {
     dayMeals[mealName] = {
       dish: bestDish,
       portion: scalePortionText(r.ingredients),
-      kcal: info.kcal,
+      kcal: info.auditKcal || info.kcal,
       cost: c,
       dishCost: c,
       costLabel: `~${c} ₽`,
     };
     dayCost += c;
-    dayKcal += info.kcal;
-    dayProtein += info.protein;
+    dayKcal += info.auditKcal || info.kcal;
+    dayProtein += info.auditProtein || info.protein;
     const mealCap = mealName === "Завтрак" ? 30 : mealName === "Обед" || mealName === "Ужин" ? 45 : 10;
     dayCookMin += Math.min(info.cookMin, mealCap);
 
