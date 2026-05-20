@@ -158,10 +158,15 @@ function connect(wsUrl) {
   });
 }
 
-async function render(page, offline) {
+async function render(page, options = {}) {
+  const { offline = false, mobile = false } = options;
   await page.command("Page.enable");
   await page.command("Runtime.enable");
   await page.command("Network.enable");
+  if (mobile) {
+    await page.command("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 3, mobile: true });
+    await page.command("Emulation.setUserAgentOverride", { userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1" });
+  }
   if (offline) await page.command("Network.emulateNetworkConditions", { offline: true, latency: 0, downloadThroughput: 0, uploadThroughput: 0 });
   await page.command("Page.navigate", { url });
   await new Promise(resolve => setTimeout(resolve, offline ? 7000 : 9000));
@@ -172,7 +177,7 @@ async function render(page, offline) {
   }
   const result = await page.command("Runtime.evaluate", {
     returnByValue: true,
-    expression: '(() => ({ title: document.title, hasToday: !!document.querySelector("#today"), text: document.body.innerText.slice(0, 2500), sw: !!navigator.serviceWorker, controlled: !!navigator.serviceWorker.controller, errors: localStorage.getItem("foodflow_runtime_errors") || "" }))()'
+    expression: '(() => ({ title: document.title, hasToday: !!document.querySelector("#today"), text: document.body.innerText.slice(0, 2500), sw: !!navigator.serviceWorker, controlled: !!navigator.serviceWorker.controller, errors: localStorage.getItem("foodflow_runtime_errors") || "", innerWidth: window.innerWidth, innerHeight: window.innerHeight }))()'
   });
   return result.result.value;
 }
@@ -184,21 +189,29 @@ function assert(condition, message) {
 (async () => {
   await withBrowser(async port => {
     const page = await newPage(port);
-    const online = await render(page, false);
+    const online = await render(page, { offline: false });
     assert(online.title.includes("FoodFlow"), "online: missing title");
     assert(online.hasToday, "online: missing #today");
     assert(/Сегодня|День|Завтрак|Расписание/.test(online.text), "online: schedule text not rendered");
     assert(online.sw, "online: service worker API unavailable");
     page.close();
 
+    const mobilePage = await newPage(port);
+    const mobile = await render(mobilePage, { offline: false, mobile: true });
+    assert(mobile.title.includes("FoodFlow"), "mobile: missing title");
+    assert(mobile.hasToday, "mobile: missing #today");
+    assert(/Сегодня|День|Завтрак|Расписание/.test(mobile.text), "mobile: schedule text not rendered");
+    assert(mobile.innerWidth <= 430, `mobile: viewport not narrow (${mobile.innerWidth}px)`);
+    mobilePage.close();
+
     const offlinePage = await newPage(port);
-    const offline = await render(offlinePage, true);
+    const offline = await render(offlinePage, { offline: true });
     assert(offline.title.includes("FoodFlow"), "offline: missing title");
     assert(offline.hasToday, "offline: missing #today");
     assert(/Сегодня|День|Завтрак|Расписание/.test(offline.text), "offline: schedule text not rendered");
     offlinePage.close();
   });
-  console.log(`Browser online/offline smoke passed: ${url}`);
+  console.log(`Browser desktop/mobile/offline smoke passed: ${url}`);
 })().catch(error => {
   console.error(error && error.stack ? error.stack : error);
   process.exit(1);

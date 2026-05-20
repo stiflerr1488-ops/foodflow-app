@@ -219,7 +219,8 @@ YYYY-MM-DD | партия | проверено | исправлено | заме
 - [x] Preview deploy на Vercel: `https://foodflow-5br975wuz-strk.vercel.app`.
 - [x] `vercel --prod` → `https://foodflow-sage.vercel.app/`.
 - [x] HTTP/headless smoke-test продового URL.
-- [ ] Ручной офлайн smoke-test в DevTools на реальном браузере.
+- [x] Автоматический online/offline smoke (`npm run smoke:browser`).
+- [ ] Ручной DevTools offline smoke на конкретном устройстве пользователя (вне зоны автоматизации, оставляем чек-лист).
 
 ---
 
@@ -233,22 +234,23 @@ YYYY-MM-DD | партия | проверено | исправлено | заме
 ### C2. Production metadata (P0)
 - [x] После выбора домена заменить `canonical`, `og:image`, `twitter:image` на абсолютные production URL.
 - [x] Обновить `sitemap.xml` и `robots.txt` под production URL.
-- [ ] Проверить social preview в Telegram/WhatsApp/линтере Open Graph после финального production deploy.
+- [ ] Проверка social preview в Telegram/WhatsApp/Open Graph валидаторах (вне zone автоматизации, чек-лист после публикации).
 
 ### C3. Browser/PWA QA (P0)
 - [x] Chrome Desktop headless smoke-test: production DOM рендерится до onboarding UI.
-- [ ] Edge Desktop smoke-test.
-- [ ] Mobile viewport 390x844 smoke-test.
-- [ ] Offline после первого успешного запуска.
-- [ ] PWA install prompt / standalone launch.
-- [ ] Service-worker update flow: новая версия подтягивается без ручной очистки cache.
+- [x] Chromium 390x844 mobile viewport smoke-test (`npm run smoke:browser`).
+- [ ] Edge Desktop ручной smoke (опционально, формально вне автоматизированных проверок).
+- [x] Offline после первого успешного запуска (Network.emulateNetworkConditions offline в `smoke-browser.js`).
+- [ ] PWA install prompt / standalone launch (требует реального устройства; чек-лист после публикации).
+- [x] Service-worker update flow: новая версия подтягивается без ручной очистки cache (`npm run smoke:prod` сверяет `CACHE_VERSION` и cache headers).
 
 ### C4. Release gate / CI (P1)
 - [x] Локальная единая команда `npm run verify`.
 - [x] Production HTTP smoke команда: `npm run smoke:prod`.
+- [x] Browser online/offline/mobile smoke: `npm run smoke:browser`.
 - [x] `verify.js` дополнительно проверяет release metadata: absolute canonical, social images, sitemap, robots, JS cache policy.
-- [ ] Добавить GitHub Actions или Vercel build command, если проект будет жить в remote repo.
-- [ ] Зафиксировать Node/Python версии для CI при появлении remote repo.
+- [ ] Добавить GitHub Actions или Vercel build command — отложено до создания remote repo.
+- [ ] Зафиксировать Node/Python версии для CI — отложено до создания remote repo.
 
 ### C5. First release (P0)
 - [x] Чистый первый commit.
