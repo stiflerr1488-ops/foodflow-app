@@ -1,4 +1,4 @@
-const CACHE_VERSION = "2026-05-21";
+const CACHE_VERSION = "2026-05-21-v1.1";
 const CACHE_NAME = `foodflow-offline-${CACHE_VERSION}`;
 const APP_SHELL = [
   "./index.html",

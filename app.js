@@ -716,7 +716,8 @@ const state = {
   familyAdults: clampInList(localStorage.getItem("family_adults"), [1, 2], 1),
   familyChildren: clampInList(localStorage.getItem("family_children"), [0, 1, 2], 0),
   familyBudget: Number(localStorage.getItem("family_budget") || 15000),
-  store: localStorage.getItem("store") || "pyaterochka"
+  store: localStorage.getItem("store") || "pyaterochka",
+  dark: localStorage.getItem("dark_theme") === "1"
 };
 // Validate persisted state against loaded data (runs after initRuntimeData)
 function validatePersistedState() {
@@ -1522,6 +1523,18 @@ function generateNewPlan(seed) {
   return { plan, actions, totalCost, uniqueDishes: usedInPlan.size };
 }
 
+// ── Theme ──
+function applyTheme() {
+  document.documentElement.setAttribute("data-theme", state.dark ? "dark" : "light");
+  const btn = document.getElementById("toggleTheme");
+  if (btn) btn.textContent = state.dark ? "☾" : "☸";
+}
+function toggleTheme() {
+  state.dark = !state.dark;
+  localStorage.setItem("dark_theme", state.dark ? "1" : "0");
+  applyTheme();
+}
+
 // ── Boot ──
 async function bootFoodFlow() {
   // If bundle is available (file:// or offline), use it immediately — no fetch needed
@@ -1541,6 +1554,7 @@ async function bootFoodFlow() {
     return;
   }
   validatePersistedState();
+  applyTheme();
   rebuildDaySelect();
   state.day = clampDay(state.day);
   daySelect.value = state.day;
@@ -1555,6 +1569,7 @@ async function bootFoodFlow() {
   document.getElementById("closeModal").onclick = closeModal;
   document.getElementById("modal").onclick = e => { if (e.target.id === "modal") closeModal(); };
   document.getElementById("editProfile").onclick = showOnboarding;
+  document.getElementById("toggleTheme").onclick = toggleTheme;
   document.getElementById("openCatalog").onclick = () => openCatalog();
   document.getElementById("resetProgress").onclick = () => {
     if (!confirm("Сбросить весь прогресс? Все отметки, пропуски и отложения будут очищены.")) return;

@@ -1144,6 +1144,65 @@
       .catalogRow{grid-template-columns:1fr}
       .catalogRow button{justify-self:start}
     }
+    /* ── Dark theme ── */
+    [data-theme="dark"]{
+      --ui-bg:#0f1117;
+      --ui-panel:#1a1d27;
+      --ui-panel-soft:#22252f;
+      --ui-border:#2e3240;
+      --ui-ink:#e4e7ee;
+      --ui-muted:#8a91a4;
+      --ui-blue:#4a9eff;
+      --ui-blue-dark:#2d7de0;
+      --ui-green:#2ebd7f;
+      --ui-warm:#2e2510;
+      --ui-shadow:0 1px 3px rgba(0,0,0,.32);
+      --ui-shadow-soft:0 1px 2px rgba(0,0,0,.22);
+    }
+    [data-theme="dark"] html{background:var(--ui-bg)}
+    [data-theme="dark"] body{background:var(--ui-bg);color:var(--ui-ink)}
+    [data-theme="dark"] button,[data-theme="dark"] select,[data-theme="dark"] input{background:var(--ui-panel);color:var(--ui-ink);border-color:var(--ui-border)}
+    [data-theme="dark"] button:hover,[data-theme="dark"] select:hover,[data-theme="dark"] input:hover{border-color:#4a5066}
+    [data-theme="dark"] .top{background:rgba(15,17,23,.92);border-bottom-color:rgba(46,50,64,.85)}
+    [data-theme="dark"] .brand{background:rgba(26,29,39,.72);border-color:rgba(46,50,64,.9)}
+    [data-theme="dark"] #timeInput{background:var(--ui-panel)!important}
+    [data-theme="dark"] .side > div,[data-theme="dark"] .line,[data-theme="dark"] details,[data-theme="dark"] .remaining,[data-theme="dark"] .nowCard,[data-theme="dark"] .mealCard,[data-theme="dark"] .action,[data-theme="dark"] .budgetTile,[data-theme="dark"] .miniBox,[data-theme="dark"] .boxRow,[data-theme="dark"] .recipeStats{background:var(--ui-panel);border-color:var(--ui-border)}
+    [data-theme="dark"] .recipeStats span{border-color:var(--ui-border);color:var(--ui-muted)}
+    [data-theme="dark"] .dayControls{background:rgba(15,17,23,.82);border-color:rgba(46,50,64,.82)}
+    [data-theme="dark"] .dayControls button{background:var(--ui-panel);color:var(--ui-ink)}
+    [data-theme="dark"] .dayControls .jumpBtn{background:var(--ui-ink);color:var(--ui-bg);border-color:var(--ui-ink)}
+    [data-theme="dark"] .nowCard{border-color:rgba(74,158,255,.25)}
+    [data-theme="dark"] .nowCard:before{background:linear-gradient(180deg,var(--ui-blue),var(--ui-green))}
+    [data-theme="dark"] .nextAction{border-color:rgba(74,158,255,.4);background:rgba(74,158,255,.06)}
+    [data-theme="dark"] .doneAction{background:rgba(46,189,127,.08);border-color:rgba(46,189,127,.25)}
+    [data-theme="dark"] .skippedAction{background:rgba(204,126,28,.08);border-color:rgba(204,126,28,.25)}
+    [data-theme="dark"] .snoozedAction{border-color:rgba(74,158,255,.45)}
+    [data-theme="dark"] .statusPill{background:rgba(204,126,28,.12);color:#c4a24a;border-color:rgba(204,126,28,.25)}
+    [data-theme="dark"] .pwaStatus{background:rgba(46,189,127,.1);border-color:rgba(46,189,127,.2);color:var(--ui-green)}
+    [data-theme="dark"] .pwaStatus.offline{background:rgba(204,126,28,.1);border-color:rgba(204,126,28,.2);color:#c4a24a}
+    [data-theme="dark"] .modal{background:var(--ui-panel);border-color:var(--ui-border)}
+    [data-theme="dark"] .modalBackdrop{background:rgba(0,0,0,.55)}
+    [data-theme="dark"] .inlineRecipe summary,[data-theme="dark"] .nowMore summary{background:var(--ui-panel);color:var(--ui-ink);border-color:var(--ui-border)}
+    [data-theme="dark"] .shopSectionTitle{color:var(--ui-ink)}
+    [data-theme="dark"] .catalogRow{background:var(--ui-panel);border-color:var(--ui-border)}
+    [data-theme="dark"] .quickNav button{background:var(--ui-panel-soft);color:var(--ui-muted);border-color:var(--ui-border)}
+    [data-theme="dark"] .quickNav button:hover{color:var(--ui-blue);border-color:var(--ui-blue)}
+    [data-theme="dark"] #markDayDone,[data-theme="dark"] #markDone,[data-theme="dark"] .primaryAction,[data-theme="dark"] .actionBtns button,[data-theme="dark"] .nowCard button[data-dish],[data-theme="dark"] .nowCard button[data-cook],[data-theme="dark"] .nowCard button[data-basket],[data-theme="dark"] .mealCard button{background:var(--ui-blue);color:#fff;border-color:var(--ui-blue)}
+    [data-theme="dark"] .onboarding{background:var(--ui-bg)}
+    [data-theme="dark"] .onboardingCard{background:var(--ui-panel);border-color:var(--ui-border)}
+    [data-theme="dark"] .onboardingOpts button{background:var(--ui-panel-soft);color:var(--ui-ink);border-color:var(--ui-border)}
+    [data-theme="dark"] .onboardingOpts button.active{background:var(--ui-ink);color:var(--ui-bg);border-color:var(--ui-ink)}
+    [data-theme="dark"] .onboardingStart{background:var(--ui-blue);color:#fff;border-color:var(--ui-blue)}
+    [data-theme="dark"] .onboardingStatus{background:var(--ui-panel-soft);border-color:var(--ui-border)}
+    [data-theme="dark"] .toggleBtn.active,[data-theme="dark"] .tabs button.active{background:var(--ui-ink);color:var(--ui-bg);border-color:var(--ui-ink)}
+    [data-theme="dark"] #plus15,[data-theme="dark"] #plus30{color:var(--ui-blue);border-color:rgba(74,158,255,.28)}
+    [data-theme="dark"] .replaceBtn{background:var(--ui-panel-soft);color:var(--ui-muted);border-color:var(--ui-border)}
+    [data-theme="dark"] .dangerAction{background:rgba(204,126,28,.1);color:#c4a24a;border-color:rgba(204,126,28,.25)}
+    [data-theme="dark"] .quietAction{background:var(--ui-panel-soft);color:var(--ui-muted);border-color:var(--ui-border)}
+    [data-theme="dark"] .secondaryAction{background:var(--ui-panel)!important;color:var(--ui-ink)!important;border-color:var(--ui-border)!important}
+    [data-theme="dark"] .catalogRow .primary{background:var(--ui-blue);color:#fff;border-color:var(--ui-blue)}
+    [data-theme="dark"] .budgetTile.good strong{color:var(--ui-green)}
+
     @keyframes ffSpin{to{transform:rotate(360deg)}}
     @media(max-width:980px){
       .onboardingCard{padding:28px 20px}
@@ -1162,6 +1221,7 @@
     <div class="brand"><span class="icon" data-icon="grid"></span><span>FoodFlow</span></div>
     <div class="label">
       <button id="editProfile">Профиль</button>
+      <button id="toggleTheme" title="Тёмная тема" style="font-size:16px;padding:6px 10px;min-height:30px;border-radius:999px">☀</button>
       <button id="openCatalog" title="Каталог рецептов">Каталог</button>
       <button id="resetProgress" title="Сбросить прогресс" style="color:var(--ui-muted);font-size:12px;padding:6px 10px;min-height:30px;border-radius:999px">Сброс</button>
       <span id="pwaStatus" class="pwaStatus" aria-live="polite">Сеть</span>
