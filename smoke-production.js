@@ -6,6 +6,13 @@ const path = require("path");
 const release = JSON.parse(fs.readFileSync(path.join(__dirname, "release.json"), "utf8"));
 const origin = release.productionOrigin;
 const root = release.productionUrl;
+const swSource = fs.readFileSync(path.join(__dirname, "sw.js"), "utf8");
+const cacheVersionMatch = swSource.match(/CACHE_VERSION\s*=\s*"([^"]+)"/);
+if (!cacheVersionMatch) {
+  console.error("smoke-production: cannot read CACHE_VERSION from sw.js");
+  process.exit(1);
+}
+const cacheVersion = cacheVersionMatch[1];
 
 function fetchText(url) {
   return new Promise((resolve, reject) => {
@@ -62,7 +69,7 @@ async function check(pathname, options = {}) {
   await check("/sw.js", {
     cache: "max-age=0, must-revalidate",
     contentType: "application/javascript",
-    includes: ["CACHE_VERSION", "2026-05-20-rc-3"]
+    includes: ["CACHE_VERSION", cacheVersion]
   });
   await check("/manifest.webmanifest", { contentType: "application/manifest+json", includes: ["FoodFlow", "icons/icon-512.png"] });
   await check("/robots.txt", { cache: "max-age=0, must-revalidate", includes: [`Sitemap: ${origin}/sitemap.xml`] });

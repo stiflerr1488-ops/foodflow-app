@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0",
   "productionUrl": "https://foodflow-sage.vercel.app/",
   "productionOrigin": "https://foodflow-sage.vercel.app",
-  "releasedAt": null
+  "releasedAt": "2026-05-21"
 }
