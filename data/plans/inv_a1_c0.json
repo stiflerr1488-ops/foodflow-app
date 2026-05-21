@@ -1660,10 +1660,6 @@
       "tvorog_g": 200,
       "salt_g": 3
     },
-    "Арнемские мейшес": {
-      "apples_g": 180,
-      "salt_g": 3
-    },
     "Аррос ал Аль-форно — запечённый рис": {
       "roots_g": 11,
       "tomato_paste_g": 25,
@@ -2551,15 +2547,6 @@
       "mince_g": 180,
       "salt_g": 3
     },
-    "Кукурузноеед Говядина и Капустное – ямайский в стиле": {
-      "cabbage_g": 160,
-      "roots_g": 54,
-      "frozenveg_g": 12,
-      "tomato_paste_g": 25,
-      "mince_g": 180,
-      "salt_g": 3,
-      "rice_g": 90
-    },
     "Кукурузноеед Говядина Хасх": {
       "roots_g": 51,
       "frozenveg_g": 180,
@@ -3417,13 +3404,6 @@
       "rice_g": 90,
       "mince_g": 180,
       "salt_g": 3
-    },
-    "Баранина Тзатзики бургеры": {
-      "roots_g": 100,
-      "kefir_ml": 200,
-      "mince_g": 180,
-      "salt_g": 3,
-      "lavash_pcs": 1
     },
     "Ламингтоны": {
       "eggs_pcs": 0.4,
@@ -8461,6 +8441,26 @@
       "tomato_paste_g": 20,
       "oil_g": 15,
       "salt_g": 3
+    },
+    "Яблоки с солью и специями": {
+      "apples_g": 180,
+      "salt_g": 3
+    },
+    "Кебаб из фарша в лаваше с соусом": {
+      "roots_g": 100,
+      "kefir_ml": 200,
+      "mince_g": 180,
+      "salt_g": 3,
+      "lavash_pcs": 1
+    },
+    "Ямайский рис с фаршем и капустой": {
+      "cabbage_g": 160,
+      "roots_g": 54,
+      "frozenveg_g": 12,
+      "tomato_paste_g": 25,
+      "mince_g": 180,
+      "salt_g": 3,
+      "rice_g": 90
     }
   },
   "shelfLifeDays": {

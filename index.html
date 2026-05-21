@@ -632,12 +632,21 @@
     }
     button:hover,select:hover,input:hover{border-color:#bdc8d6}
     .top{
+      position:sticky;
+      top:0;
+      z-index:30;
       background:rgba(248,250,252,.92);
+      backdrop-filter:blur(18px);
       border-bottom:1px solid rgba(217,224,232,.85);
     }
     .topInner{
       max-width:1240px;
-      padding:12px 28px;
+      margin:0 auto;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      padding:10px 20px;
     }
     .brand{
       width:max-content;
@@ -646,16 +655,23 @@
       border-radius:999px;
       background:rgba(255,255,255,.72);
       font-weight:700;
+      flex-shrink:0;
     }
     .label{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:6px;
+      flex:1;
       justify-content:flex-end;
-      gap:8px;
     }
     .label .small{text-transform:uppercase;font-size:11px;letter-spacing:.06em;color:var(--ui-muted)}
-    #prevDay,#nextDay{width:42px;padding:0;font-size:20px}
-    #timeInput{border-color:var(--ui-border)!important;background:#fff;width:136px!important}
+    #prevDay,#nextDay{width:36px;padding:0;font-size:18px}
+    #timeInput{border-color:var(--ui-border)!important;background:var(--ui-panel);width:110px!important}
+    #daySelect{width:52px;padding:0 4px;text-align:center}
+    #editProfile,#openCatalog,#toggleTheme{flex-shrink:0}
 
-    .shell{max-width:1240px;padding-bottom:80px}
+    .shell{max-width:1240px;margin:0 auto;padding:20px 20px 80px}
     .hero{
       grid-template-columns:minmax(260px,.55fr) minmax(0,1fr);
       align-items:stretch;
@@ -1088,7 +1104,9 @@
     #budgetRefs > .sectionTitle{display:none}
 
     @media(max-width:980px){
-      .shell{padding-top:14px}
+      .topInner{padding:8px 12px;gap:6px}
+      .shell{padding:14px 12px 56px}
+      .label .small{display:none}
       .statusBar{grid-template-columns:1fr;gap:6px}
       .statusKcal{font-size:16px}
       .sectionTitle{grid-template-columns:1fr;margin-bottom:12px}
@@ -1202,6 +1220,20 @@
     [data-theme="dark"] .secondaryAction{background:var(--ui-panel)!important;color:var(--ui-ink)!important;border-color:var(--ui-border)!important}
     [data-theme="dark"] .catalogRow .primary{background:var(--ui-blue);color:#fff;border-color:var(--ui-blue)}
     [data-theme="dark"] .budgetTile.good strong{color:var(--ui-green)}
+
+    /* ── Full HD (1920+) ── */
+    @media(min-width:1400px){
+      .shell{max-width:1380px;padding:28px 40px 80px}
+      .topInner{max-width:1380px;padding:12px 40px}
+      .nowCard{padding:34px 38px}
+      .action{padding:18px 22px}
+      .actionTitle{font-size:22px}
+      .actionTime{font-size:34px}
+      .sectionTitle h2{font-size:36px}
+      .statusKcal{font-size:22px}
+      .budgetTile strong{font-size:28px}
+      .budgetTile{padding:20px}
+    }
 
     @keyframes ffSpin{to{transform:rotate(360deg)}}
     @media(max-width:980px){

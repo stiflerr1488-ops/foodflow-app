@@ -25943,166 +25943,6 @@
       "usageSource": "ingredients_inferred",
       "contentSource": "manual_deep_cleaned"
     },
-    "Арнемские мейшес": {
-      "title": "Арнемские яблочные дольки со специями",
-      "source": {
-        "kind": "manual_reviewed",
-        "url": null,
-        "note": "Manual review A3.01-part1: title adapted because pastry ingredients are unavailable; usage preserved."
-      },
-      "type": "Быстрый перекус",
-      "time": "10 минут",
-      "store": "Лучше съесть сразу. Нарезанное яблоко хранить в холодильнике не дольше нескольких часов в закрытом контейнере.",
-      "ingredients": [
-        "яблоки — 180 г",
-        "соль и специи — по вкусу"
-      ],
-      "steps": [
-        "Вымыть яблоко и удалить сердцевину.",
-        "Нарезать яблоко тонкими дольками.",
-        "Слегка посыпать специями и совсем небольшой щепоткой соли.",
-        "Оставить на 2-3 минуты, чтобы специи раскрылись.",
-        "Подать сразу как быстрый фруктовый перекус."
-      ],
-      "notes": [
-        "Классическое печенье Arnhemse meisjes требует слоёного теста, которого нет в доступных ингредиентах.",
-        "Соль использовать минимально, только чтобы подчеркнуть вкус яблока."
-      ],
-      "usage": {
-        "apples_g": 180,
-        "salt_g": 3
-      },
-      "activeMinutes": 10,
-      "containerRule": null,
-      "ingredientBoxes": [
-        {
-          "id": "apples_g-1",
-          "productId": "apples_g",
-          "title": "Яблоки",
-          "raw": "яблоки — 180 г",
-          "amount": 180,
-          "unit": "г",
-          "amountLabel": "180 г",
-          "storage": "fridge",
-          "pricePerUnit": 0.089,
-          "priceLabel": "~16 ₽",
-          "cost": 16.02,
-          "macros": {
-            "p": 0.54,
-            "f": 0,
-            "c": 21.6,
-            "kcal": 89
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "salt_g-2",
-          "productId": "salt_g",
-          "title": "Соль",
-          "raw": "соль и специи — по вкусу",
-          "amount": 3,
-          "unit": "г",
-          "amountLabel": "3 г",
-          "storage": "base",
-          "pricePerUnit": 0.019,
-          "priceLabel": "~0 ₽",
-          "cost": 0.06,
-          "macros": {
-            "p": 0,
-            "f": 0,
-            "c": 0,
-            "kcal": 0
-          },
-          "status": "mapped"
-        }
-      ],
-      "cost": 16.08,
-      "costLabel": "~16 ₽",
-      "macros": {
-        "p": 0.54,
-        "f": 0,
-        "c": 21.6,
-        "kcal": 89
-      },
-      "kcal": 89,
-      "quality": {
-        "score": 90,
-        "level": "good",
-        "usable": true,
-        "issues": [
-          "low_cost"
-        ],
-        "sourceKind": "manual_cleaned"
-      },
-      "box": {
-        "id": "Арнемские мейшес",
-        "title": "Арнемские мейшес",
-        "type": "Готовить свежим",
-        "time": "30 минут",
-        "store": "Не хранить",
-        "ingredientCount": 2,
-        "stepCount": 5,
-        "activeMinutes": 20,
-        "cost": 16.08,
-        "costLabel": "~16 ₽",
-        "kcal": 89,
-        "macros": {
-          "p": 0.54,
-          "f": 0,
-          "c": 21.6,
-          "kcal": 89
-        },
-        "quality": {
-          "score": 90,
-          "level": "good",
-          "usable": true,
-          "issues": [
-            "low_cost"
-          ],
-          "sourceKind": "manual_cleaned"
-        }
-      },
-      "usageBoxes": [
-        {
-          "id": "apples_g-1",
-          "productId": "apples_g",
-          "title": "Яблоки",
-          "amount": 180,
-          "unit": "г",
-          "amountLabel": "180 г",
-          "storage": "fridge",
-          "pricePerUnit": 0.089,
-          "priceLabel": "~16 ₽",
-          "cost": 16.02,
-          "macros": {
-            "p": 0.54,
-            "f": 0,
-            "c": 21.6,
-            "kcal": 89
-          }
-        },
-        {
-          "id": "salt_g-2",
-          "productId": "salt_g",
-          "title": "Соль",
-          "amount": 3,
-          "unit": "г",
-          "amountLabel": "3 г",
-          "storage": "base",
-          "pricePerUnit": 0.019,
-          "priceLabel": "~0 ₽",
-          "cost": 0.06,
-          "macros": {
-            "p": 0,
-            "f": 0,
-            "c": 0,
-            "kcal": 0
-          }
-        }
-      ],
-      "usageSource": "ingredients_inferred",
-      "contentSource": "manual_deep_cleaned"
-    },
     "Аррос ал Аль-форно — запечённый рис": {
       "title": "Аррос аль форно: запечённый рис с курицей и фасолью",
       "source": {
@@ -61954,363 +61794,6 @@
       "usageSource": "ingredients_inferred",
       "contentSource": "manual_deep_cleaned"
     },
-    "Кукурузноеед Говядина и Капустное – ямайский в стиле": {
-      "title": "Фарш с капустой и рисом в пряной томатной подливке",
-      "source": {
-        "kind": "manual_reviewed",
-        "url": null,
-        "note": "Batch A3.10 manual review: corned beef unavailable; usage preserved."
-      },
-      "type": "Готовить свежим",
-      "time": "35 минут",
-      "store": "Хранить в холодильнике до 2 дней. Разогревать с небольшим количеством воды.",
-      "ingredients": [
-        "капуста — 160 г",
-        "морковь и лук — 54 г",
-        "овощная смесь — 12 г",
-        "томатная паста — 25 г",
-        "фарш — 180 г",
-        "рис — 90 г",
-        "соль и специи — по вкусу"
-      ],
-      "steps": [
-        "Рис промыть и отварить до готовности.",
-        "Капусту нашинковать, морковь и лук измельчить.",
-        "Фарш прогреть в сотейнике, разбивая лопаткой.",
-        "Добавить морковь, лук, капусту и немного овощной смеси.",
-        "Вмешать томатную пасту, соль, специи и 100 мл воды.",
-        "Тушить под крышкой 12-15 минут до готовности фарша и мягкости капусты.",
-        "Подать с рисом."
-      ],
-      "notes": [
-        "Солонины нет; пряный характер задаётся специями, а основа блюда — фарш, капуста и рис."
-      ],
-      "usage": {
-        "cabbage_g": 160,
-        "roots_g": 54,
-        "frozenveg_g": 12,
-        "tomato_paste_g": 25,
-        "mince_g": 180,
-        "salt_g": 3,
-        "rice_g": 90
-      },
-      "activeMinutes": 20,
-      "containerRule": null,
-      "ingredientBoxes": [
-        {
-          "id": "cabbage_g-1",
-          "productId": "cabbage_g",
-          "title": "Капуста/огурец",
-          "raw": "капуста — 160 г",
-          "amount": 160,
-          "unit": "г",
-          "amountLabel": "160 г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "priceLabel": "~6 ₽",
-          "cost": 6.24,
-          "macros": {
-            "p": 2.08,
-            "f": 0,
-            "c": 9.6,
-            "kcal": 47
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "roots_g-2",
-          "productId": "roots_g",
-          "title": "Морковь/лук/свекла",
-          "raw": "морковь и лук — 54 г",
-          "amount": 54,
-          "unit": "г",
-          "amountLabel": "54 г",
-          "storage": "fridge",
-          "pricePerUnit": 0.049,
-          "priceLabel": "~3 ₽",
-          "cost": 2.65,
-          "macros": {
-            "p": 0.54,
-            "f": 0,
-            "c": 4.86,
-            "kcal": 22
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "frozenveg_g-3",
-          "productId": "frozenveg_g",
-          "title": "Овощная смесь",
-          "raw": "овощная смесь — 12 г",
-          "amount": 12,
-          "unit": "г",
-          "amountLabel": "12 г",
-          "storage": "freezer",
-          "pricePerUnit": 0.149,
-          "priceLabel": "~2 ₽",
-          "cost": 1.79,
-          "macros": {
-            "p": 0.3,
-            "f": 0,
-            "c": 0.96,
-            "kcal": 5
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "tomato_paste_g-4",
-          "productId": "tomato_paste_g",
-          "title": "Томатная паста",
-          "raw": "томатная паста — 25 г",
-          "amount": 25,
-          "unit": "г",
-          "amountLabel": "25 г",
-          "storage": "base",
-          "pricePerUnit": 0.2,
-          "priceLabel": "~5 ₽",
-          "cost": 5,
-          "macros": {
-            "p": 1.13,
-            "f": 0,
-            "c": 4.5,
-            "kcal": 23
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "mince_g-5",
-          "productId": "mince_g",
-          "title": "Фарш",
-          "raw": "фарш — 180 г",
-          "amount": 180,
-          "unit": "г",
-          "amountLabel": "180 г",
-          "storage": "freezer",
-          "pricePerUnit": 0.349,
-          "priceLabel": "~63 ₽",
-          "cost": 62.82,
-          "macros": {
-            "p": 30.6,
-            "f": 32.4,
-            "c": 0,
-            "kcal": 414
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "salt_g-6",
-          "productId": "salt_g",
-          "title": "Соль",
-          "raw": "соль и специи — по вкусу",
-          "amount": 3,
-          "unit": "г",
-          "amountLabel": "3 г",
-          "storage": "base",
-          "pricePerUnit": 0.019,
-          "priceLabel": "~0 ₽",
-          "cost": 0.06,
-          "macros": {
-            "p": 0,
-            "f": 0,
-            "c": 0,
-            "kcal": 0
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "rice_g-7",
-          "productId": "rice_g",
-          "title": "Рис",
-          "raw": "рис — 90 г",
-          "amount": 90,
-          "unit": "г",
-          "amountLabel": "90 г",
-          "storage": "base",
-          "pricePerUnit": 0.079,
-          "priceLabel": "~7 ₽",
-          "cost": 7.11,
-          "macros": {
-            "p": 6.3,
-            "f": 0.9,
-            "c": 70.2,
-            "kcal": 314
-          },
-          "status": "mapped"
-        }
-      ],
-      "cost": 85.67,
-      "costLabel": "~86 ₽",
-      "macros": {
-        "p": 40.95,
-        "f": 33.3,
-        "c": 90.12,
-        "kcal": 825
-      },
-      "kcal": 825,
-      "quality": {
-        "score": 100,
-        "level": "good",
-        "usable": true,
-        "issues": [],
-        "sourceKind": "manual_cleaned"
-      },
-      "box": {
-        "id": "Кукурузноеед Говядина и Капустное – ямайский в стиле",
-        "title": "Кукурузноеед Говядина и Капустное – ямайский в стиле",
-        "type": "Готовить свежим",
-        "time": "30 минут",
-        "store": "Не хранить",
-        "ingredientCount": 7,
-        "stepCount": 5,
-        "activeMinutes": 20,
-        "cost": 85.67,
-        "costLabel": "~86 ₽",
-        "kcal": 825,
-        "macros": {
-          "p": 40.95,
-          "f": 33.3,
-          "c": 90.12,
-          "kcal": 825
-        },
-        "quality": {
-          "score": 100,
-          "level": "good",
-          "usable": true,
-          "issues": [],
-          "sourceKind": "manual_cleaned"
-        }
-      },
-      "usageBoxes": [
-        {
-          "id": "cabbage_g-1",
-          "productId": "cabbage_g",
-          "title": "Капуста/огурец",
-          "amount": 160,
-          "unit": "г",
-          "amountLabel": "160 г",
-          "storage": "fridge",
-          "pricePerUnit": 0.039,
-          "priceLabel": "~6 ₽",
-          "cost": 6.24,
-          "macros": {
-            "p": 2.08,
-            "f": 0,
-            "c": 9.6,
-            "kcal": 47
-          }
-        },
-        {
-          "id": "roots_g-2",
-          "productId": "roots_g",
-          "title": "Морковь/лук/свекла",
-          "amount": 54,
-          "unit": "г",
-          "amountLabel": "54 г",
-          "storage": "fridge",
-          "pricePerUnit": 0.049,
-          "priceLabel": "~3 ₽",
-          "cost": 2.65,
-          "macros": {
-            "p": 0.54,
-            "f": 0,
-            "c": 4.86,
-            "kcal": 22
-          }
-        },
-        {
-          "id": "frozenveg_g-3",
-          "productId": "frozenveg_g",
-          "title": "Овощная смесь",
-          "amount": 12,
-          "unit": "г",
-          "amountLabel": "12 г",
-          "storage": "freezer",
-          "pricePerUnit": 0.149,
-          "priceLabel": "~2 ₽",
-          "cost": 1.79,
-          "macros": {
-            "p": 0.3,
-            "f": 0,
-            "c": 0.96,
-            "kcal": 5
-          }
-        },
-        {
-          "id": "tomato_paste_g-4",
-          "productId": "tomato_paste_g",
-          "title": "Томатная паста",
-          "amount": 25,
-          "unit": "г",
-          "amountLabel": "25 г",
-          "storage": "base",
-          "pricePerUnit": 0.2,
-          "priceLabel": "~5 ₽",
-          "cost": 5,
-          "macros": {
-            "p": 1.13,
-            "f": 0,
-            "c": 4.5,
-            "kcal": 23
-          }
-        },
-        {
-          "id": "mince_g-5",
-          "productId": "mince_g",
-          "title": "Фарш",
-          "amount": 180,
-          "unit": "г",
-          "amountLabel": "180 г",
-          "storage": "freezer",
-          "pricePerUnit": 0.349,
-          "priceLabel": "~63 ₽",
-          "cost": 62.82,
-          "macros": {
-            "p": 30.6,
-            "f": 32.4,
-            "c": 0,
-            "kcal": 414
-          }
-        },
-        {
-          "id": "salt_g-6",
-          "productId": "salt_g",
-          "title": "Соль",
-          "amount": 3,
-          "unit": "г",
-          "amountLabel": "3 г",
-          "storage": "base",
-          "pricePerUnit": 0.019,
-          "priceLabel": "~0 ₽",
-          "cost": 0.06,
-          "macros": {
-            "p": 0,
-            "f": 0,
-            "c": 0,
-            "kcal": 0
-          }
-        },
-        {
-          "id": "rice_g-7",
-          "productId": "rice_g",
-          "title": "Рис",
-          "amount": 90,
-          "unit": "г",
-          "amountLabel": "90 г",
-          "storage": "base",
-          "pricePerUnit": 0.079,
-          "priceLabel": "~7 ₽",
-          "cost": 7.11,
-          "macros": {
-            "p": 6.3,
-            "f": 0.9,
-            "c": 70.2,
-            "kcal": 314
-          }
-        }
-      ],
-      "usageSource": "ingredients_inferred",
-      "contentSource": "manual_deep_cleaned"
-    },
     "Кукурузноеед Говядина Хасх": {
       "title": "Картофельная сковорода с фаршем и овощами",
       "source": {
@@ -96721,284 +96204,6 @@
             "f": 0,
             "c": 0,
             "kcal": 0
-          }
-        }
-      ],
-      "usageSource": "ingredients_inferred",
-      "contentSource": "manual_deep_cleaned"
-    },
-    "Баранина Тзатзики бургеры": {
-      "title": "Лаваш с фаршем и кефирным соусом",
-      "source": {
-        "kind": "manual_reviewed",
-        "url": null,
-        "note": "Manual review A3.02-part1: title adapted to lavash and kefir sauce instead of unavailable lamb burger buns/tzatziki ingredients; usage preserved."
-      },
-      "type": "Готовить свежим",
-      "time": "25 минут",
-      "store": "Лучше съесть сразу. Если нужно отложить, хранить фарш и соус отдельно в холодильнике до 24 часов, а лаваш собрать перед подачей.",
-      "ingredients": [
-        "лаваш — 1 шт",
-        "фарш — 180 г",
-        "кефир — 200 мл",
-        "морковь и лук — 100 г",
-        "соль и специи — по вкусу"
-      ],
-      "steps": [
-        "Морковь и лук мелко нарезать.",
-        "Обжарить фарш на сковороде до полной готовности.",
-        "Добавить морковь с луком, соль и специи, готовить ещё 5 минут.",
-        "Кефир смешать с щепоткой соли и специями для простого соуса.",
-        "Лаваш слегка прогреть на сухой сковороде или оставить мягким.",
-        "Выложить фарш на лаваш, добавить немного кефирного соуса и свернуть.",
-        "Подать сразу, оставшийся соус подать отдельно."
-      ],
-      "notes": [
-        "В текущем usage нет баранины, булочек, огурца и йогурта; название приведено к фактическим продуктам.",
-        "Не заливать лаваш соусом заранее, иначе он размокнет."
-      ],
-      "usage": {
-        "roots_g": 100,
-        "kefir_ml": 200,
-        "mince_g": 180,
-        "salt_g": 3,
-        "lavash_pcs": 1
-      },
-      "activeMinutes": 18,
-      "containerRule": null,
-      "ingredientBoxes": [
-        {
-          "id": "roots_g-1",
-          "productId": "roots_g",
-          "title": "Морковь/лук/свекла",
-          "raw": "морковь и лук — 100 г",
-          "amount": 100,
-          "unit": "г",
-          "amountLabel": "100 г",
-          "storage": "fridge",
-          "pricePerUnit": 0.049,
-          "priceLabel": "~5 ₽",
-          "cost": 4.9,
-          "macros": {
-            "p": 1,
-            "f": 0,
-            "c": 9,
-            "kcal": 40
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "kefir_ml-2",
-          "productId": "kefir_ml",
-          "title": "Кефир",
-          "raw": "кефир — 200 мл",
-          "amount": 200,
-          "unit": "мл",
-          "amountLabel": "200 мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.069,
-          "priceLabel": "~14 ₽",
-          "cost": 13.8,
-          "macros": {
-            "p": 6,
-            "f": 5,
-            "c": 8,
-            "kcal": 101
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "mince_g-3",
-          "productId": "mince_g",
-          "title": "Фарш",
-          "raw": "фарш — 180 г",
-          "amount": 180,
-          "unit": "г",
-          "amountLabel": "180 г",
-          "storage": "freezer",
-          "pricePerUnit": 0.349,
-          "priceLabel": "~63 ₽",
-          "cost": 62.82,
-          "macros": {
-            "p": 30.6,
-            "f": 32.4,
-            "c": 0,
-            "kcal": 414
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "salt_g-4",
-          "productId": "salt_g",
-          "title": "Соль",
-          "raw": "соль и специи — по вкусу",
-          "amount": 3,
-          "unit": "г",
-          "amountLabel": "3 г",
-          "storage": "base",
-          "pricePerUnit": 0.019,
-          "priceLabel": "~0 ₽",
-          "cost": 0.06,
-          "macros": {
-            "p": 0,
-            "f": 0,
-            "c": 0,
-            "kcal": 0
-          },
-          "status": "mapped"
-        },
-        {
-          "id": "lavash_pcs-5",
-          "productId": "lavash_pcs",
-          "title": "Лаваш",
-          "raw": "лаваш — 1 шт",
-          "amount": 1,
-          "unit": "шт",
-          "amountLabel": "1 шт",
-          "storage": "freezer",
-          "pricePerUnit": 49,
-          "priceLabel": "~49 ₽",
-          "cost": 49,
-          "macros": {
-            "p": 8,
-            "f": 2,
-            "c": 50,
-            "kcal": 250
-          },
-          "status": "mapped"
-        }
-      ],
-      "cost": 130.58,
-      "costLabel": "~131 ₽",
-      "macros": {
-        "p": 45.6,
-        "f": 39.4,
-        "c": 67,
-        "kcal": 805
-      },
-      "kcal": 805,
-      "quality": {
-        "score": 100,
-        "level": "good",
-        "usable": true,
-        "issues": [],
-        "sourceKind": "manual_cleaned"
-      },
-      "box": {
-        "id": "Баранина Тзатзики бургеры",
-        "title": "Баранина Тзатзики бургеры",
-        "type": "Готовить свежим",
-        "time": "30 минут",
-        "store": "Не хранить",
-        "ingredientCount": 5,
-        "stepCount": 5,
-        "activeMinutes": 20,
-        "cost": 130.58,
-        "costLabel": "~131 ₽",
-        "kcal": 805,
-        "macros": {
-          "p": 45.6,
-          "f": 39.4,
-          "c": 67,
-          "kcal": 805
-        },
-        "quality": {
-          "score": 100,
-          "level": "good",
-          "usable": true,
-          "issues": [],
-          "sourceKind": "manual_cleaned"
-        }
-      },
-      "usageBoxes": [
-        {
-          "id": "roots_g-1",
-          "productId": "roots_g",
-          "title": "Морковь/лук/свекла",
-          "amount": 100,
-          "unit": "г",
-          "amountLabel": "100 г",
-          "storage": "fridge",
-          "pricePerUnit": 0.049,
-          "priceLabel": "~5 ₽",
-          "cost": 4.9,
-          "macros": {
-            "p": 1,
-            "f": 0,
-            "c": 9,
-            "kcal": 40
-          }
-        },
-        {
-          "id": "kefir_ml-2",
-          "productId": "kefir_ml",
-          "title": "Кефир",
-          "amount": 200,
-          "unit": "мл",
-          "amountLabel": "200 мл",
-          "storage": "fridge",
-          "pricePerUnit": 0.069,
-          "priceLabel": "~14 ₽",
-          "cost": 13.8,
-          "macros": {
-            "p": 6,
-            "f": 5,
-            "c": 8,
-            "kcal": 101
-          }
-        },
-        {
-          "id": "mince_g-3",
-          "productId": "mince_g",
-          "title": "Фарш",
-          "amount": 180,
-          "unit": "г",
-          "amountLabel": "180 г",
-          "storage": "freezer",
-          "pricePerUnit": 0.349,
-          "priceLabel": "~63 ₽",
-          "cost": 62.82,
-          "macros": {
-            "p": 30.6,
-            "f": 32.4,
-            "c": 0,
-            "kcal": 414
-          }
-        },
-        {
-          "id": "salt_g-4",
-          "productId": "salt_g",
-          "title": "Соль",
-          "amount": 3,
-          "unit": "г",
-          "amountLabel": "3 г",
-          "storage": "base",
-          "pricePerUnit": 0.019,
-          "priceLabel": "~0 ₽",
-          "cost": 0.06,
-          "macros": {
-            "p": 0,
-            "f": 0,
-            "c": 0,
-            "kcal": 0
-          }
-        },
-        {
-          "id": "lavash_pcs-5",
-          "productId": "lavash_pcs",
-          "title": "Лаваш",
-          "amount": 1,
-          "unit": "шт",
-          "amountLabel": "1 шт",
-          "storage": "freezer",
-          "pricePerUnit": 49,
-          "priceLabel": "~49 ₽",
-          "cost": 49,
-          "macros": {
-            "p": 8,
-            "f": 2,
-            "c": 50,
-            "kcal": 250
           }
         }
       ],
@@ -300865,6 +300070,801 @@
           "sourceKind": "internal_seed"
         }
       }
+    },
+    "Яблоки с солью и специями": {
+      "title": "Яблоки с солью и специями",
+      "source": {
+        "kind": "manual_reviewed",
+        "url": null,
+        "note": "Renamed from machine-translation: Арнемские мейшес"
+      },
+      "type": "Быстрый перекус",
+      "time": "10 минут",
+      "store": "Лучше съесть сразу. Нарезанное яблоко хранить в холодильнике не дольше нескольких часов в закрытом контейнере.",
+      "ingredients": [
+        "яблоки — 180 г",
+        "соль и специи — по вкусу"
+      ],
+      "steps": [
+        "Вымыть яблоко и удалить сердцевину.",
+        "Нарезать яблоко тонкими дольками.",
+        "Слегка посыпать специями и совсем небольшой щепоткой соли.",
+        "Оставить на 2-3 минуты, чтобы специи раскрылись.",
+        "Подать сразу как быстрый фруктовый перекус."
+      ],
+      "notes": [
+        "Классическое печенье Arnhemse meisjes требует слоёного теста, которого нет в доступных ингредиентах.",
+        "Соль использовать минимально, только чтобы подчеркнуть вкус яблока."
+      ],
+      "usage": {
+        "apples_g": 180,
+        "salt_g": 3
+      },
+      "activeMinutes": 10,
+      "containerRule": null,
+      "ingredientBoxes": [
+        {
+          "id": "apples_g-1",
+          "productId": "apples_g",
+          "title": "Яблоки",
+          "raw": "яблоки — 180 г",
+          "amount": 180,
+          "unit": "г",
+          "amountLabel": "180 г",
+          "storage": "fridge",
+          "pricePerUnit": 0.089,
+          "priceLabel": "~16 ₽",
+          "cost": 16.02,
+          "macros": {
+            "p": 0.54,
+            "f": 0,
+            "c": 21.6,
+            "kcal": 89
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "salt_g-2",
+          "productId": "salt_g",
+          "title": "Соль",
+          "raw": "соль и специи — по вкусу",
+          "amount": 3,
+          "unit": "г",
+          "amountLabel": "3 г",
+          "storage": "base",
+          "pricePerUnit": 0.019,
+          "priceLabel": "~0 ₽",
+          "cost": 0.06,
+          "macros": {
+            "p": 0,
+            "f": 0,
+            "c": 0,
+            "kcal": 0
+          },
+          "status": "mapped"
+        }
+      ],
+      "cost": 16.08,
+      "costLabel": "~16 ₽",
+      "macros": {
+        "p": 0.54,
+        "f": 0,
+        "c": 21.6,
+        "kcal": 89
+      },
+      "kcal": 89,
+      "quality": {
+        "score": 90,
+        "level": "good",
+        "usable": true,
+        "issues": [
+          "low_cost"
+        ],
+        "sourceKind": "manual_cleaned"
+      },
+      "box": {
+        "id": "Арнемские мейшес",
+        "title": "Арнемские мейшес",
+        "type": "Готовить свежим",
+        "time": "30 минут",
+        "store": "Не хранить",
+        "ingredientCount": 2,
+        "stepCount": 5,
+        "activeMinutes": 20,
+        "cost": 16.08,
+        "costLabel": "~16 ₽",
+        "kcal": 89,
+        "macros": {
+          "p": 0.54,
+          "f": 0,
+          "c": 21.6,
+          "kcal": 89
+        },
+        "quality": {
+          "score": 90,
+          "level": "good",
+          "usable": true,
+          "issues": [
+            "low_cost"
+          ],
+          "sourceKind": "manual_cleaned"
+        }
+      },
+      "usageBoxes": [
+        {
+          "id": "apples_g-1",
+          "productId": "apples_g",
+          "title": "Яблоки",
+          "amount": 180,
+          "unit": "г",
+          "amountLabel": "180 г",
+          "storage": "fridge",
+          "pricePerUnit": 0.089,
+          "priceLabel": "~16 ₽",
+          "cost": 16.02,
+          "macros": {
+            "p": 0.54,
+            "f": 0,
+            "c": 21.6,
+            "kcal": 89
+          }
+        },
+        {
+          "id": "salt_g-2",
+          "productId": "salt_g",
+          "title": "Соль",
+          "amount": 3,
+          "unit": "г",
+          "amountLabel": "3 г",
+          "storage": "base",
+          "pricePerUnit": 0.019,
+          "priceLabel": "~0 ₽",
+          "cost": 0.06,
+          "macros": {
+            "p": 0,
+            "f": 0,
+            "c": 0,
+            "kcal": 0
+          }
+        }
+      ],
+      "usageSource": "ingredients_inferred",
+      "contentSource": "manual_deep_cleaned"
+    },
+    "Кебаб из фарша в лаваше с соусом": {
+      "title": "Кебаб из фарша в лаваше с соусом",
+      "source": {
+        "kind": "manual_reviewed",
+        "url": null,
+        "note": "Renamed from machine-translation: Баранина Тзатзики бургеры"
+      },
+      "type": "Готовить свежим",
+      "time": "25 минут",
+      "store": "Лучше съесть сразу. Если нужно отложить, хранить фарш и соус отдельно в холодильнике до 24 часов, а лаваш собрать перед подачей.",
+      "ingredients": [
+        "лаваш — 1 шт",
+        "фарш — 180 г",
+        "кефир — 200 мл",
+        "морковь и лук — 100 г",
+        "соль и специи — по вкусу"
+      ],
+      "steps": [
+        "Морковь и лук мелко нарезать.",
+        "Обжарить фарш на сковороде до полной готовности.",
+        "Добавить морковь с луком, соль и специи, готовить ещё 5 минут.",
+        "Кефир смешать с щепоткой соли и специями для простого соуса.",
+        "Лаваш слегка прогреть на сухой сковороде или оставить мягким.",
+        "Выложить фарш на лаваш, добавить немного кефирного соуса и свернуть.",
+        "Подать сразу, оставшийся соус подать отдельно."
+      ],
+      "notes": [
+        "В текущем usage нет баранины, булочек, огурца и йогурта; название приведено к фактическим продуктам.",
+        "Не заливать лаваш соусом заранее, иначе он размокнет."
+      ],
+      "usage": {
+        "roots_g": 100,
+        "kefir_ml": 200,
+        "mince_g": 180,
+        "salt_g": 3,
+        "lavash_pcs": 1
+      },
+      "activeMinutes": 18,
+      "containerRule": null,
+      "ingredientBoxes": [
+        {
+          "id": "roots_g-1",
+          "productId": "roots_g",
+          "title": "Морковь/лук/свекла",
+          "raw": "морковь и лук — 100 г",
+          "amount": 100,
+          "unit": "г",
+          "amountLabel": "100 г",
+          "storage": "fridge",
+          "pricePerUnit": 0.049,
+          "priceLabel": "~5 ₽",
+          "cost": 4.9,
+          "macros": {
+            "p": 1,
+            "f": 0,
+            "c": 9,
+            "kcal": 40
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "kefir_ml-2",
+          "productId": "kefir_ml",
+          "title": "Кефир",
+          "raw": "кефир — 200 мл",
+          "amount": 200,
+          "unit": "мл",
+          "amountLabel": "200 мл",
+          "storage": "fridge",
+          "pricePerUnit": 0.069,
+          "priceLabel": "~14 ₽",
+          "cost": 13.8,
+          "macros": {
+            "p": 6,
+            "f": 5,
+            "c": 8,
+            "kcal": 101
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "mince_g-3",
+          "productId": "mince_g",
+          "title": "Фарш",
+          "raw": "фарш — 180 г",
+          "amount": 180,
+          "unit": "г",
+          "amountLabel": "180 г",
+          "storage": "freezer",
+          "pricePerUnit": 0.349,
+          "priceLabel": "~63 ₽",
+          "cost": 62.82,
+          "macros": {
+            "p": 30.6,
+            "f": 32.4,
+            "c": 0,
+            "kcal": 414
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "salt_g-4",
+          "productId": "salt_g",
+          "title": "Соль",
+          "raw": "соль и специи — по вкусу",
+          "amount": 3,
+          "unit": "г",
+          "amountLabel": "3 г",
+          "storage": "base",
+          "pricePerUnit": 0.019,
+          "priceLabel": "~0 ₽",
+          "cost": 0.06,
+          "macros": {
+            "p": 0,
+            "f": 0,
+            "c": 0,
+            "kcal": 0
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "lavash_pcs-5",
+          "productId": "lavash_pcs",
+          "title": "Лаваш",
+          "raw": "лаваш — 1 шт",
+          "amount": 1,
+          "unit": "шт",
+          "amountLabel": "1 шт",
+          "storage": "freezer",
+          "pricePerUnit": 49,
+          "priceLabel": "~49 ₽",
+          "cost": 49,
+          "macros": {
+            "p": 8,
+            "f": 2,
+            "c": 50,
+            "kcal": 250
+          },
+          "status": "mapped"
+        }
+      ],
+      "cost": 130.58,
+      "costLabel": "~131 ₽",
+      "macros": {
+        "p": 45.6,
+        "f": 39.4,
+        "c": 67,
+        "kcal": 805
+      },
+      "kcal": 805,
+      "quality": {
+        "score": 100,
+        "level": "good",
+        "usable": true,
+        "issues": [],
+        "sourceKind": "manual_cleaned"
+      },
+      "box": {
+        "id": "Баранина Тзатзики бургеры",
+        "title": "Баранина Тзатзики бургеры",
+        "type": "Готовить свежим",
+        "time": "30 минут",
+        "store": "Не хранить",
+        "ingredientCount": 5,
+        "stepCount": 5,
+        "activeMinutes": 20,
+        "cost": 130.58,
+        "costLabel": "~131 ₽",
+        "kcal": 805,
+        "macros": {
+          "p": 45.6,
+          "f": 39.4,
+          "c": 67,
+          "kcal": 805
+        },
+        "quality": {
+          "score": 100,
+          "level": "good",
+          "usable": true,
+          "issues": [],
+          "sourceKind": "manual_cleaned"
+        }
+      },
+      "usageBoxes": [
+        {
+          "id": "roots_g-1",
+          "productId": "roots_g",
+          "title": "Морковь/лук/свекла",
+          "amount": 100,
+          "unit": "г",
+          "amountLabel": "100 г",
+          "storage": "fridge",
+          "pricePerUnit": 0.049,
+          "priceLabel": "~5 ₽",
+          "cost": 4.9,
+          "macros": {
+            "p": 1,
+            "f": 0,
+            "c": 9,
+            "kcal": 40
+          }
+        },
+        {
+          "id": "kefir_ml-2",
+          "productId": "kefir_ml",
+          "title": "Кефир",
+          "amount": 200,
+          "unit": "мл",
+          "amountLabel": "200 мл",
+          "storage": "fridge",
+          "pricePerUnit": 0.069,
+          "priceLabel": "~14 ₽",
+          "cost": 13.8,
+          "macros": {
+            "p": 6,
+            "f": 5,
+            "c": 8,
+            "kcal": 101
+          }
+        },
+        {
+          "id": "mince_g-3",
+          "productId": "mince_g",
+          "title": "Фарш",
+          "amount": 180,
+          "unit": "г",
+          "amountLabel": "180 г",
+          "storage": "freezer",
+          "pricePerUnit": 0.349,
+          "priceLabel": "~63 ₽",
+          "cost": 62.82,
+          "macros": {
+            "p": 30.6,
+            "f": 32.4,
+            "c": 0,
+            "kcal": 414
+          }
+        },
+        {
+          "id": "salt_g-4",
+          "productId": "salt_g",
+          "title": "Соль",
+          "amount": 3,
+          "unit": "г",
+          "amountLabel": "3 г",
+          "storage": "base",
+          "pricePerUnit": 0.019,
+          "priceLabel": "~0 ₽",
+          "cost": 0.06,
+          "macros": {
+            "p": 0,
+            "f": 0,
+            "c": 0,
+            "kcal": 0
+          }
+        },
+        {
+          "id": "lavash_pcs-5",
+          "productId": "lavash_pcs",
+          "title": "Лаваш",
+          "amount": 1,
+          "unit": "шт",
+          "amountLabel": "1 шт",
+          "storage": "freezer",
+          "pricePerUnit": 49,
+          "priceLabel": "~49 ₽",
+          "cost": 49,
+          "macros": {
+            "p": 8,
+            "f": 2,
+            "c": 50,
+            "kcal": 250
+          }
+        }
+      ],
+      "usageSource": "ingredients_inferred",
+      "contentSource": "manual_deep_cleaned"
+    },
+    "Ямайский рис с фаршем и капустой": {
+      "title": "Ямайский рис с фаршем и капустой",
+      "source": {
+        "kind": "manual_reviewed",
+        "url": null,
+        "note": "Renamed from machine-translation: Кукурузноеед Говядина и Капустное – ямайский в стиле"
+      },
+      "type": "Готовить свежим",
+      "time": "35 минут",
+      "store": "Хранить в холодильнике до 2 дней. Разогревать с небольшим количеством воды.",
+      "ingredients": [
+        "капуста — 160 г",
+        "морковь и лук — 54 г",
+        "овощная смесь — 12 г",
+        "томатная паста — 25 г",
+        "фарш — 180 г",
+        "рис — 90 г",
+        "соль и специи — по вкусу"
+      ],
+      "steps": [
+        "Рис промыть и отварить до готовности.",
+        "Капусту нашинковать, морковь и лук измельчить.",
+        "Фарш прогреть в сотейнике, разбивая лопаткой.",
+        "Добавить морковь, лук, капусту и немного овощной смеси.",
+        "Вмешать томатную пасту, соль, специи и 100 мл воды.",
+        "Тушить под крышкой 12-15 минут до готовности фарша и мягкости капусты.",
+        "Подать с рисом."
+      ],
+      "notes": [
+        "Солонины нет; пряный характер задаётся специями, а основа блюда — фарш, капуста и рис."
+      ],
+      "usage": {
+        "cabbage_g": 160,
+        "roots_g": 54,
+        "frozenveg_g": 12,
+        "tomato_paste_g": 25,
+        "mince_g": 180,
+        "salt_g": 3,
+        "rice_g": 90
+      },
+      "activeMinutes": 20,
+      "containerRule": null,
+      "ingredientBoxes": [
+        {
+          "id": "cabbage_g-1",
+          "productId": "cabbage_g",
+          "title": "Капуста/огурец",
+          "raw": "капуста — 160 г",
+          "amount": 160,
+          "unit": "г",
+          "amountLabel": "160 г",
+          "storage": "fridge",
+          "pricePerUnit": 0.039,
+          "priceLabel": "~6 ₽",
+          "cost": 6.24,
+          "macros": {
+            "p": 2.08,
+            "f": 0,
+            "c": 9.6,
+            "kcal": 47
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "roots_g-2",
+          "productId": "roots_g",
+          "title": "Морковь/лук/свекла",
+          "raw": "морковь и лук — 54 г",
+          "amount": 54,
+          "unit": "г",
+          "amountLabel": "54 г",
+          "storage": "fridge",
+          "pricePerUnit": 0.049,
+          "priceLabel": "~3 ₽",
+          "cost": 2.65,
+          "macros": {
+            "p": 0.54,
+            "f": 0,
+            "c": 4.86,
+            "kcal": 22
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "frozenveg_g-3",
+          "productId": "frozenveg_g",
+          "title": "Овощная смесь",
+          "raw": "овощная смесь — 12 г",
+          "amount": 12,
+          "unit": "г",
+          "amountLabel": "12 г",
+          "storage": "freezer",
+          "pricePerUnit": 0.149,
+          "priceLabel": "~2 ₽",
+          "cost": 1.79,
+          "macros": {
+            "p": 0.3,
+            "f": 0,
+            "c": 0.96,
+            "kcal": 5
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "tomato_paste_g-4",
+          "productId": "tomato_paste_g",
+          "title": "Томатная паста",
+          "raw": "томатная паста — 25 г",
+          "amount": 25,
+          "unit": "г",
+          "amountLabel": "25 г",
+          "storage": "base",
+          "pricePerUnit": 0.2,
+          "priceLabel": "~5 ₽",
+          "cost": 5,
+          "macros": {
+            "p": 1.13,
+            "f": 0,
+            "c": 4.5,
+            "kcal": 23
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "mince_g-5",
+          "productId": "mince_g",
+          "title": "Фарш",
+          "raw": "фарш — 180 г",
+          "amount": 180,
+          "unit": "г",
+          "amountLabel": "180 г",
+          "storage": "freezer",
+          "pricePerUnit": 0.349,
+          "priceLabel": "~63 ₽",
+          "cost": 62.82,
+          "macros": {
+            "p": 30.6,
+            "f": 32.4,
+            "c": 0,
+            "kcal": 414
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "salt_g-6",
+          "productId": "salt_g",
+          "title": "Соль",
+          "raw": "соль и специи — по вкусу",
+          "amount": 3,
+          "unit": "г",
+          "amountLabel": "3 г",
+          "storage": "base",
+          "pricePerUnit": 0.019,
+          "priceLabel": "~0 ₽",
+          "cost": 0.06,
+          "macros": {
+            "p": 0,
+            "f": 0,
+            "c": 0,
+            "kcal": 0
+          },
+          "status": "mapped"
+        },
+        {
+          "id": "rice_g-7",
+          "productId": "rice_g",
+          "title": "Рис",
+          "raw": "рис — 90 г",
+          "amount": 90,
+          "unit": "г",
+          "amountLabel": "90 г",
+          "storage": "base",
+          "pricePerUnit": 0.079,
+          "priceLabel": "~7 ₽",
+          "cost": 7.11,
+          "macros": {
+            "p": 6.3,
+            "f": 0.9,
+            "c": 70.2,
+            "kcal": 314
+          },
+          "status": "mapped"
+        }
+      ],
+      "cost": 85.67,
+      "costLabel": "~86 ₽",
+      "macros": {
+        "p": 40.95,
+        "f": 33.3,
+        "c": 90.12,
+        "kcal": 825
+      },
+      "kcal": 825,
+      "quality": {
+        "score": 100,
+        "level": "good",
+        "usable": true,
+        "issues": [],
+        "sourceKind": "manual_cleaned"
+      },
+      "box": {
+        "id": "Кукурузноеед Говядина и Капустное – ямайский в стиле",
+        "title": "Кукурузноеед Говядина и Капустное – ямайский в стиле",
+        "type": "Готовить свежим",
+        "time": "30 минут",
+        "store": "Не хранить",
+        "ingredientCount": 7,
+        "stepCount": 5,
+        "activeMinutes": 20,
+        "cost": 85.67,
+        "costLabel": "~86 ₽",
+        "kcal": 825,
+        "macros": {
+          "p": 40.95,
+          "f": 33.3,
+          "c": 90.12,
+          "kcal": 825
+        },
+        "quality": {
+          "score": 100,
+          "level": "good",
+          "usable": true,
+          "issues": [],
+          "sourceKind": "manual_cleaned"
+        }
+      },
+      "usageBoxes": [
+        {
+          "id": "cabbage_g-1",
+          "productId": "cabbage_g",
+          "title": "Капуста/огурец",
+          "amount": 160,
+          "unit": "г",
+          "amountLabel": "160 г",
+          "storage": "fridge",
+          "pricePerUnit": 0.039,
+          "priceLabel": "~6 ₽",
+          "cost": 6.24,
+          "macros": {
+            "p": 2.08,
+            "f": 0,
+            "c": 9.6,
+            "kcal": 47
+          }
+        },
+        {
+          "id": "roots_g-2",
+          "productId": "roots_g",
+          "title": "Морковь/лук/свекла",
+          "amount": 54,
+          "unit": "г",
+          "amountLabel": "54 г",
+          "storage": "fridge",
+          "pricePerUnit": 0.049,
+          "priceLabel": "~3 ₽",
+          "cost": 2.65,
+          "macros": {
+            "p": 0.54,
+            "f": 0,
+            "c": 4.86,
+            "kcal": 22
+          }
+        },
+        {
+          "id": "frozenveg_g-3",
+          "productId": "frozenveg_g",
+          "title": "Овощная смесь",
+          "amount": 12,
+          "unit": "г",
+          "amountLabel": "12 г",
+          "storage": "freezer",
+          "pricePerUnit": 0.149,
+          "priceLabel": "~2 ₽",
+          "cost": 1.79,
+          "macros": {
+            "p": 0.3,
+            "f": 0,
+            "c": 0.96,
+            "kcal": 5
+          }
+        },
+        {
+          "id": "tomato_paste_g-4",
+          "productId": "tomato_paste_g",
+          "title": "Томатная паста",
+          "amount": 25,
+          "unit": "г",
+          "amountLabel": "25 г",
+          "storage": "base",
+          "pricePerUnit": 0.2,
+          "priceLabel": "~5 ₽",
+          "cost": 5,
+          "macros": {
+            "p": 1.13,
+            "f": 0,
+            "c": 4.5,
+            "kcal": 23
+          }
+        },
+        {
+          "id": "mince_g-5",
+          "productId": "mince_g",
+          "title": "Фарш",
+          "amount": 180,
+          "unit": "г",
+          "amountLabel": "180 г",
+          "storage": "freezer",
+          "pricePerUnit": 0.349,
+          "priceLabel": "~63 ₽",
+          "cost": 62.82,
+          "macros": {
+            "p": 30.6,
+            "f": 32.4,
+            "c": 0,
+            "kcal": 414
+          }
+        },
+        {
+          "id": "salt_g-6",
+          "productId": "salt_g",
+          "title": "Соль",
+          "amount": 3,
+          "unit": "г",
+          "amountLabel": "3 г",
+          "storage": "base",
+          "pricePerUnit": 0.019,
+          "priceLabel": "~0 ₽",
+          "cost": 0.06,
+          "macros": {
+            "p": 0,
+            "f": 0,
+            "c": 0,
+            "kcal": 0
+          }
+        },
+        {
+          "id": "rice_g-7",
+          "productId": "rice_g",
+          "title": "Рис",
+          "amount": 90,
+          "unit": "г",
+          "amountLabel": "90 г",
+          "storage": "base",
+          "pricePerUnit": 0.079,
+          "priceLabel": "~7 ₽",
+          "cost": 7.11,
+          "macros": {
+            "p": 6.3,
+            "f": 0.9,
+            "c": 70.2,
+            "kcal": 314
+          }
+        }
+      ],
+      "usageSource": "ingredients_inferred",
+      "contentSource": "manual_deep_cleaned"
     }
   },
   "generatedFrom": "build-data.js",
