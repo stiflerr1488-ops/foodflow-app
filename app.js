@@ -505,9 +505,11 @@ function renderFamilyBudget() {
   document.getElementById("familyBudget").onchange = e => { state.familyBudget = Number(e.target.value); localStorage.setItem("family_budget", state.familyBudget); renderAll(); };
 }
 
-// ── Rendering: Onboarding ──
+// ── Rendering: Onboarding wizard ──
 function renderOnboarding() {
   let adults = state.familyAdults || 1, children = state.familyChildren || 0, budget = state.familyBudget || 20000;
+  let store = state.store || "pyaterochka";
+  let step = 1;
   const cfg = budgetConfig();
   function profileId() { return `a${adults}_c${children}`; }
   function calcStatus() {
@@ -515,65 +517,81 @@ function renderOnboarding() {
     const profile = { adults, children, units, label: familyProfiles().find(p => p.adults === adults && p.children === children)?.label || `${adults} взр.${children ? ` + ${children} дет.` : ""}` };
     return { ...profile, ...budgetStatus(profile, budget) };
   }
-  function getRecommendedBudget() {
-    const rec = cfg.recommendedBudgets?.[profileId()];
-    return rec || {};
-  }
-  function update() {
-    const s = calcStatus();
-    const rec = getRecommendedBudget();
-    document.getElementById("ob_statusLabel").textContent = s.label;
-    document.getElementById("ob_statusDesc").textContent = s.description;
-    document.getElementById("ob_info").textContent = `${s.label} · ${money(budget)} · ${s.perUnit}₽/чел`;
-    // Highlight recommended budget buttons
-    document.querySelectorAll("#ob_budget button").forEach(b => {
-      const v = Number(b.dataset.v);
-      b.classList.toggle("recommended", v === rec.normal);
-      b.classList.toggle("budget_ok", v === rec.strict);
-    });
-  }
+  function getRecommendedBudget() { return cfg.recommendedBudgets?.[profileId()] || {}; }
   function setGroup(id, val) { document.querySelectorAll(`#${id} button`).forEach(b => b.classList.toggle("active", Number(b.dataset.v) === val)); }
-  // Auto-select recommended budget when family changes
   function autoSelectBudget() {
     const rec = getRecommendedBudget();
-    if (rec.normal && cfg.fixedBudgets.includes(rec.normal)) {
-      budget = rec.normal;
+    if (rec.normal && cfg.fixedBudgets.includes(rec.normal)) { budget = rec.normal; setGroup("ob_budget", budget); }
+  }
+  const storeKeys = Object.keys(STORE_PRICES || {});
+  function renderStep() {
+    const steps = [1, 2, 3];
+    const dots = steps.map(s => `<div class="obDot ${s === step ? "obDotActive" : s < step ? "obDotDone" : ""}"></div>`).join("");
+    if (step === 1) {
+      document.getElementById("ob_body").innerHTML = `
+        <div class="onboardingTitle">Кто будет есть?</div>
+        <div class="onboardingSub">Выбери состав семьи — я подстрою порции и закупки.</div>
+        <div class="onboardingGroup"><span>Взрослые</span><div class="onboardingOpts" id="ob_adults">${[1, 2].map(v => `<button data-v="${v}">${v}</button>`).join("")}</div></div>
+        <div class="onboardingGroup"><span>Дети</span><div class="onboardingOpts" id="ob_children">${[0, 1, 2].map(v => `<button data-v="${v}">${v}</button>`).join("")}</div></div>
+        <button class="onboardingStart" id="ob_next">Далее</button>`;
+      setGroup("ob_adults", adults); setGroup("ob_children", children);
+      document.querySelectorAll("#ob_adults button").forEach(b => { b.onclick = () => { adults = Number(b.dataset.v); setGroup("ob_adults", adults); autoSelectBudget(); }; });
+      document.querySelectorAll("#ob_children button").forEach(b => { b.onclick = () => { children = Number(b.dataset.v); setGroup("ob_children", children); autoSelectBudget(); }; });
+      document.getElementById("ob_next").onclick = () => { step = 2; renderStep(); };
+    } else if (step === 2) {
+      const rec = getRecommendedBudget();
+      const s = calcStatus();
+      document.getElementById("ob_body").innerHTML = `
+        <div class="onboardingTitle">Какой бюджет?</div>
+        <div class="onboardingSub">${esc(s.label)} — рекомендую ${rec.normal ? money(rec.normal) : "20 000 ₽"} на месяц.</div>
+        <div class="onboardingGroup"><span>Бюджет на месяц</span><div class="onboardingOpts" id="ob_budget">${cfg.fixedBudgets.map(v => {
+          const perUnit = Math.round(v / s.units);
+          const bst = cfg.statusByRubPerUnit.find(x => perUnit >= x.min && perUnit <= x.max);
+          const mark = bst && (bst.status === "comfortable" || bst.status === "normal") ? " ✓" : bst && bst.status === "not_recommended" ? " ✗" : "";
+          return `<button data-v="${v}" class="${v === rec.normal ? "recommended" : ""}">${money(v)}<span class="obBudgetHint">${money(perUnit)}/чел${mark}</span></button>`;
+        }).join("")}</div></div>
+        <div class="onboardingStatus"><div class="sLabel" id="ob_statusLabel">${esc(s.label)}</div><div class="sDesc" id="ob_statusDesc">${esc(s.description)}</div></div>
+        <div style="display:flex;gap:10px"><button class="obBack" id="ob_back">Назад</button><button class="onboardingStart" id="ob_next2" style="flex:1">Далее</button></div>`;
       setGroup("ob_budget", budget);
+      document.querySelectorAll("#ob_budget button").forEach(b => { b.onclick = () => { budget = Number(b.dataset.v); setGroup("ob_budget", budget); const ns = calcStatus(); document.getElementById("ob_statusLabel").textContent = ns.label; document.getElementById("ob_statusDesc").textContent = ns.description; }; });
+      document.getElementById("ob_back").onclick = () => { step = 1; renderStep(); };
+      document.getElementById("ob_next2").onclick = () => { step = 3; renderStep(); };
+    } else {
+      const s = calcStatus();
+      document.getElementById("ob_body").innerHTML = `
+        <div class="onboardingTitle">Где закупаемся?</div>
+        <div class="onboardingSub">Цены и упаковки зависят от магазина. Можно поменять позже.</div>
+        <div class="onboardingGroup"><span>Магазин</span><div class="onboardingOpts obStoreOpts" id="ob_store">${storeKeys.map(k => {
+          const st = STORE_PRICES[k];
+          const sel = k === store ? "active" : "";
+          return `<button data-v="${k}" class="${sel}" style="background:${safeColor(st.color)};color:#fff;border-color:${safeColor(st.color)}">${esc(st.icon || "")} ${esc(st.name || k)}</button>`;
+        }).join("")}</div></div>
+        <div class="onboardingStatus"><div class="sLabel">${esc(s.label)} · ${money(budget)}</div><div class="sDesc">Готовлю расписание, закупки и контейнеры на 30 дней.</div></div>
+        <div style="display:flex;gap:10px"><button class="obBack" id="ob_back2">Назад</button><button class="onboardingStart" id="ob_start" style="flex:1">Начать</button></div>`;
+      document.querySelectorAll("#ob_store button").forEach(b => { b.onclick = () => { store = b.dataset.v; document.querySelectorAll("#ob_store button").forEach(x => x.classList.remove("active")); b.classList.add("active"); }; });
+      document.getElementById("ob_back2").onclick = () => { step = 2; renderStep(); };
+      document.getElementById("ob_start").onclick = () => {
+        state.familyAdults = adults; state.familyChildren = children; state.familyBudget = budget; state.store = store;
+        localStorage.setItem("family_adults", adults); localStorage.setItem("family_children", children); localStorage.setItem("family_budget", budget); localStorage.setItem("store", store);
+        localStorage.setItem("foodflow_onboarded", "1");
+        savePlanReplacements({});
+        const el = document.getElementById("onboarding"); if (el) el.remove();
+        window.FoodFlowDataStore.refresh().then(() => {
+          _baseSaved = false; _basePkgForStore = null; _baseBasketsForStore = null;
+          initRuntimeData(); applyFamilyScale(); applyStorePrices(); applyPlanReplacements(); renderAll();
+        });
+      };
     }
+    document.getElementById("ob_dots").innerHTML = dots;
   }
   const el = document.createElement("div"); el.className = "onboarding"; el.id = "onboarding";
   el.innerHTML = `<div class="onboardingCard">
     <div class="onboardingLogo">FoodFlow</div>
-    <div class="onboardingTitle">План питания на 30 дней</div>
-    <div class="onboardingSub">Выбери состав семьи и бюджет — я подготовлю расписание, закупки и остатки.</div>
-    <div class="onboardingGroup"><span>Взрослые</span><div class="onboardingOpts" id="ob_adults">${[1, 2].map(v => `<button data-v="${v}">${v}</button>`).join("")}</div></div>
-    <div class="onboardingGroup"><span>Дети</span><div class="onboardingOpts" id="ob_children">${[0, 1, 2].map(v => `<button data-v="${v}">${v}</button>`).join("")}</div></div>
-    <div class="onboardingGroup"><span>Бюджет на месяц</span><div class="onboardingOpts" id="ob_budget">${cfg.fixedBudgets.map(v => `<button data-v="${v}">${money(v)}</button>`).join("")}</div></div>
-    <div class="onboardingStatus"><div id="ob_info" style="font-size:13px;color:var(--ui-muted);margin-bottom:8px"></div><div class="sLabel" id="ob_statusLabel"></div><div class="sDesc" id="ob_statusDesc"></div></div>
-    <button class="onboardingStart" id="ob_start">Начать</button>
+    <div id="ob_dots" class="obDots"></div>
+    <div id="ob_body"></div>
   </div>`;
   document.body.appendChild(el);
-  setGroup("ob_adults", adults); setGroup("ob_children", children); setGroup("ob_budget", budget);
-  document.querySelectorAll("#ob_adults button").forEach(b => { b.onclick = () => { adults = Number(b.dataset.v); setGroup("ob_adults", adults); autoSelectBudget(); update(); }; });
-  document.querySelectorAll("#ob_children button").forEach(b => { b.onclick = () => { children = Number(b.dataset.v); setGroup("ob_children", children); autoSelectBudget(); update(); }; });
-  document.querySelectorAll("#ob_budget button").forEach(b => { b.onclick = () => { budget = Number(b.dataset.v); setGroup("ob_budget", budget); update(); }; });
-  update();
-  document.getElementById("ob_start").onclick = () => {
-    state.familyAdults = adults; state.familyChildren = children; state.familyBudget = budget;
-    localStorage.setItem("family_adults", adults); localStorage.setItem("family_children", children); localStorage.setItem("family_budget", budget);
-    localStorage.setItem("foodflow_onboarded", "1");
-    savePlanReplacements({});
-    el.remove();
-    // Reload data for the selected profile (triggers page reload with correct plan)
-    window.FoodFlowDataStore.refresh().then(() => {
-      _baseSaved = false; _basePkgForStore = null; // Reset family scale base
-      initRuntimeData();
-      applyFamilyScale();
-      applyStorePrices();
-      applyPlanReplacements();
-      renderAll();
-    });
-  };
+  renderStep();
 }
 function showOnboarding() { const existing = document.getElementById("onboarding"); if (existing) existing.remove(); renderOnboarding(); }
 
@@ -629,6 +647,7 @@ function renderRefs() {
       <div class="dayControls">
         <label class="small">Магазин <select id="storeSelect">${storeOptions}</select></label>
         <button id="exportPlanBtn">Экспорт плана</button>
+        <button id="shareShoppingBtn" class="shareBtn">Отправить список</button>
         <button id="printPlanBtn">Печать</button>
       </div>
       ${baskets}
@@ -637,11 +656,33 @@ function renderRefs() {
   bind();
   document.getElementById("exportPlanBtn").onclick = exportPlan;
   document.getElementById("printPlanBtn").onclick = printPlan;
+  document.getElementById("shareShoppingBtn").onclick = shareShoppingList;
   const storeSelect = document.getElementById("storeSelect");
   if (storeSelect) storeSelect.onchange = e => { state.store = e.target.value; localStorage.setItem("store", state.store); applyStorePrices(); renderAll(); };
 }
 
 // ── NEW: Export / Print ──
+function shareShoppingList() {
+  const lines = [];
+  Object.entries(DATA.shopping || {}).forEach(([key, basket]) => {
+    if (basket.itemBoxes?.length) {
+      lines.push(`🛒 ${basket.name} ${basket.totalCostLabel || ""}`);
+      const groups = {};
+      basket.itemBoxes.forEach(it => { const sec = it.storeSection || "Другое"; if (!groups[sec]) groups[sec] = []; groups[sec].push(it); });
+      Object.entries(groups).forEach(([sec, items]) => { lines.push(`  ${sec}:`); items.forEach(it => { lines.push(`    ☐ ${it.title}${it.quantity > 1 ? ` x${it.quantity}` : ""} ${it.priceLabel || ""}`); }); });
+      lines.push("");
+    }
+  });
+  const text = lines.join("\n") || "Список покупок пуст";
+  if (navigator.share) { navigator.share({ title: "Список покупок FoodFlow", text }).catch(() => {}); }
+  else { navigator.clipboard.writeText(text).then(() => showToast("Скопировано в буфер")).catch(() => {}); }
+}
+function showToast(msg) {
+  let t = document.getElementById("shareToast");
+  if (!t) { t = document.createElement("div"); t.id = "shareToast"; t.className = "shareToast"; document.body.appendChild(t); }
+  t.textContent = msg; t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 2000);
+}
 function exportPlan() {
   const rows = DATA.plan.map((d, i) => {
     const meals = Object.entries(d.meals).map(([k, m]) => `${k}: ${m.dish} (${m.portion}, ${m.kcal} ккал)`).join("\n  ");
@@ -816,6 +857,13 @@ function recipeStatsHtml(recipe) {
   return parts.length ? `<div class="recipeStats">${parts.map(x => `<span>${esc(x)}</span>`).join("")}</div>${macroLine}` : "";
 }
 const REHEAT_STEPS = ["Достать контейнер из холодильника/морозилки.", "Разогреть в микроволновке 2 мин или на сковороде под крышкой 5 мин.", "Проверить температуру, при необходимости добавить ещё 1 мин."];
+function recipeImageHtml(r) {
+  if (!r) return "";
+  if (r.image) return `<img src="${esc(r.image)}" alt="" style="width:100%;border-radius:14px;margin-bottom:14px;object-fit:cover;max-height:220px">`;
+  const type = r.type || "";
+  const hue = type.includes("Завтрак") ? 38 : type.includes("Обед") ? 200 : type.includes("Ужин") ? 280 : type.includes("Полдник") ? 120 : type.includes("Чай") ? 45 : type.includes("Заморозка") ? 210 : 170;
+  return `<div style="width:100%;height:120px;border-radius:14px;margin-bottom:14px;background:hsl(${hue},45%,88%);display:flex;align-items:center;justify-content:center;font-size:42px">${type.includes("Суп") ? "🍲" : type.includes("Салат") ? "🥗" : type.includes("Завтрак") || type.includes("Блин") ? "🥞" : type.includes("Заморозка") ? "🧊" : type.includes("Рыба") ? "🐟" : type.includes("Готовить") ? "🍳" : type.includes("Перекус") ? "🍎" : type.includes("Без готовки") ? "🥪" : "🍽️"}</div>`;
+}
 function recipeHtml(name, mode = "full", isContainer = false) {
   const r = findRecipe(name);
   if (!r) return `<p class="small">Рецепт не найден.</p>`;
@@ -826,7 +874,7 @@ function recipeHtml(name, mode = "full", isContainer = false) {
   }
   const short = (r.steps || []).slice(0, 6);
   if (mode === "short") return `<ol>${short.map(x => `<li>${esc(x)}</li>`).join("")}</ol>`;
-  return `${recipeStatsHtml(r)}<div class="recipeCols"><div><h3>Ингредиенты</h3>${ingredientBoxesHtml(r, false)}<h3>Список</h3><ul>${(r.ingredients || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div><div><h3>Шаги</h3><ol>${(r.steps || []).map(x => `<li>${esc(x)}</li>`).join("")}</ol>${r.notes && r.notes.length ? `<h3>Важно</h3><ul>${r.notes.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div></div>`;
+  return `${recipeImageHtml(r)}${recipeStatsHtml(r)}<div class="recipeCols"><div><h3>Ингредиенты</h3>${ingredientBoxesHtml(r, false)}<h3>Список</h3><ul>${(r.ingredients || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div><div><h3>Шаги</h3><ol>${(r.steps || []).map(x => `<li>${esc(x)}</li>`).join("")}</ol>${r.notes && r.notes.length ? `<h3>Важно</h3><ul>${r.notes.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div></div>`;
 }
 
 // ── Time helpers ──
@@ -893,7 +941,7 @@ function renderToday(_audit, _invToday) {
       if (!meal) return "";
       const replacedNote = meal._replaced ? `<div class="meta" style="color:var(--ui-blue);margin-top:4px">Заменено</div>` : "";
       const clearBtn = meal._replaced ? `<button class="replaceBtn" data-clear-replace="${esc(name)}">Вернуть</button>` : "";
-      return `<div class="mealCard">
+      return `<div class="mealCard" data-drop-meal="'${esc(name)}'>"
         <div class="mealTop"><span class="mealType">${esc(name)}</span><span class="mealKcal">${Number(meal.kcal || 0)} ккал · ${estimateDishCost(meal.dish)} ₽</span></div>
         <div class="mealName">${esc(meal.dish)}</div>
         <div class="mealPortion">${esc(meal.portion)}</div>${replacedNote}
@@ -963,6 +1011,24 @@ function renderToday(_audit, _invToday) {
   const dayKcal = cals(d);
   const kcalExtra = currentFamilyProfile().units > 1 ? ` <span class="small" style="font-size:13px">(~${Math.round(dayKcal / currentFamilyProfile().units)} на чел)</span>` : "";
   const statusBar = `<div class="statusBar"><div class="statusProgress"><div class="progress"><i id="progress"></i></div><div class="small" id="progressText">0 / 0</div></div><div class="statusKcal">${icon("kcal")}${dayKcal} ккал${kcalExtra}</div></div>`;
+
+  // Weekly summary
+  const weekStart = Math.floor((state.day - 1) / 7) * 7 + 1;
+  const weekEnd = Math.min(planLength(), weekStart + 6);
+  let weekCooks = 0, weekReheats = 0, weekShopDay = 0, weekShopCost = 0;
+  for (let dn = weekStart; dn <= weekEnd; dn++) {
+    const dayActs = ACTIONS[String(dn)] || [];
+    dayActs.forEach(a => { const ea = enrichAction(a); if (ea.type === "cook") { if (ea.dish && /разогр/i.test(ea.title || "")) weekReheats++; else weekCooks++; } });
+    const pd = DATA.plan[dn - 1];
+    if (pd?.shopping_type_actual && pd.actual_day === dn) { weekShopDay = dn; weekShopCost = DATA.shopping[pd.shopping_type_actual]?.totalCost || 0; }
+  }
+  const weekSummary = `<div class="weekSummary">
+    <span class="weekLabel">Неделя ${Math.ceil(state.day / 7)}</span>
+    <span class="weekStat">${icon("cook")} ${weekCooks} готовок</span>
+    <span class="weekStat">↑ ${weekReheats} разогревов</span>
+    ${weekShopDay ? `<span class="weekStat">${icon("cart")} Закупка день ${weekShopDay} · ${money(weekShopCost)}</span>` : ""}
+  </div>`;
+
   const quickNav = `<div class="quickNav">
     <button data-quick="budgetRefs">${icon("cart")} Бюджет и закупки</button>
     <button data-quick="familyRefs">Семья и бюджет</button>
@@ -971,7 +1037,7 @@ function renderToday(_audit, _invToday) {
   </div>`;
 
   document.getElementById("today").innerHTML = sectionTitle(`${icon("meal")}День ${state.day}`, d.title) +
-    statusBar + nowCard + quickNav + scheduleBlock + `<details class="scheduleExtras"><summary>Меню · Настройки</summary><div class="extrasBody">${mealDeck}${controls}</div></details>`;
+    statusBar + weekSummary + nowCard + quickNav + scheduleBlock + `<details class="scheduleExtras"><summary>Меню · Настройки</summary><div class="extrasBody">${mealDeck}${controls}</div></details>`;
   bind();
   const doneBtn = document.getElementById("markCurrentSimple"); if (doneBtn) doneBtn.onclick = markDone;
   const useNowBtn = document.getElementById("useNow"); if (useNowBtn) useNowBtn.onclick = () => { setAutoNow(true); renderAll(); };
@@ -997,10 +1063,22 @@ function openRecipe(dish, isContainer = false) {
   const r = findRecipe(dish);
   document.getElementById("modalTitle").textContent = isContainer ? `Разогреть: ${dish}` : dish;
   document.getElementById("modalMeta").innerHTML = r ? (isContainer ? `<span>Из контейнера</span><span>~2 мин</span>` : `<span>${esc(r.type || "")}</span><span>${esc(r.time || "")}</span><span>${esc(r.store || "")}</span>`) : "";
-  document.getElementById("modalBody").innerHTML = r ? `<div class="tabs"><button class="active" id="shortBtn">Коротко</button><button id="fullBtn">Подробно</button></div><div id="recipeContent">${recipeHtml(dish, "short", isContainer)}</div>` : `<p class="small">Рецепт не найден.</p>`;
+  const voiceBtn = r && window.speechSynthesis ? `<button class="voiceBtn" id="voiceBtn">🔊 Вслух</button>` : "";
+  document.getElementById("modalBody").innerHTML = r ? `<div class="tabs"><button class="active" id="shortBtn">Коротко</button><button id="fullBtn">Подробно</button>${voiceBtn}</div><div id="recipeContent">${recipeHtml(dish, "short", isContainer)}</div>` : `<p class="small">Рецепт не найден.</p>`;
   document.getElementById("modal").style.display = "block"; document.body.style.overflow = "hidden";
   const short = document.getElementById("shortBtn"), full = document.getElementById("fullBtn"), cont = document.getElementById("recipeContent");
   if (short && full) { short.onclick = () => { short.classList.add("active"); full.classList.remove("active"); cont.innerHTML = recipeHtml(dish, "short", isContainer); }; full.onclick = () => { full.classList.add("active"); short.classList.remove("active"); cont.innerHTML = recipeHtml(dish, "full", isContainer); }; }
+  const vb = document.getElementById("voiceBtn");
+  if (vb) vb.onclick = () => {
+    if (window.speechSynthesis.speaking) { window.speechSynthesis.cancel(); vb.classList.remove("speaking"); vb.textContent = "🔊 Вслух"; return; }
+    const steps = (r.steps || []).filter(s => s && !/проверь|при необходимости|по вкусу/.test(s));
+    if (!steps.length) return;
+    const utter = new SpeechSynthesisUtterance(steps.join(". Следующий шаг. "));
+    utter.lang = "ru-RU"; utter.rate = 0.95;
+    utter.onend = () => { vb.classList.remove("speaking"); vb.textContent = "🔊 Вслух"; };
+    vb.classList.add("speaking"); vb.textContent = "⏹ Стоп";
+    window.speechSynthesis.speak(utter);
+  };
 }
 function openCook(i) {
   const a = enrichAction((ACTIONS[String(state.day)] || [])[i] || {});
@@ -1101,7 +1179,7 @@ function renderCatalogList() {
   list.innerHTML = slice.map(([name, r]) => {
     const meta = [r.type, r.time, (r.kcal || r.macros?.kcal) ? `${r.kcal || r.macros?.kcal} ккал` : "", r.cost ? `~${Math.round(r.cost)} ₽` : ""].filter(Boolean).join(" · ");
     const replaceBtn = _catalogState.replaceTarget ? `<button class="primary" data-replace="${esc(name)}">Заменить</button>` : "";
-    return `<div class="catalogRow"><div><strong>${esc(name)}</strong><div class="meta">${esc(meta)}</div></div><button data-dish="${esc(name)}">Открыть</button>${replaceBtn}</div>`;
+    return `<div class="catalogRow" draggable="true" data-drag-dish="${esc(name)}"><div><strong>${esc(name)}</strong><div class="meta">${esc(meta)}</div></div><button data-dish="${esc(name)}">Открыть</button>${replaceBtn}</div>`;
   }).join("") || `<p class="small">Ничего не найдено.</p>`;
   if (footer) footer.textContent = total ? `Найдено: ${total}. Страница ${_catalogState.page + 1} из ${maxPage + 1}.` : "";
   list.querySelectorAll("[data-dish]").forEach(btn => btn.addEventListener("click", () => openRecipe(btn.dataset.dish)));
@@ -1193,6 +1271,20 @@ function bind(root = document) {
   root.querySelectorAll("[data-replace-meal]").forEach(b => b.addEventListener("click", () => startReplaceFlow(state.day, b.dataset.replaceMeal)));
   root.querySelectorAll("[data-clear-replace]").forEach(b => b.addEventListener("click", () => clearReplacement(state.day, b.dataset.clearReplace)));
   root.querySelectorAll("[data-quick]").forEach(b => b.addEventListener("click", () => expandSection(b.dataset.quick)));
+  // Drag-and-drop: catalog rows → meal cards
+  root.querySelectorAll("[data-drag-dish]").forEach(row => {
+    row.addEventListener("dragstart", e => { e.dataTransfer.setData("text/dish", row.dataset.dragDish); e.dataTransfer.effectAllowed = "move"; });
+  });
+  root.querySelectorAll(".mealCard").forEach(card => {
+    card.addEventListener("dragover", e => { e.preventDefault(); e.dataTransfer.dropEffect = "move"; card.style.outline = "2px solid var(--ui-blue)"; });
+    card.addEventListener("dragleave", () => { card.style.outline = ""; });
+    card.addEventListener("drop", e => {
+      e.preventDefault(); card.style.outline = "";
+      const dish = e.dataTransfer.getData("text/dish");
+      const mealName = card.querySelector(".mealType")?.textContent;
+      if (dish && mealName && RECIPES[dish]) { confirmReplacement(dish); _catalogState.replaceTarget = { day: state.day, mealName, dish: card.querySelector(".mealName")?.textContent || "" }; confirmReplacement(dish); }
+    });
+  });
 }
 function expandSection(id) {
   const el = document.getElementById(id);
@@ -1218,6 +1310,39 @@ function updatePwaStatus() {
   const online = navigator.onLine !== false;
   el.textContent = online ? "Сеть есть" : "Офлайн";
   el.classList.toggle("offline", !online);
+}
+// ── Notifications ──
+function requestNotifPermission() {
+  if (!("Notification" in window)) return;
+  if (Notification.permission === "default") Notification.requestPermission();
+}
+function scheduleNotifs() {
+  if (!("Notification" in window) || Notification.permission !== "granted") return;
+  const now = new Date();
+  const h = now.getHours(), m = now.getMinutes();
+  // Cancel any existing scheduled notifs via timeout
+  clearTimeout(window._notifCook);
+  clearTimeout(window._notifShop);
+  // "Пора готовить обед" at 12:05
+  if (h < 12 || (h === 12 && m < 5)) {
+    const minsUntil = (12 * 60 + 5) - (h * 60 + m);
+    window._notifCook = setTimeout(() => {
+      const acts = ACTIONS[String(state.day)] || [];
+      const cook = acts.find(a => { const ea = enrichAction(a); return ea.type === "cook" && minutes(ea.time) >= 720 && minutes(ea.time) <= 780; });
+      if (cook) new Notification("FoodFlow", { body: `Пора готовить: ${enrichAction(cook).title}`, icon: "./icons/icon-192.png" });
+    }, minsUntil * 60000);
+  }
+  // "Закажи закупку" at 21:00 if shopping tomorrow
+  const tomorrow = state.day + 1;
+  if (tomorrow <= planLength()) {
+    const td = DATA.plan[tomorrow - 1];
+    if (td?.shopping_type_actual && h < 21) {
+      const minsUntil = (21 * 60) - (h * 60 + m);
+      window._notifShop = setTimeout(() => {
+        new Notification("FoodFlow", { body: `Завтра закупка: ${DATA.shopping[td.shopping_type_actual]?.name || ""}`, icon: "./icons/icon-192.png" });
+      }, minsUntil * 60000);
+    }
+  }
 }
 function showLoadError(message) {
   const overlay = document.getElementById("loadingOverlay");
@@ -1534,6 +1659,33 @@ function toggleTheme() {
   localStorage.setItem("dark_theme", state.dark ? "1" : "0");
   applyTheme();
 }
+function toggleStoreMode() {
+  document.body.classList.toggle("storeMode");
+  const btn = document.getElementById("storeModeBtn");
+  if (btn) btn.classList.toggle("active");
+  if (document.body.classList.contains("storeMode")) { renderStoreMode(); }
+  else { renderAll(); }
+}
+function renderStoreMode() {
+  const container = document.getElementById("today");
+  let html = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h2 style="font-size:24px;font-weight:800">Список покупок</h2><button class="shareBtn" id="shareStoreBtn">Отправить</button></div>`;
+  Object.entries(DATA.shopping || {}).forEach(([key, basket]) => {
+    if (basket.itemBoxes?.length) {
+      html += `<div style="font-size:18px;font-weight:800;margin:18px 0 8px">${esc(basket.name)} ${basket.totalCostLabel || ""}</div>`;
+      const groups = {};
+      basket.itemBoxes.forEach((it, i) => { const sec = it.storeSection || "Другое"; if (!groups[sec]) groups[sec] = []; groups[sec].push({ it, i: `${key}_${i}` }); });
+      Object.entries(groups).forEach(([sec, items]) => {
+        html += `<div style="font-size:14px;font-weight:700;color:var(--ui-muted);margin:10px 0 4px;border-bottom:1px solid var(--ui-border);padding-bottom:2px">${esc(sec)}</div>`;
+        items.forEach(({ it, i: idx }) => {
+          html += `<div class="storeItem"><input class="check" type="checkbox" data-type="shop" data-day="${key}" data-index="${idx}" style="width:28px;height:28px;accent-color:var(--ui-blue)"><span style="font-size:18px">${esc(it.title)}${it.quantity > 1 ? ` ×${it.quantity}` : ""}</span></div>`;
+        });
+      });
+    }
+  });
+  container.innerHTML = html;
+  document.getElementById("shareStoreBtn").onclick = shareShoppingList;
+  bind();
+}
 
 // ── Boot ──
 async function bootFoodFlow() {
@@ -1570,6 +1722,7 @@ async function bootFoodFlow() {
   document.getElementById("modal").onclick = e => { if (e.target.id === "modal") closeModal(); };
   document.getElementById("editProfile").onclick = showOnboarding;
   document.getElementById("toggleTheme").onclick = toggleTheme;
+  document.getElementById("storeModeBtn").onclick = toggleStoreMode;
   document.getElementById("openCatalog").onclick = () => openCatalog();
   document.getElementById("regeneratePlan").onclick = () => {
     if (!confirm("Сгенерировать новый план? Текущий прогресс будет сброшен.")) return;
@@ -1610,6 +1763,8 @@ async function bootFoodFlow() {
     });
   }
   updatePwaStatus();
+  requestNotifPermission();
+  scheduleNotifs();
   if (state.autoNow) setTimeToNow();
   const overlay = document.getElementById("loadingOverlay");
   if (overlay) { overlay.style.opacity = "0"; setTimeout(() => overlay.remove(), 350); }

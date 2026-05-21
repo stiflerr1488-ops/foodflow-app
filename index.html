@@ -1010,6 +1010,59 @@
       border-color:var(--ui-border);
     }
     .quickNav button:hover{color:var(--ui-ink);border-color:var(--ui-blue)}
+    .weekSummary{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-bottom:12px;
+      padding:10px 14px;
+      border:1px solid var(--ui-border);
+      border-radius:14px;
+      background:var(--ui-panel);
+      font-size:13px;
+    }
+    .weekLabel{font-weight:800;color:var(--ui-blue);text-transform:uppercase;letter-spacing:.06em}
+    .weekStat{color:var(--ui-muted);white-space:nowrap}
+    .weekStat .icon{vertical-align:-2px}
+    .voiceBtn,.shareBtn,.storeModeBtn{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      min-height:30px;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      background:var(--ui-panel-soft);
+      color:var(--ui-muted);
+      border-color:var(--ui-border);
+      cursor:pointer;
+    }
+    .voiceBtn:hover,.shareBtn:hover,.storeModeBtn:hover{color:var(--ui-ink);border-color:var(--ui-blue)}
+    .voiceBtn.speaking{color:var(--ui-blue);border-color:var(--ui-blue);background:rgba(23,105,223,.08)}
+    .storeModeBtn.active{background:var(--ui-blue);color:#fff;border-color:var(--ui-blue)}
+    .shareToast{
+      position:fixed;
+      bottom:24px;
+      left:50%;
+      transform:translateX(-50%);
+      padding:10px 20px;
+      border-radius:999px;
+      background:var(--ui-ink);
+      color:#fff;
+      font-size:14px;
+      font-weight:700;
+      z-index:100;
+      opacity:0;
+      transition:opacity .3s;
+    }
+    .shareToast.show{opacity:1}
+    .storeMode .top,.storeMode .hero,.storeMode .weekSummary,.storeMode .nowCard,.storeMode .quickNav,.storeMode .scheduleExtras,.storeMode #budgetRefs,.storeMode #familyRefs,.storeMode #inventoryRefs,.storeMode #weeklyShoppingRefs{display:none!important}
+    .storeMode .shell{padding-top:12px}
+    .storeMode .statusBar{display:none}
+    .storeItem{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--ui-border)}
+    .storeItem:last-child{border-bottom:0}
     .shell{padding-top:22px}
     #today{padding-top:0}
     .sectionTitle{
@@ -1144,6 +1197,13 @@
     .onboardingStatus .sDesc{font-size:13px;color:var(--ui-muted);line-height:1.45}
     .onboardingStart{width:100%;min-height:56px;border-radius:16px;font-weight:800;font-size:18px;background:var(--ui-blue);color:#fff;border-color:var(--ui-blue)}
     .onboardingStart:hover{background:#0f5cc2;border-color:#0f5cc2}
+    .obDots{display:flex;gap:8px;justify-content:center;margin-bottom:24px}
+    .obDot{width:10px;height:10px;border-radius:50%;background:var(--ui-border);transition:background .2s}
+    .obDotActive{background:var(--ui-blue)}
+    .obDotDone{background:var(--ui-green)}
+    .obBack{min-height:56px;border-radius:16px;font-weight:800;font-size:18px;background:var(--ui-panel-soft);color:var(--ui-muted);border-color:var(--ui-border);flex:0 0 100px}
+    .obStoreOpts button{min-height:52px!important;font-size:16px!important;font-weight:800!important;border-radius:14px!important}
+    .obBudgetHint{display:block;font-size:11px;font-weight:400;opacity:.7;margin-top:2px}
     #editProfile{font-size:13px;font-weight:800;padding:8px 14px;border-radius:999px;min-height:auto}
     #openCatalog{font-size:13px;font-weight:800;padding:8px 14px;border-radius:999px;min-height:auto}
     .catalogBar{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-bottom:10px}
@@ -1256,6 +1316,7 @@
       <button id="toggleTheme" title="Тёмная тема" style="font-size:16px;padding:6px 10px;min-height:30px;border-radius:999px">☀</button>
       <button id="openCatalog" title="Каталог рецептов">Каталог</button>
       <button id="regeneratePlan" title="Перегенерировать план" style="color:var(--ui-blue);font-size:12px;padding:6px 10px;min-height:30px;border-radius:999px">↻ Новый</button>
+      <button id="storeModeBtn" class="storeModeBtn" title="Режим магазина">🛒</button>
       <button id="resetProgress" title="Сбросить прогресс" style="color:var(--ui-muted);font-size:12px;padding:6px 10px;min-height:30px;border-radius:999px">Сброс</button>
       <span id="pwaStatus" class="pwaStatus" aria-live="polite">Сеть</span>
       <span class="small">День</span>
