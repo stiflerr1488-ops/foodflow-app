@@ -1571,6 +1571,15 @@ async function bootFoodFlow() {
   document.getElementById("editProfile").onclick = showOnboarding;
   document.getElementById("toggleTheme").onclick = toggleTheme;
   document.getElementById("openCatalog").onclick = () => openCatalog();
+  document.getElementById("regeneratePlan").onclick = () => {
+    if (!confirm("Сгенерировать новый план? Текущий прогресс будет сброшен.")) return;
+    const seed = Date.now();
+    generateNewPlan(seed);
+    _baseSaved = false; _basePkgForStore = null; _baseBasketsForStore = null;
+    applyFamilyScale(); applyStorePrices(); applyPlanReplacements();
+    rebuildDaySelect(); state.day = 1; daySelect.value = 1;
+    shouldAutoScroll = true; renderAll();
+  };
   document.getElementById("resetProgress").onclick = () => {
     if (!confirm("Сбросить весь прогресс? Все отметки, пропуски и отложения будут очищены.")) return;
     const keys = []; for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k.startsWith("command_")) keys.push(k); }
