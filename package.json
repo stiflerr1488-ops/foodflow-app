@@ -10,6 +10,7 @@
     "verify": "node verify.js",
     "smoke:prod": "node smoke-production.js",
     "smoke:browser": "node smoke-browser.js",
+    "smoke:browser:deep": "node smoke-browser-deep.js",
     "check:runtime": "node test-runtime.js",
     "check:profiles": "node audit-all-profiles.js",
     "check:recipes": "node check-recipe-coverage.js",

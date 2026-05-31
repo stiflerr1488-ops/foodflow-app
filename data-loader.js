@@ -265,7 +265,7 @@
     }
     // 2. Cached in localStorage
     const cached = loadCached();
-    if (cached && cached.version === DATA_VERSION && cached.files) {
+    if (cached && cached.version === DATA_VERSION && cached.profileId === getProfileId() && cached.files) {
       _runtime = buildRuntimeFromFiles(cached.files);
       normalizePlan(_runtime);
       return _runtime;

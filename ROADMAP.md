@@ -257,8 +257,8 @@ YYYY-MM-DD | партия | проверено | исправлено | заме
 - [x] Production HTTP smoke команда: `npm run smoke:prod`.
 - [x] Browser online/offline/mobile smoke: `npm run smoke:browser`.
 - [x] `verify.js` дополнительно проверяет release metadata: absolute canonical, social images, sitemap, robots, JS cache policy.
-- [ ] Добавить GitHub Actions или Vercel build command — отложено до создания remote repo.
-- [ ] Зафиксировать Node/Python версии для CI — отложено до создания remote repo.
+- [x] GitHub Actions: `npm run verify` на push (`ci.yml`), production deploy по тегу `v*` (`deploy.yml`).
+- [x] Зафиксирована Node.js версия `>=18.0.0` в `package.json` / `engines` + `node-version: 20` в CI.
 
 ### C5. First release (P0)
 - [x] Чистый первый commit.

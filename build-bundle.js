@@ -21,7 +21,9 @@ const defaultRules = loadJson("data/inventory-rules.json");
 // Load all profile-specific plans
 const planManifest = loadJson("data/plans/manifest.json");
 const profilePlans = {};
-for (const pid of planManifest.profiles || []) {
+for (const p of planManifest.profiles || []) {
+  const pid = p.id;
+  if (!pid) continue;
   try {
     profilePlans[`plan_${pid}`] = loadJson(`data/plans/plan_${pid}.json`);
     profilePlans[`inv_${pid}`] = loadJson(`data/plans/inv_${pid}.json`);

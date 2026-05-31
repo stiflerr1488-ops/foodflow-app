@@ -2122,10 +2122,19 @@ async function bootFoodFlow() {
     } catch (err) { console.warn("FoodFlow data hydration failed", err); }
   }
   if (!initRuntimeData()) {
-    if (!showLoadError("Не удалось загрузить данные. Проверьте подключение и обновите страницу.")) {
-      console.error("FoodFlow data load failed");
+    try {
+      await window.FoodFlowDataStore?.refresh();
+      if (initRuntimeData()) {
+        console.log("FoodFlow: runtime data loaded after refresh");
+      } else {
+        throw new Error("refresh did not yield runtime data");
+      }
+    } catch (e) {
+      if (!showLoadError("Не удалось загрузить данные. Проверьте подключение и обновите страницу.")) {
+        console.error("FoodFlow data load failed", e);
+      }
+      return;
     }
-    return;
   }
   validatePersistedState();
   applyTheme();
