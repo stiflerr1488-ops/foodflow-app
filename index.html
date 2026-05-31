@@ -1030,7 +1030,7 @@
     .weekLabel{font-weight:800;color:var(--ui-blue);text-transform:uppercase;letter-spacing:.06em}
     .weekStat{color:var(--ui-muted);white-space:nowrap}
     .weekStat .icon{vertical-align:-2px}
-    .voiceBtn,.shareBtn,.storeModeBtn{
+    .voiceBtn,.shareBtn,.storeModeBtn,.favBtn{
       display:inline-flex;
       align-items:center;
       gap:4px;
@@ -1044,7 +1044,8 @@
       border-color:var(--ui-border);
       cursor:pointer;
     }
-    .voiceBtn:hover,.shareBtn:hover,.storeModeBtn:hover{color:var(--ui-ink);border-color:var(--ui-blue)}
+    .voiceBtn:hover,.shareBtn:hover,.storeModeBtn:hover,.favBtn:hover{color:var(--ui-ink);border-color:var(--ui-blue)}
+    .favBtn.active{background:var(--ui-red);color:#fff;border-color:var(--ui-red)}
     .voiceBtn.speaking{color:var(--ui-blue);border-color:var(--ui-blue);background:rgba(23,105,223,.08)}
     .storeModeBtn.active{background:var(--ui-blue);color:#fff;border-color:var(--ui-blue)}
     .shareToast{

@@ -711,6 +711,15 @@ function showToast(msg, action) {
   const dur = action ? 60000 : 2000;
   setTimeout(() => t.classList.remove("show"), dur);
 }
+function getFavorites() { return JSON.parse(localStorage.getItem("foodflow_favorites") || "[]"); }
+function isFavorite(dish) { return getFavorites().includes(dish); }
+function toggleFavorite(dish) {
+  const favs = getFavorites();
+  const idx = favs.indexOf(dish);
+  if (idx >= 0) favs.splice(idx, 1); else favs.push(dish);
+  localStorage.setItem("foodflow_favorites", JSON.stringify(favs));
+  return idx < 0;
+}
 function exportPlan() {
   const rows = DATA.plan.map((d, i) => {
     const meals = Object.entries(d.meals).map(([k, m]) => `${k}: ${m.dish} (${m.portion}, ${m.kcal} ккал)`).join("\n  ");
@@ -1102,7 +1111,9 @@ function openRecipe(dish, isContainer = false) {
   document.getElementById("modalTitle").textContent = isContainer ? `Разогреть: ${dish}` : dish;
   document.getElementById("modalMeta").innerHTML = r ? (isContainer ? `<span>Из контейнера</span><span>~2 мин</span>` : `<span>${esc(r.type || "")}</span><span>${esc(r.time || "")}</span><span>${esc(r.store || "")}</span>`) : "";
   const voiceBtn = r && window.speechSynthesis ? `<button class="voiceBtn" id="voiceBtn">🔊 Вслух</button>` : "";
-  document.getElementById("modalBody").innerHTML = r ? `<div class="tabs"><button class="active" id="shortBtn">Коротко</button><button id="fullBtn">Подробно</button>${voiceBtn}</div><div id="recipeContent">${recipeHtml(dish, "short", isContainer)}</div>` : `<p class="small">Рецепт не найден.</p>`;
+  const favIcon = isFavorite(dish) ? "♥" : "♡";
+  const favBtn = `<button class="favBtn ${isFavorite(dish) ? "active" : ""}" id="favBtn">${favIcon} Избранное</button>`;
+  document.getElementById("modalBody").innerHTML = r ? `<div class="tabs"><button class="active" id="shortBtn">Коротко</button><button id="fullBtn">Подробно</button>${voiceBtn}${favBtn}</div><div id="recipeContent">${recipeHtml(dish, "short", isContainer)}</div>` : `<p class="small">Рецепт не найден.</p>`;
   document.getElementById("modal").style.display = "block"; document.body.style.overflow = "hidden";
   const short = document.getElementById("shortBtn"), full = document.getElementById("fullBtn"), cont = document.getElementById("recipeContent");
   if (short && full) { short.onclick = () => { short.classList.add("active"); full.classList.remove("active"); cont.innerHTML = recipeHtml(dish, "short", isContainer); }; full.onclick = () => { full.classList.add("active"); short.classList.remove("active"); cont.innerHTML = recipeHtml(dish, "full", isContainer); }; }
@@ -1116,6 +1127,13 @@ function openRecipe(dish, isContainer = false) {
     utter.onend = () => { vb.classList.remove("speaking"); vb.textContent = "🔊 Вслух"; };
     vb.classList.add("speaking"); vb.textContent = "⏹ Стоп";
     window.speechSynthesis.speak(utter);
+  };
+  const fb = document.getElementById("favBtn");
+  if (fb) fb.onclick = () => {
+    const nowFav = toggleFavorite(dish);
+    fb.textContent = `${nowFav ? "♥" : "♡"} Избранное`;
+    fb.classList.toggle("active", nowFav);
+    showToast(nowFav ? "Добавлено в избранное" : "Убрано из избранного");
   };
 }
 function openCook(i) {
