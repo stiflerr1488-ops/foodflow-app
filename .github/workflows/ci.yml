@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Verify
+        run: |
+          node verify.js
+          node check-html-refs.js
+          node check-sw-files.js
+      - name: Audit
+        run: node audit.js
+      - name: Check runtime
+        run: node test-runtime.js

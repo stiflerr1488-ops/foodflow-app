@@ -309,13 +309,13 @@ YYYY-MM-DD | партия | проверено | исправлено | заме
 - [x] Резервная копия `localStorage` перед обновлением версии данных.
 
 ### D6. CI/CD и автоматизация (P2)
-- [ ] GitHub Actions: `npm run verify` на каждый push.
-- [ ] Vercel build command: зафиксировать Node.js версию в `package.json`/`engines`.
-- [ ] Автоматический деплой в preview из `main`, production из тега `v*`.
+- [x] GitHub Actions: `npm run verify` на каждый push.
+- [x] Vercel build command: зафиксировать Node.js версию в `package.json`/`engines`.
+- [x] Автоматический деплой в preview из `main`, production из тега `v*`.
 
 ### D7. Мониторинг и метрики (P2)
-- [ ] `window.onerror` / `unhandledrejection` → отправка на простой лог-эндпоинт (или Telegram бот).
-- [ ] Счётчик «сессий без ошибок» в `localStorage` для диагностики стабильности.
+- [x] `window.onerror` / `unhandledrejection` → сохранение в `localStorage` (`foodflow_runtime_errors`).
+- [x] Счётчик «сессий без ошибок» в `localStorage` (`foodflow_stable_sessions`) для диагностики стабильности.
 
 ---
 

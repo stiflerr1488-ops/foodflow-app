@@ -25,6 +25,19 @@ function logRuntimeError(type, error) {
 window.addEventListener("error", event => logRuntimeError("error", event.error || event.message));
 window.addEventListener("unhandledrejection", event => logRuntimeError("unhandledrejection", event.reason));
 
+function bumpStableSessionCounter() {
+  try {
+    const key = "foodflow_stable_sessions";
+    const current = Number(localStorage.getItem(key) || 0);
+    localStorage.setItem(key, String(current + 1));
+  } catch (_) {}
+}
+function resetStableSessionCounter() {
+  try { localStorage.setItem("foodflow_stable_sessions", "0"); } catch (_) {}
+}
+window.addEventListener("error", () => resetStableSessionCounter(), { once: false });
+window.addEventListener("unhandledrejection", () => resetStableSessionCounter(), { once: false });
+
 function initRuntimeData() {
   const R = window.FoodFlowRuntimeData || window.FoodFlowDataStore?.runtime;
   if (!R) { console.error("FoodFlow: runtime data not available"); return false; }
@@ -2205,6 +2218,6 @@ async function bootFoodFlow() {
   if (state.autoNow) setTimeToNow();
   const overlay = document.getElementById("loadingOverlay");
   if (overlay) { overlay.style.opacity = "0"; setTimeout(() => overlay.remove(), 350); }
-  if (localStorage.getItem("foodflow_onboarded") !== "1" && localStorage.getItem("foodflow_onboarded_snoozed") !== "1") { renderOnboarding(); } else { renderAll(); }
+  if (localStorage.getItem("foodflow_onboarded") !== "1" && localStorage.getItem("foodflow_onboarded_snoozed") !== "1") { renderOnboarding(); } else { renderAll(); bumpStableSessionCounter(); }
 }
 bootFoodFlow();
