@@ -698,11 +698,18 @@ function shareShoppingList() {
   if (navigator.share) { navigator.share({ title: "Список покупок FoodFlow", text }).catch(() => {}); }
   else { navigator.clipboard.writeText(text).then(() => showToast("Скопировано в буфер")).catch(() => {}); }
 }
-function showToast(msg) {
+function showToast(msg, action) {
   let t = document.getElementById("shareToast");
   if (!t) { t = document.createElement("div"); t.id = "shareToast"; t.className = "shareToast"; document.body.appendChild(t); }
   t.textContent = msg; t.classList.add("show");
-  setTimeout(() => t.classList.remove("show"), 2000);
+  t.querySelectorAll(".toastAction").forEach(b => b.remove());
+  if (action) {
+    const btn = document.createElement("button"); btn.className = "toastAction"; btn.textContent = action.text;
+    btn.onclick = () => { action.onClick(); t.classList.remove("show"); };
+    t.appendChild(btn);
+  }
+  const dur = action ? 60000 : 2000;
+  setTimeout(() => t.classList.remove("show"), dur);
 }
 function exportPlan() {
   const rows = DATA.plan.map((d, i) => {
@@ -2015,6 +2022,14 @@ async function bootFoodFlow() {
               if (worker.state === "installed" && navigator.serviceWorker.controller) {
                 const el = document.getElementById("pwaStatus");
                 if (el) el.textContent = "Есть обновление";
+                showToast("Новая версия готова", {
+                  text: "Обновить сейчас",
+                  onClick: () => { worker.postMessage({ action: "skipWaiting" }); }
+                });
+                let _reloadOnce = false;
+                navigator.serviceWorker.addEventListener("controllerchange", () => {
+                  if (_reloadOnce) return; _reloadOnce = true; window.location.reload();
+                });
               }
             });
           });
