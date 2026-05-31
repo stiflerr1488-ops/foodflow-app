@@ -1104,7 +1104,7 @@ function openBasket(basketKey, dayNum) {
   document.getElementById("modalTitle").textContent = b.name;
   document.getElementById("modalMeta").innerHTML = `<span>День ${dayNum}</span><span>${esc(b.totalCostLabel || b.budget || "")}</span>`;
   document.getElementById("modalBody").innerHTML = `<div class="modalList">${shoppingItemsHtml(b, dayNum)}</div>`;
-  document.getElementById("modal").style.display = "block"; document.body.style.overflow = "hidden"; bind(document.getElementById("modalBody"));
+  openModalTrap(); bind(document.getElementById("modalBody"));
 }
 function openRecipe(dish, isContainer = false) {
   const r = findRecipe(dish);
@@ -1114,7 +1114,7 @@ function openRecipe(dish, isContainer = false) {
   const favIcon = isFavorite(dish) ? "♥" : "♡";
   const favBtn = `<button class="favBtn ${isFavorite(dish) ? "active" : ""}" id="favBtn">${favIcon} Избранное</button>`;
   document.getElementById("modalBody").innerHTML = r ? `<div class="tabs"><button class="active" id="shortBtn">Коротко</button><button id="fullBtn">Подробно</button>${voiceBtn}${favBtn}</div><div id="recipeContent">${recipeHtml(dish, "short", isContainer)}</div>` : `<p class="small">Рецепт не найден.</p>`;
-  document.getElementById("modal").style.display = "block"; document.body.style.overflow = "hidden";
+  openModalTrap();
   const short = document.getElementById("shortBtn"), full = document.getElementById("fullBtn"), cont = document.getElementById("recipeContent");
   if (short && full) { short.onclick = () => { short.classList.add("active"); full.classList.remove("active"); cont.innerHTML = recipeHtml(dish, "short", isContainer); }; full.onclick = () => { full.classList.add("active"); short.classList.remove("active"); cont.innerHTML = recipeHtml(dish, "full", isContainer); }; }
   const vb = document.getElementById("voiceBtn");
@@ -1145,9 +1145,30 @@ function openCook(i) {
   document.getElementById("modalTitle").textContent = a.title;
   document.getElementById("modalMeta").innerHTML = `<span>${esc(a.time)}</span>`;
   document.getElementById("modalBody").innerHTML = `<p>${esc(a.detail || a.title)}</p><div class="sideBlock"><h3>Хранение</h3><p class="small">${esc(a.storage || "")}</p></div>`;
-  document.getElementById("modal").style.display = "block"; document.body.style.overflow = "hidden";
+  openModalTrap();
 }
-function closeModal() { document.getElementById("modal").style.display = "none"; document.body.style.overflow = ""; }
+function closeModal() { document.getElementById("modal").style.display = "none"; document.body.style.overflow = ""; _modalTrapCleanup && _modalTrapCleanup(); }
+let _modalTrapCleanup = null, _previousActiveElement = null;
+function trapFocus(container) {
+  const focusable = () => Array.from(container.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')).filter(el => !el.disabled && el.offsetParent !== null);
+  const first = () => focusable()[0];
+  const last = () => focusable()[focusable().length - 1];
+  const keyHandler = e => {
+    if (e.key !== "Tab") return;
+    const f = focusable(); if (f.length === 0) return;
+    if (e.shiftKey && document.activeElement === first()) { e.preventDefault(); last().focus(); }
+    else if (!e.shiftKey && document.activeElement === last()) { e.preventDefault(); first().focus(); }
+  };
+  container.addEventListener("keydown", keyHandler);
+  _modalTrapCleanup = () => { container.removeEventListener("keydown", keyHandler); _previousActiveElement && _previousActiveElement.focus(); _previousActiveElement = null; };
+  const f = focusable(); if (f.length) f[0].focus();
+}
+function openModalTrap() {
+  const modal = document.getElementById("modal");
+  modal.style.display = "block"; document.body.style.overflow = "hidden";
+  _previousActiveElement = document.activeElement;
+  requestAnimationFrame(() => { if (modal.style.display === "block") trapFocus(modal); });
+}
 
 // ── Recipe catalog & replacement ──
 const PLAN_REPLACEMENTS_LEGACY_KEY = "command_plan_replacements";
@@ -1237,11 +1258,19 @@ function renderCatalogList() {
   list.innerHTML = slice.map(([name, r]) => {
     const meta = [r.type, r.time, (r.kcal || r.macros?.kcal) ? `${r.kcal || r.macros?.kcal} ккал` : "", r.cost ? `~${Math.round(r.cost)} ₽` : ""].filter(Boolean).join(" · ");
     const replaceBtn = _catalogState.replaceTarget ? `<button class="primary" data-replace="${esc(name)}">Заменить</button>` : "";
-    return `<div class="catalogRow" draggable="true" data-drag-dish="${esc(name)}"><div><strong>${esc(name)}</strong><div class="meta">${esc(meta)}</div></div><button data-dish="${esc(name)}">Открыть</button>${replaceBtn}</div>`;
+    return `<div class="catalogRow" draggable="true" tabindex="0" data-drag-dish="${esc(name)}"><div><strong>${esc(name)}</strong><div class="meta">${esc(meta)}</div></div><button data-dish="${esc(name)}">Открыть</button>${replaceBtn}</div>`;
   }).join("") || `<p class="small">Ничего не найдено.</p>`;
   if (footer) footer.textContent = total ? `Найдено: ${total}. Страница ${_catalogState.page + 1} из ${maxPage + 1}.` : "";
   list.querySelectorAll("[data-dish]").forEach(btn => btn.addEventListener("click", () => openRecipe(btn.dataset.dish)));
   list.querySelectorAll("[data-replace]").forEach(btn => btn.addEventListener("click", () => confirmReplacement(btn.dataset.replace)));
+  list.querySelectorAll(".catalogRow").forEach(row => {
+    row.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      e.preventDefault();
+      const name = row.dataset.dragDish;
+      if (_catalogState.replaceTarget) confirmReplacement(name); else openRecipe(name);
+    });
+  });
 }
 function openCatalog(replaceTarget = null) {
   _catalogState = { query: "", type: "", page: 0, replaceTarget };
@@ -1262,7 +1291,7 @@ function openCatalog(replaceTarget = null) {
       <button id="catalogNext">Дальше</button>
     </div>
   `;
-  document.getElementById("modal").style.display = "block"; document.body.style.overflow = "hidden";
+  openModalTrap();
   const queryInput = document.getElementById("catalogQuery");
   const typeSelect = document.getElementById("catalogType");
   queryInput.addEventListener("input", () => { _catalogState.query = queryInput.value; _catalogState.page = 0; renderCatalogList(); });
@@ -2013,7 +2042,7 @@ async function bootFoodFlow() {
     keys.forEach(k => localStorage.removeItem(k));
     shouldAutoScroll = true; renderAll();
   };
-  document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && document.getElementById("modal").style.display === "block") closeModal(); });
   // Mobile swipe navigation
   let _touchStartX = 0;
   document.addEventListener("touchstart", e => { _touchStartX = e.changedTouches[0].screenX; }, { passive: true });
