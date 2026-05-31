@@ -668,6 +668,9 @@ function renderRefs() {
       <div class="dayControls">
         <label class="small">Магазин <select id="storeSelect">${storeOptions}</select></label>
         <button id="exportPlanBtn">Экспорт плана</button>
+        <button id="exportPlanJsonBtn">Экспорт JSON</button>
+        <button id="importPlanBtn">Импорт плана</button>
+        <input type="file" id="importPlanInput" accept=".json" style="display:none">
         <button id="shareShoppingBtn" class="shareBtn">Отправить список</button>
         <button id="printPlanBtn">Печать</button>
       </div>
@@ -676,8 +679,18 @@ function renderRefs() {
   </details>`;
   bind();
   document.getElementById("exportPlanBtn").onclick = exportPlan;
+  document.getElementById("exportPlanJsonBtn").onclick = exportPlanJson;
   document.getElementById("printPlanBtn").onclick = printPlan;
   document.getElementById("shareShoppingBtn").onclick = shareShoppingList;
+  const importInput = document.getElementById("importPlanInput");
+  document.getElementById("importPlanBtn").onclick = () => importInput && importInput.click();
+  if (importInput) importInput.onchange = e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => { importPlanJson(ev.target.result); e.target.value = ""; };
+    reader.readAsText(file);
+  };
   const storeSelect = document.getElementById("storeSelect");
   if (storeSelect) storeSelect.onchange = e => { state.store = e.target.value; localStorage.setItem("store", state.store); applyStorePrices(); renderAll(); };
 }
@@ -734,6 +747,108 @@ function exportPlan() {
   URL.revokeObjectURL(a.href);
 }
 function printPlan() { window.print(); }
+
+function exportPlanJson() {
+  const exportData = {
+    appVersion: "1.1.3",
+    dataVersion: window.FoodFlowDataStore?.cached?.version || 13,
+    exportedAt: new Date().toISOString(),
+    plan: DATA.plan,
+    shopping: DATA.shopping,
+    planFamily: DATA.planFamily,
+    actions: ACTIONS,
+    used: USED,
+    state: {
+      day: state.day,
+      hidePast: state.hidePast,
+      compact: state.compact,
+      autoNow: state.autoNow,
+      focusMode: state.focusMode,
+      familyAdults: state.familyAdults,
+      familyChildren: state.familyChildren,
+      familyBudget: state.familyBudget,
+      store: state.store,
+      dark: state.dark
+    },
+    replacements: loadPlanReplacements(),
+    favorites: getFavorites()
+  };
+  const progress = {};
+  const settings = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k.startsWith("command_")) progress[k] = localStorage.getItem(k);
+    if (/^(family_|store|hide_past|compact_mode|auto_now|focus_mode|dark_theme|foodflow_onboarded)/.test(k)) settings[k] = localStorage.getItem(k);
+  }
+  exportData.progress = progress;
+  exportData.settings = settings;
+  const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `foodflow-plan-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+  showToast("План экспортирован в JSON");
+}
+function importPlanJson(text) {
+  let data;
+  try { data = JSON.parse(text); } catch (e) { showToast("Неверный формат файла"); return; }
+  if (!data || !Array.isArray(data.plan)) { showToast("Файл не содержит плана"); return; }
+  const currentVersion = window.FoodFlowDataStore?.cached?.version || 13;
+  if (data.dataVersion && Number(data.dataVersion) !== Number(currentVersion)) {
+    if (!confirm(`Версия данных в файле (${data.dataVersion}) отличается от текущей (${currentVersion}). Импорт может работать некорректно. Продолжить?`)) return;
+  }
+  const backup = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k.startsWith("command_") || k.startsWith("family_") || k === "store" || k.startsWith("foodflow_onboarded") || k.startsWith("foodflow_favorites")) {
+      backup[k] = localStorage.getItem(k);
+    }
+  }
+  try { localStorage.setItem("foodflow_import_backup", JSON.stringify(backup)); } catch (_) {}
+  if (data.plan) {
+    DATA.plan = data.plan;
+    if (data.shopping) DATA.shopping = data.shopping;
+    if (data.planFamily) DATA.planFamily = data.planFamily;
+    if (data.actions) { Object.keys(ACTIONS).forEach(k => delete ACTIONS[k]); Object.assign(ACTIONS, data.actions); }
+    if (data.used) { Object.keys(USED).forEach(k => delete USED[k]); Object.assign(USED, data.used); }
+  }
+  if (data.replacements) savePlanReplacements(data.replacements);
+  if (data.favorites) localStorage.setItem("foodflow_favorites", JSON.stringify(data.favorites));
+  if (data.settings) Object.entries(data.settings).forEach(([k, v]) => localStorage.setItem(k, v));
+  if (data.progress) Object.entries(data.progress).forEach(([k, v]) => localStorage.setItem(k, v));
+  const s = data.state || {};
+  state.day = clampDay(s.day !== undefined ? s.day : (data.settings?.command_day || state.day));
+  state.hidePast = s.hidePast !== undefined ? s.hidePast : (data.settings?.hide_past !== "0");
+  state.compact = s.compact !== undefined ? s.compact : (data.settings?.compact_mode === "1");
+  state.autoNow = s.autoNow !== undefined ? s.autoNow : (data.settings?.auto_now !== "0");
+  state.focusMode = s.focusMode !== undefined ? s.focusMode : (data.settings?.focus_mode !== "0");
+  state.familyAdults = clampInList(s.familyAdults !== undefined ? s.familyAdults : Number(data.settings?.family_adults || 1), [1, 2], 1);
+  state.familyChildren = clampInList(s.familyChildren !== undefined ? s.familyChildren : Number(data.settings?.family_children || 0), [0, 1, 2], 0);
+  state.familyBudget = Number(s.familyBudget !== undefined ? s.familyBudget : (data.settings?.family_budget || 20000));
+  state.store = s.store || data.settings?.store || state.store;
+  state.dark = s.dark !== undefined ? s.dark : (data.settings?.dark_theme === "1");
+  localStorage.setItem("command_day", String(state.day));
+  localStorage.setItem("hide_past", state.hidePast ? "1" : "0");
+  localStorage.setItem("compact_mode", state.compact ? "1" : "0");
+  localStorage.setItem("auto_now", state.autoNow ? "1" : "0");
+  localStorage.setItem("focus_mode", state.focusMode ? "1" : "0");
+  localStorage.setItem("family_adults", String(state.familyAdults));
+  localStorage.setItem("family_children", String(state.familyChildren));
+  localStorage.setItem("family_budget", String(state.familyBudget));
+  localStorage.setItem("store", state.store);
+  localStorage.setItem("dark_theme", state.dark ? "1" : "0");
+  _baseSaved = false;
+  _basePkgForStore = null;
+  _baseBasketsForStore = null;
+  applyFamilyScale();
+  applyStorePrices();
+  applyPlanReplacements();
+  rebuildDaySelect();
+  daySelect.value = state.day;
+  renderAll();
+  showToast("План импортирован");
+}
 
 // ── NEW: Weekly shopping list ──
 function getWeeklyShoppingList() {

@@ -224,7 +224,11 @@
       catch (_) { return [fileKey(file), null]; }
     }));
     const payload = { version: DATA_VERSION, loadedAt: new Date().toISOString(), profileId, files: Object.fromEntries(entries.filter(([_, v]) => v !== null)) };
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(payload)); } catch (_) {}
+    try {
+      const old = localStorage.getItem(STORAGE_KEY);
+      if (old) localStorage.setItem(STORAGE_KEY + "_backup", old);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    } catch (_) {}
     return payload;
   }
   function loadCached() {
