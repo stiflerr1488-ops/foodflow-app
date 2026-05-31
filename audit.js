@@ -43,6 +43,21 @@ if (profileRules) {
   }
 }
 
+// Normalize plan fields
+(plans.plan || []).forEach((d, i) => {
+  if (d.actual_day == null) d.actual_day = i + 1;
+  if (!d.shopping_type_actual && d.shopping_type) {
+    d.shopping_type_actual = d.shopping_type;
+  }
+});
+const _seenShop = new Set();
+(plans.plan || []).forEach(d => {
+  if (d.shopping_type_actual) {
+    if (_seenShop.has(d.shopping_type_actual)) d.shopping_type_actual = "";
+    else _seenShop.add(d.shopping_type_actual);
+  }
+});
+
 // Extract current plan data
 const DATA = { plan: plans.plan, shopping: plans.shopping };
 const RECIPES = recipes.recipes;
@@ -284,7 +299,7 @@ function planQualityAudit(audit) {
     if (n.p < minProtein) warnings.push(`День ${d.day}: белка около ${n.p} г, цель минимум ${minProtein} г`);
     if (n.kcal < minKcal || n.kcal > maxKcal) warnings.push(`День ${d.day}: калории ${n.kcal}, диапазон ${minKcal}-${maxKcal}`);
   });
-  for (let start = 1; start <= 24; start++) {
+  for (let start = 1; start + 6 <= DATA.plan.length; start++) {
     const dishes = [];
     for (let d = start; d < start + 7; d++) dishes.push(...Object.values(DATA.plan[d - 1].meals).map(m => m.dish));
     const frozen = dishes.filter(x => /Пельмени|Вареники|Наггетсы|Котлет|Рыбные палочки/.test(x)).length;

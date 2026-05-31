@@ -7,6 +7,8 @@ const APP_SHELL = [
   "./index.html",
   "./data-loader.js",
   "./app.js",
+  "./tokens.css",
+  "./style.css",
   "./manifest.webmanifest",
   "./foodflow-icon.svg",
   "./data/products.json",

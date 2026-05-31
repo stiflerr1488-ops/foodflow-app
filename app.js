@@ -244,7 +244,7 @@ function dayNutrition(dayNum) {
 function planQualityAudit(audit) {
   const warnings = [];
   audit.days.forEach(d => {
-    const active = (ACTIVE_MIN[DATA.plan[d.day - 1].meals["Завтрак"].dish] || 0) +
+    const active = (ACTIVE_MIN[(DATA.plan[d.day - 1].meals["Завтрак"] || {}).dish] || 0) +
       d.cooks.reduce((s, c) => s + (c.source === "container" ? 5 : (ACTIVE_MIN[c.dish] || 10) + (c.portions > 1 ? 3 : 0)), 0);
     d.activeMinutes = active;
     if (active > 45) warnings.push(`День ${d.day}: активная готовка ${active} мин, цель до 45 мин`);
@@ -252,7 +252,7 @@ function planQualityAudit(audit) {
     if (n.p < 70) warnings.push(`День ${d.day}: белка около ${n.p} г, цель минимум 70 г`);
     if (n.kcal < 1900 || n.kcal > 2700) warnings.push(`День ${d.day}: калории ${n.kcal}, проверь комфортный диапазон`);
   });
-  for (let start = 1; start <= 24; start++) {
+  for (let start = 1; start + 6 <= DATA.plan.length; start++) {
     const dishes = [];
     for (let d = start; d < start + 7; d++) dishes.push(...Object.values(DATA.plan[d - 1].meals).map(m => m.dish));
     const frozen = dishes.filter(x => /Пельмени|Вареники|Наггетсы|Котлет|Рыбные палочки/.test(x)).length;
@@ -384,6 +384,17 @@ function getUnits() { return currentFamilyProfile().units; }
 function familyScaleFactor(units) {
   const bulk = units >= 3 ? .84 : units >= 2 ? .88 : units > 1 ? .92 : 1;
   return Number((units * bulk).toFixed(2));
+}
+function scalePortionText(ingredients) {
+  if (!ingredients) return "";
+  const units = getUnits ? getUnits() : 1;
+  const scale = familyScaleFactor(units);
+  if (scale === 1) return ingredients.join(", ") || "";
+  return ingredients.map(s => s.replace(/(\d+(?:[.,]\d+)?)/g, m => {
+    const n = parseFloat(m.replace(",", "."));
+    const scaled = Math.round(n * scale * 10) / 10;
+    return scaled % 1 === 0 ? String(scaled) : scaled.toFixed(1).replace(".", ",");
+  })).join(", ");
 }
 function budgetStatus(profile, budget) {
   const cfg = budgetConfig();
@@ -586,11 +597,21 @@ function renderOnboarding() {
   }
   const el = document.createElement("div"); el.className = "onboarding"; el.id = "onboarding";
   el.innerHTML = `<div class="onboardingCard">
+    <button class="obClose" id="ob_close" aria-label="Закрыть">×</button>
     <div class="onboardingLogo">FoodFlow</div>
     <div id="ob_dots" class="obDots"></div>
     <div id="ob_body"></div>
   </div>`;
   document.body.appendChild(el);
+  const dismiss = () => {
+    localStorage.setItem("foodflow_onboarded_snoozed", "1");
+    el.remove();
+    document.removeEventListener("keydown", onKey);
+    renderAll();
+  };
+  document.getElementById("ob_close").onclick = dismiss;
+  const onKey = e => { if (e.key === "Escape") { dismiss(); } };
+  document.addEventListener("keydown", onKey);
   renderStep();
 }
 function showOnboarding() { const existing = document.getElementById("onboarding"); if (existing) existing.remove(); renderOnboarding(); }
@@ -941,7 +962,7 @@ function renderToday(_audit, _invToday) {
       if (!meal) return "";
       const replacedNote = meal._replaced ? `<div class="meta" style="color:var(--ui-blue);margin-top:4px">Заменено</div>` : "";
       const clearBtn = meal._replaced ? `<button class="replaceBtn" data-clear-replace="${esc(name)}">Вернуть</button>` : "";
-      return `<div class="mealCard" data-drop-meal="'${esc(name)}'>"
+      return `<div class="mealCard" data-drop-meal="${esc(name)}">
         <div class="mealTop"><span class="mealType">${esc(name)}</span><span class="mealKcal">${Number(meal.kcal || 0)} ккал · ${estimateDishCost(meal.dish)} ₽</span></div>
         <div class="mealName">${esc(meal.dish)}</div>
         <div class="mealPortion">${esc(meal.portion)}</div>${replacedNote}
@@ -1034,6 +1055,7 @@ function renderToday(_audit, _invToday) {
     <button data-quick="familyRefs">Семья и бюджет</button>
     <button data-quick="inventoryRefs">${icon("fridge")} Остатки и контейнеры</button>
     <button data-quick="weeklyShoppingRefs">Список на неделю</button>
+    <button id="shareDayBtn">Поделиться днём</button>
   </div>`;
 
   document.getElementById("today").innerHTML = sectionTitle(`${icon("meal")}День ${state.day}`, d.title) +
@@ -1043,11 +1065,20 @@ function renderToday(_audit, _invToday) {
   const useNowBtn = document.getElementById("useNow"); if (useNowBtn) useNowBtn.onclick = () => { setAutoNow(true); renderAll(); };
   const skipBtn = document.getElementById("skipCurrent"); if (skipBtn) skipBtn.onclick = skipCurrent;
   const goTomorrow = document.getElementById("goTomorrow"); if (goTomorrow && !goTomorrow.disabled) goTomorrow.onclick = () => changeDay(state.day + 1);
+  const shareDayBtn = document.getElementById("shareDayBtn"); if (shareDayBtn) shareDayBtn.onclick = shareDay;
   document.getElementById("toggleFocus").onclick = () => { state.focusMode = !state.focusMode; localStorage.setItem("focus_mode", state.focusMode ? "1" : "0"); renderToday(); };
   document.getElementById("togglePast").onclick = () => { state.hidePast = !state.hidePast; localStorage.setItem("hide_past", state.hidePast ? "1" : "0"); renderToday(); };
 }
 function isDoneAction(i) { return isDone("action", state.day, i); }
 function shiftTime(delta) { const input = document.getElementById("timeInput"); setAutoNow(false); const m = currentMinutes() + delta; input.value = formatMinutes(m); renderAll(); }
+function shareDay() {
+  const d = day() || {};
+  const lines = [`День ${state.day} · ${d.title || ""}`];
+  ["Завтрак","Обед","Полдник","Ужин","Чай"].forEach(m => { const meal = d.meals?.[m]; if (meal?.dish) lines.push(`${m}: ${meal.dish}`); });
+  const text = lines.join("\n");
+  if (navigator.share) { navigator.share({ title: `FoodFlow — день ${state.day}`, text }).catch(() => {}); }
+  else { navigator.clipboard.writeText(text).then(() => showToast("Скопировано в буфер")).catch(() => {}); }
+}
 function snoozeCurrent(delta) { const acts = ACTIONS[String(state.day)] || []; const idx = nearestActionIndex(acts); if (idx < 0) return; const action = enrichAction(acts[idx] || {}); setSnoozeAction(idx, Math.max(effectiveActionMinutes(action, idx), currentMinutes()) + delta); shouldAutoScroll = true; renderAll(); }
 function skipCurrent() { if (!confirm("Пропустить ближайший пункт?")) return; const idx = nearestActionIndex(ACTIONS[String(state.day)] || []); if (idx < 0) return; setSkippedAction(idx, true); setDone("action", state.day, idx, false); clearSnoozeAction(idx); shouldAutoScroll = true; renderAll(); }
 
@@ -1126,12 +1157,14 @@ function applyPlanReplacements() {
     const macros = MACRO_BY_ITEM || {};
     let p = 0, f = 0, c = 0;
     for (const [k, v] of Object.entries(usage)) { const m = macros[k]; if (!m) continue; p += (m.p || 0) * v; f += (m.f || 0) * v; c += (m.c || 0) * v; }
-    const kcal = Math.round(4 * p + 9 * f + 4 * c);
+      const calcKcal = Math.round(4 * p + 9 * f + 4 * c);
+      const recipeKcal = RECIPES[dish]?.macros?.kcal || RECIPES[dish]?.kcal || 0;
+      const kcal = calcKcal > 0 && Math.abs(calcKcal - recipeKcal) < 50 ? calcKcal : recipeKcal;
     const cost = Math.round((RECIPES[dish]?.cost || 0));
     DATA.plan[dayIdx].meals[mealName] = {
       dish,
-      portion: (RECIPES[dish]?.ingredients || []).join(", "),
-      kcal: kcal || RECIPES[dish]?.macros?.kcal || RECIPES[dish]?.kcal || 0,
+      portion: scalePortionText(RECIPES[dish]?.ingredients),
+      kcal,
       cost,
       dishCost: cost,
       costLabel: `~${cost} ₽`,
@@ -1234,7 +1267,7 @@ function clearReplacement(dayNum, mealName) {
   delete map[`${dayNum}|${mealName}`];
   savePlanReplacements(map);
   if (window.FoodFlowDataStore?.refresh) {
-    window.FoodFlowDataStore.refresh().then(() => { initRuntimeData(); applyFamilyScale(); applyStorePrices(); renderAll(); });
+    window.FoodFlowDataStore.refresh().then(() => { initRuntimeData(); applyFamilyScale(); applyStorePrices(); applyPlanReplacements(); renderAll(); });
   } else {
     renderAll();
   }
@@ -1282,7 +1315,7 @@ function bind(root = document) {
       e.preventDefault(); card.style.outline = "";
       const dish = e.dataTransfer.getData("text/dish");
       const mealName = card.querySelector(".mealType")?.textContent;
-      if (dish && mealName && RECIPES[dish]) { confirmReplacement(dish); _catalogState.replaceTarget = { day: state.day, mealName, dish: card.querySelector(".mealName")?.textContent || "" }; confirmReplacement(dish); }
+      if (dish && mealName && RECIPES[dish]) { _catalogState.replaceTarget = { day: state.day, mealName, dish: card.querySelector(".mealName")?.textContent || "" }; confirmReplacement(dish); }
     });
   });
 }
@@ -1326,6 +1359,7 @@ function scheduleNotifs() {
   // "Пора готовить обед" at 12:05
   if (h < 12 || (h === 12 && m < 5)) {
     const minsUntil = (12 * 60 + 5) - (h * 60 + m);
+    if (minsUntil < 0 || minsUntil * 60000 > 2147483647) return;
     window._notifCook = setTimeout(() => {
       const acts = ACTIONS[String(state.day)] || [];
       const cook = acts.find(a => { const ea = enrichAction(a); return ea.type === "cook" && minutes(ea.time) >= 720 && minutes(ea.time) <= 780; });
@@ -1338,6 +1372,7 @@ function scheduleNotifs() {
     const td = DATA.plan[tomorrow - 1];
     if (td?.shopping_type_actual && h < 21) {
       const minsUntil = (21 * 60) - (h * 60 + m);
+      if (minsUntil < 0 || minsUntil * 60000 > 2147483647) return;
       window._notifShop = setTimeout(() => {
         new Notification("FoodFlow", { body: `Завтра закупка: ${DATA.shopping[td.shopping_type_actual]?.name || ""}`, icon: "./icons/icon-192.png" });
       }, minsUntil * 60000);
@@ -1353,10 +1388,209 @@ function showLoadError(message) {
   return true;
 }
 
+// ── Render fridge door (primary view) ──
+function renderFridge(_audit, _invToday) {
+  const el = document.getElementById("fridge");
+  if (!el) return;
+  const audit = _audit || inventoryAudit();
+  const today = _invToday || audit.days[state.day - 1];
+  if (!today) return;
+
+  // ── Build shelf data ──
+  const shelfData = [
+    { key: "freezer", label: "Морозилка", icon: "❄", css: "shelf-freezer", items: [], containers: [] },
+    { key: "fridge", label: "Холодильник", icon: "🧊", css: "shelf-fridge", items: [], containers: [] },
+    { key: "base", label: "Полки", icon: "📦", css: "shelf-pantry", items: [], containers: [] }
+  ];
+
+  // Place items into shelves by group
+  for (const shelf of shelfData) {
+    shelf.items = compactStock(today.end, shelf.key);
+    shelf.containers = today.containersEnd.filter(c => {
+      if (shelf.key === "freezer") return c.location === "freezer";
+      if (shelf.key === "fridge") return c.location === "fridge";
+      return false;
+    });
+  }
+
+  // Slot usage
+  const fridgeSlots = today.slotUse?.fridge || 0;
+  const freezerSlots = today.slotUse?.freezer || 0;
+
+  function freshnessClass(itemKey) {
+    const shelfLife = SHELF_LIFE_DAYS[itemKey];
+    if (!shelfLife) return "";
+    // Check if item expires within 2 days
+    const purchases = INVENTORY_PURCHASES.filter(p => p.items[itemKey]);
+    if (!purchases.length) return "";
+    const lastBought = Math.max(...purchases.map(p => p.availableDay));
+    const expires = lastBought + shelfLife - 1;
+    const daysLeft = expires - state.day;
+    if (daysLeft < 0) return "expired";
+    if (daysLeft <= 1) return "danger";
+    if (daysLeft <= 2) return "warn";
+    return "";
+  }
+
+  function chipHtml(itemStr) {
+    // Parse "Name amount unit" from formatInvItem output
+    const parts = itemStr.match(/^(.+?)\s(\d+(?:[.,]\d+)?\s*\S*)$/);
+    if (!parts) return `<span class="chip"><span class="chip-name">${esc(itemStr)}</span></span>`;
+    const name = parts[1];
+    const amount = parts[2];
+    // Find item key for freshness
+    let fKey = null;
+    for (const [k, meta] of Object.entries(INVENTORY_ITEMS)) {
+      if (meta[0] === name) { fKey = k; break; }
+    }
+    const freshness = fKey ? freshnessClass(fKey) : "";
+    return `<span class="chip" data-freshness="${freshness}"><span class="chip-name">${esc(name)}</span><span class="chip-amount">${esc(amount)}</span><span class="chip-dot"></span></span>`;
+  }
+
+  function containerHtml(c) {
+    const diff = c.targetDay - state.day;
+    const targetLabel = diff === 0 ? "сегодня" : diff === 1 ? "завтра" : `через ${diff} дн.`;
+    return `<div class="container-card">
+      <span class="container-id">#${c.id}</span>
+      <span class="container-dish">${esc(c.dish)}</span>
+      <span class="container-meta">${c.weight} г</span>
+      <span class="container-target">${targetLabel}</span>
+    </div>`;
+  }
+
+  function shelfHtml(shelf) {
+    const slotKey = shelf.key === "freezer" ? "freezer" : shelf.key === "fridge" ? "fridge" : null;
+    const maxSlots = slotKey ? CONTAINER_SLOTS[slotKey] || 0 : 0;
+    const usedSlots = slotKey ? today.slotUse?.[slotKey] || 0 : 0;
+    const overMax = maxSlots > 0 && usedSlots > maxSlots;
+    const slotBadge = maxSlots > 0
+      ? `<span class="shelf-badge${overMax ? " over" : ""}">${usedSlots}/${maxSlots} слотов</span>`
+      : "";
+
+    const chips = shelf.items.length
+      ? shelf.items.map(chipHtml).join("")
+      : `<span class="chip-empty">пусто</span>`;
+    const containers = shelf.containers.length
+      ? shelf.containers.map(containerHtml).join("")
+      : "";
+
+    return `<section class="shelf ${shelf.css}">
+      <div class="shelf-head">
+        <span class="shelf-label">${shelf.icon} ${esc(shelf.label)}</span>
+        ${slotBadge}
+      </div>
+      ${containers}
+      <div class="chip-rack">${chips}</div>
+    </section>`;
+  }
+
+  // ── Magnet card: today's plan ──
+  const d = day() || {};
+  const dayKcal = cals(d);
+  const profile = currentFamilyProfile();
+  const kcalPerPerson = profile.units > 1 ? ` <span style="font-size:13px;color:var(--color-muted)">(~${Math.round(dayKcal / profile.units)} на чел)</span>` : "";
+  const acts = (ACTIONS[String(state.day)] || []).map(enrichAction);
+  const nextIdx = nearestActionIndex(acts);
+  const allDone = acts.every((_, i) => isCompleteAction(i));
+  const current = enrichAction(acts[nextIdx] || {});
+  const nextMin = current ? effectiveActionMinutes(current, nextIdx) : currentMinutes();
+  const nowMin = currentMinutes();
+  const waitLine = allDone ? "Всё готово" : nextMin > nowMin ? `Через ${diffText(nextMin)}` : "Сейчас";
+
+  const currentCook = current.type === "cook" ? (today.cooks || []).find(c => c.dish === current.dish && c.time === current.time) : null;
+  const currentTitle = currentCook?.source === "container" ? current.dish : current.title;
+  const nowBtn = !allDone && current.dish
+    ? (current.type === "order" ? `<button data-basket="${esc(current.basket)}" data-basket-day="${state.day}">Заказ</button>`
+     : current.type === "cook" ? `<button data-cook="${nextIdx}">Рецепт</button>`
+     : `<button data-dish="${esc(current.dish)}">Рецепт</button>`)
+    : "";
+  const doneBtn = !allDone ? `<button class="primaryAction" id="markCurrentSimple">Готово</button>` : "";
+  const goBtn = allDone && state.day < planLength() ? `<button class="primaryAction" id="goTomorrow">Завтра</button>` : "";
+
+  // Progress
+  let total = 0, doneCount = 0;
+  Object.entries(ACTIONS).forEach(([d, arr]) => arr.forEach((_, i) => { total++; if (isDone("action", d, i) || localStorage.getItem(key("skip", d, i)) === "1") doneCount++; }));
+  DATA.plan.forEach(d => { if (d.shopping_type_actual) (DATA.shopping[d.shopping_type_actual].itemBoxes || DATA.shopping[d.shopping_type_actual].items || []).forEach((_, i) => { total++; if (isDone("shop", d.actual_day, i)) doneCount++; }); });
+  const pct = total ? Math.round(doneCount / total * 100) : 0;
+
+  const magnetCard = `<div class="magnet-card">
+    <div class="magnet-title">День ${state.day}</div>
+    <div class="magnet-row">
+      <div class="progress"><i id="progress" style="width:${pct}%"></i></div>
+      <div class="magnet-kcal">${icon("kcal")}${dayKcal} ккал${kcalPerPerson}</div>
+    </div>
+    <div style="font-size:13px;color:var(--color-muted);margin-top:4px">${doneCount}/${total} · ${pct}%</div>
+    ${allDone ? "" : `<div style="margin-top:var(--space-sm)">
+      <div class="magnet-when">${waitLine}</div>
+      <div class="magnet-dish">${esc(currentTitle)}</div>
+      <div class="magnet-meta">${current.kcal ? `${current.kcal} ккал` : typeLabel(current.type)}</div>
+      <div class="magnet-actions">${doneBtn}${nowBtn}${goBtn}</div>
+    </div>`}
+    ${allDone ? `<div style="margin-top:var(--space-sm)">
+      <div class="magnet-dish">Всё готово</div>
+      <div class="magnet-actions">${goBtn}</div>
+    </div>` : ""}
+  </div>`;
+
+  // ── Notepad: next shopping ──
+  const weekStart = Math.floor((state.day - 1) / 7) * 7 + 1;
+  const weekEnd = Math.min(planLength(), weekStart + 6);
+  let shopItems = [];
+  for (let dn = state.day; dn <= weekEnd; dn++) {
+    const pd = DATA.plan[dn - 1];
+    if (pd?.shopping_type_actual && pd.actual_day === dn) {
+      const b = DATA.shopping[pd.shopping_type_actual];
+      if (b?.itemBoxes) shopItems.push({ name: b.name, items: b.itemBoxes, key: pd.shopping_type_actual, day: dn });
+    }
+  }
+  const MAX_NOTEPAD = 8;
+  let notepadHtml = "";
+  if (shopItems.length) {
+    const first = shopItems[0];
+    const allItems = shopItems.flatMap(s => s.items || []);
+    const visible = allItems.slice(0, MAX_NOTEPAD);
+    const rest = allItems.length - MAX_NOTEPAD;
+    notepadHtml = `<div class="notepad">
+      <div class="notepad-title">Закупки</div>
+      ${visible.map((it, i) => `<div class="notepad-item">
+        <input class="check" type="checkbox" data-type="shop" data-day="${first.day}" data-index="${i}">
+        <span>${esc(it.title)}${it.quantity > 1 ? ` ×${it.quantity}` : ""}</span>
+      </div>`).join("")}
+      ${rest > 0 ? `<button class="notepad-more" data-basket="${esc(first.key)}" data-basket-day="${first.day}">Ещё ${rest} позиций</button>` : ""}
+    </div>`;
+  } else {
+    notepadHtml = `<div class="notepad">
+      <div class="notepad-title">Закупки</div>
+      <div class="notepad-item" style="color:var(--color-muted);font-style:italic;border:0">На этой неделе нет</div>
+    </div>`;
+  }
+
+  el.innerHTML = `
+    <div class="fridge-body">
+      ${shelfData.map(shelfHtml).join("")}
+    </div>
+    <div class="fridge-door">
+      ${magnetCard}
+      ${notepadHtml}
+    </div>
+  `;
+
+  // Bind fridge interactions
+  const markSimple = document.getElementById("markCurrentSimple");
+  if (markSimple) markSimple.onclick = markDone;
+  const goTomorrow = document.getElementById("goTomorrow");
+  if (goTomorrow && !goTomorrow.disabled) goTomorrow.onclick = () => changeDay(state.day + 1);
+  el.querySelectorAll("[data-dish]").forEach(b => b.addEventListener("click", () => openRecipe(b.dataset.dish)));
+  el.querySelectorAll("[data-cook]").forEach(b => b.addEventListener("click", () => openCook(Number(b.dataset.cook))));
+  el.querySelectorAll("[data-basket]").forEach(b => b.addEventListener("click", () => openBasket(b.dataset.basket, Number(b.dataset.basketDay))));
+  bind(el);
+}
+
 // ── Render all ──
 function renderAll() {
   const _audit = inventoryAudit();
   const _invToday = _audit.days[state.day - 1];
+  renderFridge(_audit, _invToday);
   renderToday(_audit, _invToday); renderRefs(); renderFamilyBudget();
   try { renderInventory(_audit, _invToday); } catch (e) { console.warn("renderInventory failed", e); }
   try { renderWeeklyShopping(); } catch (e) { console.warn("renderWeeklyShopping failed", e); }
@@ -1377,7 +1611,7 @@ function markDone() {
 
 // ── Browser-side plan generation ──
 function generateNewPlan(seed) {
-  if (!RECIPES || !DISH_USAGE || !PRODUCTS) { alert("Данные не загружены"); return; }
+  if (!RECIPES || !DISH_USAGE || !PRODUCTS) { showToast("Данные не загружены"); return; }
   const DAYS = 30;
   const profile = currentFamilyProfile();
   const FAMILY_SCALE = familyScaleFactor(profile.units);
@@ -1452,14 +1686,7 @@ function generateNewPlan(seed) {
       cookMin, type,
     };
   }
-  function scalePortionText(ingredients) {
-    if (!ingredients || FAMILY_SCALE === 1) return ingredients?.join?.(", ") || "";
-    return ingredients.map(s => s.replace(/(\d+(?:[.,]\d+)?)/g, m => {
-      const n = parseFloat(m.replace(",", "."));
-      const scaled = Math.round(n * FAMILY_SCALE * 10) / 10;
-      return scaled % 1 === 0 ? String(scaled) : scaled.toFixed(1).replace(".", ",");
-    })).join(", ");
-  }
+  // scalePortionText is now a global function
 
   // Weekly balance
   const MAX_FREEZE_PER_WEEK = 5, MIN_FISH_PER_WEEK = 2, MIN_MEAT_PER_WEEK = 3;
@@ -1593,7 +1820,7 @@ function generateNewPlan(seed) {
 
     plan.push({
       day_cycle: ((dayNum - 1) % 7) + 1,
-      title: `${dayMeals["Завтрак"].dish} + ${dayMeals["Ужин"].dish} · ~${dayCost} ₽`,
+      title: `${(dayMeals["Завтрак"] || {}).dish || "—"} + ${(dayMeals["Ужин"] || {}).dish || "—"} · ~${dayCost} ₽`,
       cost: dayCost,
       shopping_type: dayNum <= 7 ? "week1" : dayNum <= 14 ? "week2" : dayNum <= 21 ? "week3" : dayNum <= 28 ? "week4" : "topup",
       meals: dayMeals,
@@ -1632,17 +1859,28 @@ function generateNewPlan(seed) {
 
   // Apply generated plan to runtime data
   DATA.plan = plan;
+  DATA.shopping = shopping;
   DATA.planFamily = { adults: profile.adults, children: profile.children, units: profile.units, scale: FAMILY_SCALE, budget: BUDGET };
-  ACTIONS.length = 0; Object.assign(ACTIONS, actions);
-  USED.length = 0;
+  Object.keys(ACTIONS).forEach(k => delete ACTIONS[k]); Object.assign(ACTIONS, actions);
+  Object.keys(USED).forEach(k => delete USED[k]);
   plan.forEach((d, idx) => { USED[String(idx + 1)] = [...new Set(Object.values(d.meals).flatMap(m => (m.portion || "").split(/[+,.·/]/).map(x => x.trim()).filter(Boolean)))]; });
+
+  // Normalize plan: set actual_day and shopping_type_actual
+  const seenShop = new Set();
+  DATA.plan.forEach((d, i) => {
+    if (d.actual_day == null) d.actual_day = i + 1;
+    if (!d.shopping_type_actual && d.shopping_type) {
+      if (!seenShop.has(d.shopping_type)) { d.shopping_type_actual = d.shopping_type; seenShop.add(d.shopping_type); }
+      else d.shopping_type_actual = "";
+    }
+  });
 
   // Reset progress
   const keys = []; for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k.startsWith("command_")) keys.push(k); }
   keys.forEach(k => localStorage.removeItem(k));
 
   // Reset family scale base so it recalculates
-  _baseSaved = false; _basePkgForStore = null;
+  _baseSaved = false; _basePkgForStore = null; _baseBasketsForStore = null;
 
   console.log(`Plan generated: seed=${seed}, ${usedInPlan.size} unique dishes, ${totalCost}₽ total`);
   return { plan, actions, totalCost, uniqueDishes: usedInPlan.size };
@@ -1668,16 +1906,18 @@ function toggleStoreMode() {
 }
 function renderStoreMode() {
   const container = document.getElementById("today");
+  const shoppingDays = DATA.plan.reduce((acc, planDay) => { if (planDay.shopping_type_actual) acc[planDay.shopping_type_actual] = planDay.actual_day; return acc; }, {});
   let html = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h2 style="font-size:24px;font-weight:800">Список покупок</h2><button class="shareBtn" id="shareStoreBtn">Отправить</button></div>`;
   Object.entries(DATA.shopping || {}).forEach(([key, basket]) => {
     if (basket.itemBoxes?.length) {
+      const dayNum = shoppingDays[key] || 1;
       html += `<div style="font-size:18px;font-weight:800;margin:18px 0 8px">${esc(basket.name)} ${basket.totalCostLabel || ""}</div>`;
       const groups = {};
-      basket.itemBoxes.forEach((it, i) => { const sec = it.storeSection || "Другое"; if (!groups[sec]) groups[sec] = []; groups[sec].push({ it, i: `${key}_${i}` }); });
+      basket.itemBoxes.forEach((it, i) => { const sec = it.storeSection || "Другое"; if (!groups[sec]) groups[sec] = []; groups[sec].push({ it, i }); });
       Object.entries(groups).forEach(([sec, items]) => {
         html += `<div style="font-size:14px;font-weight:700;color:var(--ui-muted);margin:10px 0 4px;border-bottom:1px solid var(--ui-border);padding-bottom:2px">${esc(sec)}</div>`;
         items.forEach(({ it, i: idx }) => {
-          html += `<div class="storeItem"><input class="check" type="checkbox" data-type="shop" data-day="${key}" data-index="${idx}" style="width:28px;height:28px;accent-color:var(--ui-blue)"><span style="font-size:18px">${esc(it.title)}${it.quantity > 1 ? ` ×${it.quantity}` : ""}</span></div>`;
+          html += `<div class="storeItem"><input class="check" type="checkbox" data-type="shop" data-day="${dayNum}" data-index="${idx}" style="width:28px;height:28px;accent-color:var(--ui-blue)"><span style="font-size:18px">${esc(it.title)}${it.quantity > 1 ? ` ×${it.quantity}` : ""}</span></div>`;
         });
       });
     }
@@ -1717,7 +1957,6 @@ async function bootFoodFlow() {
   timeInput.onchange = () => { setAutoNow(false); shouldAutoScroll = true; renderAll(); };
   document.getElementById("prevDay").onclick = () => changeDay(state.day - 1);
   document.getElementById("nextDay").onclick = () => changeDay(state.day + 1);
-  document.getElementById("markDone").onclick = markDone;
   document.getElementById("closeModal").onclick = closeModal;
   document.getElementById("modal").onclick = e => { if (e.target.id === "modal") closeModal(); };
   document.getElementById("editProfile").onclick = showOnboarding;
@@ -1727,8 +1966,18 @@ async function bootFoodFlow() {
   document.getElementById("regeneratePlan").onclick = () => {
     if (!confirm("Сгенерировать новый план? Текущий прогресс будет сброшен.")) return;
     const seed = Date.now();
+    // Save original base data before generation overwrites DISH_USAGE etc.
+    const origBaseDU = _baseSaved ? JSON.parse(JSON.stringify(_baseDU)) : null;
+    const origBasePurch = _baseSaved ? JSON.parse(JSON.stringify(_basePurch)) : null;
+    const origBasePkg = _baseSaved ? JSON.parse(JSON.stringify(_basePkg)) : null;
+    const origBaseCS = _baseSaved ? { ..._baseCS } : null;
+    const origBaseBM = _baseSaved ? { ..._baseBM } : null;
+    const origBaseLS = _baseSaved ? { ..._baseLS } : null;
     generateNewPlan(seed);
-    _baseSaved = false; _basePkgForStore = null; _baseBasketsForStore = null;
+    // Restore original base so profile changes re-scale from un-scaled data
+    if (origBaseDU) { _baseDU = origBaseDU; _basePurch = origBasePurch; _basePkg = origBasePkg; _baseCS = origBaseCS; _baseBM = origBaseBM; _baseLS = origBaseLS; _baseSaved = true; }
+    else { _baseSaved = false; }
+    _basePkgForStore = null; _baseBasketsForStore = null;
     applyFamilyScale(); applyStorePrices(); applyPlanReplacements();
     rebuildDaySelect(); state.day = 1; daySelect.value = 1;
     shouldAutoScroll = true; renderAll();
@@ -1740,6 +1989,17 @@ async function bootFoodFlow() {
     shouldAutoScroll = true; renderAll();
   };
   document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+  // Mobile swipe navigation
+  let _touchStartX = 0;
+  document.addEventListener("touchstart", e => { _touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  document.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].screenX;
+    const dx = endX - _touchStartX;
+    if (Math.abs(dx) > 60 && document.getElementById("modal").style.display !== "block") {
+      if (dx < 0 && state.day < planLength()) changeDay(state.day + 1);
+      else if (dx > 0 && state.day > 1) changeDay(state.day - 1);
+    }
+  }, { passive: true });
   window.addEventListener("online", updatePwaStatus);
   window.addEventListener("offline", updatePwaStatus);
   setInterval(() => { if (state.autoNow) { setTimeToNow(); renderAll(); } }, 60000);
@@ -1768,6 +2028,6 @@ async function bootFoodFlow() {
   if (state.autoNow) setTimeToNow();
   const overlay = document.getElementById("loadingOverlay");
   if (overlay) { overlay.style.opacity = "0"; setTimeout(() => overlay.remove(), 350); }
-  if (localStorage.getItem("foodflow_onboarded") !== "1") { renderOnboarding(); } else { renderAll(); }
+  if (localStorage.getItem("foodflow_onboarded") !== "1" && localStorage.getItem("foodflow_onboarded_snoozed") !== "1") { renderOnboarding(); } else { renderAll(); }
 }
 bootFoodFlow();

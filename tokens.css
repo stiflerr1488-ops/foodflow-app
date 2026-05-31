@@ -1,0 +1,106 @@
+/* Hallmark · macrostructure: Fridge Door · tone: soft · anchor hue: 55 (warm-kitchen)
+ * genre: playful · theme: custom (kitchen-warm) · enrichment: none (typography only)
+ * nav: N7 Brutal slab · footer: Ft5 Statement
+ * display: Bricolage Grotesque · body: Geist · outlier: Geist Mono
+ * pre-emit critique: P4 H5 E5 S4 R5 V5
+ */
+
+:root {
+  /* ── Palette: warm kitchen ── */
+  --color-paper:    oklch(97% 0.008 75);
+  --color-paper-2:  oklch(94% 0.010 75);
+  --color-paper-3:  oklch(91% 0.012 72);
+  --color-rule:     oklch(82% 0.008 72);
+  --color-neutral:  oklch(56% 0.010 70);
+  --color-muted:    oklch(42% 0.008 65);
+  --color-ink:      oklch(20% 0.012 55);
+  --color-accent:   oklch(55% 0.15 30);
+  --color-accent-soft: oklch(85% 0.05 35);
+  --color-focus:    oklch(55% 0.18 55);
+
+  /* Fridge-specific surfaces */
+  --color-freezer:  oklch(93% 0.015 230);
+  --color-fridge:   oklch(96% 0.006 215);
+  --color-pantry:   oklch(93% 0.014 75);
+  --color-magnet:   oklch(96% 0.005 220);
+  --color-fresh:    oklch(55% 0.12 145);
+  --color-fresh-soft: oklch(92% 0.04 150);
+  --color-warn:     oklch(68% 0.14 75);
+  --color-warn-soft: oklch(94% 0.04 75);
+  --color-danger:   oklch(55% 0.18 20);
+  --color-danger-soft: oklch(92% 0.05 25);
+  --color-done:     oklch(55% 0.14 155);
+  --color-done-soft: oklch(92% 0.04 155);
+
+  /* ── Typography ── */
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, monospace;
+
+  --text-xs:    0.64rem;
+  --text-sm:    0.8rem;
+  --text-base:  1rem;
+  --text-md:    1.25rem;
+  --text-lg:    1.5625rem;
+  --text-xl:    1.9531rem;
+  --text-2xl:   2.4414rem;
+  --text-display: clamp(2.5rem, 4vw + 1rem, 4.5rem);
+
+  /* ── Spacing (4pt scale) ── */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+
+  /* ── Motion ── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro:   120ms;
+  --dur-short:   220ms;
+  --dur-long:    420ms;
+
+  /* ── Layout ── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-pill: 999px;
+  --max-width:   1240px;
+
+  /* ── Z-index ── */
+  --z-base:     1;
+  --z-raised:   10;
+  --z-sticky:   200;
+  --z-modal:    400;
+  --z-toast:    500;
+}
+
+/* ── Dark theme ── */
+[data-theme="dark"] {
+  --color-paper:    oklch(14% 0.008 55);
+  --color-paper-2:  oklch(18% 0.010 55);
+  --color-paper-3:  oklch(22% 0.012 55);
+  --color-rule:     oklch(32% 0.008 55);
+  --color-neutral:  oklch(60% 0.008 55);
+  --color-muted:    oklch(48% 0.006 55);
+  --color-ink:      oklch(94% 0.006 60);
+  --color-accent:   oklch(65% 0.13 30);
+  --color-accent-soft: oklch(28% 0.04 30);
+  --color-freezer:  oklch(18% 0.014 230);
+  --color-fridge:   oklch(16% 0.008 220);
+  --color-pantry:   oklch(20% 0.012 55);
+  --color-magnet:   oklch(22% 0.008 220);
+  --color-fresh:    oklch(60% 0.10 145);
+  --color-fresh-soft: oklch(22% 0.04 150);
+  --color-warn:     oklch(72% 0.12 75);
+  --color-warn-soft: oklch(28% 0.04 75);
+  --color-danger:   oklch(60% 0.16 20);
+  --color-danger-soft: oklch(28% 0.05 25);
+  --color-done:     oklch(60% 0.12 155);
+  --color-done-soft: oklch(22% 0.04 155);
+}

@@ -116,6 +116,39 @@
     const pid = profileId || getProfileId();
     return [...BASE_DATA_FILES, `data/plans/plan_${pid}.json`, `data/plans/inv_${pid}.json`, "data/plans.json", "data/inventory-rules.json"];
   }
+  function buildItemBoxesFromPackageOrders(shopping, packageOrders, products) {
+    Object.entries(shopping || {}).forEach(([key, basket]) => {
+      if (basket.itemBoxes && basket.itemBoxes.length) return;
+      const orders = packageOrders[key] || [];
+      if (!orders.length) return;
+      const boxes = orders.map((item, index) => {
+        const [label, productId, packageSize, quantity] = item;
+        const product = products[productId] || {};
+        const packPrice = product.packPrice || (product.pricePerUnit || 0) * (packageSize || 0);
+        const totalPrice = Math.round(packPrice * Number(quantity || 0));
+        return {
+          id: `${key}-${index + 1}-${productId}`,
+          title: label,
+          productId,
+          productName: product.name || productId,
+          packageSize,
+          packageSizeLabel: product.packLabel || "",
+          quantity,
+          totalAmount: Number(packageSize || 0) * Number(quantity || 0),
+          unit: product.unit || '',
+          storage: product.storage || '',
+          storeSection: product.storeSection || '',
+          packagePrice: packPrice,
+          totalPrice,
+          priceLabel: `~${totalPrice} ₽`
+        };
+      });
+      basket.itemBoxes = boxes;
+      basket.totalCost = boxes.reduce((s, b) => s + (b.totalPrice || 0), 0);
+      basket.totalCostLabel = `~${basket.totalCost} ₽`;
+    });
+  }
+
   function buildRuntimeFromFiles(files) {
     const products = files.products?.products || {};
     const recipes = files.recipes?.recipes || {};
@@ -159,8 +192,10 @@
     };
     const PRICES = {};
     Object.entries(products).forEach(([id, p]) => { if (p.pricePerUnit != null) PRICES[id] = p.pricePerUnit; });
+    const shopping = plans.shopping || {};
+    buildItemBoxesFromPackageOrders(shopping, rules.packageOrders || {}, products);
     return {
-      DATA: { plan: plans.plan || [], shopping: plans.shopping || {}, planFamily: plans.family || rules.familyInfo || { adults: 1, children: 0, units: 1, scale: 1, budget: 20000 } },
+      DATA: { plan: plans.plan || [], shopping, planFamily: plans.family || rules.familyInfo || { adults: 1, children: 0, units: 1, scale: 1, budget: 20000 } },
       RECIPES: recipes,
       ACTIONS: plans.actions || {},
       USED: plans.used || {},
@@ -176,7 +211,7 @@
       MACRO_BY_ITEM: rules.macroByItem || {},
       BUDGET_META, BUDGET_TIERS: budget, FAMILY_PROFILES: profiles,
       PRODUCTS: products, PRICES, STORE_PRICES: storePrices,
-      STORE_SECTIONS: products.storeSections || [],
+      STORE_SECTIONS: files.products?.storeSections || [],
       MEAL_ORDER: ["Завтрак","Обед","Полдник","Ужин","Чай"]
     };
   }
@@ -196,6 +231,23 @@
     try { const raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : null; } catch (_) { return null; }
   }
 
+  function normalizePlan(rt) {
+    const plan = rt.DATA.plan;
+    if (!Array.isArray(plan)) return;
+    const seen = new Set();
+    plan.forEach((d, i) => {
+      if (d.actual_day == null) d.actual_day = i + 1;
+      if (!d.shopping_type_actual && d.shopping_type) {
+        if (!seen.has(d.shopping_type)) {
+          d.shopping_type_actual = d.shopping_type;
+          seen.add(d.shopping_type);
+        } else {
+          d.shopping_type_actual = "";
+        }
+      }
+    });
+  }
+
   let _runtime = null;
 
   // ── Priority: inline bundle > cached > fetch ──
@@ -204,12 +256,14 @@
     // 1. Inline bundle (works on file://)
     if (window.FoodFlowBundle) {
       _runtime = buildRuntimeFromBundle(window.FoodFlowBundle);
+      normalizePlan(_runtime);
       return _runtime;
     }
     // 2. Cached in localStorage
     const cached = loadCached();
     if (cached && cached.version === DATA_VERSION && cached.files) {
       _runtime = buildRuntimeFromFiles(cached.files);
+      normalizePlan(_runtime);
       return _runtime;
     }
     return null;
@@ -222,13 +276,19 @@
     get profileId() { return getProfileId(); },
     refresh: async () => {
       _runtime = null;
-      try { const p = await loadAll(); _runtime = buildRuntimeFromFiles(p.files); return p; }
+      try { const p = await loadAll(); _runtime = buildRuntimeFromFiles(p.files); normalizePlan(_runtime); return p; }
       catch (e) {
-        if (window.FoodFlowBundle) { _runtime = buildRuntimeFromBundle(window.FoodFlowBundle); return { fromBundle: true }; }
+        if (window.FoodFlowBundle) { _runtime = buildRuntimeFromBundle(window.FoodFlowBundle); normalizePlan(_runtime); return { fromBundle: true }; }
         throw e;
       }
     },
-    ready: loadAll().then(p => { _runtime = buildRuntimeFromFiles(p.files); return p; }).catch(() => {
+    ready: loadAll().then(p => {
+      // Only overwrite runtime if bundle was not already used
+      if (!_runtime || !window.FoodFlowBundle) {
+        _runtime = buildRuntimeFromFiles(p.files); normalizePlan(_runtime);
+      }
+      return p;
+    }).catch(() => {
       // fetch failed — use bundle or cache
       const r = getRuntimeData();
       if (r) { _runtime = r; return { fromFallback: true }; }

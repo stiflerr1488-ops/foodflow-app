@@ -7,6 +7,9 @@ recipes_data = json.loads((root / 'data' / 'recipes.json').read_text(encoding='u
 recipes = recipes_data['recipes']
 plans_data = json.loads((root / 'data' / 'plans.json').read_text(encoding='utf-8-sig'))
 plans = plans_data['plan']
+inv_data = json.loads((root / 'data' / 'inventory-rules.json').read_text(encoding='utf-8-sig'))
+_fi = inv_data.get('familyInfo', {})
+FAMILY_SCALE = _fi.get('scale', 1)
 
 # Identify current plan dishes
 plan_dishes = set()
@@ -217,10 +220,10 @@ for (idx, mn), new_dish in replacement_map.items():
     old_dish = meal['dish']
 
     meal['dish'] = new_dish
-    meal['kcal'] = r.get('macros', {}).get('kcal', r.get('macros', {}).get('calories', 0))
-    meal['cost'] = r.get('cost', 0)
-    meal['dishCost'] = r.get('cost', 0)
-    meal['costLabel'] = f"~{r.get('cost', 0):.0f} ₽"
+    meal['kcal'] = round((r.get('macros', {}).get('kcal') or r.get('kcal', 0)) * FAMILY_SCALE)
+    meal['cost'] = round(r.get('cost', 0) * FAMILY_SCALE)
+    meal['dishCost'] = round(r.get('cost', 0) * FAMILY_SCALE)
+    meal['costLabel'] = f"~{round(r.get('cost', 0) * FAMILY_SCALE):.0f} ₽"
     meal['portion'] = r.get('ingredients', '')
 
     # Update box if present

@@ -13,17 +13,22 @@
   <meta property="og:description" content="Персональный план питания на 30 дней: расписание, закупки, остатки и бюджет. Работает офлайн.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:image" content="https://foodflow-sage.vercel.app/icons/icon-512.png">
+  <meta property="og:image" content="https://foodflow-app-eta.vercel.app/icons/icon-512.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="https://foodflow-sage.vercel.app/icons/icon-512.png">
+  <meta name="twitter:image" content="https://foodflow-app-eta.vercel.app/icons/icon-512.png">
   <meta name="twitter:title" content="FoodFlow · План питания">
   <meta name="twitter:description" content="Персональный план питания на 30 дней: расписание, закупки, остатки и бюджет.">
   <title>FoodFlow · План питания</title>
-  <link rel="canonical" href="https://foodflow-sage.vercel.app/">
+  <link rel="canonical" href="https://foodflow-app-eta.vercel.app/">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="foodflow-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="style.css">
   <script src="data-bundle.js" defer></script>
   <script src="data-loader.js" defer></script>
   <style>
@@ -1183,7 +1188,9 @@
       }
     }
     .onboarding{position:fixed;inset:0;z-index:100;background:var(--ui-bg);display:flex;align-items:center;justify-content:center;overflow:auto;padding:24px}
-    .onboardingCard{max-width:460px;width:100%;background:var(--ui-panel);border:1px solid var(--ui-border);border-radius:22px;padding:40px 32px}
+    .onboardingCard{max-width:460px;width:100%;background:var(--ui-panel);border:1px solid var(--ui-border);border-radius:22px;padding:40px 32px;position:relative}
+    .obClose{position:absolute;top:12px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--ui-border);background:transparent;color:var(--ui-muted);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    .obClose:hover{background:var(--ui-surface);color:var(--ui-ink)}
     .onboardingLogo{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ui-blue);margin-bottom:20px}
     .onboardingTitle{font-size:clamp(32px,6vw,44px);font-weight:900;letter-spacing:-.05em;line-height:1.1;margin-bottom:8px}
     .onboardingSub{font-size:16px;color:var(--ui-muted);margin-bottom:36px;line-height:1.5}
@@ -1313,44 +1320,24 @@
     <div class="brand"><span class="icon" data-icon="grid"></span><span>FoodFlow</span></div>
     <div class="label">
       <button id="editProfile">Профиль</button>
-      <button id="toggleTheme" title="Тёмная тема" style="font-size:16px;padding:6px 10px;min-height:30px;border-radius:999px">☀</button>
+      <button id="toggleTheme" title="Тёмная тема" aria-label="Переключить тему" style="font-size:16px;padding:6px 10px;min-height:30px;border-radius:999px">☀</button>
       <button id="openCatalog" title="Каталог рецептов">Каталог</button>
       <button id="regeneratePlan" title="Перегенерировать план" style="color:var(--ui-blue);font-size:12px;padding:6px 10px;min-height:30px;border-radius:999px">↻ Новый</button>
-      <button id="storeModeBtn" class="storeModeBtn" title="Режим магазина">🛒</button>
+      <button id="storeModeBtn" class="storeModeBtn" title="Режим магазина" aria-label="Режим магазина">🛒</button>
       <button id="resetProgress" title="Сбросить прогресс" style="color:var(--ui-muted);font-size:12px;padding:6px 10px;min-height:30px;border-radius:999px">Сброс</button>
       <span id="pwaStatus" class="pwaStatus" aria-live="polite">Сеть</span>
       <span class="small">День</span>
       <select id="daySelect"></select>
-      <button id="prevDay">←</button>
-      <button id="nextDay">→</button>
+      <button id="prevDay" aria-label="Предыдущий день">←</button>
+      <button id="nextDay" aria-label="Следующий день">→</button>
       <span class="small">Время</span>
-      <input id="timeInput" type="time" style="font:inherit;border:1px solid var(--black);padding:8px 12px;width:130px">
+      <input id="timeInput" type="time" style="font:inherit;border:1px solid var(--ui-border,#d9e0e8);padding:8px 12px;width:130px">
     </div>
   </div>
 </header>
 
 <main class="shell">
-  <section class="hero">
-    <div>
-      <h1 class="num" id="heroDay">01</h1>
-    </div>
-    <div class="side">
-      <div>
-        <div id="dayTitle">День 1</div>
-        <div id="daySubtitle" class="small"></div>
-      </div>
-      <div class="line">
-        <div class="progress"><i id="progress"></i></div>
-        <div class="small" id="progressText">0 / 0</div>
-      </div>
-      <div class="line">
-        <p id="kcal">0 ккал</p>
-        
-      </div>
-      <button id="markDone">Отметить текущий пункт</button>
-    </div>
-  </section>
-
+  <div class="fridge" id="fridge"></div>
   <section id="today" class="section" aria-labelledby="pageTitle"></section>
   
 </main>

@@ -1,10 +1,12 @@
-const CACHE_VERSION = "2026-05-21-v1.1";
+const CACHE_VERSION = "2026-05-22-v1.3";
 const CACHE_NAME = `foodflow-offline-${CACHE_VERSION}`;
 const APP_SHELL = [
   "./index.html",
   "./data-bundle.js",
   "./data-loader.js",
   "./app.js",
+  "./tokens.css",
+  "./style.css",
   "./manifest.webmanifest",
   "./foodflow-icon.svg",
   "./robots.txt",
@@ -36,16 +38,18 @@ const APP_SHELL = [
 ];
 
 function cacheAppShell() {
-  return caches.open(CACHE_NAME).then(cache => cache.addAll(
-    APP_SHELL.map(url => new Request(url, { cache: "reload" }))
-  ));
+  return caches.open(CACHE_NAME).then(cache =>
+    Promise.allSettled(APP_SHELL.map(url =>
+      cache.add(new Request(url, { cache: "reload" })).catch(() => undefined)
+    ))
+  );
 }
 
 function updateCache(request) {
   return fetch(request).then(response => {
     if (response && response.ok && new URL(request.url).origin === self.location.origin) {
       const copy = response.clone();
-      caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+      caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).catch(() => undefined);
     }
     return response;
   });
@@ -57,7 +61,7 @@ function networkFirst(request) {
 
 function staleWhileRevalidate(request) {
   return caches.match(request).then(cached => {
-    const fresh = updateCache(request).catch(() => cached);
+    const fresh = updateCache(request).catch(() => cached || undefined);
     return cached || fresh;
   });
 }

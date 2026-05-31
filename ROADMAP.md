@@ -8,8 +8,14 @@
 ## Статус сейчас
 
 - Сборка/линт: `npm run verify` (`test-runtime`, HTML refs, SW files, audit, recipe cleanup, JS syntax) — проходит.
-- 1211 рецептов, 118 уникальных в плане по умолчанию, 30 дней, 9 закупок.
+- 1211 рецептов, 73 уникальных в плане по умолчанию, 30 дней, 7 закупок.
 - Audit: 0 ошибок, `PLAN QUALITY: PASS`, warnings по качеству плана = 0.
+- Все 6 профилей проходят аудит (0 plan quality warnings).
+- `validate_recipe_cleanup.py`: suspicious_names=0, missing_refs=0.
+- `recipes-extended.json`: синхронизирован с `recipes.json` (101 пересекающийся рецепт обновлён).
+- `quality.sourceKind` для всех 1211 рецептов приведён к `manual_reviewed` (совпадает с `source.kind`).
+- Рецепт «Малайский десерт seri muka» переименован в «Малайский рисовый пудинг со сметаной».
+- Профиль a2_c0: заменён день 6 ужин на рыбное блюдо, добавлена закупка, plan quality warnings=0.
 - Git: репозиторий пустой (нет коммитов), `node_modules/` и `.vercel/` исключены через `.gitignore`.
 
 ---
@@ -218,6 +224,7 @@ YYYY-MM-DD | партия | проверено | исправлено | заме
 - [x] `git init` уже сделан — первый коммит со всем деревом, `node_modules/` и `.vercel/` исключены через `.gitignore`/`.vercelignore`.
 - [x] Preview deploy на Vercel: `https://foodflow-5br975wuz-strk.vercel.app`.
 - [x] `vercel --prod` → `https://foodflow-sage.vercel.app/`.
+- [x] Проект пересоздан, новый deploy → `https://foodflow-app-eta.vercel.app/`.
 - [x] HTTP/headless smoke-test продового URL.
 - [x] Автоматический online/offline smoke (`npm run smoke:browser`).
 - [ ] Ручной DevTools offline smoke на конкретном устройстве пользователя (вне зоны автоматизации, оставляем чек-лист).
@@ -229,7 +236,8 @@ YYYY-MM-DD | партия | проверено | исправлено | заме
 ### C1. Release freeze (P0)
 - [x] Рецепты и план заморожены: новые content-правки только при blocker bugs.
 - [x] Release candidate версия: `1.0.0-rc.1`.
-- [x] Финальный production domain выбран и зафиксирован: `https://foodflow-sage.vercel.app/`.
+- [x] ~~Финальный production domain: `https://foodflow-sage.vercel.app/`~~ (проект был пересоздан).
+- [x] Новый production domain зафиксирован: `https://foodflow-app-eta.vercel.app/`.
 
 ### C2. Production metadata (P0)
 - [x] После выбора домена заменить `canonical`, `og:image`, `twitter:image` на абсолютные production URL.
@@ -262,9 +270,59 @@ YYYY-MM-DD | партия | проверено | исправлено | заме
 
 ---
 
+---
+
+## ПОЛОСА D. Пост-релизные улучшения и доведение до идеала
+
+### D1. Глубокий аудит логики app.js (P0)
+- [x] Исправлено 3 критических бага:
+  - `_baseBasketsForStore` не сбрасывался при `generateNewPlan()` → утечка при смене магазина (добавлено `_baseBasketsForStore = null;` в reset-блок).
+  - `generateNewPlan()` не обновлял `DATA.shopping` → старые корзины оставались в рантайме (добавлено `DATA.shopping = shopping;`).
+  - `applyPlanReplacements` не масштабировал порции — подпись оставалась на 1 персону при familyScale > 1 (извлечён глобальный `scalePortionText`, применён в `applyPlanReplacements`).
+- [ ] Проверить `generateNewPlan()` в браузере: 100 сидов на каждом профиле, нет `undefined` блюд, бюджет в рамках ±10%.
+- [ ] Проверить `applyFamilyScale` + `applyStorePrices`: при смене профиля mid-session нет утечки стейта (старые граммовки/цены не висят).
+- [ ] Проверить `localStorage` миграцию: пустой `RECIPES`/`PLAN` после смены версии данных — фоллбек на `data-bundle.js` отрабатывает.
+- [ ] Проверить offline fallback: `data-bundle.js` в inline-скрипте > `localStorage` > `fetch` — приоритеты корректны.
+
+### D2. Service Worker и обновления (P0)
+- [ ] Добавить кнопку «Обновить сейчас» в тост уведомления о новой версии.
+- [ ] Убедиться, что `skipWaiting` + `clients.claim()` не ломает открытые модалки (сохранить UI-состояние).
+- [ ] Проверить `CACHE_VERSION` в smoke-test: новый билд подтягивается без ручной очистки кэша.
+
+### D3. UX мелочи (P1)
+- [x] Swipe-жесты на мобильном для переключения дней (влево/вправо) — реализованы в `bootFoodFlow`, порог 60px, блокируются если модалка открыта.
+- [x] Кнопка «Поделиться днём» — формирует текстовый список блюд, использует Web Share API с фоллбеком на `navigator.clipboard` + тост.
+- [x] `alert(...)` при ошибке загрузки данных в `generateNewPlan` заменён на `showToast`.
+- [x] Onboarding: кнопка закрытия (×) + Escape сохраняют `foodflow_onboarded_snoozed` в `localStorage` и вызывают `renderAll()` — повторный показ подавлен.
+- [ ] Рецепт в модалке: кнопка «Добавить в избранное» с хранением в `localStorage`.
+- [ ] Тема: проверить контраст `--ui-muted` на `--ui-bg` ≥ 4.5:1 в обеих темах (светлой/тёмной).
+- [ ] `<h1>` должен быть видимым на странице (не только `#heroDay` в скрытом `.hero`).
+
+### D4. Доступность (P1)
+- [ ] Проверить focus trap в модалках (рецепт, настройки, замена блюда).
+- [ ] `aria-live` для динамических изменений плана (замена блюда, генерация нового плана).
+- [ ] Проверить keyboard navigation для всех интерактивных элементов.
+
+### D5. Данные и экспорт (P2)
+- [ ] Кнопка «Экспорт моего плана» → JSON с текущим планом + настройками.
+- [ ] Кнопка «Импорт плана» → валидация схемы, предупреждение при конфликте версий.
+- [ ] Резервная копия `localStorage` перед обновлением версии данных.
+
+### D6. CI/CD и автоматизация (P2)
+- [ ] GitHub Actions: `npm run verify` на каждый push.
+- [ ] Vercel build command: зафиксировать Node.js версию в `package.json`/`engines`.
+- [ ] Автоматический деплой в preview из `main`, production из тега `v*`.
+
+### D7. Мониторинг и метрики (P2)
+- [ ] `window.onerror` / `unhandledrejection` → отправка на простой лог-эндпоинт (или Telegram бот).
+- [ ] Счётчик «сессий без ошибок» в `localStorage` для диагностики стабильности.
+
+---
+
 ## Принципы работы
 
 - Каждая партия рецептов или каждый блок Полосы B = отдельный коммит после успешного прогона верификации.
 - При исправлении рецепта меняется `source.kind` → `manual_reviewed` и `source.note` → краткое описание правок.
 - Если для рецепта поменялись ингредиенты/граммы — синхронизирую `data/inventory-rules.json::dishUsage` и пересчитываю `cost`/`macros`.
 - После каждой партии: `node test-runtime.js && node audit.js`. Если упало — фикс перед следующей партией.
+- Новые пункты в Полосе D добавляются по мере нахождения багов или UX-недочётов.

@@ -51,7 +51,7 @@ const DISH_BUDGET = Math.round(BUDGET * 0.65);
 console.log(`Budget: ${BUDGET}₽ (purchases), ${DISH_BUDGET}₽ (dish cost target)`);
 
 // ── Seeded PRNG ─────────────────────────────────────────────────────
-let _s = SEED | 0 || 1;
+let _s = (SEED !== undefined && SEED !== null && !isNaN(SEED)) ? (SEED | 0) : 1;
 function rand() { _s ^= _s << 13; _s ^= _s >> 17; _s ^= _s << 5; return (_s >>> 0) / 4294967296; }
 function randInt(a, b) { return a + Math.floor(rand() * (b - a + 1)); }
 function shuffle(arr) {
@@ -411,7 +411,7 @@ const FROZEN_NAME_RE = /пельмен|вареник|наггетс|котле�
 function getMinForWeek(weekNum, baseMin) {
   const daysInWeek = Math.min(weekNum * 7, DAYS) - (weekNum - 1) * 7;
   const mainMeals = daysInWeek * 2; // обед+ужин
-  return Math.max(1, Math.round(baseMin * mainMeals / 14)); // scale to week size
+  const scaled = Math.round(baseMin * mainMeals / 14); return scaled >= 1 ? scaled : 0; // if week is too short, no hard requirement
 }
 const weekFreezeCount = {};      // {weekNum: count}
 const weekFishCount = {};        // {weekNum: count}
@@ -785,34 +785,7 @@ for (let dayNum = 1; dayNum <= DAYS; dayNum++) {
 
 console.log(`\nPlan: ${usedInPlan.size} unique dishes, ${totalCost}₽, avg ${Math.round(totalKcal/DAYS)} kcal/day, avg ${Math.round(totalProtein/DAYS)}g protein/day`);
 
-// ── Generate actions ───────────────────────────────────────────────
-const actions = {};
-for (let dayNum = 1; dayNum <= DAYS; dayNum++) {
-  const dayActions = [];
-  const meals = plan[dayNum - 1].meals;
-
-  MEAL_ORDER.forEach(mn => {
-    const meal = meals[mn];
-    const r = recipes[meal.dish];
-    if (!r) return;
-    const type = r.type || "";
-    const min = activeMinutes[meal.dish] || r.activeMinutes || 15;
-
-    if (type.includes("Без готовки") || type.includes("Собрать без готовки") || type.includes("Быстрый перекус")) {
-      dayActions.push({ time: mn === "Чай" ? "21:00" : mn === "Полдник" ? "16:00" : "07:30", action: `Собрать: ${meal.dish}`, minutes: 2 });
-    } else if (type.includes("Разогреть")) {
-      dayActions.push({ time: mn === "Обед" ? "12:30" : "19:00", action: `Разогреть: ${meal.dish}`, minutes: 5 });
-    } else if (type.includes("Заморозка") || type.includes("Фарш")) {
-      dayActions.push({ time: mn === "Обед" ? "12:00" : "18:30", action: `Разогреть/собрать: ${meal.dish}`, minutes: 10 });
-    } else if (type.includes("Готовить утром") || mn === "Завтрак") {
-      dayActions.push({ time: "07:15", action: `Готовить: ${meal.dish}`, minutes: Math.min(min, 30) });
-    } else {
-      dayActions.push({ time: mn === "Обед" ? "12:00" : "18:30", action: `Готовить: ${meal.dish}`, minutes: Math.min(min, 45) });
-    }
-  });
-
-  actions[String(dayNum)] = dayActions;
-}
+// ── Actions will be generated after purchases (need purchase data for order actions) ──
 
 // ── Save helper ─────────────────────────────────────────────────────
 const writeJSON = (n, d) => fs.writeFileSync(path.join(__dirname, "data", n), JSON.stringify(d, null, 2), "utf-8");
@@ -1060,8 +1033,9 @@ Object.entries(periodUsage).forEach(([key, needed]) => {
       }
     });
 
-  const orderDay = purchaseDays[key] || 1;
-  purchases.push({ key, title: `Заказ ${key}`, orderDay: orderDay - 1, availableDay: orderDay, items });
+  const availDay = purchaseDays[key] || 1;
+  const orderDay = availDay === 1 ? 1 : availDay - 1;
+  purchases.push({ key, title: `Заказ ${key}`, orderDay, availableDay: availDay, items });
   packageOrders[key] = packages;
 
   // Mid-week topup for perishables
@@ -1082,6 +1056,60 @@ purchases.forEach(p => { Object.entries(p.items).forEach(([prod, amt]) => {
   purchaseCost += packCount * packPrice;
 }); });
 console.log(`Purchases: ${Math.round(purchaseCost)}₽`);
+
+// ── Generate actions ───────────────────────────────────────────────
+// Map: which purchases should appear as order actions on a given day
+// Day 1: order arrives same morning (06:30) — fridge was empty before
+// Other days: order placed evening before (21:00 on day N-1, available day N)
+const orderActionsByDay = {};
+purchases.forEach(p => {
+  const orderDay = p.availableDay === 1 ? 1 : p.orderDay;
+  const time = p.availableDay === 1 ? "06:30" : "21:00";
+  if (orderDay < 1) return;
+  if (!orderActionsByDay[orderDay]) orderActionsByDay[orderDay] = [];
+  orderActionsByDay[orderDay].push({
+    time,
+    action: `Заказ: ${p.title}`,
+    minutes: 5,
+    basket: p.key,
+  });
+});
+
+const actions = {};
+for (let dayNum = 1; dayNum <= DAYS; dayNum++) {
+  const dayActions = [];
+
+  // Insert order actions first (they must happen before cooking)
+  if (orderActionsByDay[dayNum]) {
+    dayActions.push(...orderActionsByDay[dayNum]);
+  }
+
+  const meals = plan[dayNum - 1].meals;
+  MEAL_ORDER.forEach(mn => {
+    const meal = meals[mn];
+    const r = recipes[meal.dish];
+    if (!r) return;
+    const type = r.type || "";
+    const min = activeMinutes[meal.dish] || r.activeMinutes || 15;
+
+    if (type.includes("Без готовки") || type.includes("Собрать без готовки") || type.includes("Быстрый перекус")) {
+      dayActions.push({ time: mn === "Чай" ? "21:00" : mn === "Полдник" ? "16:00" : "07:30", action: `Собрать: ${meal.dish}`, minutes: 2 });
+    } else if (type.includes("Разогреть")) {
+      dayActions.push({ time: mn === "Обед" ? "12:30" : "19:00", action: `Разогреть: ${meal.dish}`, minutes: 5 });
+    } else if (type.includes("Заморозка") || type.includes("Фарш")) {
+      dayActions.push({ time: mn === "Обед" ? "12:00" : "18:30", action: `Разогреть/собрать: ${meal.dish}`, minutes: 10 });
+    } else if (type.includes("Готовить утром") || mn === "Завтрак") {
+      dayActions.push({ time: "07:15", action: `Готовить: ${meal.dish}`, minutes: Math.min(min, 30) });
+    } else {
+      dayActions.push({ time: mn === "Обед" ? "12:00" : "18:30", action: `Готовить: ${meal.dish}`, minutes: Math.min(min, 45) });
+    }
+  });
+
+  // Sort all actions by time
+  dayActions.sort((a, b) => a.time.localeCompare(b.time));
+
+  actions[String(dayNum)] = dayActions;
+}
 
 // ── Save ────────────────────────────────────────────────────────────
 const plansOut = {

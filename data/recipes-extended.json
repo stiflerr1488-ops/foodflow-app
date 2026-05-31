@@ -179,7 +179,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Овсянка с яблоком и корицей",
@@ -436,7 +436,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Овсянка “банановый пирог”",
@@ -736,7 +736,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Овсяные вафли с бананом в мультипекаре",
@@ -1015,7 +1015,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Овсяные панкейки на сковороде",
@@ -1246,7 +1246,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Творог с яблоком",
@@ -1419,7 +1419,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Творог",
@@ -1575,7 +1575,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Творог + банан",
@@ -1755,7 +1755,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Творог + чай",
@@ -1999,7 +1999,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Творожные вафли в мультипекаре",
@@ -2255,7 +2255,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Яичный сэндвич в мультипекаре",
@@ -2493,7 +2493,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Омлет с капустой в мультипекаре",
@@ -2708,7 +2708,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "2 яйца + хлеб + яблоко",
@@ -2902,7 +2902,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Кефир + яблоко",
@@ -3096,7 +3096,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Банан + кефир",
@@ -3290,7 +3290,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Кефир + банан",
@@ -3462,7 +3462,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Кефир",
@@ -3618,7 +3618,7 @@
         "issues": [
           "low_cost"
         ],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Чай + сушки",
@@ -3760,7 +3760,7 @@
         "issues": [
           "low_cost"
         ],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Чай + хлеб",
@@ -3917,7 +3917,7 @@
         "issues": [
           "low_cost"
         ],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Чай + яблоко",
@@ -4082,7 +4082,7 @@
         "issues": [
           "low_cost"
         ],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Варёное яйцо + чай",
@@ -4385,7 +4385,7 @@
         "issues": [
           "high_kcal"
         ],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Гречотто с курицей в скороварке",
@@ -4560,7 +4560,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Гречотто с курицей из контейнера",
@@ -4842,7 +4842,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Ленивый плов с курицей в скороварке",
@@ -5173,7 +5173,7 @@
         "issues": [
           "high_kcal"
         ],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Куриный суп-лапша в скороварке",
@@ -5368,7 +5368,7 @@
         "issues": [
           "low_cost"
         ],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Куриный суп-лапша из контейнера",
@@ -5673,7 +5673,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Минтай в томатно-морковной подливке + картофель",
@@ -5993,7 +5993,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Рыба в томатной подливке + рис",
@@ -6185,7 +6185,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Рыба в томатной подливке + рис из контейнера",
@@ -6474,7 +6474,7 @@
         "issues": [
           "high_kcal"
         ],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Рыбные котлетки из минтая + гречка",
@@ -6684,7 +6684,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Рыбные котлетки + гречка из контейнера",
@@ -6932,7 +6932,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Макароны с яйцом и капустой",
@@ -7118,7 +7118,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Макароны с яйцом и капустой из контейнера",
@@ -7382,7 +7382,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Капустное рагу с картофелем и яйцом",
@@ -7573,7 +7573,7 @@
         "issues": [
           "low_cost"
         ],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Капустное рагу с картофелем из контейнера",
@@ -7858,7 +7858,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Курица “под шаурму” + картофель + капустный салат",
@@ -8095,7 +8095,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Курица “под шаурму” + картофель из контейнера",
@@ -8358,7 +8358,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Сковородка остатков",
@@ -8568,7 +8568,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Творог или кефир по плану остатков",
@@ -8835,7 +8835,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Картофельные драники в мультипекаре",
@@ -9108,7 +9108,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Омлет с овощной смесью",
@@ -9321,7 +9321,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Творог с бананом",
@@ -9517,7 +9517,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Творог с бананом и сушками",
@@ -9688,7 +9688,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Яблоко + арахис",
@@ -9918,7 +9918,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Бутерброды с яйцом и огурцом",
@@ -10158,7 +10158,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Овсянка банан-арахис",
@@ -10398,7 +10398,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Овсяноблин с творогом",
@@ -10610,7 +10610,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Гречневая каша с яйцом",
@@ -10811,7 +10811,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Рисовая каша с яблоком",
@@ -11077,7 +11077,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Куриный суп с лапшой",
@@ -11355,7 +11355,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Плов с курицей",
@@ -11582,7 +11582,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Пельмени с бульоном",
@@ -11744,7 +11744,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Котлеты с гречкой и салатом",
@@ -11964,7 +11964,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Котлеты с картофельным пюре",
@@ -12180,7 +12180,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Котлеты с макаронами и салатом",
@@ -12401,7 +12401,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Минтай с картофельным пюре",
@@ -12655,7 +12655,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Макароны по-флотски",
@@ -12882,7 +12882,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Гречка с наггетсами и салатом",
@@ -13150,7 +13150,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Тушеная капуста с курицей",
@@ -13471,7 +13471,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Борщ с курицей",
@@ -13738,7 +13738,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Рыбные палочки с рисом и овощами",
@@ -13956,7 +13956,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Домашняя шаурма с курицей",
@@ -14148,7 +14148,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Вареники с творогом и сметаной",
@@ -14348,7 +14348,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Вареники с картофелем и капустным салатом",
@@ -14566,7 +14566,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Фасоль тушеная с овощами и яйцом",
@@ -14787,7 +14787,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Тефтели в томатном соусе с макаронами",
@@ -15004,7 +15004,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Тефтели в томатном соусе с гречкой",
@@ -15227,7 +15227,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Картофельная запеканка с фаршем",
@@ -15523,7 +15523,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Шакшука бюджетная",
@@ -15783,7 +15783,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Сырники на сковороде",
@@ -16023,7 +16023,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Ленивый хачапури на твороге",
@@ -16264,7 +16264,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Картофельная сковорода с яйцом",
@@ -16503,7 +16503,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Драники с яйцом и кефирным соусом",
@@ -16787,7 +16787,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Курица карри с рисом",
@@ -17046,7 +17046,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Рыба в лаваше с капустой",
@@ -17302,7 +17302,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Пельмени в бульоне по-азиатски",
@@ -17563,7 +17563,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Котлетный бургер-боул",
@@ -17816,7 +17816,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Вареники с жареным луком и капустой",
@@ -18013,7 +18013,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Вареники с жареным луком",
@@ -18257,7 +18257,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Наггетсы в лаваше",
@@ -18586,7 +18586,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Рыбные палочки с макаронами в томатном соусе",
@@ -18768,7 +18768,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Пельмени, запеченные в сметане",
@@ -19033,7 +19033,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Чили из фасоли с рисом",
@@ -19293,7 +19293,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Лаваш-пицца с котлетой и капустой",
@@ -19557,7 +19557,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Тефтельный суп",
@@ -19816,7 +19816,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Капустные оладьи с кефирным соусом",
@@ -20132,7 +20132,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Минтай в томатном соусе с макаронами",
@@ -20318,7 +20318,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Гречка по-купечески с курицей",
@@ -20554,7 +20554,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Рис жареный с курицей и овощами",
@@ -20770,7 +20770,7 @@
         "issues": [
           "low_cost"
         ],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Чай + бутерброд с яйцом",
@@ -20925,7 +20925,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "internal_seed"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Кефир перед сном",
@@ -23186,7 +23186,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Говядина фо",
@@ -25331,7 +25331,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Курица Кускус",
@@ -25609,7 +25609,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Курица Энчилада Запеканка",
@@ -29186,7 +29186,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Фалафель",
@@ -29946,7 +29946,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Флан",
@@ -31442,7 +31442,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Хумус",
@@ -32850,7 +32850,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Кеджери",
@@ -35122,7 +35122,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Мусака",
@@ -36166,7 +36166,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Паэлья",
@@ -39946,7 +39946,7 @@
         "level": "good",
         "usable": true,
         "issues": [],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Шаурма",
@@ -42523,7 +42523,7 @@
         "issues": [
           "low_cost"
         ],
-        "sourceKind": "manual_cleaned"
+        "sourceKind": "manual_reviewed"
       },
       "box": {
         "id": "Суши",
