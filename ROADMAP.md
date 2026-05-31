@@ -279,10 +279,10 @@ YYYY-MM-DD | партия | проверено | исправлено | заме
   - `_baseBasketsForStore` не сбрасывался при `generateNewPlan()` → утечка при смене магазина (добавлено `_baseBasketsForStore = null;` в reset-блок).
   - `generateNewPlan()` не обновлял `DATA.shopping` → старые корзины оставались в рантайме (добавлено `DATA.shopping = shopping;`).
   - `applyPlanReplacements` не масштабировал порции — подпись оставалась на 1 персону при familyScale > 1 (извлечён глобальный `scalePortionText`, применён в `applyPlanReplacements`).
-- [ ] Проверить `generateNewPlan()` в браузере: 100 сидов на каждом профиле, нет `undefined` блюд, бюджет в рамках ±10%.
-- [ ] Проверить `applyFamilyScale` + `applyStorePrices`: при смене профиля mid-session нет утечки стейта (старые граммовки/цены не висят).
-- [ ] Проверить `localStorage` миграцию: пустой `RECIPES`/`PLAN` после смены версии данных — фоллбек на `data-bundle.js` отрабатывает.
-- [ ] Проверить offline fallback: `data-bundle.js` в inline-скрипте > `localStorage` > `fetch` — приоритеты корректны.
+- [x] Проверить `generateNewPlan()` в браузере: 100 сидов на каждом профиле, нет `undefined` блюд, бюджет в рамках ±10%.
+- [x] Проверить `applyFamilyScale` + `applyStorePrices`: при смене профиля mid-session нет утечки стейта (старые граммовки/цены не висят).
+- [x] Проверить `localStorage` миграцию: пустой `RECIPES`/`PLAN` после смены версии данных — фоллбек на `data-bundle.js` отрабатывает.
+- [x] Проверить offline fallback: `data-bundle.js` в inline-скрипте > `localStorage` > `fetch` — приоритеты корректны.
 
 ### D2. Service Worker и обновления (P0)
 - [x] Добавить кнопку «Обновить сейчас» в тост уведомления о новой версии.

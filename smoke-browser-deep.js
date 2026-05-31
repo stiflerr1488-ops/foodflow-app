@@ -217,7 +217,7 @@ async function testProfileSwitch(page) {
   await new Promise(resolve => setTimeout(resolve, 9000));
   const base = await page.command("Runtime.evaluate", {
     returnByValue: true,
-    expression: '(() => ({ day1Dish: DATA.plan[0].meals[0][0], day1Grams: DATA.plan[0].meals[0][1] }))()'
+    expression: '(() => ({ day1Dish: DATA.plan[0]?.meals?.["Завтрак"]?.dish, day1Grams: DATA.plan[0]?.meals?.["Завтрак"]?.portion }))()'
   });
   const baseVal = base.result.value;
 
@@ -228,14 +228,14 @@ async function testProfileSwitch(page) {
   await new Promise(resolve => setTimeout(resolve, 12000));
   const switched = await page.command("Runtime.evaluate", {
     returnByValue: true,
-    expression: '(() => { const raw = localStorage.getItem("foodflow_offline_data_v3"); const cached = raw ? JSON.parse(raw) : null; return { day1Dish: DATA.plan[0].meals["Завтрак"]?.dish, day1Grams: DATA.plan[0].meals["Завтрак"]?.portion, adults: DATA.planFamily.adults, children: DATA.planFamily.children, lsAdults: localStorage.getItem("family_adults"), lsChildren: localStorage.getItem("family_children"), cachedProfileId: cached?.profileId, cachedVersion: cached?.version, keys: Object.keys(cached?.files || {}) }; })()'
+    expression: '(() => { const raw = localStorage.getItem("foodflow_offline_data_v3"); const cached = raw ? JSON.parse(raw) : null; const meal = DATA.plan[0]?.meals?.["Завтрак"]; const day0 = DATA.plan[0] ? JSON.stringify(DATA.plan[0]).slice(0,300) : "none"; return { day1Dish: meal?.dish, day1Grams: meal?.portion, adults: DATA.planFamily?.adults, children: DATA.planFamily?.children, lsAdults: localStorage.getItem("family_adults"), lsChildren: localStorage.getItem("family_children"), cachedProfileId: cached?.profileId, cachedVersion: cached?.version, keys: Object.keys(cached?.files || {}), day0 }; })()'
   });
   const sw = switched && switched.result && switched.result.value;
   if (!sw) {
     console.error("Unexpected profile switch result:", JSON.stringify(switched).slice(0, 500));
     throw new Error("profile switch: evaluate returned no value");
   }
-  console.log(`  profile switch debug: lsAdults=${sw.lsAdults} lsChildren=${sw.lsChildren} dataAdults=${sw.adults} cachedProfileId=${sw.cachedProfileId} cachedVersion=${sw.cachedVersion} keys=${sw.keys?.join(", ")}`);
+  console.log(`  profile switch debug: lsAdults=${sw.lsAdults} lsChildren=${sw.lsChildren} dataAdults=${sw.adults} cachedProfileId=${sw.cachedProfileId} cachedVersion=${sw.cachedVersion} keys=${sw.keys?.join(", ")} day0=${sw.day0}`);
   assert(sw.adults === 2 && sw.children === 1, `profile switch: expected a2_c1, got a${sw.adults}_c${sw.children}`);
   assert(sw.day1Dish, `profile switch: day1 dish missing`);
   console.log(`  profile switch: a1_c0 → a2_c1, grams changed from ${baseVal.day1Grams} to ${sw.day1Grams}`);
