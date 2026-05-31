@@ -303,6 +303,28 @@ input::placeholder{color:var(--color-muted)}
   cursor:pointer;border:0;background:0;padding:0;
   min-height:auto;
 }
+.myProductsBlock{background:var(--color-surface);border:1px solid var(--color-rule);border-radius:var(--radius-md);padding:12px;margin-top:12px}
+.myProductsHead{font-size:var(--text-sm);font-weight:800;color:var(--color-ink);margin-bottom:8px}
+.myProductsBar{display:flex;gap:6px;flex-wrap:wrap}
+.myProductsBar input{flex:1;min-width:120px;padding:8px 10px;border:1px solid var(--color-rule);border-radius:var(--radius-md);font-size:var(--text-sm)}
+.myProductsBar button{padding:8px 12px;font-size:var(--text-sm)}
+.myProductsTags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.myProductTag{background:var(--color-fill);border:1px solid var(--color-rule);border-radius:999px;padding:4px 10px;font-size:var(--text-xs);display:inline-flex;align-items:center;gap:4px}
+.myProductTag button{border:0;background:0;color:var(--color-muted);cursor:pointer;font-size:14px;padding:0 2px}
+.myProductTag button:hover{color:var(--color-danger)}
+.myProductsResults{margin-top:10px;display:grid;gap:6px}
+.myProductResult{border:1px solid var(--color-rule);border-radius:var(--radius-md);padding:10px 12px;cursor:pointer;background:var(--color-surface);display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center}
+.myProductResult:hover{background:var(--color-fill)}
+.myProductResult strong{display:block;font-size:var(--text-sm);color:var(--color-ink)}
+.myProductResult span{font-size:var(--text-xs);color:var(--color-muted)}
+.myProductScore{height:6px;background:var(--color-rule);border-radius:3px;overflow:hidden}
+.myProductScore>div{height:100%;background:var(--color-accent);border-radius:3px}
+.reorderList{display:grid;gap:4px;max-height:60vh;overflow:auto}
+.reorderRow{display:grid;grid-template-columns:64px 1fr auto;gap:8px;align-items:center;padding:8px 10px;border:1px solid var(--color-rule);border-radius:var(--radius-md);background:var(--color-surface)}
+.reorderRow span:first-child{font-weight:800;font-size:var(--text-sm)}
+.reorderMeals{font-size:var(--text-xs);color:var(--color-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reorderBtns{display:flex;gap:4px}
+.reorderBtns button{padding:4px 10px;font-size:var(--text-sm)}
 
 /* ═══════════════════════════════════════════════
    SCHEDULE — secondary, below the fridge
@@ -596,6 +618,20 @@ summary::-webkit-details-marker{display:none}
 .shopSection{margin:var(--space-2xs) 0 var(--space-xs)}
 .shopSectionTitle{font-size:var(--text-xs);font-weight:700;color:var(--color-ink);border-bottom:1px solid var(--color-rule);padding-bottom:4px;margin-bottom:var(--space-2xs)}
 .storeBadge{display:inline-block;vertical-align:middle;margin-left:var(--space-2xs)}
+.basketBudgetBar{font-size:var(--text-sm);color:var(--color-ink);background:var(--color-surface);border:1px solid var(--color-rule);border-radius:var(--radius-md);padding:10px 14px;margin-bottom:var(--space-sm);display:flex;gap:var(--space-sm)}
+.basketBudgetBar strong{color:var(--color-ink)}
+.shopBox .smallBtn{font-size:var(--text-xs);padding:4px 8px;background:var(--color-surface);border:1px solid var(--color-rule);border-radius:var(--radius-md);color:var(--color-ink);cursor:pointer;margin-left:auto}
+.shopBox .smallBtn:hover{background:var(--color-fill)}
+.shopBox:has(input.check:checked){opacity:.55;text-decoration:line-through}
+.starRow{display:inline-flex;gap:2px;font-size:15px;color:#d1d5db;cursor:default;line-height:1}
+.starRow .star{cursor:pointer;transition:transform .12s,color .12s}
+.starRow .star:hover{transform:scale(1.2)}
+.starRow .star.on{color:#f59e0b}
+.mealStars{margin-top:4px}
+.recipeStars{margin-left:auto}
+.allergenBar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.allergen{display:inline-flex;align-items:center;gap:4px;font-size:var(--text-xs);cursor:pointer}
+.allergen input{margin:0}
 .recipeStats{
   display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-bottom:var(--space-sm);
   background:var(--color-paper);
@@ -813,7 +849,13 @@ summary::-webkit-details-marker{display:none}
 }
 
 /* ── Print ── */
+@media screen{
+  #printArea{display:none}
+}
 @media print{
+  body *{visibility:hidden}
+  #printArea,#printArea *{visibility:visible}
+  #printArea{position:absolute;left:0;top:0;width:100%;padding:12px;box-sizing:border-box}
   .top,.fridge-door,.dayControls,.quickNav,.nowActions,.nowMore,.shareToast,.pwaStatus{display:none!important}
   .shell{max-width:100%;padding:0}
   .fridge{grid-template-columns:1fr}

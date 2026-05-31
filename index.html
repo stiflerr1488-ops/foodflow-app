@@ -1310,6 +1310,46 @@
       .onboardingCard{padding:28px 20px}
       .onboardingOpts button{min-height:46px;font-size:16px;min-width:64px}
     }
+
+    /* ── Cooking Mode ── */
+    .cookingHeader{display:flex;align-items:center;gap:12px;padding:16px 24px;border-bottom:1px solid var(--ui-border)}
+    .cookingClose{width:48px;height:48px;border-radius:50%;border:1px solid var(--ui-border);background:var(--ui-panel);font-size:20px;color:var(--ui-ink);cursor:pointer;flex-shrink:0}
+    .cookingClose:hover{background:var(--ui-panel-soft)}
+    .cookingProgress{flex:1;text-align:center;font-size:14px;font-weight:800;color:var(--ui-muted);letter-spacing:.05em;text-transform:uppercase}
+    .cookingPrepBtn{min-height:40px;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:700;background:var(--ui-panel);border:1px solid var(--ui-border);color:var(--ui-ink);cursor:pointer;flex-shrink:0}
+    .cookingPrepBtn:hover{border-color:var(--ui-blue);color:var(--ui-blue)}
+    .cookingBody{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;gap:24px;min-height:0}
+    .cookingStep{font-size:clamp(28px,5.5vw,52px);font-weight:800;line-height:1.2;letter-spacing:-.04em;text-align:center;color:var(--ui-ink);max-width:900px;word-break:break-word;padding:0 12px}
+    .cookingTimer{text-align:center}
+    .cookingTimerDisplay{font-size:clamp(48px,10vw,96px);font-weight:900;letter-spacing:-.06em;color:var(--ui-blue);font-variant-numeric:tabular-nums;line-height:1}
+    .cookingTimer button{min-height:52px;padding:12px 28px;border-radius:14px;font-size:16px;font-weight:800;margin-top:12px;background:var(--ui-blue);color:#fff;border-color:var(--ui-blue)}
+    .cookingTimer button:hover{background:var(--ui-blue-dark)}
+    .cookingNav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-top:1px solid var(--ui-border);gap:12px}
+    .cookingNav button{min-height:56px;min-width:56px;border-radius:14px;font-size:22px;font-weight:800;background:var(--ui-panel);border:1px solid var(--ui-border);color:var(--ui-ink);cursor:pointer}
+    .cookingNav button:disabled{opacity:.35;cursor:not-allowed}
+    .cookingNav button:hover:not(:disabled){border-color:var(--ui-blue);color:var(--ui-blue)}
+    .cookingSwipeHint{font-size:12px;color:var(--ui-muted);text-align:center;flex:1}
+    @media(max-width:980px){
+      .cookingHeader{padding:12px 16px}
+      .cookingStep{padding:0 8px}
+      .cookingNav{padding:12px 16px}
+      .cookingSwipeHint{display:none}
+    }
+
+    /* ── Prep List ── */
+    .prepHeader{display:flex;align-items:center;gap:12px;padding:16px 24px;border-bottom:1px solid var(--ui-border)}
+    .prepTitle{flex:1;font-size:20px;font-weight:800;color:var(--ui-ink)}
+    .prepBody{padding:24px;max-width:800px;margin:0 auto}
+    .prepGroup{margin-bottom:28px}
+    .prepGroupTitle{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ui-muted);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--ui-border)}
+    .prepItem{padding:14px 16px;background:var(--ui-panel);border:1px solid var(--ui-border);border-radius:14px;margin-bottom:10px;font-size:16px;line-height:1.4;color:var(--ui-ink)}
+    .prepItem strong{display:block;font-size:18px;font-weight:800;margin-bottom:4px}
+    .prepItem span{font-size:13px;color:var(--ui-muted)}
+    .prepEmpty{text-align:center;color:var(--ui-muted);padding:40px 20px;font-size:16px}
+    @media(max-width:980px){
+      .prepBody{padding:16px}
+      .prepHeader{padding:12px 16px}
+    }
   </style>
 </head>
 <body>
@@ -1354,6 +1394,36 @@
     <div class="modalMeta" id="modalMeta"></div>
     <div id="modalBody"></div>
   </div>
+</div>
+
+<!-- Cooking Mode overlay -->
+<div id="cookingOverlay" style="display:none;position:fixed;inset:0;z-index:200;background:var(--ui-bg,#f4f6f8);overflow:hidden;touch-action:pan-y">
+  <div class="cookingHeader">
+    <button id="cookingClose" class="cookingClose" aria-label="Закрыть режим готовки">✕</button>
+    <div class="cookingProgress" id="cookingProgress">1 / 3</div>
+    <button id="cookingPrepBtn" class="cookingPrepBtn" aria-label="Подготовка">🔪 Подготовка</button>
+  </div>
+  <div class="cookingBody" id="cookingBody">
+    <div class="cookingStep" id="cookingStep"></div>
+    <div class="cookingTimer" id="cookingTimerWrap" style="display:none">
+      <div class="cookingTimerDisplay" id="cookingTimer">00:00</div>
+      <button id="cookingTimerToggle">▶ Старт</button>
+    </div>
+  </div>
+  <div class="cookingNav">
+    <button id="cookingPrev" aria-label="Предыдущий шаг">←</button>
+    <div class="cookingSwipeHint" id="cookingSwipeHint">Свайп влево — следующий</div>
+    <button id="cookingNext" aria-label="Следующий шаг">→</button>
+  </div>
+</div>
+
+<!-- Prep List overlay -->
+<div id="prepOverlay" style="display:none;position:fixed;inset:0;z-index:199;background:var(--ui-bg,#f4f6f8);overflow:auto">
+  <div class="prepHeader">
+    <button id="prepClose" class="cookingClose" aria-label="Закрыть подготовку">✕</button>
+    <div class="prepTitle" id="prepTitle">Подготовка</div>
+  </div>
+  <div class="prepBody" id="prepBody"></div>
 </div>
 
 <script type="application/json" id="foodflow-agent-notes">
